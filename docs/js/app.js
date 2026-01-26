@@ -131,7 +131,7 @@ function displayHeatIndex() {
             
             <!-- Recommendations -->
             ${recs.length > 0 ? `
-                <div class="border-t border-gray-700 pt-4">
+                <div class="border-t border-gray-700 pt-4 mb-4">
                     <div class="text-sm font-semibold text-gray-300 mb-2">💡 Khuyến nghị:</div>
                     ${recs.map(r => `
                         <div class="flex items-start gap-2 text-sm mb-1">
@@ -141,8 +141,154 @@ function displayHeatIndex() {
                     `).join('')}
                 </div>
             ` : ''}
+            
+            <!-- Historical Heat Chart -->
+            <div class="border-t border-gray-700 pt-4">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Heat Index (${sectorHeat.history?.length || 0} quý)</div>
+                    <div class="text-xs text-gray-500">
+                        Max: <span class="text-red-400">${sectorHeat.analysis?.max_heat}</span> (${sectorHeat.analysis?.max_heat_period}) | 
+                        Min: <span class="text-blue-400">${sectorHeat.analysis?.min_heat}</span> (${sectorHeat.analysis?.min_heat_period})
+                    </div>
+                </div>
+                <div id="heat-history-chart" style="height: 280px;"></div>
+            </div>
         </div>
     `;
+    
+    // Draw heat history chart
+    drawHeatHistoryChart();
+}
+
+function drawHeatHistoryChart() {
+    if (!sectorHeat || !sectorHeat.history || sectorHeat.history.length === 0) return;
+    
+    const history = sectorHeat.history;
+    const periods = history.map(h => h.period);
+    const heatValues = history.map(h => h.heat_index);
+    const avgPBs = history.map(h => h.avg_pb);
+    
+    // Color based on heat level
+    const colors = heatValues.map(h => {
+        if (h >= 85) return '#EF4444';
+        if (h >= 70) return '#F97316';
+        if (h >= 55) return '#EAB308';
+        if (h >= 45) return '#22C55E';
+        if (h >= 35) return '#14B8A6';
+        if (h >= 20) return '#3B82F6';
+        return '#8B5CF6';
+    });
+    
+    // Heat line
+    const trace1 = {
+        x: periods,
+        y: heatValues,
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Heat Index',
+        line: { color: '#F97316', width: 2 },
+        marker: { color: colors, size: 6 },
+        fill: 'tozeroy',
+        fillcolor: 'rgba(249, 115, 22, 0.1)'
+    };
+    
+    // Zone lines
+    const overheatedLine = {
+        x: [periods[0], periods[periods.length-1]],
+        y: [85, 85],
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Overheated (85)',
+        line: { color: '#EF4444', width: 1, dash: 'dash' }
+    };
+    
+    const hotLine = {
+        x: [periods[0], periods[periods.length-1]],
+        y: [70, 70],
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Hot (70)',
+        line: { color: '#F97316', width: 1, dash: 'dot' }
+    };
+    
+    const coldLine = {
+        x: [periods[0], periods[periods.length-1]],
+        y: [35, 35],
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Cold (35)',
+        line: { color: '#3B82F6', width: 1, dash: 'dot' }
+    };
+    
+    const iceColdLine = {
+        x: [periods[0], periods[periods.length-1]],
+        y: [20, 20],
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Ice Cold (20)',
+        line: { color: '#8B5CF6', width: 1, dash: 'dash' }
+    };
+    
+    const layout = {
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        font: { color: '#9ca3af', size: 10 },
+        margin: { t: 10, b: 50, l: 40, r: 10 },
+        xaxis: {
+            gridcolor: '#374151',
+            tickangle: -45,
+            tickfont: { size: 9 }
+        },
+        yaxis: {
+            title: 'Heat Index',
+            gridcolor: '#374151',
+            range: [0, 100],
+            tickfont: { size: 9 }
+        },
+        legend: {
+            x: 0,
+            y: 1.15,
+            orientation: 'h',
+            font: { size: 9 }
+        },
+        shapes: [
+            // Overheated zone (red)
+            {
+                type: 'rect',
+                xref: 'paper', yref: 'y',
+                x0: 0, x1: 1, y0: 85, y1: 100,
+                fillcolor: 'rgba(239, 68, 68, 0.1)',
+                line: { width: 0 }
+            },
+            // Cold zone (blue)
+            {
+                type: 'rect',
+                xref: 'paper', yref: 'y',
+                x0: 0, x1: 1, y0: 0, y1: 35,
+                fillcolor: 'rgba(59, 130, 246, 0.1)',
+                line: { width: 0 }
+            }
+        ],
+        annotations: [
+            {
+                x: periods[periods.length-1],
+                y: heatValues[heatValues.length-1],
+                text: `${heatValues[heatValues.length-1].toFixed(0)}`,
+                showarrow: true,
+                arrowhead: 2,
+                arrowsize: 1,
+                arrowcolor: '#F97316',
+                font: { color: '#F97316', size: 12, weight: 'bold' },
+                ax: 30,
+                ay: -20
+            }
+        ]
+    };
+    
+    Plotly.newPlot('heat-history-chart', [trace1, overheatedLine, hotLine, coldLine, iceColdLine], layout, { 
+        responsive: true,
+        displayModeBar: false
+    });
 }
 
 function getSignalColor(signal) {
