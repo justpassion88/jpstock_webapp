@@ -1,6 +1,27 @@
 {
-  "generated_at": "2026-01-26T15:36:27.242543",
+  "generated_at": "2026-01-26T15:57:40.018976",
   "buy_signals": [
+    {
+      "symbol": "VIB",
+      "name": "VIB",
+      "action": "BUY",
+      "strength": "MODERATE",
+      "bots_agree": 3,
+      "bot_names": [
+        "🎯 Balanced Pro",
+        "🌈 Wide Net",
+        "💎 Quality First"
+      ],
+      "reasons": [
+        "P/B P29, WR 81%, ER 22.7%"
+      ],
+      "current_pb": 1.3650690329,
+      "current_price": 17.45,
+      "pb_percentile": 28.6,
+      "zone": "HỢP LÝ",
+      "expected_return_1y": 22.743862109659098,
+      "win_rate_1y": 81.25
+    },
     {
       "symbol": "ACB",
       "name": "ACB",
@@ -8,8 +29,8 @@
       "strength": "MODERATE",
       "bots_agree": 2,
       "bot_names": [
-        "💎 Quality Value",
-        "🌈 Diversified"
+        "🌈 Wide Net",
+        "💎 Quality First"
       ],
       "reasons": [
         "P/B P35, WR 78%, ER 32.8%"
@@ -28,8 +49,8 @@
       "strength": "MODERATE",
       "bots_agree": 2,
       "bot_names": [
-        "💎 Quality Value",
-        "🌈 Diversified"
+        "🌈 Wide Net",
+        "💎 Quality First"
       ],
       "reasons": [
         "P/B P33, WR 69%, ER 17.9%"
@@ -42,33 +63,13 @@
       "win_rate_1y": 69.23076923076923
     },
     {
-      "symbol": "VIB",
-      "name": "VIB",
-      "action": "BUY",
-      "strength": "MODERATE",
-      "bots_agree": 2,
-      "bot_names": [
-        "💎 Quality Value",
-        "🌈 Diversified"
-      ],
-      "reasons": [
-        "P/B P29, WR 81%, ER 22.7%"
-      ],
-      "current_pb": 1.3650690329,
-      "current_price": 17.45,
-      "pb_percentile": 28.6,
-      "zone": "HỢP LÝ",
-      "expected_return_1y": 22.743862109659098,
-      "win_rate_1y": 81.25
-    },
-    {
       "symbol": "VCB",
       "name": "Vietcombank",
       "action": "BUY",
       "strength": "WEAK",
       "bots_agree": 1,
       "bot_names": [
-        "💎 Quality Value"
+        "💎 Quality First"
       ],
       "reasons": [
         "P/B P47, WR 92%, ER 18.9%"
@@ -87,7 +88,7 @@
       "strength": "WEAK",
       "bots_agree": 1,
       "bot_names": [
-        "💎 Quality Value"
+        "💎 Quality First"
       ],
       "reasons": [
         "P/B P41, WR 67%, ER 35.2%"
@@ -106,7 +107,7 @@
       "strength": "WEAK",
       "bots_agree": 1,
       "bot_names": [
-        "💎 Quality Value"
+        "💎 Quality First"
       ],
       "reasons": [
         "P/B P45, WR 100%, ER 44.7%"
@@ -122,96 +123,102 @@
   "sell_signals": [],
   "hold_signals": [],
   "bot_allocations": {
-    "BOT1_CONSERVATIVE": {
-      "name": "🛡️ Conservative Value",
+    "BOT1_AGGRESSIVE_OPTIMIZED": {
+      "name": "🔥 Aggressive Alpha",
       "buy_signals": [],
       "config": {
-        "pb_max": 10,
-        "min_wr": 70,
+        "pb_max": 20,
+        "min_wr": 45,
         "max_pos": 5
       }
     },
-    "BOT2_VALUE_HUNTER": {
-      "name": "🎯 Value Hunter",
-      "buy_signals": [],
-      "config": {
-        "pb_max": 25,
-        "min_wr": 60,
-        "max_pos": 6
-      }
-    },
-    "BOT3_QUALITY_VALUE": {
-      "name": "💎 Quality Value",
+    "BOT2_BALANCED_OPTIMIZED": {
+      "name": "🎯 Balanced Pro",
       "buy_signals": [
         {
-          "symbol": "VCB",
-          "reason": "P/B P47, WR 92%, ER 18.9%",
-          "bot": "💎 Quality Value"
-        },
-        {
-          "symbol": "VPB",
-          "reason": "P/B P41, WR 67%, ER 35.2%",
-          "bot": "💎 Quality Value"
-        },
+          "symbol": "VIB",
+          "reason": "P/B P29, WR 81%, ER 22.7%",
+          "bot": "🎯 Balanced Pro"
+        }
+      ],
+      "config": {
+        "pb_max": 30,
+        "min_wr": 50,
+        "max_pos": 7
+      }
+    },
+    "BOT3_CONSERVATIVE_OPTIMIZED": {
+      "name": "🛡️ Safe Value",
+      "buy_signals": [],
+      "config": {
+        "pb_max": 20,
+        "min_wr": 60,
+        "max_pos": 5
+      }
+    },
+    "BOT4_DIVERSIFIED_OPTIMIZED": {
+      "name": "🌈 Wide Net",
+      "buy_signals": [
         {
           "symbol": "ACB",
           "reason": "P/B P35, WR 78%, ER 32.8%",
-          "bot": "💎 Quality Value"
+          "bot": "🌈 Wide Net"
         },
         {
           "symbol": "TPB",
           "reason": "P/B P33, WR 69%, ER 17.9%",
-          "bot": "💎 Quality Value"
+          "bot": "🌈 Wide Net"
         },
         {
           "symbol": "VIB",
           "reason": "P/B P29, WR 81%, ER 22.7%",
-          "bot": "💎 Quality Value"
+          "bot": "🌈 Wide Net"
+        }
+      ],
+      "config": {
+        "pb_max": 40,
+        "min_wr": 45,
+        "max_pos": 10
+      }
+    },
+    "BOT5_QUALITY_OPTIMIZED": {
+      "name": "💎 Quality First",
+      "buy_signals": [
+        {
+          "symbol": "VCB",
+          "reason": "P/B P47, WR 92%, ER 18.9%",
+          "bot": "💎 Quality First"
+        },
+        {
+          "symbol": "VPB",
+          "reason": "P/B P41, WR 67%, ER 35.2%",
+          "bot": "💎 Quality First"
+        },
+        {
+          "symbol": "ACB",
+          "reason": "P/B P35, WR 78%, ER 32.8%",
+          "bot": "💎 Quality First"
+        },
+        {
+          "symbol": "TPB",
+          "reason": "P/B P33, WR 69%, ER 17.9%",
+          "bot": "💎 Quality First"
+        },
+        {
+          "symbol": "VIB",
+          "reason": "P/B P29, WR 81%, ER 22.7%",
+          "bot": "💎 Quality First"
         },
         {
           "symbol": "NAB",
           "reason": "P/B P45, WR 100%, ER 44.7%",
-          "bot": "💎 Quality Value"
+          "bot": "💎 Quality First"
         }
       ],
       "config": {
         "pb_max": 50,
         "min_wr": 50,
-        "max_pos": 4
-      }
-    },
-    "BOT4_DIVERSIFIED": {
-      "name": "🌈 Diversified",
-      "buy_signals": [
-        {
-          "symbol": "ACB",
-          "reason": "P/B P35, WR 78%, ER 32.8%",
-          "bot": "🌈 Diversified"
-        },
-        {
-          "symbol": "TPB",
-          "reason": "P/B P33, WR 69%, ER 17.9%",
-          "bot": "🌈 Diversified"
-        },
-        {
-          "symbol": "VIB",
-          "reason": "P/B P29, WR 81%, ER 22.7%",
-          "bot": "🌈 Diversified"
-        }
-      ],
-      "config": {
-        "pb_max": 40,
-        "min_wr": 55,
-        "max_pos": 10
-      }
-    },
-    "BOT5_AGGRESSIVE": {
-      "name": "🔥 Aggressive Growth",
-      "buy_signals": [],
-      "config": {
-        "pb_max": 15,
-        "min_wr": 50,
-        "max_pos": 3
+        "max_pos": 6
       }
     }
   },

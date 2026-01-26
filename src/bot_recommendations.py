@@ -9,7 +9,7 @@ import os
 from datetime import datetime
 from typing import Dict, List
 from dataclasses import dataclass
-from bot_simulator import BOT_CONFIGS, TradingBOT, TradingAction
+from bot_optimizer import create_optimized_bots
 
 @dataclass
 class Recommendation:
@@ -43,6 +43,9 @@ def generate_recommendations():
         "bot_allocations": {},
         "market_summary": {}
     }
+    
+    # Get optimized BOT configs
+    BOT_CONFIGS = create_optimized_bots()
     
     # Evaluate each symbol with current data directly
     for bot_id, config in BOT_CONFIGS.items():
