@@ -1,268 +1,231 @@
 /**
- * JP Stock Webapp - Main Application JavaScript
- * Phân tích P/B định lượng cho ngành ngân hàng
+ * JP Stock Webapp - Dashboard V2
+ * Phân tích P/B với Historical Backtest
  */
 
-// Global state
-let bankData = null;
-let sortColumn = 'expected_return';
-let sortDirection = 'desc';
+let banksData = null;
 
-// Format numbers
-function formatNumber(num, decimals = 2) {
-    if (num === null || num === undefined) return 'N/A';
-    return Number(num).toFixed(decimals);
-}
-
-function formatPercent(num) {
-    if (num === null || num === undefined) return 'N/A';
-    const sign = num >= 0 ? '+' : '';
-    return `${sign}${formatNumber(num, 1)}%`;
-}
-
-function formatPrice(num) {
-    if (num === null || num === undefined) return 'N/A';
-    return new Intl.NumberFormat('vi-VN').format(Math.round(num));
-}
-
-// Get color class for valuation
-function getValuationClass(zone) {
-    const classes = {
-        'EXTREMELY_CHEAP': 'valuation-extremely-cheap',
-        'CHEAP': 'valuation-cheap',
-        'FAIR': 'valuation-fair',
-        'EXPENSIVE': 'valuation-expensive',
-        'EXTREMELY_EXPENSIVE': 'valuation-extremely-expensive',
-        'UNKNOWN': 'valuation-unknown'
-    };
-    return classes[zone] || 'valuation-unknown';
-}
-
-// Get signal badge
-function getSignalBadge(signal, label) {
-    const badges = {
-        'STRONG_BUY': `<span class="badge badge-strong-buy">${label}</span>`,
-        'BUY': `<span class="badge badge-buy">${label}</span>`,
-        'HOLD': `<span class="badge badge-hold">${label}</span>`,
-        'SELL': `<span class="badge badge-sell">${label}</span>`,
-        'STRONG_SELL': `<span class="badge badge-strong-sell">${label}</span>`,
-        'N/A': `<span class="badge badge-unknown">${label}</span>`
-    };
-    return badges[signal] || `<span class="badge badge-unknown">${label}</span>`;
-}
-
-// Get risk level badge
-function getRiskBadge(riskLevel) {
-    const badges = {
-        'VERY_LOW': '<span class="badge badge-risk-very-low">Rất thấp</span>',
-        'LOW': '<span class="badge badge-risk-low">Thấp</span>',
-        'MEDIUM': '<span class="badge badge-risk-medium">Trung bình</span>',
-        'HIGH': '<span class="badge badge-risk-high">Cao</span>',
-        'VERY_HIGH': '<span class="badge badge-risk-very-high">Rất cao</span>',
-        'UNKNOWN': '<span class="badge badge-unknown">N/A</span>'
-    };
-    return badges[riskLevel] || badges['UNKNOWN'];
-}
-
-// Load data from JSON file
-async function loadData() {
+// Fetch and display banks data
+async function loadBanks() {
     try {
-        const response = await fetch('data/banks.json');
-        if (!response.ok) throw new Error('Failed to load data');
-        bankData = await response.json();
-        
-        // Update last updated time
-        document.getElementById('lastUpdated').textContent = 
-            new Date(bankData.generated_at || bankData.last_updated).toLocaleString('vi-VN');
-        
-        // Update summary cards
-        updateSummaryCards();
-        
-        // Render table
-        renderTable();
-        
+        const response = await fetch('data/banks_v2.json');
+        banksData = await response.json();
+        displayBankList(banksData.banks);
+        displaySummary(banksData);
     } catch (error) {
-        console.error('Error loading data:', error);
-        document.getElementById('bankTable').innerHTML = `
-            <tr>
-                <td colspan="8" class="text-center py-8 text-red-500">
-                    Không thể tải dữ liệu. Vui lòng thử lại sau.
-                </td>
-            </tr>
+        console.error('Error loading banks:', error);
+        document.getElementById('bank-list').innerHTML = `
+            <div class="col-span-full text-center text-red-500 py-8">
+                <p class="text-xl">⚠️ Không thể tải dữ liệu</p>
+                <p class="text-sm mt-2">Error: ${error.message}</p>
+            </div>
         `;
     }
 }
 
-// Update summary cards
-function updateSummaryCards() {
-    if (!bankData || !bankData.summary) return;
+// Display summary statistics
+function displaySummary(data) {
+    const banks = Object.values(data.banks);
     
-    const summary = bankData.summary;
+    // Count by zone
+    const zoneCounts = {
+        'extremely_cheap': 0,
+        'cheap': 0,
+        'fair': 0,
+        'expensive': 0,
+        'extremely_expensive': 0
+    };
     
-    document.getElementById('countStrongBuy').textContent = 
-        summary.extremely_cheap.length + summary.cheap.length;
-    document.getElementById('countHold').textContent = summary.fair.length;
-    document.getElementById('countSell').textContent = 
-        summary.expensive.length + summary.extremely_expensive.length;
-    document.getElementById('totalBanks').textContent = bankData.total_banks;
-}
-
-// Sort data
-function sortData(data, column, direction) {
-    return [...data].sort((a, b) => {
-        let aVal, bVal;
-        
-        switch (column) {
-            case 'symbol':
-                aVal = a.symbol;
-                bVal = b.symbol;
-                break;
-            case 'current_pb':
-                aVal = a.current_pb || 0;
-                bVal = b.current_pb || 0;
-                break;
-            case 'percentile':
-                aVal = a.valuation?.percentile || 50;
-                bVal = b.valuation?.percentile || 50;
-                break;
-            case 'expected_return':
-                aVal = a.expected_return?.expected_return || -999;
-                bVal = b.expected_return?.expected_return || -999;
-                break;
-            case 'risk_score':
-                aVal = a.risk?.risk_score || 50;
-                bVal = b.risk?.risk_score || 50;
-                break;
-            default:
-                aVal = a.symbol;
-                bVal = b.symbol;
+    let totalReturn = 0, countReturn = 0;
+    
+    banks.forEach(bank => {
+        const zone = bank.valuation?.zone || 'unknown';
+        if (zoneCounts.hasOwnProperty(zone)) {
+            zoneCounts[zone]++;
         }
-        
-        if (direction === 'asc') {
-            return aVal > bVal ? 1 : -1;
-        } else {
-            return aVal < bVal ? 1 : -1;
+        if (bank.expected_return?.expected_1y != null) {
+            totalReturn += bank.expected_return.expected_1y;
+            countReturn++;
         }
     });
+    
+    const avgReturn = countReturn > 0 ? (totalReturn / countReturn).toFixed(1) : 'N/A';
+    
+    document.getElementById('summary').innerHTML = `
+        <div class="bg-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-white mb-4">📊 Tổng quan thị trường ngân hàng</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+                <div class="text-center p-3 bg-green-900/30 rounded-lg">
+                    <div class="text-3xl font-bold text-green-400">${zoneCounts.extremely_cheap}</div>
+                    <div class="text-sm text-gray-400">Cực rẻ</div>
+                </div>
+                <div class="text-center p-3 bg-green-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-green-300">${zoneCounts.cheap}</div>
+                    <div class="text-sm text-gray-400">Rẻ</div>
+                </div>
+                <div class="text-center p-3 bg-yellow-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-yellow-400">${zoneCounts.fair}</div>
+                    <div class="text-sm text-gray-400">Hợp lý</div>
+                </div>
+                <div class="text-center p-3 bg-orange-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-orange-400">${zoneCounts.expensive}</div>
+                    <div class="text-sm text-gray-400">Đắt</div>
+                </div>
+                <div class="text-center p-3 bg-red-900/30 rounded-lg">
+                    <div class="text-3xl font-bold text-red-400">${zoneCounts.extremely_expensive}</div>
+                    <div class="text-sm text-gray-400">Cực đắt</div>
+                </div>
+            </div>
+            <div class="text-sm text-gray-400 text-center border-t border-gray-700 pt-3">
+                <span class="mr-4">📅 Cập nhật: ${new Date(data.last_updated).toLocaleString('vi-VN')}</span>
+                <span>📈 Dựa trên backtest lịch sử P/B theo quý</span>
+            </div>
+        </div>
+    `;
 }
 
-// Handle sort click
-function handleSort(column) {
-    if (sortColumn === column) {
-        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
-    } else {
-        sortColumn = column;
-        sortDirection = 'desc';
-    }
-    renderTable();
-    updateSortIndicators();
-}
-
-// Update sort indicators
-function updateSortIndicators() {
-    document.querySelectorAll('.sort-indicator').forEach(el => {
-        el.textContent = '';
+// Display bank list
+function displayBankList(banks) {
+    const container = document.getElementById('bank-list');
+    
+    // Sort by valuation score (best buys first)
+    const sortedBanks = Object.values(banks).sort((a, b) => {
+        const scoreA = a.valuation?.score || 0;
+        const scoreB = b.valuation?.score || 0;
+        return scoreB - scoreA;
     });
     
-    const indicator = document.querySelector(`[data-sort="${sortColumn}"] .sort-indicator`);
-    if (indicator) {
-        indicator.textContent = sortDirection === 'asc' ? ' ↑' : ' ↓';
-    }
+    container.innerHTML = sortedBanks.map(bank => createBankCard(bank)).join('');
 }
 
-// Render table
-function renderTable() {
-    if (!bankData || !bankData.banks) return;
+// Create individual bank card
+function createBankCard(bank) {
+    const valuation = bank.valuation || {};
+    const expectedReturn = bank.expected_return || {};
+    const risk = bank.risk || {};
+    const stats = bank.pb_statistics || {};
     
-    const sortedBanks = sortData(bankData.banks, sortColumn, sortDirection);
-    const tbody = document.getElementById('bankTable');
+    const zoneColor = valuation.color || '#6b7280';
+    const zoneVi = valuation.zone_vi || 'N/A';
+    const percentile = valuation.percentile != null ? valuation.percentile.toFixed(0) : 'N/A';
     
-    tbody.innerHTML = sortedBanks.map(bank => {
-        const valuation = bank.valuation || {};
-        const expectedReturn = bank.expected_return || {};
-        const risk = bank.risk || {};
-        const pbStats = bank.pb_statistics || {};
-        
-        return `
-            <tr class="hover:bg-gray-50 cursor-pointer" onclick="viewDetail('${bank.symbol}')">
-                <td class="px-4 py-3 font-semibold">
-                    <div class="flex items-center">
-                        <span class="text-blue-600">${bank.symbol}</span>
-                    </div>
-                    <div class="text-xs text-gray-500">${bank.name}</div>
-                </td>
-                <td class="px-4 py-3 text-right">
-                    ${formatPrice(bank.current_price)}
-                </td>
-                <td class="px-4 py-3 text-right font-medium">
-                    ${formatNumber(bank.current_pb)}
-                </td>
-                <td class="px-4 py-3 text-right text-gray-500 text-sm">
-                    ${formatNumber(pbStats.mean)} ± ${formatNumber(pbStats.std)}
-                </td>
-                <td class="px-4 py-3 text-center">
-                    ${getSignalBadge(valuation.signal, valuation.label)}
-                    <div class="text-xs text-gray-500 mt-1">P${formatNumber(valuation.percentile, 0)}%</div>
-                </td>
-                <td class="px-4 py-3 text-right ${expectedReturn.expected_return >= 0 ? 'text-green-600' : 'text-red-600'}">
-                    ${formatPercent(expectedReturn.expected_return)}
-                    <div class="text-xs text-gray-500">${expectedReturn.confidence || ''}</div>
-                </td>
-                <td class="px-4 py-3 text-center">
-                    ${getRiskBadge(risk.risk_level)}
-                </td>
-                <td class="px-4 py-3 text-center">
-                    <button onclick="event.stopPropagation(); viewDetail('${bank.symbol}')" 
-                            class="text-blue-600 hover:text-blue-800 text-sm font-medium">
-                        Chi tiết →
-                    </button>
-                </td>
-            </tr>
-        `;
-    }).join('');
-}
-
-// View detail page
-function viewDetail(symbol) {
-    window.location.href = `stock.html?symbol=${symbol}`;
+    const currentPb = bank.current_pb?.toFixed(2) || 'N/A';
+    const currentPrice = bank.current_price?.toLocaleString() || 'N/A';
+    const avgPb = stats.mean?.toFixed(2) || 'N/A';
+    
+    const return1y = expectedReturn.expected_1y != null ? 
+        `${expectedReturn.expected_1y > 0 ? '+' : ''}${expectedReturn.expected_1y.toFixed(1)}%` : 'N/A';
+    const winRate = expectedReturn.win_rate_1y != null ? 
+        `${expectedReturn.win_rate_1y.toFixed(0)}%` : 'N/A';
+    
+    const returnClass = (expectedReturn.expected_1y || 0) >= 20 ? 'text-green-400' : 
+                        (expectedReturn.expected_1y || 0) >= 0 ? 'text-yellow-400' : 'text-red-400';
+    
+    const winRateClass = (expectedReturn.win_rate_1y || 0) >= 70 ? 'text-green-400' :
+                         (expectedReturn.win_rate_1y || 0) >= 50 ? 'text-yellow-400' : 'text-red-400';
+    
+    return `
+        <a href="stock.html?symbol=${bank.symbol}" class="bank-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
+            <div class="flex justify-between items-start mb-3">
+                <div>
+                    <h3 class="text-xl font-bold text-white">${bank.symbol}</h3>
+                    <p class="text-sm text-gray-400">${bank.name}</p>
+                </div>
+                <span class="px-3 py-1 rounded-full text-sm font-bold" 
+                      style="background-color: ${zoneColor}25; color: ${zoneColor}; border: 2px solid ${zoneColor}">
+                    ${zoneVi}
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3 text-sm mb-3">
+                <div class="bg-gray-900/50 rounded p-2">
+                    <div class="text-gray-500 text-xs">P/B hiện tại</div>
+                    <div class="text-white font-bold text-lg">${currentPb}</div>
+                    <div class="text-gray-500 text-xs">TB: ${avgPb}</div>
+                </div>
+                <div class="bg-gray-900/50 rounded p-2">
+                    <div class="text-gray-500 text-xs">Percentile</div>
+                    <div class="text-white font-bold text-lg">P${percentile}</div>
+                    <div class="text-gray-500 text-xs">vs lịch sử</div>
+                </div>
+                <div class="bg-gray-900/50 rounded p-2">
+                    <div class="text-gray-500 text-xs">Kỳ vọng 1Y</div>
+                    <div class="${returnClass} font-bold text-lg">${return1y}</div>
+                    <div class="text-gray-500 text-xs">từ backtest</div>
+                </div>
+                <div class="bg-gray-900/50 rounded p-2">
+                    <div class="text-gray-500 text-xs">Win Rate 1Y</div>
+                    <div class="${winRateClass} font-bold text-lg">${winRate}</div>
+                    <div class="text-gray-500 text-xs">tỷ lệ có lãi</div>
+                </div>
+            </div>
+            
+            <div class="flex justify-between items-center text-xs pt-2 border-t border-gray-700">
+                <span class="text-gray-500">💰 ${currentPrice}đ</span>
+                <span class="text-gray-500">⚠️ Rủi ro: ${risk.level_vi || 'N/A'}</span>
+            </div>
+        </a>
+    `;
 }
 
 // Filter by zone
-function filterByZone(zone) {
-    if (!bankData || !bankData.banks) return;
+function filterByZone(zone, btn) {
+    if (!banksData) return;
     
-    const filteredBanks = zone === 'all' 
-        ? bankData.banks 
-        : bankData.banks.filter(b => {
-            if (zone === 'buy') {
-                return b.valuation?.zone === 'EXTREMELY_CHEAP' || b.valuation?.zone === 'CHEAP';
-            } else if (zone === 'sell') {
-                return b.valuation?.zone === 'EXPENSIVE' || b.valuation?.zone === 'EXTREMELY_EXPENSIVE';
-            } else if (zone === 'hold') {
-                return b.valuation?.zone === 'FAIR';
+    if (zone === 'all') {
+        displayBankList(banksData.banks);
+    } else {
+        const filtered = {};
+        Object.entries(banksData.banks).forEach(([symbol, bank]) => {
+            if (bank.valuation?.zone === zone) {
+                filtered[symbol] = bank;
             }
-            return true;
         });
+        displayBankList(filtered);
+    }
     
-    // Temporarily replace banks array and render
-    const originalBanks = bankData.banks;
-    bankData.banks = filteredBanks;
-    renderTable();
-    bankData.banks = originalBanks;
-    
-    // Update active filter button
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('ring-2', 'ring-blue-500');
     });
-    document.querySelector(`[data-filter="${zone}"]`)?.classList.add('active');
+    btn.classList.add('ring-2', 'ring-blue-500');
 }
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    loadData();
+// Sort banks
+function sortBanks(field) {
+    if (!banksData) return;
     
-    // Add sort click handlers
-    document.querySelectorAll('[data-sort]').forEach(el => {
-        el.addEventListener('click', () => handleSort(el.dataset.sort));
+    const banks = Object.values(banksData.banks);
+    
+    banks.sort((a, b) => {
+        let valA, valB;
+        
+        switch(field) {
+            case 'return':
+                valA = a.expected_return?.expected_1y ?? -999;
+                valB = b.expected_return?.expected_1y ?? -999;
+                return valB - valA;
+            case 'winrate':
+                valA = a.expected_return?.win_rate_1y ?? -999;
+                valB = b.expected_return?.win_rate_1y ?? -999;
+                return valB - valA;
+            case 'cheap':
+                valA = a.valuation?.percentile ?? 999;
+                valB = b.valuation?.percentile ?? 999;
+                return valA - valB;
+            case 'risk':
+                valA = a.risk?.score ?? 999;
+                valB = b.risk?.score ?? 999;
+                return valA - valB;
+            default:
+                return (b.valuation?.score ?? 0) - (a.valuation?.score ?? 0);
+        }
     });
-});
+    
+    const banksObj = {};
+    banks.forEach(bank => banksObj[bank.symbol] = bank);
+    displayBankList(banksObj);
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', loadBanks);

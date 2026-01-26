@@ -3,193 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Stock Analysis - Phân Tích P/B Ngân Hàng</title>
+    <title>JP Stock Analysis V2 - Phân Tích P/B Ngân Hàng với Backtest</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom styles -->
     <style>
-        /* Badge styles */
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .badge-strong-buy { background-color: #15803d; color: white; }
-        .badge-buy { background-color: #22c55e; color: white; }
-        .badge-hold { background-color: #6b7280; color: white; }
-        .badge-sell { background-color: #f97316; color: white; }
-        .badge-strong-sell { background-color: #dc2626; color: white; }
-        .badge-unknown { background-color: #9ca3af; color: white; }
-        
-        /* Risk badges */
-        .badge-risk-very-low { background-color: #dcfce7; color: #166534; }
-        .badge-risk-low { background-color: #f0fdf4; color: #15803d; }
-        .badge-risk-medium { background-color: #fef9c3; color: #854d0e; }
-        .badge-risk-high { background-color: #ffedd5; color: #c2410c; }
-        .badge-risk-very-high { background-color: #fee2e2; color: #b91c1c; }
-        
-        /* Filter buttons */
-        .filter-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
-            background-color: #f3f4f6;
-            color: #374151;
-            transition: all 0.2s;
-        }
-        .filter-btn:hover { background-color: #e5e7eb; }
-        .filter-btn.active { background-color: #2563eb; color: white; }
-        
-        /* Table hover */
-        .data-row:hover { background-color: #eff6ff; }
-        
-        /* Sort indicator */
-        .sort-indicator { font-size: 0.75rem; }
+        body { background-color: #111827; }
+        .bank-card { transition: all 0.2s ease; }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-900 min-h-screen text-gray-100">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
+    <header class="bg-gradient-to-r from-blue-800 to-purple-800 text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-bold">📊 JP Stock Analysis</h1>
-                    <p class="text-blue-100 mt-1">Phân tích định lượng P/B - Ngành Ngân Hàng Việt Nam</p>
+                    <h1 class="text-2xl md:text-3xl font-bold">📊 JP Stock Analysis V2</h1>
+                    <p class="text-blue-200 mt-1">Phân tích P/B định lượng với Historical Backtest</p>
                 </div>
-                <div class="mt-4 md:mt-0 text-sm text-blue-100">
-                    <span>Cập nhật: </span>
-                    <span id="lastUpdated" class="font-semibold">--</span>
+                <div class="mt-4 md:mt-0">
+                    <span class="bg-green-600 px-3 py-1 rounded-full text-sm font-semibold">
+                        ✨ Data theo Quý + Lợi nhuận thực tế
+                    </span>
                 </div>
             </div>
         </div>
     </header>
     
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-        <!-- Summary Cards -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            <div class="bg-white rounded-xl shadow-md p-4 md:p-6 border-l-4 border-green-500">
-                <div class="text-sm text-gray-500">Nên Mua</div>
-                <div class="text-2xl md:text-3xl font-bold text-green-600" id="countStrongBuy">0</div>
-                <div class="text-xs text-gray-400">Strong Buy + Buy</div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md p-4 md:p-6 border-l-4 border-gray-500">
-                <div class="text-sm text-gray-500">Giữ</div>
-                <div class="text-2xl md:text-3xl font-bold text-gray-600" id="countHold">0</div>
-                <div class="text-xs text-gray-400">Hold</div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md p-4 md:p-6 border-l-4 border-red-500">
-                <div class="text-sm text-gray-500">Nên Bán</div>
-                <div class="text-2xl md:text-3xl font-bold text-red-600" id="countSell">0</div>
-                <div class="text-xs text-gray-400">Sell + Strong Sell</div>
-            </div>
-            <div class="bg-white rounded-xl shadow-md p-4 md:p-6 border-l-4 border-blue-500">
-                <div class="text-sm text-gray-500">Tổng Số</div>
-                <div class="text-2xl md:text-3xl font-bold text-blue-600" id="totalBanks">0</div>
-                <div class="text-xs text-gray-400">Ngân hàng</div>
-            </div>
-        </div>
+    <main class="container mx-auto px-4 py-6">
+        <!-- Summary -->
+        <div id="summary"></div>
         
-        <!-- Filters -->
-        <div class="bg-white rounded-xl shadow-md p-4 mb-6">
+        <!-- Filters & Sort -->
+        <div class="bg-gray-800 rounded-lg p-4 mb-6">
+            <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-gray-400 mr-2">Lọc:</span>
+                <button onclick="filterByZone('all', this)" class="filter-btn bg-blue-600 text-white px-3 py-1 rounded text-sm ring-2 ring-blue-500">Tất cả</button>
+                <button onclick="filterByZone('extremely_cheap', this)" class="filter-btn bg-gray-700 text-green-400 px-3 py-1 rounded text-sm">Cực rẻ</button>
+                <button onclick="filterByZone('cheap', this)" class="filter-btn bg-gray-700 text-green-300 px-3 py-1 rounded text-sm">Rẻ</button>
+                <button onclick="filterByZone('fair', this)" class="filter-btn bg-gray-700 text-yellow-400 px-3 py-1 rounded text-sm">Hợp lý</button>
+                <button onclick="filterByZone('expensive', this)" class="filter-btn bg-gray-700 text-orange-400 px-3 py-1 rounded text-sm">Đắt</button>
+                <button onclick="filterByZone('extremely_expensive', this)" class="filter-btn bg-gray-700 text-red-400 px-3 py-1 rounded text-sm">Cực đắt</button>
+            </div>
             <div class="flex flex-wrap gap-2">
-                <button class="filter-btn active" data-filter="all" onclick="filterByZone('all')">
-                    Tất cả
-                </button>
-                <button class="filter-btn" data-filter="buy" onclick="filterByZone('buy')">
-                    🟢 Nên Mua
-                </button>
-                <button class="filter-btn" data-filter="hold" onclick="filterByZone('hold')">
-                    ⚪ Giữ
-                </button>
-                <button class="filter-btn" data-filter="sell" onclick="filterByZone('sell')">
-                    🔴 Nên Bán
-                </button>
+                <span class="text-gray-400 mr-2">Sắp xếp:</span>
+                <button onclick="sortBanks('return')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↑ Lợi nhuận cao</button>
+                <button onclick="sortBanks('winrate')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↑ Win rate cao</button>
+                <button onclick="sortBanks('cheap')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↓ P/B rẻ nhất</button>
+                <button onclick="sortBanks('risk')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↓ Rủi ro thấp</button>
             </div>
         </div>
         
-        <!-- Data Table -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-600 uppercase cursor-pointer hover:bg-gray-100" data-sort="symbol">
-                                Mã CK <span class="sort-indicator"></span>
-                            </th>
-                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase">
-                                Giá (VNĐ)
-                            </th>
-                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase cursor-pointer hover:bg-gray-100" data-sort="current_pb">
-                                P/B <span class="sort-indicator"></span>
-                            </th>
-                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase">
-                                P/B TB
-                            </th>
-                            <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase cursor-pointer hover:bg-gray-100" data-sort="percentile">
-                                Định Giá <span class="sort-indicator"></span>
-                            </th>
-                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-600 uppercase cursor-pointer hover:bg-gray-100" data-sort="expected_return">
-                                Lợi Nhuận KV <span class="sort-indicator"></span>
-                            </th>
-                            <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase cursor-pointer hover:bg-gray-100" data-sort="risk_score">
-                                Rủi Ro <span class="sort-indicator"></span>
-                            </th>
-                            <th class="px-4 py-3 text-center text-xs font-semibold text-gray-600 uppercase">
-                                Chi Tiết
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="bankTable">
-                        <tr>
-                            <td colspan="8" class="text-center py-8 text-gray-500">
-                                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
-                                Đang tải dữ liệu...
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Bank List -->
+        <div id="bank-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div class="col-span-full text-center py-8 text-gray-500">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2"></div>
+                Đang tải dữ liệu...
             </div>
         </div>
         
         <!-- Info Section -->
-        <div class="mt-8 bg-blue-50 rounded-xl p-6">
-            <h3 class="font-semibold text-blue-900 mb-3">📘 Hướng dẫn đọc bảng</h3>
-            <div class="grid md:grid-cols-2 gap-4 text-sm text-blue-800">
+        <div class="mt-8 bg-gray-800 rounded-lg p-6">
+            <h3 class="font-bold text-white mb-3">📘 Cách đọc dữ liệu</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
                 <div>
-                    <p><strong>P/B (Price-to-Book):</strong> Tỷ lệ giá/giá trị sổ sách. P/B thấp = rẻ, P/B cao = đắt.</p>
-                    <p class="mt-2"><strong>P/B TB:</strong> P/B trung bình lịch sử ± độ lệch chuẩn (13 năm).</p>
-                    <p class="mt-2"><strong>Percentile:</strong> Vị trí P/B hiện tại so với lịch sử (P10 = rẻ hơn 90% thời điểm).</p>
+                    <p><strong class="text-white">P/B Percentile:</strong> P10 = rẻ hơn 90% lịch sử, P90 = đắt hơn 90% lịch sử</p>
+                    <p class="mt-2"><strong class="text-white">Kỳ vọng 1Y:</strong> Lợi nhuận trung bình khi mua ở vùng P/B này (backtest thực tế)</p>
                 </div>
                 <div>
-                    <p><strong>Lợi Nhuận KV:</strong> Expected Return nếu P/B quay về trung bình × xác suất.</p>
-                    <p class="mt-2"><strong>Định giá:</strong></p>
-                    <ul class="ml-4 mt-1">
-                        <li>🟢 <strong>Cực rẻ/Rẻ:</strong> P/B < percentile 25 → Nên mua</li>
-                        <li>⚪ <strong>Hợp lý:</strong> P/B trong vùng 25-75 → Giữ</li>
-                        <li>🔴 <strong>Đắt/Cực đắt:</strong> P/B > percentile 75 → Nên bán</li>
-                    </ul>
+                    <p><strong class="text-white">Win Rate:</strong> % số lần có lãi sau 1 năm khi mua ở vùng P/B này</p>
+                    <p class="mt-2"><strong class="text-white">Rủi ro:</strong> Dựa trên vùng định giá và win rate lịch sử</p>
                 </div>
             </div>
         </div>
     </main>
     
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>JP Stock Analysis - Phân tích định lượng P/B cho ngành Ngân hàng Việt Nam</p>
-            <p class="mt-2">Dữ liệu từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a> | 
-            Cập nhật tự động hàng ngày qua GitHub Actions</p>
-            <p class="mt-2 text-gray-500">⚠️ Đây chỉ là công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
+            <p>JP Stock Analysis V2 - Phân tích P/B với Historical Backtest</p>
+            <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a> | 
+            P/B theo Quý + Giá cổ phiếu = Tính lợi nhuận thực tế</p>
+            <p class="mt-2 text-gray-500">⚠️ Công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
         </div>
     </footer>
     
-    <!-- Scripts -->
     <script src="js/app.js"></script>
 </body>
 </html>
