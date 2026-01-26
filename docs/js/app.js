@@ -145,19 +145,81 @@ function displayHeatIndex() {
             <!-- Historical Heat Chart -->
             <div class="border-t border-gray-700 pt-4">
                 <div class="flex justify-between items-center mb-3">
-                    <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Heat Index (${sectorHeat.history?.length || 0} quý)</div>
+                    <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Nhiệt độ ngành (${sectorHeat.history?.length || 0} quý)</div>
                     <div class="text-xs text-gray-500">
-                        Max: <span class="text-red-400">${sectorHeat.analysis?.max_heat}</span> (${sectorHeat.analysis?.max_heat_period}) | 
-                        Min: <span class="text-blue-400">${sectorHeat.analysis?.min_heat}</span> (${sectorHeat.analysis?.min_heat_period})
+                        🔥 Max: <span class="text-red-400 font-bold">${sectorHeat.analysis?.max_heat}</span> (${sectorHeat.analysis?.max_heat_period}) | 
+                        ❄️ Min: <span class="text-blue-400 font-bold">${sectorHeat.analysis?.min_heat}</span> (${sectorHeat.analysis?.min_heat_period}) |
+                        📊 Avg: <span class="text-yellow-400">${sectorHeat.analysis?.avg_heat}</span>
                     </div>
                 </div>
-                <div id="heat-history-chart" style="height: 280px;"></div>
+                <div id="heat-history-chart" style="height: 300px; background: rgba(17,24,39,0.5); border-radius: 8px;"></div>
+                
+                <!-- Historical Data Table -->
+                <div class="mt-4">
+                    <details class="group">
+                        <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
+                            <span>📋 Xem bảng dữ liệu chi tiết</span>
+                            <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="mt-3 max-h-64 overflow-y-auto">
+                            <table class="w-full text-xs">
+                                <thead class="sticky top-0 bg-gray-800">
+                                    <tr class="border-b border-gray-700">
+                                        <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
+                                        <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Banks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${(sectorHeat.history || []).slice().reverse().map(h => `
+                                        <tr class="border-b border-gray-700/50 hover:bg-gray-700/30">
+                                            <td class="py-1 px-2 text-gray-300">${h.period}</td>
+                                            <td class="py-1 px-2 text-right font-bold" style="color: ${getHeatColor(h.heat_index)}">${h.heat_index?.toFixed(1)}</td>
+                                            <td class="py-1 px-2 text-center">${getStatusEmoji(h.status)}</td>
+                                            <td class="py-1 px-2 text-right text-cyan-400">${h.avg_pb?.toFixed(2)}x</td>
+                                            <td class="py-1 px-2 text-right text-gray-500">${h.banks_count}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
     `;
     
-    // Draw heat history chart
-    drawHeatHistoryChart();
+    // Draw heat history chart after DOM is ready
+    setTimeout(() => {
+        drawHeatHistoryChart();
+    }, 100);
+}
+
+function getHeatColor(heat) {
+    if (heat >= 85) return '#EF4444';
+    if (heat >= 70) return '#F97316';
+    if (heat >= 55) return '#EAB308';
+    if (heat >= 45) return '#22C55E';
+    if (heat >= 35) return '#14B8A6';
+    if (heat >= 20) return '#3B82F6';
+    return '#8B5CF6';
+}
+
+function getStatusEmoji(status) {
+    const emojis = {
+        'OVERHEATED': '🔥',
+        'HOT': '🌡️',
+        'WARM': '☀️',
+        'NEUTRAL': '😐',
+        'COOL': '🌤️',
+        'COLD': '❄️',
+        'ICE_COLD': '🥶'
+    };
+    return emojis[status] || '❓';
 }
 
 function drawHeatHistoryChart() {
