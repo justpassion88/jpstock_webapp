@@ -214,14 +214,56 @@ function showBotDetail(botId) {
                         <div class="text-white font-bold">${(sizing.max_allocation || 0).toFixed(1)}%</div>
                     </div>
                 </div>
+                
+                <!-- Heat Allocation Map -->
+                ${sizing.heat_allocation_map && Object.keys(sizing.heat_allocation_map).length > 0 ? `
+                <div class="mt-4 p-3 bg-gray-900/50 rounded">
+                    <h4 class="text-sm font-bold text-orange-400 mb-2">🌡️ Heat-Aware Allocation</h4>
+                    <p class="text-gray-400 text-xs mb-2">Điều chỉnh vị thế dựa trên nhiệt độ ngành ngân hàng:</p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
+                        ${Object.entries(sizing.heat_allocation_map).map(([level, info]) => {
+                            const colors = {
+                                'ICE_COLD': 'bg-purple-600',
+                                'COLD': 'bg-blue-600',
+                                'COOL': 'bg-teal-600',
+                                'NEUTRAL': 'bg-green-600',
+                                'WARM': 'bg-yellow-600',
+                                'HOT': 'bg-orange-600',
+                                'OVERHEATED': 'bg-red-600'
+                            };
+                            const icons = {
+                                'ICE_COLD': '🥶',
+                                'COLD': '❄️',
+                                'COOL': '🌤️',
+                                'NEUTRAL': '😐',
+                                'WARM': '☀️',
+                                'HOT': '🌡️',
+                                'OVERHEATED': '🔥'
+                            };
+                            return `
+                            <div class="${colors[level] || 'bg-gray-600'} bg-opacity-30 rounded p-2 text-center">
+                                <div class="text-lg">${icons[level] || ''}</div>
+                                <div class="text-white text-xs font-bold">${level}</div>
+                                <div class="text-cyan-300 text-sm font-bold">${(info.multiplier * 100).toFixed(0)}%</div>
+                                <div class="text-gray-400 text-xs">Cash: ${info.cash_reserve}%</div>
+                            </div>
+                        `}).join('')}
+                    </div>
+                    <p class="text-gray-500 text-xs mt-2">
+                        📊 Khi ngành <span class="text-blue-400">lạnh</span> → Mua mạnh hơn | 
+                        Khi ngành <span class="text-red-400">nóng</span> → Giảm vị thế, giữ cash
+                    </p>
+                </div>
+                ` : `
                 <div class="mt-3 p-3 bg-gray-800/50 rounded">
                     <p class="text-gray-300 text-sm">
                         ${sizing.method === 'kelly' ? 
-                            '🎲 <b>Kelly Criterion</b>: Chia vốn theo công thức Kelly dựa trên xác suất thắng và kỳ vọng return của mỗi zone P/B. Zone có win rate cao và expected return tốt sẽ được cấp nhiều vốn hơn.' :
-                            '⚖️ <b>Equal Weight</b>: Chia đều vốn cho tối đa ' + config.max_positions + ' vị thế, mỗi vị thế tối đa ' + config.max_position_percent + '% tổng danh mục.'
+                            '🎲 <b>Kelly Criterion</b>: Chia vốn theo công thức Kelly dựa trên xác suất thắng và kỳ vọng return của mỗi zone P/B.' :
+                            '⚖️ <b>Equal Weight</b>: Chia đều vốn cho tối đa ' + config.max_positions + ' vị thế.'
                         }
                     </p>
                 </div>
+                `}
             </div>
             
             <!-- Trade Analysis Section -->
@@ -290,6 +332,10 @@ function showBotDetail(botId) {
                                         <span class="text-cyan-400">${(pos.buy_pb || 0).toFixed(2)}</span>
                                     </div>
                                     <div class="flex justify-between">
+                                        <span>Heat lúc mua:</span>
+                                        <span class="text-orange-400">${(pos.buy_heat || 0).toFixed(0)}</span>
+                                    </div>
+                                    <div class="flex justify-between">
                                         <span>Ngày mua:</span>
                                         <span class="text-gray-300">${pos.buy_date || 'N/A'}</span>
                                     </div>
@@ -348,7 +394,7 @@ function displayTradeHistory(detailedTrades) {
                                 <th class="py-2 px-3 text-right text-gray-400">SL</th>
                                 <th class="py-2 px-3 text-right text-gray-400">Giá</th>
                                 <th class="py-2 px-3 text-right text-gray-400">P/B</th>
-                                <th class="py-2 px-3 text-right text-gray-400">Tỷ trọng</th>
+                                <th class="py-2 px-3 text-right text-gray-400">Heat</th>
                                 <th class="py-2 px-3 text-right text-gray-400">P&L</th>
                                 <th class="py-2 px-3 text-left text-gray-400">Lý do</th>
                             </tr>
@@ -446,6 +492,9 @@ function renderTradeRow(t) {
     const isBuy = t.action === 'BUY';
     const pnl = t.pnl || 0;
     const pnlPercent = t.pnl_percent || 0;
+    const heat = t.heat || 50;
+    
+    const heatColor = heat >= 70 ? 'text-red-400' : heat >= 55 ? 'text-yellow-400' : heat >= 35 ? 'text-green-400' : 'text-blue-400';
     
     return `
         <tr class="border-b border-gray-700 hover:bg-gray-700/50">
@@ -459,7 +508,7 @@ function renderTradeRow(t) {
             <td class="py-2 px-3 text-right text-white">${formatMoney(t.quantity)}</td>
             <td class="py-2 px-3 text-right text-white">${formatMoney(t.price || t.sell_price)}đ</td>
             <td class="py-2 px-3 text-right text-cyan-400">${(t.pb || t.sell_pb || 0).toFixed(2)}</td>
-            <td class="py-2 px-3 text-right text-yellow-400">${isBuy ? (t.allocation_percent || 0).toFixed(1) + '%' : '-'}</td>
+            <td class="py-2 px-3 text-right ${heatColor} font-bold">${heat.toFixed(0)}</td>
             <td class="py-2 px-3 text-right ${pnl >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
                 ${!isBuy ? (pnl >= 0 ? '+' : '') + formatMoney(pnl) + 'đ (' + (pnlPercent >= 0 ? '+' : '') + pnlPercent.toFixed(1) + '%)' : '-'}
             </td>
@@ -486,6 +535,7 @@ function drawEquityCurve(equityCurve) {
     
     const dates = equityCurve.map(e => e.date);
     const values = equityCurve.map(e => e.value);
+    const heats = equityCurve.map(e => e.heat || 50);
     
     const trace1 = {
         x: dates,
@@ -495,33 +545,85 @@ function drawEquityCurve(equityCurve) {
         name: 'Portfolio Value',
         line: { color: '#3B82F6', width: 2 },
         fill: 'tozeroy',
-        fillcolor: 'rgba(59, 130, 246, 0.1)'
+        fillcolor: 'rgba(59, 130, 246, 0.1)',
+        yaxis: 'y'
+    };
+    
+    const trace2 = {
+        x: dates,
+        y: heats,
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Heat Index',
+        line: { color: '#F97316', width: 1, dash: 'dot' },
+        yaxis: 'y2'
     };
     
     const benchmark = {
         x: [dates[0], dates[dates.length-1]],
-        y: [100000000, 100000000],
+        y: [1000000000, 1000000000],
         type: 'scatter',
         mode: 'lines',
-        name: 'Vốn ban đầu (100M)',
-        line: { color: '#6B7280', width: 1, dash: 'dash' }
+        name: 'Vốn ban đầu (1B)',
+        line: { color: '#6B7280', width: 1, dash: 'dash' },
+        yaxis: 'y'
     };
     
     const layout = {
         title: {
-            text: 'Equity Curve - Đường cong vốn',
+            text: 'Equity Curve + Sector Heat Index',
             font: { color: '#fff', size: 14 }
         },
         paper_bgcolor: '#1f2937',
         plot_bgcolor: '#111827',
         font: { color: '#9ca3af' },
         xaxis: { gridcolor: '#374151', tickangle: -45 },
-        yaxis: { title: 'Giá trị (VND)', gridcolor: '#374151', tickformat: ',.0f' },
+        yaxis: { 
+            title: 'Giá trị (VND)', 
+            gridcolor: '#374151', 
+            tickformat: ',.0f',
+            side: 'left'
+        },
+        yaxis2: {
+            title: 'Heat Index',
+            overlaying: 'y',
+            side: 'right',
+            range: [0, 100],
+            tickcolor: '#F97316',
+            titlefont: { color: '#F97316' },
+            tickfont: { color: '#F97316' }
+        },
         legend: { x: 0, y: 1.15, orientation: 'h' },
-        margin: { t: 50, b: 60 }
+        margin: { t: 50, b: 60 },
+        shapes: [
+            // Hot zone
+            {
+                type: 'rect',
+                xref: 'paper',
+                yref: 'y2',
+                x0: 0,
+                x1: 1,
+                y0: 70,
+                y1: 100,
+                fillcolor: 'rgba(239, 68, 68, 0.1)',
+                line: { width: 0 }
+            },
+            // Cold zone
+            {
+                type: 'rect',
+                xref: 'paper',
+                yref: 'y2',
+                x0: 0,
+                x1: 1,
+                y0: 0,
+                y1: 35,
+                fillcolor: 'rgba(59, 130, 246, 0.1)',
+                line: { width: 0 }
+            }
+        ]
     };
     
-    Plotly.newPlot('equity-chart', [trace1, benchmark], layout, { responsive: true });
+    Plotly.newPlot('equity-chart', [trace1, trace2, benchmark], layout, { responsive: true });
 }
 
 document.addEventListener('DOMContentLoaded', loadBotResults);
