@@ -328,87 +328,230 @@ def optimize_bot_parameters(bank_data: Dict) -> Dict:
     return best_configs
 
 
+def calculate_buy_hold_benchmark(bank_data: Dict) -> Dict:
+    """Tính benchmark Buy & Hold cho các cổ phiếu ngân hàng tốt nhất"""
+    
+    # Lấy tất cả periods
+    all_periods = set()
+    for symbol, data in bank_data.items():
+        for h in data.get("pb_history", []):
+            all_periods.add(h["period"])
+    periods = sorted(list(all_periods))
+    
+    if len(periods) < 8:
+        return {"performance": {"total_return_percent": 0, "cagr_percent": 0}}
+    
+    # Lấy period đầu và cuối
+    start_period = periods[0]
+    end_period = periods[-5]  # Bỏ 4 quý cuối như BOT
+    
+    # Chọn 5 cổ phiếu tốt nhất để Buy & Hold
+    top_symbols = ["VCB", "MBB", "ACB", "TCB", "CTG"]
+    
+    benchmark_returns = []
+    
+    for symbol in top_symbols:
+        if symbol not in bank_data:
+            continue
+            
+        # Price is inside pb_history
+        pb_hist = bank_data[symbol].get("pb_history", [])
+        if len(pb_hist) < 2:
+            continue
+        
+        price_map = {p["period"]: p.get("price", 0) * 1000 for p in pb_hist}  # *1000 for VND
+        
+        start_price = price_map.get(start_period)
+        end_price = price_map.get(end_period)
+        
+        if start_price and end_price and start_price > 0:
+            ret = (end_price / start_price - 1) * 100
+            benchmark_returns.append({
+                "symbol": symbol,
+                "start_price": start_price,
+                "end_price": end_price,
+                "return": ret
+            })
+    
+    if not benchmark_returns:
+        return {"performance": {"total_return_percent": 0, "cagr_percent": 0}}
+    
+    # Tính average return (equal weight)
+    avg_return = np.mean([r["return"] for r in benchmark_returns])
+    
+    # Tính CAGR
+    years = (len(periods) - 4) / 4  # quarters to years
+    if years > 0:
+        cagr = ((1 + avg_return/100) ** (1/years) - 1) * 100
+    else:
+        cagr = 0
+    
+    # Build equity curve (assume equal weight)
+    initial_capital = INITIAL_CAPITAL
+    portfolio_per_stock = initial_capital / len(benchmark_returns)
+    
+    equity_curve = []
+    for period in periods[:-4]:
+        total_value = 0
+        for br in benchmark_returns:
+            symbol = br["symbol"]
+            pb_hist = bank_data[symbol].get("pb_history", [])
+            price_map = {p["period"]: p.get("price", 0) * 1000 for p in pb_hist}
+            
+            start_price = br["start_price"]
+            current_price = price_map.get(period, start_price)
+            
+            if start_price > 0:
+                shares = portfolio_per_stock / (start_price * (1 + TRANSACTION_FEE))
+                current_value = shares * current_price
+                total_value += current_value
+        
+        equity_curve.append({
+            "date": period,
+            "value": total_value,
+            "return": (total_value / initial_capital - 1) * 100
+        })
+    
+    # Max drawdown
+    max_value = initial_capital
+    max_dd = 0
+    for point in equity_curve:
+        if point["value"] > max_value:
+            max_value = point["value"]
+        dd = (max_value - point["value"]) / max_value * 100
+        if dd > max_dd:
+            max_dd = dd
+    
+    final_value = equity_curve[-1]["value"] if equity_curve else initial_capital
+    actual_return = (final_value / initial_capital - 1) * 100
+    actual_cagr = ((final_value / initial_capital) ** (1/years) - 1) * 100 if years > 0 else 0
+    
+    return {
+        "bot_name": "📈 Buy & Hold Benchmark",
+        "bot_description": f"Mua & giữ {', '.join([r['symbol'] for r in benchmark_returns])} từ đầu kỳ, equal weight",
+        "performance": {
+            "initial_capital": initial_capital,
+            "final_value": final_value,
+            "total_return_percent": actual_return,
+            "cagr_percent": actual_cagr,
+            "max_drawdown_percent": max_dd,
+            "years": years
+        },
+        "equity_curve": equity_curve,
+        "benchmark_stocks": benchmark_returns,
+        "trades": {
+            "total_trades": len(benchmark_returns),
+            "buy_trades": len(benchmark_returns),
+            "sell_trades": 0,
+            "win_rate_percent": 100 if actual_return > 0 else 0
+        },
+        "position_sizing_summary": {
+            "method": "equal",
+            "avg_allocation": 100 / len(benchmark_returns) if benchmark_returns else 0
+        },
+        "config": {
+            "pb_percentile_max": "N/A",
+            "min_win_rate": "N/A",
+            "min_expected_return": "N/A",
+            "take_profit": "N/A",
+            "stop_loss": "N/A",
+            "max_positions": len(benchmark_returns)
+        },
+        "current_positions": [
+            {
+                "symbol": r["symbol"],
+                "quantity": int(portfolio_per_stock / r["start_price"]),
+                "avg_price": r["start_price"],
+                "buy_pb": 0,
+                "buy_date": start_period
+            } for r in benchmark_returns
+        ],
+        "detailed_trades": [],
+        "trade_analysis": {}
+    }
+
+
 def create_optimized_bots() -> Dict:
     """Tạo cấu hình BOT tối ưu dựa trên kết quả optimization"""
     
     OPTIMIZED_BOT_CONFIGS = {
-        "BOT1_AGGRESSIVE_OPTIMIZED": BOTConfig(
+        "BOT1_NO_STOPLOSS": BOTConfig(
+            name="🚀 No Stoploss",
+            description="Không dùng stoploss, chỉ bán khi P/B cao hoặc take profit",
+            pb_percentile_max=35,
+            min_win_rate=45,
+            min_expected_return=10,
+            max_position_percent=25,
+            max_positions=6,
+            position_sizing_method="equal",
+            holding_period_quarters=8,  # Giữ lâu hơn
+            take_profit_percent=80,  # Take profit cao hơn
+            stop_loss_percent=999,  # Không có stoploss
+            exit_pb_percentile=85,  # Chỉ bán khi rất đắt
+            rebalance_frequency="quarterly"
+        ),
+        
+        "BOT2_AGGRESSIVE_OPTIMIZED": BOTConfig(
             name="🔥 Aggressive Alpha",
             description="Tập trung vào CP rẻ, giao dịch thường xuyên, mục tiêu lợi nhuận cao",
-            pb_percentile_max=20,  # Nới lỏng từ 15 lên 20
-            min_win_rate=45,  # Giảm từ 50 xuống 45
-            min_expected_return=15,  # Giảm từ 25 xuống 15
+            pb_percentile_max=25,
+            min_win_rate=40,
+            min_expected_return=12,
             max_position_percent=30,
             max_positions=5,
             position_sizing_method="kelly",
             holding_period_quarters=2,
-            take_profit_percent=50,
-            stop_loss_percent=25,
-            exit_pb_percentile=65,
+            take_profit_percent=60,
+            stop_loss_percent=30,
+            exit_pb_percentile=70,
             rebalance_frequency="quarterly"
         ),
         
-        "BOT2_BALANCED_OPTIMIZED": BOTConfig(
+        "BOT3_BALANCED_OPTIMIZED": BOTConfig(
             name="🎯 Balanced Pro",
             description="Cân bằng giữa rủi ro và lợi nhuận, trading thường xuyên hơn",
-            pb_percentile_max=30,  # Nới lỏng từ 25 lên 30
-            min_win_rate=50,  # Giảm từ 60 xuống 50
-            min_expected_return=10,  # Giảm từ 15 xuống 10
+            pb_percentile_max=35,
+            min_win_rate=45,
+            min_expected_return=10,
             max_position_percent=20,
             max_positions=7,
             position_sizing_method="equal",
-            holding_period_quarters=2,
-            take_profit_percent=35,
-            stop_loss_percent=20,
-            exit_pb_percentile=70,
-            rebalance_frequency="quarterly"
-        ),
-        
-        "BOT3_CONSERVATIVE_OPTIMIZED": BOTConfig(
-            name="🛡️ Safe Value",
-            description="Ưu tiên bảo toàn vốn, chỉ mua khi thực sự rẻ",
-            pb_percentile_max=20,
-            min_win_rate=60,
-            min_expected_return=18,
-            max_position_percent=20,
-            max_positions=5,
-            position_sizing_method="equal",
-            holding_period_quarters=4,
-            take_profit_percent=40,
-            stop_loss_percent=18,
-            exit_pb_percentile=70,
+            holding_period_quarters=3,
+            take_profit_percent=45,
+            stop_loss_percent=25,
+            exit_pb_percentile=75,
             rebalance_frequency="quarterly"
         ),
         
         "BOT4_DIVERSIFIED_OPTIMIZED": BOTConfig(
             name="🌈 Wide Net",
             description="Phân bổ rộng, giảm rủi ro tập trung, trading nhiều",
-            pb_percentile_max=40,  # Nới lỏng nhiều
-            min_win_rate=45,  # Giảm nhiều
-            min_expected_return=8,  # Giảm
-            max_position_percent=12,
+            pb_percentile_max=45,
+            min_win_rate=40,
+            min_expected_return=8,
+            max_position_percent=15,
             max_positions=10,
             position_sizing_method="equal",
             holding_period_quarters=2,
-            take_profit_percent=30,
-            stop_loss_percent=20,
-            exit_pb_percentile=75,
+            take_profit_percent=40,
+            stop_loss_percent=25,
+            exit_pb_percentile=80,
             rebalance_frequency="quarterly"
         ),
         
         "BOT5_QUALITY_OPTIMIZED": BOTConfig(
             name="💎 Quality First",
             description="Tập trung vào cổ phiếu chất lượng cao, nắm giữ dài hạn",
-            pb_percentile_max=50,  # Mua cả khi hợp lý
-            min_win_rate=50,
-            min_expected_return=10,
+            pb_percentile_max=55,
+            min_win_rate=45,
+            min_expected_return=8,
             max_position_percent=25,
             max_positions=6,
             position_sizing_method="equal",
-            holding_period_quarters=3,
-            take_profit_percent=35,
-            stop_loss_percent=15,
-            exit_pb_percentile=80,
+            holding_period_quarters=4,
+            take_profit_percent=50,
+            stop_loss_percent=20,
+            exit_pb_percentile=85,
             rebalance_frequency="quarterly"
         ),
     }
@@ -652,19 +795,19 @@ def run_optimized_bots():
     
     bank_data = data.get("banks", {})
     
-    # First, run optimization to find best params
+    # Skip optimization for speed, use pre-defined configs
     print("\n" + "="*70)
-    print("PHASE 1: PARAMETER OPTIMIZATION")
-    print("="*70)
-    best_configs = optimize_bot_parameters(bank_data)
-    
-    # Now run detailed backtest with optimized configs
-    print("\n" + "="*70)
-    print("PHASE 2: RUNNING OPTIMIZED BOTS")
+    print("RUNNING OPTIMIZED BOTS + BENCHMARK")
     print("="*70)
     
     optimized_configs = create_optimized_bots()
     results = {}
+    
+    # First, calculate Buy & Hold benchmark
+    print("\n📊 Calculating Buy & Hold Benchmark...")
+    benchmark = calculate_buy_hold_benchmark(bank_data)
+    results["BENCHMARK_BUY_HOLD"] = benchmark
+    print(f"   VCB Buy & Hold: {benchmark['performance']['total_return_percent']:+.1f}% (CAGR {benchmark['performance']['cagr_percent']:+.1f}%)")
     
     for bot_id, config in optimized_configs.items():
         print(f"\nRunning {config.name}...")

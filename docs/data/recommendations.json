@@ -1,13 +1,36 @@
 {
-  "generated_at": "2026-01-26T15:57:40.018976",
+  "generated_at": "2026-01-26T16:03:14.769438",
   "buy_signals": [
+    {
+      "symbol": "TPB",
+      "name": "TPBank",
+      "action": "BUY",
+      "strength": "STRONG",
+      "bots_agree": 4,
+      "bot_names": [
+        "🚀 No Stoploss",
+        "🎯 Balanced Pro",
+        "🌈 Wide Net",
+        "💎 Quality First"
+      ],
+      "reasons": [
+        "P/B P33, WR 69%, ER 17.9%"
+      ],
+      "current_pb": 1.2138536221,
+      "current_price": 17.1,
+      "pb_percentile": 33.3,
+      "zone": "HỢP LÝ",
+      "expected_return_1y": 17.892409693610187,
+      "win_rate_1y": 69.23076923076923
+    },
     {
       "symbol": "VIB",
       "name": "VIB",
       "action": "BUY",
-      "strength": "MODERATE",
-      "bots_agree": 3,
+      "strength": "STRONG",
+      "bots_agree": 4,
       "bot_names": [
+        "🚀 No Stoploss",
         "🎯 Balanced Pro",
         "🌈 Wide Net",
         "💎 Quality First"
@@ -21,6 +44,26 @@
       "zone": "HỢP LÝ",
       "expected_return_1y": 22.743862109659098,
       "win_rate_1y": 81.25
+    },
+    {
+      "symbol": "VPB",
+      "name": "VPBank",
+      "action": "BUY",
+      "strength": "MODERATE",
+      "bots_agree": 2,
+      "bot_names": [
+        "🌈 Wide Net",
+        "💎 Quality First"
+      ],
+      "reasons": [
+        "P/B P41, WR 67%, ER 35.2%"
+      ],
+      "current_pb": 1.3467082822,
+      "current_price": 27.75,
+      "pb_percentile": 41.2,
+      "zone": "HỢP LÝ",
+      "expected_return_1y": 35.16037586372021,
+      "win_rate_1y": 66.66666666666666
     },
     {
       "symbol": "ACB",
@@ -43,8 +86,8 @@
       "win_rate_1y": 78.26086956521739
     },
     {
-      "symbol": "TPB",
-      "name": "TPBank",
+      "symbol": "NAB",
+      "name": "Nam A Bank",
       "action": "BUY",
       "strength": "MODERATE",
       "bots_agree": 2,
@@ -53,14 +96,14 @@
         "💎 Quality First"
       ],
       "reasons": [
-        "P/B P33, WR 69%, ER 17.9%"
+        "P/B P45, WR 100%, ER 44.7%"
       ],
-      "current_pb": 1.2138536221,
-      "current_price": 17.1,
-      "pb_percentile": 33.3,
+      "current_pb": 1.1557434284,
+      "current_price": 14.35,
+      "pb_percentile": 45.0,
       "zone": "HỢP LÝ",
-      "expected_return_1y": 17.892409693610187,
-      "win_rate_1y": 69.23076923076923
+      "expected_return_1y": 44.69424432744369,
+      "win_rate_1y": 100.0
     },
     {
       "symbol": "VCB",
@@ -82,8 +125,8 @@
       "win_rate_1y": 91.66666666666666
     },
     {
-      "symbol": "VPB",
-      "name": "VPBank",
+      "symbol": "MSB",
+      "name": "MSB",
       "action": "BUY",
       "strength": "WEAK",
       "bots_agree": 1,
@@ -91,50 +134,56 @@
         "💎 Quality First"
       ],
       "reasons": [
-        "P/B P41, WR 67%, ER 35.2%"
+        "P/B P55, WR 88%, ER 10.8%"
       ],
-      "current_pb": 1.3467082822,
-      "current_price": 27.75,
-      "pb_percentile": 41.2,
+      "current_pb": 0.9693203166,
+      "current_price": 12.25,
+      "pb_percentile": 55.0,
       "zone": "HỢP LÝ",
-      "expected_return_1y": 35.16037586372021,
-      "win_rate_1y": 66.66666666666666
-    },
-    {
-      "symbol": "NAB",
-      "name": "Nam A Bank",
-      "action": "BUY",
-      "strength": "WEAK",
-      "bots_agree": 1,
-      "bot_names": [
-        "💎 Quality First"
-      ],
-      "reasons": [
-        "P/B P45, WR 100%, ER 44.7%"
-      ],
-      "current_pb": 1.1557434284,
-      "current_price": 14.35,
-      "pb_percentile": 45.0,
-      "zone": "HỢP LÝ",
-      "expected_return_1y": 44.69424432744369,
-      "win_rate_1y": 100.0
+      "expected_return_1y": 10.792692111610167,
+      "win_rate_1y": 87.5
     }
   ],
   "sell_signals": [],
   "hold_signals": [],
   "bot_allocations": {
-    "BOT1_AGGRESSIVE_OPTIMIZED": {
+    "BOT1_NO_STOPLOSS": {
+      "name": "🚀 No Stoploss",
+      "buy_signals": [
+        {
+          "symbol": "TPB",
+          "reason": "P/B P33, WR 69%, ER 17.9%",
+          "bot": "🚀 No Stoploss"
+        },
+        {
+          "symbol": "VIB",
+          "reason": "P/B P29, WR 81%, ER 22.7%",
+          "bot": "🚀 No Stoploss"
+        }
+      ],
+      "config": {
+        "pb_max": 35,
+        "min_wr": 45,
+        "max_pos": 6
+      }
+    },
+    "BOT2_AGGRESSIVE_OPTIMIZED": {
       "name": "🔥 Aggressive Alpha",
       "buy_signals": [],
       "config": {
-        "pb_max": 20,
-        "min_wr": 45,
+        "pb_max": 25,
+        "min_wr": 40,
         "max_pos": 5
       }
     },
-    "BOT2_BALANCED_OPTIMIZED": {
+    "BOT3_BALANCED_OPTIMIZED": {
       "name": "🎯 Balanced Pro",
       "buy_signals": [
+        {
+          "symbol": "TPB",
+          "reason": "P/B P33, WR 69%, ER 17.9%",
+          "bot": "🎯 Balanced Pro"
+        },
         {
           "symbol": "VIB",
           "reason": "P/B P29, WR 81%, ER 22.7%",
@@ -142,23 +191,19 @@
         }
       ],
       "config": {
-        "pb_max": 30,
-        "min_wr": 50,
+        "pb_max": 35,
+        "min_wr": 45,
         "max_pos": 7
-      }
-    },
-    "BOT3_CONSERVATIVE_OPTIMIZED": {
-      "name": "🛡️ Safe Value",
-      "buy_signals": [],
-      "config": {
-        "pb_max": 20,
-        "min_wr": 60,
-        "max_pos": 5
       }
     },
     "BOT4_DIVERSIFIED_OPTIMIZED": {
       "name": "🌈 Wide Net",
       "buy_signals": [
+        {
+          "symbol": "VPB",
+          "reason": "P/B P41, WR 67%, ER 35.2%",
+          "bot": "🌈 Wide Net"
+        },
         {
           "symbol": "ACB",
           "reason": "P/B P35, WR 78%, ER 32.8%",
@@ -173,11 +218,16 @@
           "symbol": "VIB",
           "reason": "P/B P29, WR 81%, ER 22.7%",
           "bot": "🌈 Wide Net"
+        },
+        {
+          "symbol": "NAB",
+          "reason": "P/B P45, WR 100%, ER 44.7%",
+          "bot": "🌈 Wide Net"
         }
       ],
       "config": {
-        "pb_max": 40,
-        "min_wr": 45,
+        "pb_max": 45,
+        "min_wr": 40,
         "max_pos": 10
       }
     },
@@ -205,6 +255,11 @@
           "bot": "💎 Quality First"
         },
         {
+          "symbol": "MSB",
+          "reason": "P/B P55, WR 88%, ER 10.8%",
+          "bot": "💎 Quality First"
+        },
+        {
           "symbol": "VIB",
           "reason": "P/B P29, WR 81%, ER 22.7%",
           "bot": "💎 Quality First"
@@ -216,8 +271,8 @@
         }
       ],
       "config": {
-        "pb_max": 50,
-        "min_wr": 50,
+        "pb_max": 55,
+        "min_wr": 45,
         "max_pos": 6
       }
     }
@@ -227,7 +282,7 @@
     "cheap_banks": 2,
     "fair_banks": 12,
     "expensive_banks": 12,
-    "buy_opportunities": 6,
-    "strong_buys": 0
+    "buy_opportunities": 7,
+    "strong_buys": 2
   }
 }
