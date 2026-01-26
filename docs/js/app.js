@@ -5,20 +5,26 @@
 
 let banksData = null;
 let recommendations = null;
+let sectorHeat = null;
 
 // Fetch and display banks data
 async function loadBanks() {
     try {
-        const [banksRes, recRes] = await Promise.all([
+        const [banksRes, recRes, heatRes] = await Promise.all([
             fetch('data/banks_v2.json'),
-            fetch('data/recommendations.json').catch(() => null)
+            fetch('data/recommendations.json').catch(() => null),
+            fetch('data/sector_heat.json').catch(() => null)
         ]);
         
         banksData = await banksRes.json();
         if (recRes) {
             recommendations = await recRes.json();
         }
+        if (heatRes) {
+            sectorHeat = await heatRes.json();
+        }
         
+        displayHeatIndex();
         displaySummary(banksData);
         displayRecommendations();
         displayBankList(banksData.banks);
@@ -31,6 +37,125 @@ async function loadBanks() {
             </div>
         `;
     }
+}
+
+// Display Sector Heat Index
+function displayHeatIndex() {
+    if (!sectorHeat) {
+        document.getElementById('heat-index').innerHTML = '';
+        return;
+    }
+    
+    const current = sectorHeat.current;
+    const trend = sectorHeat.trend;
+    const metrics = current.metrics;
+    const recs = sectorHeat.recommendations || [];
+    
+    // Heat gauge gradient
+    const heatPercent = current.heat_index;
+    const gaugeGradient = `linear-gradient(to right, 
+        #8B5CF6 0%, #3B82F6 20%, #22C55E 40%, #EAB308 60%, #F97316 80%, #EF4444 100%)`;
+    
+    document.getElementById('heat-index').innerHTML = `
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg p-6 mb-6 border border-gray-700">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        🌡️ Chỉ số Nhiệt độ Ngành Ngân hàng
+                        <span class="text-sm font-normal text-gray-400">(Sector Heat Index)</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-1">Đo lường độ nóng/lạnh dựa trên P/B toàn ngành</p>
+                </div>
+                <div class="mt-3 md:mt-0 text-right">
+                    <div class="text-4xl font-bold" style="color: ${current.color}">${current.heat_index}</div>
+                    <div class="text-sm text-gray-400">/ 100</div>
+                </div>
+            </div>
+            
+            <!-- Heat Gauge -->
+            <div class="mb-4">
+                <div class="h-4 rounded-full overflow-hidden" style="background: ${gaugeGradient}">
+                    <div class="relative h-full">
+                        <div class="absolute top-0 h-full w-1 bg-white shadow-lg" 
+                             style="left: ${heatPercent}%; transform: translateX(-50%);">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>🥶 Cực lạnh</span>
+                    <span>❄️ Lạnh</span>
+                    <span>😐 Bình thường</span>
+                    <span>🌡️ Nóng</span>
+                    <span>🔥 Quá nóng</span>
+                </div>
+            </div>
+            
+            <!-- Status & Signal -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Trạng thái</div>
+                    <div class="text-2xl font-bold" style="color: ${current.color}">${current.status}</div>
+                    <div class="text-xs text-gray-500 mt-1">${current.description}</div>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Xu hướng</div>
+                    <div class="text-2xl font-bold text-white">${trend.emoji} ${trend.direction.replace('_', ' ')}</div>
+                    <div class="text-xs text-gray-500 mt-1">${trend.description}</div>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Tín hiệu</div>
+                    <div class="text-2xl font-bold ${getSignalColor(current.signal)}">${current.signal}</div>
+                    <div class="text-xs text-gray-500 mt-1">Dựa trên nhiệt độ hiện tại</div>
+                </div>
+            </div>
+            
+            <!-- Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">Avg P/B Percentile</div>
+                    <div class="text-white font-bold">P${metrics.avg_pb_percentile}</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">Avg P/B</div>
+                    <div class="text-white font-bold">${metrics.avg_pb}x</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">CP rẻ (P<35)</div>
+                    <div class="text-green-400 font-bold">${metrics.cheap_count}/${metrics.total_banks} (${metrics.cheap_percent}%)</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">CP đắt (P>65)</div>
+                    <div class="text-red-400 font-bold">${metrics.expensive_count}/${metrics.total_banks} (${metrics.expensive_percent}%)</div>
+                </div>
+            </div>
+            
+            <!-- Recommendations -->
+            ${recs.length > 0 ? `
+                <div class="border-t border-gray-700 pt-4">
+                    <div class="text-sm font-semibold text-gray-300 mb-2">💡 Khuyến nghị:</div>
+                    ${recs.map(r => `
+                        <div class="flex items-start gap-2 text-sm mb-1">
+                            <span class="${r.priority === 'HIGH' ? 'text-red-400' : r.priority === 'MEDIUM' ? 'text-yellow-400' : 'text-gray-400'}">[${r.priority}]</span>
+                            <span class="text-gray-300">${r.message}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+        </div>
+    `;
+}
+
+function getSignalColor(signal) {
+    const colors = {
+        'SELL_ALL': 'text-red-500',
+        'REDUCE': 'text-orange-400',
+        'HOLD': 'text-yellow-400',
+        'NORMAL': 'text-green-400',
+        'ACCUMULATE': 'text-blue-400',
+        'BUY': 'text-blue-500',
+        'BUY_HEAVY': 'text-purple-500'
+    };
+    return colors[signal] || 'text-gray-400';
 }
 
 // Display BOT recommendations
