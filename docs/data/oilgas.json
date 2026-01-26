@@ -1,0 +1,3119 @@
+{
+  "sector_id": "oilgas",
+  "sector_name": "🛢️ Dầu khí",
+  "sector_name_en": "Oil & Gas",
+  "description": "Khai thác, dịch vụ dầu khí",
+  "pb_suitable": 3,
+  "color": "#78716C",
+  "updated_at": "2026-01-26T16:50:19.106951",
+  "summary": {
+    "total_stocks": 8,
+    "stocks_with_data": 8,
+    "failed": 0
+  },
+  "heat": {
+    "heat_index": 45.4,
+    "status": "😐 NEUTRAL",
+    "signal": "NORMAL",
+    "avg_pb_percentile": 45.4,
+    "avg_pb": 1.38,
+    "very_cheap_count": 1,
+    "very_expensive_count": 1,
+    "total_stocks": 8
+  },
+  "stocks": {
+    "PVD": {
+      "symbol": "PVD",
+      "current_pb": 0.98,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.27,
+        "max": 2.62,
+        "mean": 0.88,
+        "median": 0.71,
+        "std": 0.53,
+        "p10": 0.44,
+        "p25": 0.52,
+        "p50": 0.71,
+        "p75": 1.04,
+        "p90": 1.7,
+        "count": 51
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 0.98,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 0.7,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 0.71,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.62,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 0.82,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 0.97,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.1,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 1.24,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.03,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.11,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.01,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 0.82,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 0.79,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 0.8,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 0.62,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 0.75,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.05,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 0.76,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 0.59,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 0.6,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 0.5,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.33,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.27,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.28,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.46,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 0.5,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 0.53,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 0.55,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 0.47,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 0.49,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 0.39,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 0.49,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 0.87,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 0.44,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 0.39,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 0.48,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 0.57,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 0.7,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 0.69,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 0.65,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 0.6,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 0.87,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 1.08,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 1.29,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 1.7,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.05
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 2.62,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.04
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 2.31,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.04
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 2.31,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 1.94,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 1.79,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 1.44,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.02
+        }
+      ],
+      "valuation": {
+        "percentile": 30.2,
+        "zone": "CHEAP"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 23,
+          "win_rate_1y": 26.1,
+          "return_1y_avg": 13.8,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "cheap": {
+          "sample_count": 13,
+          "win_rate_1y": 30.8,
+          "return_1y_avg": 3.8,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "fair": {
+          "sample_count": 7,
+          "win_rate_1y": 42.9,
+          "return_1y_avg": 12.9,
+          "return_1y_median": -33.3,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -60.0
+        },
+        "expensive": {
+          "sample_count": 1,
+          "win_rate_1y": 100.0,
+          "return_1y_avg": 66.7,
+          "return_1y_median": 66.7,
+          "return_1y_best": 66.7,
+          "return_1y_worst": 66.7
+        },
+        "very_expensive": {
+          "sample_count": 2,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -25.0,
+          "return_1y_median": -25.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -50.0
+        }
+      },
+      "data_quality": {
+        "quarters": 51,
+        "years": 13,
+        "has_prices": true
+      }
+    },
+    "PVS": {
+      "symbol": "PVS",
+      "current_pb": 1.44,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.45,
+        "max": 2.31,
+        "mean": 1.03,
+        "median": 0.95,
+        "std": 0.37,
+        "p10": 0.66,
+        "p25": 0.75,
+        "p50": 0.95,
+        "p75": 1.23,
+        "p90": 1.53,
+        "count": 51
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.44,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.07,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.15,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.88,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 1.16,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.04
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.46,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.04
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.54,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.04
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 1.6,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.39,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.5,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.3,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 1.0,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 0.92,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 0.92,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 0.94,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 1.0,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.12,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 1.13,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 0.95,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 0.79,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 0.6,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.5,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.46,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.45,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.72,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 0.73,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 0.87,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 0.94,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 0.82,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 0.78,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 0.7,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 0.68,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 1.29,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 0.65,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 0.69,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 0.77,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 0.76,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 0.86,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 0.73,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 0.74,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 0.66,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 1.02,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 1.04,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 1.18,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 1.45,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 2.31,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 1.68,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 1.53,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 1.56,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 0.99,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 0.99,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.01
+        }
+      ],
+      "valuation": {
+        "percentile": 53.2,
+        "zone": "FAIR"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 18,
+          "win_rate_1y": 38.9,
+          "return_1y_avg": 30.6,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "cheap": {
+          "sample_count": 13,
+          "win_rate_1y": 46.2,
+          "return_1y_avg": 20.5,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "fair": {
+          "sample_count": 14,
+          "win_rate_1y": 42.9,
+          "return_1y_avg": 20.8,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "expensive": {
+          "sample_count": 1,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -50.0,
+          "return_1y_median": -50.0,
+          "return_1y_best": -50.0,
+          "return_1y_worst": -50.0
+        },
+        "very_expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        }
+      },
+      "data_quality": {
+        "quarters": 51,
+        "years": 13,
+        "has_prices": true
+      }
+    },
+    "PVT": {
+      "symbol": "PVT",
+      "current_pb": 1.18,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.51,
+        "max": 1.63,
+        "mean": 1.13,
+        "median": 1.14,
+        "std": 0.25,
+        "p10": 0.81,
+        "p25": 1.01,
+        "p50": 1.14,
+        "p75": 1.25,
+        "p90": 1.5,
+        "count": 51
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.18,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.01,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.07,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.99,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 1.23,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.44,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.51,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 1.35,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.18,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.5,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.24,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 1.12,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 1.16,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 1.09,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 1.16,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 1.46,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.36,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 1.63,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 1.14,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 1.07,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 1.03,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.81,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.6,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.64,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.88,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 1.19,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 1.23,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 1.14,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 1.25,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 1.29,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 1.2,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 1.53,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 1.55,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 1.19,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 1.11,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 1.01,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 1.02,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 1.03,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 1.14,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 0.86,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 0.77,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 0.91,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 1.04,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 0.94,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 1.2,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 1.54,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 1.2,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 1.25,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 0.99,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 0.74,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 0.51,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.0
+        }
+      ],
+      "valuation": {
+        "percentile": 59.8,
+        "zone": "FAIR"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 1,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": 0.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": 0.0
+        },
+        "cheap": {
+          "sample_count": 2,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": 0.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": 0.0
+        },
+        "fair": {
+          "sample_count": 21,
+          "win_rate_1y": 23.8,
+          "return_1y_avg": 2.4,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -100.0
+        },
+        "expensive": {
+          "sample_count": 5,
+          "win_rate_1y": 20.0,
+          "return_1y_avg": 20.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": 0.0
+        },
+        "very_expensive": {
+          "sample_count": 6,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -8.3,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -50.0
+        }
+      },
+      "data_quality": {
+        "quarters": 51,
+        "years": 13,
+        "has_prices": true
+      }
+    },
+    "BSR": {
+      "symbol": "BSR",
+      "current_pb": 1.87,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.59,
+        "max": 2.14,
+        "mean": 1.25,
+        "median": 1.21,
+        "std": 0.42,
+        "p10": 0.74,
+        "p25": 0.98,
+        "p50": 1.21,
+        "p75": 1.52,
+        "p90": 1.93,
+        "count": 27
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.87,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.54,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.03,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.89,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.24,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.26,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 1.06,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.04,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.25,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.06,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 1.01,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 0.94,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 1.24,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 1.74,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 2.14,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 2.07,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 2.01,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 1.58,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 1.51,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 1.25,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.76,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.68,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.59,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.7,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 0.92,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 1.16,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 1.21,
+          "year": 2017,
+          "quarter": 4
+        }
+      ],
+      "valuation": {
+        "percentile": 82.6,
+        "zone": "VERY_EXPENSIVE"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 1,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -100.0,
+          "return_1y_median": -100.0,
+          "return_1y_best": -100.0,
+          "return_1y_worst": -100.0
+        },
+        "cheap": {
+          "sample_count": 6,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -16.7,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -100.0
+        },
+        "fair": {
+          "sample_count": 7,
+          "win_rate_1y": 14.3,
+          "return_1y_avg": -7.1,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -100.0
+        },
+        "expensive": {
+          "sample_count": 1,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": 0.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": 0.0
+        },
+        "very_expensive": {
+          "sample_count": 2,
+          "win_rate_1y": 50.0,
+          "return_1y_avg": 50.0,
+          "return_1y_median": 50.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": 0.0
+        }
+      },
+      "data_quality": {
+        "quarters": 27,
+        "years": 9,
+        "has_prices": true
+      }
+    },
+    "OIL": {
+      "symbol": "OIL",
+      "current_pb": 1.35,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.82,
+        "max": 2.07,
+        "mean": 1.18,
+        "median": 1.13,
+        "std": 0.27,
+        "p10": 0.9,
+        "p25": 0.98,
+        "p50": 1.13,
+        "p75": 1.31,
+        "p90": 1.47,
+        "count": 29
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.35,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.06,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.13,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.96,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 1.26,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.21,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.39,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 0.98,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 0.98,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.03,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.09,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 0.94,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 0.95,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 1.01,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 1.24,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 1.4,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 2.07,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 1.58,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 1.31,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 1.31,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 1.15,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.91,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.83,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.82,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.87,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 1.11,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 1.19,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 1.44,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 1.63,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.02
+        }
+      ],
+      "valuation": {
+        "percentile": 42.4,
+        "zone": "FAIR"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 10,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": 0.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": 0.0
+        },
+        "cheap": {
+          "sample_count": 6,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -8.3,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -50.0
+        },
+        "fair": {
+          "sample_count": 8,
+          "win_rate_1y": 25.0,
+          "return_1y_avg": 12.5,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        },
+        "very_expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        }
+      },
+      "data_quality": {
+        "quarters": 29,
+        "years": 8,
+        "has_prices": true
+      }
+    },
+    "CNG": {
+      "symbol": "CNG",
+      "current_pb": 1.43,
+      "current_period": "2025-Q4",
+      "pb_statistics": {
+        "min": 0.99,
+        "max": 2.93,
+        "mean": 1.79,
+        "median": 1.76,
+        "std": 0.48,
+        "p10": 1.25,
+        "p25": 1.42,
+        "p50": 1.76,
+        "p75": 2.09,
+        "p90": 2.47,
+        "count": 52
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q4",
+          "pb": 1.43,
+          "year": 2025,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2025-Q3",
+          "pb": 1.44,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.51,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.62,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 1.62,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 1.85,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.98,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 2.02,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 2.17,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.73,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.99,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.03
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.96,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 1.33,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 1.29,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 1.56,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 1.59,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 2.23,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.62,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 2.07,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 1.26,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 1.12,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 1.29,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 1.11,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 1.05,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.99,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 1.27,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 1.25,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 1.16,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 1.32,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 1.39,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 1.54,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 1.52,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 1.61,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 1.83,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 1.8,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 1.79,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 1.92,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 2.48,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 2.93,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 2.81,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 2.64,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 1.98,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 2.24,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 2.02,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 2.15,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 2.19,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 2.74,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 2.41,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 2.57,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 2.17,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 1.78,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 1.72,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.01
+        }
+      ],
+      "valuation": {
+        "percentile": 22.7,
+        "zone": "CHEAP"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 12,
+          "win_rate_1y": 41.7,
+          "return_1y_avg": 33.3,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": 0.0
+        },
+        "cheap": {
+          "sample_count": 8,
+          "win_rate_1y": 12.5,
+          "return_1y_avg": 2.1,
+          "return_1y_median": 0.0,
+          "return_1y_best": 50.0,
+          "return_1y_worst": -33.3
+        },
+        "fair": {
+          "sample_count": 21,
+          "win_rate_1y": 23.8,
+          "return_1y_avg": 19.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "expensive": {
+          "sample_count": 2,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -25.0,
+          "return_1y_median": -25.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -50.0
+        },
+        "very_expensive": {
+          "sample_count": 4,
+          "win_rate_1y": 25.0,
+          "return_1y_avg": 12.5,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        }
+      },
+      "data_quality": {
+        "quarters": 52,
+        "years": 13,
+        "has_prices": true
+      }
+    },
+    "PVC": {
+      "symbol": "PVC",
+      "current_pb": 1.26,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.31,
+        "max": 1.96,
+        "mean": 0.85,
+        "median": 0.89,
+        "std": 0.37,
+        "p10": 0.39,
+        "p25": 0.5,
+        "p50": 0.89,
+        "p75": 1.1,
+        "p90": 1.29,
+        "count": 51
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.26,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 0.95,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.01,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 0.78,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 0.89,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.13,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.3,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 1.41,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 1.24,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 1.25,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.29,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 1.08,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 1.03,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 1.23,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 1.11,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 1.36,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.04,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 0.87,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 0.61,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 0.63,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 0.51,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.38,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.31,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.32,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.38,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 0.46,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 0.49,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 0.46,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 0.4,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 0.44,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 0.39,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 0.39,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 0.7,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 0.58,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 0.53,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 0.41,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 0.5,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 0.48,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 0.65,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 0.69,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 0.67,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 0.94,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 1.01,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 1.1,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 1.4,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 1.96,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 1.23,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 1.05,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 0.98,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 0.96,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 0.96,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.01
+        }
+      ],
+      "valuation": {
+        "percentile": 57.6,
+        "zone": "FAIR"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 7,
+          "win_rate_1y": 14.3,
+          "return_1y_avg": -42.9,
+          "return_1y_median": -100.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -100.0
+        },
+        "cheap": {
+          "sample_count": 5,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -40.0,
+          "return_1y_median": 0.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -100.0
+        },
+        "fair": {
+          "sample_count": 20,
+          "win_rate_1y": 5.0,
+          "return_1y_avg": 2.5,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -50.0
+        },
+        "expensive": {
+          "sample_count": 2,
+          "win_rate_1y": 0.0,
+          "return_1y_avg": -25.0,
+          "return_1y_median": -25.0,
+          "return_1y_best": 0.0,
+          "return_1y_worst": -50.0
+        },
+        "very_expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        }
+      },
+      "data_quality": {
+        "quarters": 51,
+        "years": 13,
+        "has_prices": true
+      }
+    },
+    "PXS": {
+      "symbol": "PXS",
+      "current_pb": 1.55,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.39,
+        "max": 8.4,
+        "mean": 1.27,
+        "median": 1.0,
+        "std": 1.13,
+        "p10": 0.52,
+        "p25": 0.73,
+        "p50": 1.0,
+        "p75": 1.56,
+        "p90": 1.96,
+        "count": 52
+      },
+      "pb_history": [
+        {
+          "period": "2025-Q3",
+          "pb": 1.55,
+          "year": 2025,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2025-Q2",
+          "pb": 1.6,
+          "year": 2025,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2025-Q1",
+          "pb": 1.52,
+          "year": 2025,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2024-Q4",
+          "pb": 1.18,
+          "year": 2024,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2024-Q3",
+          "pb": 1.25,
+          "year": 2024,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2024-Q2",
+          "pb": 1.34,
+          "year": 2024,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2024-Q1",
+          "pb": 1.6,
+          "year": 2024,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2023-Q4",
+          "pb": 2.3,
+          "year": 2023,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2023-Q3",
+          "pb": 2.08,
+          "year": 2023,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q2",
+          "pb": 2.11,
+          "year": 2023,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2023-Q1",
+          "pb": 1.71,
+          "year": 2023,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2022-Q4",
+          "pb": 0.91,
+          "year": 2022,
+          "quarter": 4,
+          "price": 0.0
+        },
+        {
+          "period": "2022-Q3",
+          "pb": 0.84,
+          "year": 2022,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2022-Q2",
+          "pb": 0.89,
+          "year": 2022,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2022-Q1",
+          "pb": 0.78,
+          "year": 2022,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q4",
+          "pb": 1.24,
+          "year": 2021,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q3",
+          "pb": 1.98,
+          "year": 2021,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q2",
+          "pb": 1.26,
+          "year": 2021,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2021-Q1",
+          "pb": 0.95,
+          "year": 2021,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q4",
+          "pb": 1.14,
+          "year": 2020,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q3",
+          "pb": 1.07,
+          "year": 2020,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2020-Q2",
+          "pb": 0.93,
+          "year": 2020,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2020-Q1",
+          "pb": 0.83,
+          "year": 2020,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q4",
+          "pb": 0.67,
+          "year": 2019,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2019-Q3",
+          "pb": 0.52,
+          "year": 2019,
+          "quarter": 3,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q2",
+          "pb": 0.48,
+          "year": 2019,
+          "quarter": 2,
+          "price": 0.0
+        },
+        {
+          "period": "2019-Q1",
+          "pb": 0.58,
+          "year": 2019,
+          "quarter": 1,
+          "price": 0.0
+        },
+        {
+          "period": "2018-Q4",
+          "pb": 0.5,
+          "year": 2018,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q3",
+          "pb": 0.39,
+          "year": 2018,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q2",
+          "pb": 0.43,
+          "year": 2018,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2018-Q1",
+          "pb": 0.4,
+          "year": 2018,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q4",
+          "pb": 0.54,
+          "year": 2017,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q3",
+          "pb": 0.79,
+          "year": 2017,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q2",
+          "pb": 0.6,
+          "year": 2017,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2017-Q1",
+          "pb": 0.69,
+          "year": 2017,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q4",
+          "pb": 0.73,
+          "year": 2016,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q3",
+          "pb": 0.72,
+          "year": 2016,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q2",
+          "pb": 0.93,
+          "year": 2016,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2016-Q1",
+          "pb": 0.92,
+          "year": 2016,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q4",
+          "pb": 1.04,
+          "year": 2015,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q3",
+          "pb": 0.71,
+          "year": 2015,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2015-Q2",
+          "pb": 1.12,
+          "year": 2015,
+          "quarter": 2,
+          "price": 0.02
+        },
+        {
+          "period": "2015-Q1",
+          "pb": 1.5,
+          "year": 2015,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q4",
+          "pb": 1.68,
+          "year": 2014,
+          "quarter": 4,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q3",
+          "pb": 1.64,
+          "year": 2014,
+          "quarter": 3,
+          "price": 0.02
+        },
+        {
+          "period": "2014-Q2",
+          "pb": 2.51,
+          "year": 2014,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2014-Q1",
+          "pb": 1.74,
+          "year": 2014,
+          "quarter": 1,
+          "price": 0.02
+        },
+        {
+          "period": "2013-Q4",
+          "pb": 1.69,
+          "year": 2013,
+          "quarter": 4,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q3",
+          "pb": 1.38,
+          "year": 2013,
+          "quarter": 3,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q2",
+          "pb": 0.83,
+          "year": 2013,
+          "quarter": 2,
+          "price": 0.01
+        },
+        {
+          "period": "2013-Q1",
+          "pb": 0.82,
+          "year": 2013,
+          "quarter": 1,
+          "price": 0.01
+        },
+        {
+          "period": "2010-Q1",
+          "pb": 8.4,
+          "year": 2010,
+          "quarter": 1
+        }
+      ],
+      "valuation": {
+        "percentile": 14.5,
+        "zone": "VERY_CHEAP"
+      },
+      "zone_statistics": {
+        "very_cheap": {
+          "sample_count": 32,
+          "win_rate_1y": 9.4,
+          "return_1y_avg": -15.6,
+          "return_1y_median": 0.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -100.0
+        },
+        "cheap": {
+          "sample_count": 3,
+          "win_rate_1y": 33.3,
+          "return_1y_avg": -33.3,
+          "return_1y_median": -100.0,
+          "return_1y_best": 100.0,
+          "return_1y_worst": -100.0
+        },
+        "fair": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        },
+        "expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        },
+        "very_expensive": {
+          "sample_count": 0,
+          "win_rate_1y": null,
+          "return_1y_avg": null
+        }
+      },
+      "data_quality": {
+        "quarters": 52,
+        "years": 14,
+        "has_prices": true
+      }
+    }
+  }
+}

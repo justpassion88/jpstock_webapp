@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-01-26T16:53:55.652644",
+  "sectors": [
+    {
+      "sector_id": "insurance",
+      "sector_name": "🛡️ Bảo hiểm",
+      "heat_index": 46.8,
+      "status": "😐 NEUTRAL",
+      "signal": "NORMAL",
+      "stocks_count": 6
+    }
+  ],
+  "market_heat": {
+    "heat_index": 46.8,
+    "status": "😐 NEUTRAL",
+    "total_sectors": 1,
+    "total_stocks": 6
+  }
+}
