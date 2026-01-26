@@ -64,7 +64,7 @@ function displayStockHeader() {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">Giá hiện tại</div>
-                    <div class="text-2xl font-bold text-white">${stockData.current_price?.toLocaleString() || 'N/A'}đ</div>
+                    <div class="text-2xl font-bold text-white">${stockData.current_price ? (stockData.current_price * 1000).toLocaleString('vi-VN') : 'N/A'}đ</div>
                 </div>
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">P/B hiện tại</div>
@@ -243,7 +243,7 @@ function displayPBChart() {
     
     const periods = history.map(h => h.period);
     const pbValues = history.map(h => h.pb);
-    const priceValues = history.map(h => h.price);
+    const priceValues = history.map(h => h.price ? h.price * 1000 : null);
     
     const trace1 = {
         x: periods,
@@ -261,7 +261,7 @@ function displayPBChart() {
         y: priceValues,
         type: 'scatter',
         mode: 'lines',
-        name: 'Giá (đ)',
+        name: 'Giá (nghìn đ)',
         line: { color: '#10B981', width: 1, dash: 'dot' },
         yaxis: 'y2',
         opacity: 0.7
@@ -331,7 +331,7 @@ function displayQuarterlyTable() {
         <tr class="border-b border-gray-700 hover:bg-gray-700">
             <td class="py-2 px-4 text-white">${q.period}</td>
             <td class="py-2 px-4 text-white text-right">${q.pb?.toFixed(2) || 'N/A'}</td>
-            <td class="py-2 px-4 text-white text-right">${q.price?.toLocaleString() || 'N/A'}</td>
+            <td class="py-2 px-4 text-white text-right">${q.price ? (q.price * 1000).toLocaleString('vi-VN') : 'N/A'}</td>
         </tr>
     `).join('');
     
