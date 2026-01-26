@@ -1,0 +1,2998 @@
+{
+  "BOT1_CONSERVATIVE": {
+    "bot_name": "🛡️ Conservative Value",
+    "bot_description": "Chỉ mua cổ phiếu CỰC RẺ, ưu tiên an toàn và win rate cao",
+    "config": {
+      "pb_percentile_max": 10,
+      "min_win_rate": 70,
+      "min_expected_return": 20,
+      "max_positions": 5,
+      "max_position_percent": 20,
+      "position_sizing": "equal",
+      "take_profit": 50,
+      "stop_loss": 20
+    },
+    "performance": {
+      "initial_capital": 100000000,
+      "final_value": 158312058.49999997,
+      "total_return_percent": 58.31205849999998,
+      "cagr_percent": 3.52796087574081,
+      "max_drawdown_percent": 33.174166044852946
+    },
+    "trades": {
+      "total_trades": 29,
+      "buy_trades": 15,
+      "sell_trades": 14,
+      "win_rate_percent": 57.14285714285714,
+      "avg_win_percent": 57.437050869771724,
+      "avg_loss_percent": -23.394999401806725,
+      "profit_factor": 1.9483293611467403
+    },
+    "current_positions": [
+      {
+        "symbol": "VPB",
+        "quantity": 1700,
+        "avg_price": 18260.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 1.0907888894
+      }
+    ],
+    "trade_history": [
+      {
+        "date": "2016-Q3",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 3700,
+        "price": 8540.0,
+        "pb": 1.3055851633,
+        "reason": "P/B P6, WR 100%, ER 46.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2016-Q3",
+        "symbol": "SHB",
+        "action": "BUY",
+        "quantity": 300,
+        "price": 1310.0,
+        "pb": 0.3885810974,
+        "reason": "P/B P2, WR 80%, ER 68.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2017-Q1",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 24800,
+        "price": 3150.0,
+        "pb": 1.3873364258,
+        "reason": "Take profit: +54.4%",
+        "pnl": 27332700.0,
+        "pnl_percent": 54.02573529411765
+      },
+      {
+        "date": "2017-Q2",
+        "symbol": "SHB",
+        "action": "SELL",
+        "quantity": 300,
+        "price": 2330.0,
+        "pb": 0.6302346956,
+        "reason": "Take profit: +77.9%",
+        "pnl": 304252.5,
+        "pnl_percent": 77.41793893129771
+      },
+      {
+        "date": "2017-Q3",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 3700,
+        "price": 10700.0,
+        "pb": 2.2811210778,
+        "reason": "P/B P81 >= 75",
+        "pnl": 7893025.0,
+        "pnl_percent": 24.979508196721312
+      },
+      {
+        "date": "2019-Q1",
+        "symbol": "SHB",
+        "action": "BUY",
+        "quantity": 9500,
+        "price": 2470.0,
+        "pb": 0.4652920069,
+        "reason": "P/B P8, WR 80%, ER 68.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q2",
+        "symbol": "LPB",
+        "action": "BUY",
+        "quantity": 17400,
+        "price": 2800.0,
+        "pb": 0.5703244791,
+        "reason": "P/B P9, WR 100%, ER 59.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q3",
+        "symbol": "STB",
+        "action": "BUY",
+        "quantity": 4300,
+        "price": 10550.0,
+        "pb": 0.7117009331,
+        "reason": "P/B P6, WR 80%, ER 56.6%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "SHB",
+        "action": "SELL",
+        "quantity": 9500,
+        "price": 2140.0,
+        "pb": 1.5080342188,
+        "reason": "P/B P92 >= 75",
+        "pnl": -3185825.0,
+        "pnl_percent": -13.576923076923078
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 2100,
+        "price": 9560.0,
+        "pb": 0.9309312015,
+        "reason": "P/B P2, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "LPB",
+        "action": "SELL",
+        "quantity": 17400,
+        "price": 2210.0,
+        "pb": 0.6552391374,
+        "reason": "Stop loss: -21.1%",
+        "pnl": -10362135.0,
+        "pnl_percent": -21.26875
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "STB",
+        "action": "SELL",
+        "quantity": 4300,
+        "price": 7300.0,
+        "pb": 0.7497067876,
+        "reason": "Stop loss: -30.8%",
+        "pnl": -14053475.0,
+        "pnl_percent": -30.97867298578199
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "MBB",
+        "action": "BUY",
+        "quantity": 7600,
+        "price": 3940.0,
+        "pb": 0.9356592838,
+        "reason": "P/B P7, WR 100%, ER 52.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "STB",
+        "action": "BUY",
+        "quantity": 5500,
+        "price": 7300.0,
+        "pb": 0.7497067876,
+        "reason": "P/B P10, WR 80%, ER 56.6%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q3",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 7600,
+        "price": 5740.0,
+        "pb": 1.564957625,
+        "reason": "P/B P84 >= 75",
+        "pnl": 13570940.0,
+        "pnl_percent": 45.32106598984772
+      },
+      {
+        "date": "2020-Q3",
+        "symbol": "STB",
+        "action": "SELL",
+        "quantity": 5500,
+        "price": 13800.0,
+        "pb": 1.2757806655,
+        "reason": "Take profit: +89.0%",
+        "pnl": 35560250.0,
+        "pnl_percent": 88.56849315068493
+      },
+      {
+        "date": "2020-Q4",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 2100,
+        "price": 16040.0,
+        "pb": 1.7450880118,
+        "reason": "Take profit: +67.8%",
+        "pnl": 13523790.0,
+        "pnl_percent": 67.36297071129708
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 1900,
+        "price": 16050.0,
+        "pb": 1.055038073,
+        "reason": "P/B P9, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q4",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 1900,
+        "price": 18590.0,
+        "pb": 1.5421308573,
+        "reason": "P/B P81 >= 75",
+        "pnl": 4737697.5,
+        "pnl_percent": 15.535981308411214
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "VPB",
+        "action": "BUY",
+        "quantity": 1700,
+        "price": 18260.0,
+        "pb": 1.0907888894,
+        "reason": "P/B P9, WR 100%, ER 37.8%",
+        "pnl": 0,
+        "pnl_percent": 0
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2010-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2011-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q1",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2013-Q1",
+        "value": 99970562.5,
+        "return": -0.0294375,
+        "drawdown": 0.0294375
+      },
+      {
+        "date": "2013-Q2",
+        "value": 97520562.5,
+        "return": -2.4794375,
+        "drawdown": 2.4794375
+      },
+      {
+        "date": "2013-Q3",
+        "value": 96769674.5,
+        "return": -3.2303255,
+        "drawdown": 3.2303255
+      },
+      {
+        "date": "2013-Q4",
+        "value": 97215674.5,
+        "return": -2.7843255,
+        "drawdown": 2.7843255
+      },
+      {
+        "date": "2014-Q1",
+        "value": 112517394.5,
+        "return": 12.517394500000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2014-Q2",
+        "value": 101606394.5,
+        "return": 1.6063945,
+        "drawdown": 9.697167312206115
+      },
+      {
+        "date": "2014-Q3",
+        "value": 101457394.5,
+        "return": 1.4573945,
+        "drawdown": 9.829591281550695
+      },
+      {
+        "date": "2014-Q4",
+        "value": 104367457.0,
+        "return": 4.367457,
+        "drawdown": 7.243268950739878
+      },
+      {
+        "date": "2015-Q1",
+        "value": 109197457.0,
+        "return": 9.197457,
+        "drawdown": 2.950599340442424
+      },
+      {
+        "date": "2015-Q2",
+        "value": 126155832.0,
+        "return": 26.155832,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q3",
+        "value": 129787660.49999999,
+        "return": 29.787660499999983,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q4",
+        "value": 125600660.49999999,
+        "return": 25.600660499999982,
+        "drawdown": 3.2260385801468394
+      },
+      {
+        "date": "2016-Q1",
+        "value": 111893947.99999999,
+        "return": 11.893947999999984,
+        "drawdown": 13.786913510163782
+      },
+      {
+        "date": "2016-Q2",
+        "value": 111926947.99999999,
+        "return": 11.926947999999985,
+        "drawdown": 13.761487364201317
+      },
+      {
+        "date": "2016-Q3",
+        "value": 101263723.99999999,
+        "return": 1.2637239999999852,
+        "drawdown": 21.97738705676107
+      },
+      {
+        "date": "2016-Q4",
+        "value": 96738723.99999999,
+        "return": -3.261276000000015,
+        "drawdown": 25.46385101070529
+      },
+      {
+        "date": "2017-Q1",
+        "value": 112866423.99999999,
+        "return": 12.866423999999984,
+        "drawdown": 13.03763118528514
+      },
+      {
+        "date": "2017-Q2",
+        "value": 118625676.49999999,
+        "return": 18.625676499999987,
+        "drawdown": 8.600188921657926
+      },
+      {
+        "date": "2017-Q3",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2017-Q4",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2018-Q1",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2018-Q2",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2018-Q3",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2018-Q4",
+        "value": 118193701.49999999,
+        "return": 18.193701499999985,
+        "drawdown": 8.933021024752968
+      },
+      {
+        "date": "2019-Q1",
+        "value": 118158503.99999999,
+        "return": 18.158503999999986,
+        "drawdown": 8.960140320889751
+      },
+      {
+        "date": "2019-Q2",
+        "value": 115900423.99999997,
+        "return": 15.90042399999997,
+        "drawdown": 10.699966735281444
+      },
+      {
+        "date": "2019-Q3",
+        "value": 113522376.49999997,
+        "return": 13.52237649999997,
+        "drawdown": 12.532226821362588
+      },
+      {
+        "date": "2019-Q4",
+        "value": 112129437.49999997,
+        "return": 12.12943749999997,
+        "drawdown": 13.605471376841727
+      },
+      {
+        "date": "2020-Q1",
+        "value": 86731686.49999997,
+        "return": -13.268313500000028,
+        "drawdown": 33.174166044852946
+      },
+      {
+        "date": "2020-Q2",
+        "value": 116649686.49999997,
+        "return": 16.64968649999997,
+        "drawdown": 10.12266801742683
+      },
+      {
+        "date": "2020-Q3",
+        "value": 144850876.49999997,
+        "return": 44.85087649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q4",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q1",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q2",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q3",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q4",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q1",
+        "value": 152935666.49999997,
+        "return": 52.93566649999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q2",
+        "value": 152889923.99999997,
+        "return": 52.889923999999965,
+        "drawdown": 0.029909635238683847
+      },
+      {
+        "date": "2022-Q3",
+        "value": 149450923.99999997,
+        "return": 49.450923999999965,
+        "drawdown": 2.278567570109619
+      },
+      {
+        "date": "2022-Q4",
+        "value": 154181923.99999997,
+        "return": 54.18192399999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q1",
+        "value": 156442923.99999997,
+        "return": 56.44292399999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q2",
+        "value": 156803923.99999997,
+        "return": 56.803923999999974,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q3",
+        "value": 157430923.99999997,
+        "return": 57.43092399999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q4",
+        "value": 157627621.49999997,
+        "return": 57.62762149999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q1",
+        "value": 157581058.49999997,
+        "return": 57.58105849999997,
+        "drawdown": 0.029539873504974515
+      },
+      {
+        "date": "2024-Q2",
+        "value": 157411058.49999997,
+        "return": 57.41105849999997,
+        "drawdown": 0.1373889918144835
+      },
+      {
+        "date": "2024-Q3",
+        "value": 159808058.49999997,
+        "return": 59.80805849999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q4",
+        "value": 158312058.49999997,
+        "return": 58.31205849999998,
+        "drawdown": 0.9361230053364301
+      }
+    ]
+  },
+  "BOT2_VALUE_HUNTER": {
+    "bot_name": "🎯 Value Hunter",
+    "bot_description": "Săn cổ phiếu RẺ, cân bằng giữa cơ hội và rủi ro",
+    "config": {
+      "pb_percentile_max": 25,
+      "min_win_rate": 60,
+      "min_expected_return": 15,
+      "max_positions": 6,
+      "max_position_percent": 25,
+      "position_sizing": "equal",
+      "take_profit": 40,
+      "stop_loss": 25
+    },
+    "performance": {
+      "initial_capital": 100000000,
+      "final_value": 289091091.5,
+      "total_return_percent": 189.0910915,
+      "cagr_percent": 8.341556932705618,
+      "max_drawdown_percent": 24.810096703820783
+    },
+    "trades": {
+      "total_trades": 39,
+      "buy_trades": 21,
+      "sell_trades": 18,
+      "win_rate_percent": 72.22222222222221,
+      "avg_win_percent": 46.116542924867105,
+      "avg_loss_percent": -27.117164856920276,
+      "profit_factor": 4.898139755671756
+    },
+    "current_positions": [
+      {
+        "symbol": "VPB",
+        "quantity": 3000,
+        "avg_price": 17040.0,
+        "buy_date": "2022-Q2",
+        "buy_pb": 1.1862208548
+      },
+      {
+        "symbol": "ACB",
+        "quantity": 2400,
+        "avg_price": 21560.0,
+        "buy_date": "2024-Q4",
+        "buy_pb": 1.2897710453
+      },
+      {
+        "symbol": "VIB",
+        "quantity": 3200,
+        "avg_price": 16620.0,
+        "buy_date": "2024-Q4",
+        "buy_pb": 1.3130084318
+      }
+    ],
+    "trade_history": [
+      {
+        "date": "2017-Q3",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 6100,
+        "price": 10700.0,
+        "pb": 2.2811210778,
+        "reason": "P/B P81 >= 70",
+        "pnl": 13927825.0,
+        "pnl_percent": 27.213945172824793
+      },
+      {
+        "date": "2018-Q3",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 7500,
+        "price": 3930.0,
+        "pb": 1.327130287,
+        "reason": "P/B P20, WR 100%, ER 27.0%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q1",
+        "symbol": "SHB",
+        "action": "BUY",
+        "quantity": 18800,
+        "price": 2470.0,
+        "pb": 0.4652920069,
+        "reason": "P/B P8, WR 80%, ER 68.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q2",
+        "symbol": "LPB",
+        "action": "BUY",
+        "quantity": 31500,
+        "price": 2800.0,
+        "pb": 0.5703244791,
+        "reason": "P/B P9, WR 100%, ER 59.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q3",
+        "symbol": "STB",
+        "action": "BUY",
+        "quantity": 1300,
+        "price": 10550.0,
+        "pb": 0.7117009331,
+        "reason": "P/B P6, WR 80%, ER 56.6%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "SHB",
+        "action": "SELL",
+        "quantity": 18800,
+        "price": 2140.0,
+        "pb": 1.5080342188,
+        "reason": "P/B P92 >= 70",
+        "pnl": -6304580.0,
+        "pnl_percent": -13.576923076923078
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 4300,
+        "price": 9560.0,
+        "pb": 0.9309312015,
+        "reason": "P/B P2, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "STB",
+        "action": "SELL",
+        "quantity": 1300,
+        "price": 7300.0,
+        "pb": 0.7497067876,
+        "reason": "Stop loss: -30.8%",
+        "pnl": -4248725.0,
+        "pnl_percent": -30.97867298578199
+      },
+      {
+        "date": "2020-Q1",
+        "symbol": "MBB",
+        "action": "BUY",
+        "quantity": 2300,
+        "price": 3940.0,
+        "pb": 0.9356592838,
+        "reason": "P/B P7, WR 100%, ER 52.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q2",
+        "symbol": "VIB",
+        "action": "SELL",
+        "quantity": 7500,
+        "price": 4070.0000000000005,
+        "pb": 2.0286368471,
+        "reason": "P/B P80 >= 70",
+        "pnl": 973687.5000000037,
+        "pnl_percent": 3.30343511450383
+      },
+      {
+        "date": "2020-Q3",
+        "symbol": "LPB",
+        "action": "SELL",
+        "quantity": 31500,
+        "price": 4510.0,
+        "pb": 1.1202890138,
+        "reason": "Take profit: +61.1%",
+        "pnl": 53509837.5,
+        "pnl_percent": 60.66875
+      },
+      {
+        "date": "2020-Q3",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 2300,
+        "price": 5740.0,
+        "pb": 1.564957625,
+        "reason": "Take profit: +45.7%",
+        "pnl": 4106995.0,
+        "pnl_percent": 45.32106598984772
+      },
+      {
+        "date": "2020-Q4",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 4300,
+        "price": 16040.0,
+        "pb": 1.7450880118,
+        "reason": "Take profit: +67.8%",
+        "pnl": 27691570.0,
+        "pnl_percent": 67.36297071129708
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 2600,
+        "price": 16050.0,
+        "pb": 1.055038073,
+        "reason": "P/B P9, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "VPB",
+        "action": "BUY",
+        "quantity": 3000,
+        "price": 17040.0,
+        "pb": 1.1862208548,
+        "reason": "P/B P24, WR 100%, ER 18.2%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "ACB",
+        "action": "BUY",
+        "quantity": 4000,
+        "price": 14070.0,
+        "pb": 1.2941226522,
+        "reason": "P/B P24, WR 100%, ER 26.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q4",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 2600,
+        "price": 18590.0,
+        "pb": 1.5421308573,
+        "reason": "P/B P81 >= 70",
+        "pnl": 6483165.0,
+        "pnl_percent": 15.535981308411214
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "ACB",
+        "action": "SELL",
+        "quantity": 4000,
+        "price": 20000.0,
+        "pb": 1.4333298662,
+        "reason": "Take profit: +42.1%",
+        "pnl": 23520000.0,
+        "pnl_percent": 41.7910447761194
+      },
+      {
+        "date": "2024-Q4",
+        "symbol": "ACB",
+        "action": "BUY",
+        "quantity": 2400,
+        "price": 21560.0,
+        "pb": 1.2897710453,
+        "reason": "P/B P22, WR 100%, ER 26.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q4",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 3200,
+        "price": 16620.0,
+        "pb": 1.3130084318,
+        "reason": "P/B P14, WR 100%, ER 27.0%",
+        "pnl": 0,
+        "pnl_percent": 0
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2010-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2011-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q1",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q2",
+        "value": 99975232.0,
+        "return": -0.024768000000000002,
+        "drawdown": 0.024768000000000002
+      },
+      {
+        "date": "2012-Q4",
+        "value": 99459232.0,
+        "return": -0.540768,
+        "drawdown": 0.540768
+      },
+      {
+        "date": "2013-Q1",
+        "value": 99850394.5,
+        "return": -0.1496055,
+        "drawdown": 0.1496055
+      },
+      {
+        "date": "2013-Q2",
+        "value": 94868394.5,
+        "return": -5.1316055,
+        "drawdown": 5.1316055
+      },
+      {
+        "date": "2013-Q3",
+        "value": 92197394.5,
+        "return": -7.802605499999999,
+        "drawdown": 7.802605499999999
+      },
+      {
+        "date": "2013-Q4",
+        "value": 92519394.5,
+        "return": -7.480605499999999,
+        "drawdown": 7.480605499999999
+      },
+      {
+        "date": "2014-Q1",
+        "value": 106441394.5,
+        "return": 6.4413945,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2014-Q2",
+        "value": 102327394.5,
+        "return": 2.3273945,
+        "drawdown": 3.8650376757324425
+      },
+      {
+        "date": "2014-Q3",
+        "value": 102056394.5,
+        "return": 2.0563945,
+        "drawdown": 4.119637872651133
+      },
+      {
+        "date": "2014-Q4",
+        "value": 113849394.5,
+        "return": 13.8493945,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q1",
+        "value": 123619394.5,
+        "return": 23.6193945,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q2",
+        "value": 163706719.5,
+        "return": 63.7067195,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q3",
+        "value": 164717441.0,
+        "return": 64.717441,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q4",
+        "value": 156242441.0,
+        "return": 56.242441,
+        "drawdown": 5.145174638792501
+      },
+      {
+        "date": "2016-Q1",
+        "value": 131811592.5,
+        "return": 31.811592500000003,
+        "drawdown": 19.97714892863106
+      },
+      {
+        "date": "2016-Q2",
+        "value": 143509592.5,
+        "return": 43.5095925,
+        "drawdown": 12.875290176466498
+      },
+      {
+        "date": "2016-Q3",
+        "value": 134693922.5,
+        "return": 34.6939225,
+        "drawdown": 18.227285658232148
+      },
+      {
+        "date": "2016-Q4",
+        "value": 125414922.5,
+        "return": 25.4149225,
+        "drawdown": 23.860568899926026
+      },
+      {
+        "date": "2017-Q1",
+        "value": 144369922.5,
+        "return": 44.369922499999994,
+        "drawdown": 12.352983616349407
+      },
+      {
+        "date": "2017-Q2",
+        "value": 179990820.0,
+        "return": 79.99082,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q3",
+        "value": 179132222.5,
+        "return": 79.13222250000001,
+        "drawdown": 0.47702293928101447
+      },
+      {
+        "date": "2017-Q4",
+        "value": 179132222.5,
+        "return": 79.13222250000001,
+        "drawdown": 0.47702293928101447
+      },
+      {
+        "date": "2018-Q1",
+        "value": 179132222.5,
+        "return": 79.13222250000001,
+        "drawdown": 0.47702293928101447
+      },
+      {
+        "date": "2018-Q2",
+        "value": 179132222.5,
+        "return": 79.13222250000001,
+        "drawdown": 0.47702293928101447
+      },
+      {
+        "date": "2018-Q3",
+        "value": 179088010.0,
+        "return": 79.08801,
+        "drawdown": 0.5015866920324048
+      },
+      {
+        "date": "2018-Q4",
+        "value": 174963010.0,
+        "return": 74.96301,
+        "drawdown": 2.79337023966
+      },
+      {
+        "date": "2019-Q1",
+        "value": 176918356.0,
+        "return": 76.918356,
+        "drawdown": 1.707011502031048
+      },
+      {
+        "date": "2019-Q2",
+        "value": 169462056.0,
+        "return": 69.462056,
+        "drawdown": 5.849611663528173
+      },
+      {
+        "date": "2019-Q3",
+        "value": 172363483.5,
+        "return": 72.3634835,
+        "drawdown": 4.23762528555623
+      },
+      {
+        "date": "2019-Q4",
+        "value": 171804241.5,
+        "return": 71.8042415,
+        "drawdown": 4.5483311315543755
+      },
+      {
+        "date": "2020-Q1",
+        "value": 135334923.5,
+        "return": 35.334923499999995,
+        "drawdown": 24.810096703820783
+      },
+      {
+        "date": "2020-Q2",
+        "value": 186407611.0,
+        "return": 86.40761099999999,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q3",
+        "value": 237964443.5,
+        "return": 137.9644435,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q4",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q1",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q2",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q3",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q4",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q1",
+        "value": 254519013.5,
+        "return": 154.5190135,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q2",
+        "value": 254295318.5,
+        "return": 154.2953185,
+        "drawdown": 0.08788930812039314
+      },
+      {
+        "date": "2022-Q3",
+        "value": 241809318.5,
+        "return": 141.80931850000002,
+        "drawdown": 4.993613178529785
+      },
+      {
+        "date": "2022-Q4",
+        "value": 247333318.5,
+        "return": 147.3333185,
+        "drawdown": 2.823244873216515
+      },
+      {
+        "date": "2023-Q1",
+        "value": 266047318.5,
+        "return": 166.04731850000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q2",
+        "value": 266641318.5,
+        "return": 166.64131849999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q3",
+        "value": 271789318.5,
+        "return": 171.7893185,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q4",
+        "value": 273708483.5,
+        "return": 173.7084835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q1",
+        "value": 287958483.5,
+        "return": 187.9584835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q2",
+        "value": 287658483.5,
+        "return": 187.65848350000002,
+        "drawdown": 0.10418168492681343
+      },
+      {
+        "date": "2024-Q3",
+        "value": 291888483.5,
+        "return": 191.8884835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q4",
+        "value": 289091091.5,
+        "return": 189.0910915,
+        "drawdown": 0.9583769686480281
+      }
+    ]
+  },
+  "BOT3_QUALITY_VALUE": {
+    "bot_name": "💎 Quality Value",
+    "bot_description": "Mua CP chất lượng (Big4) khi định giá hợp lý hoặc rẻ",
+    "config": {
+      "pb_percentile_max": 50,
+      "min_win_rate": 50,
+      "min_expected_return": 10,
+      "max_positions": 4,
+      "max_position_percent": 30,
+      "position_sizing": "equal",
+      "take_profit": 35,
+      "stop_loss": 15
+    },
+    "performance": {
+      "initial_capital": 100000000,
+      "final_value": 437768173.5,
+      "total_return_percent": 337.7681735,
+      "cagr_percent": 11.788154762023018,
+      "max_drawdown_percent": 21.124008140498425
+    },
+    "trades": {
+      "total_trades": 70,
+      "buy_trades": 37,
+      "sell_trades": 33,
+      "win_rate_percent": 54.54545454545454,
+      "avg_win_percent": 56.77957776352808,
+      "avg_loss_percent": -21.38886186346789,
+      "profit_factor": 2.909394657003215
+    },
+    "current_positions": [
+      {
+        "symbol": "VPB",
+        "quantity": 5900,
+        "avg_price": 18550.0,
+        "buy_date": "2023-Q1",
+        "buy_pb": 1.3278204054
+      },
+      {
+        "symbol": "STB",
+        "quantity": 3300,
+        "avg_price": 27950.0,
+        "buy_date": "2023-Q4",
+        "buy_pb": 1.1995438946
+      },
+      {
+        "symbol": "VCB",
+        "quantity": 2200,
+        "avg_price": 63020.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 2.8217066513
+      },
+      {
+        "symbol": "ACB",
+        "quantity": 3300,
+        "avg_price": 20000.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 1.4333298662
+      }
+    ],
+    "trade_history": [
+      {
+        "date": "2020-Q4",
+        "symbol": "EIB",
+        "action": "SELL",
+        "quantity": 100,
+        "price": 12500.0,
+        "pb": 1.9297272786,
+        "reason": "P/B P90 >= 85",
+        "pnl": 304875.0,
+        "pnl_percent": 32.36464968152866
+      },
+      {
+        "date": "2020-Q4",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 3400,
+        "price": 27490.0,
+        "pb": 2.1580733779,
+        "reason": "Take profit: +57.9%",
+        "pnl": 34038335.0,
+        "pnl_percent": 57.503015508328545
+      },
+      {
+        "date": "2021-Q2",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 2900,
+        "price": 27120.0,
+        "pb": 1.972382213,
+        "reason": "P/B P47, WR 67%, ER 16.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2021-Q3",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 2900,
+        "price": 22640.0,
+        "pb": 2.7421840401,
+        "reason": "Stop loss: -16.5%",
+        "pnl": -13156140.0,
+        "pnl_percent": -16.72787610619469
+      },
+      {
+        "date": "2022-Q1",
+        "symbol": "LPB",
+        "action": "BUY",
+        "quantity": 7300,
+        "price": 10550.0,
+        "pb": 0.9977007864,
+        "reason": "P/B P39, WR 56%, ER 56.5%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "LPB",
+        "action": "SELL",
+        "quantity": 7300,
+        "price": 7030.0,
+        "pb": 0.6846573525,
+        "reason": "Stop loss: -33.4%",
+        "pnl": -25824297.5,
+        "pnl_percent": -33.53151658767772
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "VCB",
+        "action": "BUY",
+        "quantity": 1600,
+        "price": 42060.0,
+        "pb": 2.5608871949,
+        "reason": "P/B P27, WR 92%, ER 18.9%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 3300,
+        "price": 24300.0,
+        "pb": 1.8050277169,
+        "reason": "P/B P36, WR 67%, ER 16.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 6500,
+        "price": 16050.0,
+        "pb": 1.055038073,
+        "reason": "P/B P9, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "MBB",
+        "action": "BUY",
+        "quantity": 2900,
+        "price": 10920.0,
+        "pb": 1.1657482138,
+        "reason": "P/B P47, WR 85%, ER 31.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q4",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 2900,
+        "price": 9260.0,
+        "pb": 1.0924678869,
+        "reason": "Stop loss: -15.2%",
+        "pnl": -4881135.0,
+        "pnl_percent": -15.41346153846154
+      },
+      {
+        "date": "2022-Q4",
+        "symbol": "MBB",
+        "action": "BUY",
+        "quantity": 2900,
+        "price": 9260.0,
+        "pb": 1.0924678869,
+        "reason": "P/B P38, WR 85%, ER 31.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q1",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 3300,
+        "price": 33510.0,
+        "pb": 2.2493750379,
+        "reason": "Take profit: +37.9%",
+        "pnl": 30116542.5,
+        "pnl_percent": 37.55648148148148
+      },
+      {
+        "date": "2023-Q1",
+        "symbol": "VPB",
+        "action": "BUY",
+        "quantity": 5900,
+        "price": 18550.0,
+        "pb": 1.3278204054,
+        "reason": "P/B P38, WR 67%, ER 35.2%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q3",
+        "symbol": "VCB",
+        "action": "SELL",
+        "quantity": 1600,
+        "price": 58110.0,
+        "pb": 3.1152190054,
+        "reason": "Take profit: +38.2%",
+        "pnl": 25447560.0,
+        "pnl_percent": 37.81437232524964
+      },
+      {
+        "date": "2023-Q4",
+        "symbol": "STB",
+        "action": "BUY",
+        "quantity": 3300,
+        "price": 27950.0,
+        "pb": 1.1995438946,
+        "reason": "P/B P49, WR 64%, ER 22.0%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 6500,
+        "price": 24380.0,
+        "pb": 1.3250765449,
+        "reason": "Take profit: +51.9%",
+        "pnl": 53748825.0,
+        "pnl_percent": 51.520560747663545
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 2900,
+        "price": 16219.999999999998,
+        "pb": 1.2373823055,
+        "reason": "Take profit: +75.2%",
+        "pnl": 20066404.999999993,
+        "pnl_percent": 74.72408207343409
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "VCB",
+        "action": "BUY",
+        "quantity": 2200,
+        "price": 63020.0,
+        "pb": 2.8217066513,
+        "reason": "P/B P43, WR 92%, ER 18.9%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "ACB",
+        "action": "BUY",
+        "quantity": 3300,
+        "price": 20000.0,
+        "pb": 1.4333298662,
+        "reason": "P/B P43, WR 78%, ER 32.8%",
+        "pnl": 0,
+        "pnl_percent": 0
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2010-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2011-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q1",
+        "value": 99962662.0,
+        "return": -0.037337999999999996,
+        "drawdown": 0.037337999999999996
+      },
+      {
+        "date": "2012-Q2",
+        "value": 99454662.0,
+        "return": -0.545338,
+        "drawdown": 0.545338
+      },
+      {
+        "date": "2012-Q4",
+        "value": 98692662.0,
+        "return": -1.3073380000000001,
+        "drawdown": 1.3073380000000001
+      },
+      {
+        "date": "2013-Q1",
+        "value": 99342454.5,
+        "return": -0.6575455,
+        "drawdown": 0.6575455
+      },
+      {
+        "date": "2013-Q2",
+        "value": 91053454.5,
+        "return": -8.9465455,
+        "drawdown": 8.9465455
+      },
+      {
+        "date": "2013-Q3",
+        "value": 88736888.5,
+        "return": -11.2631115,
+        "drawdown": 11.2631115
+      },
+      {
+        "date": "2013-Q4",
+        "value": 88810888.5,
+        "return": -11.1891115,
+        "drawdown": 11.1891115
+      },
+      {
+        "date": "2014-Q1",
+        "value": 104957753.5,
+        "return": 4.9577535,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2014-Q2",
+        "value": 101871753.5,
+        "return": 1.8717535,
+        "drawdown": 2.9402306138345464
+      },
+      {
+        "date": "2014-Q3",
+        "value": 102068753.5,
+        "return": 2.0687535,
+        "drawdown": 2.7525360477537277
+      },
+      {
+        "date": "2014-Q4",
+        "value": 118122304.0,
+        "return": 18.122304,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q1",
+        "value": 128261304.0,
+        "return": 28.261304,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q2",
+        "value": 171676262.5,
+        "return": 71.67626249999999,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q3",
+        "value": 171098432.5,
+        "return": 71.0984325,
+        "drawdown": 0.3365811857652714
+      },
+      {
+        "date": "2015-Q4",
+        "value": 163850432.5,
+        "return": 63.8504325,
+        "drawdown": 4.5584811120873505
+      },
+      {
+        "date": "2016-Q1",
+        "value": 151774541.5,
+        "return": 51.774541500000005,
+        "drawdown": 11.592587530847487
+      },
+      {
+        "date": "2016-Q2",
+        "value": 158434845.5,
+        "return": 58.4348455,
+        "drawdown": 7.713015653518203
+      },
+      {
+        "date": "2016-Q3",
+        "value": 156366321.5,
+        "return": 56.366321500000005,
+        "drawdown": 8.91791373894804
+      },
+      {
+        "date": "2016-Q4",
+        "value": 147097321.5,
+        "return": 47.0973215,
+        "drawdown": 14.317029414593646
+      },
+      {
+        "date": "2017-Q1",
+        "value": 173636321.5,
+        "return": 73.63632150000001,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q2",
+        "value": 229969918.5,
+        "return": 129.9699185,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q3",
+        "value": 228445010.0,
+        "return": 128.44501,
+        "drawdown": 0.6630904206716932
+      },
+      {
+        "date": "2017-Q4",
+        "value": 279534812.0,
+        "return": 179.53481200000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2018-Q1",
+        "value": 296612712.0,
+        "return": 196.612712,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2018-Q2",
+        "value": 275862274.0,
+        "return": 175.862274,
+        "drawdown": 6.995801987070601
+      },
+      {
+        "date": "2018-Q3",
+        "value": 296485274.0,
+        "return": 196.485274,
+        "drawdown": 0.04296444314227504
+      },
+      {
+        "date": "2018-Q4",
+        "value": 269370939.5,
+        "return": 169.3709395,
+        "drawdown": 9.184290287599001
+      },
+      {
+        "date": "2019-Q1",
+        "value": 294051939.5,
+        "return": 194.0519395,
+        "drawdown": 0.8633387567017019
+      },
+      {
+        "date": "2019-Q2",
+        "value": 279896939.5,
+        "return": 179.8969395,
+        "drawdown": 5.635554992666666
+      },
+      {
+        "date": "2019-Q3",
+        "value": 265718989.0,
+        "return": 165.718989,
+        "drawdown": 10.415508759449258
+      },
+      {
+        "date": "2019-Q4",
+        "value": 304699279.0,
+        "return": 204.699279,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q1",
+        "value": 240334578.5,
+        "return": 140.3345785,
+        "drawdown": 21.124008140498425
+      },
+      {
+        "date": "2020-Q2",
+        "value": 276865578.5,
+        "return": 176.8655785,
+        "drawdown": 9.134810095825662
+      },
+      {
+        "date": "2020-Q3",
+        "value": 308388683.5,
+        "return": 208.38868349999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q4",
+        "value": 323461893.5,
+        "return": 223.46189349999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q1",
+        "value": 323461893.5,
+        "return": 223.46189349999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q2",
+        "value": 323343921.5,
+        "return": 223.34392150000002,
+        "drawdown": 0.036471684105812606
+      },
+      {
+        "date": "2021-Q3",
+        "value": 310187781.5,
+        "return": 210.1877815,
+        "drawdown": 4.1037637714811686
+      },
+      {
+        "date": "2021-Q4",
+        "value": 310187781.5,
+        "return": 210.1877815,
+        "drawdown": 4.1037637714811686
+      },
+      {
+        "date": "2022-Q1",
+        "value": 310072259.0,
+        "return": 210.07225900000003,
+        "drawdown": 4.139478179367054
+      },
+      {
+        "date": "2022-Q2",
+        "value": 283822743.0,
+        "return": 183.822743,
+        "drawdown": 12.254658522859355
+      },
+      {
+        "date": "2022-Q3",
+        "value": 271313743.0,
+        "return": 171.313743,
+        "drawdown": 16.121883766812243
+      },
+      {
+        "date": "2022-Q4",
+        "value": 300203327.0,
+        "return": 200.203327,
+        "drawdown": 7.190512071864812
+      },
+      {
+        "date": "2023-Q1",
+        "value": 337763702.0,
+        "return": 237.763702,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q2",
+        "value": 344345702.0,
+        "return": 244.345702,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q3",
+        "value": 360594262.0,
+        "return": 260.594262,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q4",
+        "value": 353637909.5,
+        "return": 253.6379095,
+        "drawdown": 1.9291356610660653
+      },
+      {
+        "date": "2024-Q1",
+        "value": 418005173.5,
+        "return": 318.0051735,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q2",
+        "value": 393611173.5,
+        "return": 293.6111735,
+        "drawdown": 5.835812938808041
+      },
+      {
+        "date": "2024-Q3",
+        "value": 432268173.5,
+        "return": 332.26817350000005,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q4",
+        "value": 437768173.5,
+        "return": 337.7681735,
+        "drawdown": 0.0
+      }
+    ]
+  },
+  "BOT4_DIVERSIFIED": {
+    "bot_name": "🌈 Diversified",
+    "bot_description": "Phân bổ đều nhiều CP, giảm rủi ro tập trung",
+    "config": {
+      "pb_percentile_max": 40,
+      "min_win_rate": 55,
+      "min_expected_return": 12,
+      "max_positions": 10,
+      "max_position_percent": 12,
+      "position_sizing": "risk_parity",
+      "take_profit": 30,
+      "stop_loss": 20
+    },
+    "performance": {
+      "initial_capital": 100000000,
+      "final_value": 261834729.49999994,
+      "total_return_percent": 161.83472949999992,
+      "cagr_percent": 7.534848217484935,
+      "max_drawdown_percent": 26.61850054071657
+    },
+    "trades": {
+      "total_trades": 91,
+      "buy_trades": 49,
+      "sell_trades": 42,
+      "win_rate_percent": 64.28571428571429,
+      "avg_win_percent": 37.27457333358189,
+      "avg_loss_percent": -26.290315730320845,
+      "profit_factor": 2.8243037495692938
+    },
+    "current_positions": [
+      {
+        "symbol": "VPB",
+        "quantity": 1900,
+        "avg_price": 17040.0,
+        "buy_date": "2022-Q2",
+        "buy_pb": 1.1862208548
+      },
+      {
+        "symbol": "KLB",
+        "quantity": 5300,
+        "avg_price": 8500.0,
+        "buy_date": "2023-Q2",
+        "buy_pb": 0.8129964817
+      },
+      {
+        "symbol": "VIB",
+        "quantity": 2200,
+        "avg_price": 17230.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 1.4065594356
+      },
+      {
+        "symbol": "BAB",
+        "quantity": 3400,
+        "avg_price": 11220.0,
+        "buy_date": "2024-Q2",
+        "buy_pb": 0.9595107439
+      },
+      {
+        "symbol": "VCB",
+        "quantity": 600,
+        "avg_price": 61100.0,
+        "buy_date": "2024-Q3",
+        "buy_pb": 2.6948304678
+      },
+      {
+        "symbol": "ACB",
+        "quantity": 1800,
+        "avg_price": 21510.0,
+        "buy_date": "2024-Q3",
+        "buy_pb": 1.3962862138
+      },
+      {
+        "symbol": "BID",
+        "quantity": 1000,
+        "avg_price": 37140.0,
+        "buy_date": "2024-Q4",
+        "buy_pb": 1.7737789849
+      }
+    ],
+    "trade_history": [
+      {
+        "date": "2022-Q2",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 1000,
+        "price": 24300.0,
+        "pb": 1.8050277169,
+        "reason": "P/B P36, WR 67%, ER 16.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 1700,
+        "price": 16050.0,
+        "pb": 1.055038073,
+        "reason": "P/B P9, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "VPB",
+        "action": "BUY",
+        "quantity": 1900,
+        "price": 17040.0,
+        "pb": 1.1862208548,
+        "reason": "P/B P24, WR 100%, ER 18.2%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "ACB",
+        "action": "BUY",
+        "quantity": 2500,
+        "price": 14070.0,
+        "pb": 1.2941226522,
+        "reason": "P/B P24, WR 100%, ER 26.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "STB",
+        "action": "BUY",
+        "quantity": 1800,
+        "price": 21500.0,
+        "pb": 0.9294916253,
+        "reason": "P/B P27, WR 64%, ER 22.0%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q4",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 1000,
+        "price": 28000.0,
+        "pb": 2.2605431811,
+        "reason": "P/B P77 >= 75",
+        "pnl": 3630000.0,
+        "pnl_percent": 14.938271604938272
+      },
+      {
+        "date": "2022-Q4",
+        "symbol": "MBB",
+        "action": "BUY",
+        "quantity": 4800,
+        "price": 9260.0,
+        "pb": 1.0924678869,
+        "reason": "P/B P38, WR 85%, ER 31.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2022-Q4",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 100,
+        "price": 10080.0,
+        "pb": 1.342670695,
+        "reason": "P/B P26, WR 81%, ER 22.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q1",
+        "symbol": "STB",
+        "action": "SELL",
+        "quantity": 1800,
+        "price": 26200.0,
+        "pb": 1.3851697585,
+        "reason": "P/B P80 >= 75",
+        "pnl": 8342100.0,
+        "pnl_percent": 21.55581395348837
+      },
+      {
+        "date": "2023-Q2",
+        "symbol": "VCB",
+        "action": "SELL",
+        "quantity": 500,
+        "price": 56230.0,
+        "pb": 3.1642722225,
+        "reason": "Take profit: +33.7%",
+        "pnl": 7014712.5,
+        "pnl_percent": 33.355741797432245
+      },
+      {
+        "date": "2023-Q2",
+        "symbol": "VIB",
+        "action": "SELL",
+        "quantity": 100,
+        "price": 13380.0,
+        "pb": 1.4700234275,
+        "reason": "Take profit: +32.7%",
+        "pnl": 326655.0,
+        "pnl_percent": 32.40625
+      },
+      {
+        "date": "2023-Q2",
+        "symbol": "KLB",
+        "action": "BUY",
+        "quantity": 5300,
+        "price": 8500.0,
+        "pb": 0.8129964817,
+        "reason": "P/B P26, WR 60%, ER 22.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q4",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 1700,
+        "price": 18590.0,
+        "pb": 1.5421308573,
+        "reason": "P/B P81 >= 75",
+        "pnl": 4238992.5,
+        "pnl_percent": 15.535981308411214
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "ACB",
+        "action": "SELL",
+        "quantity": 2500,
+        "price": 20000.0,
+        "pb": 1.4333298662,
+        "reason": "Take profit: +42.1%",
+        "pnl": 14700000.0,
+        "pnl_percent": 41.7910447761194
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 4800,
+        "price": 16219.999999999998,
+        "pb": 1.2373823055,
+        "reason": "Take profit: +75.2%",
+        "pnl": 33213359.999999985,
+        "pnl_percent": 74.72408207343409
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 2200,
+        "price": 17230.0,
+        "pb": 1.4065594356,
+        "reason": "P/B P34, WR 81%, ER 22.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q2",
+        "symbol": "BAB",
+        "action": "BUY",
+        "quantity": 3400,
+        "price": 11220.0,
+        "pb": 0.9595107439,
+        "reason": "P/B P9, WR 100%, ER 14.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q3",
+        "symbol": "VCB",
+        "action": "BUY",
+        "quantity": 600,
+        "price": 61100.0,
+        "pb": 2.6948304678,
+        "reason": "P/B P33, WR 92%, ER 18.9%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q3",
+        "symbol": "ACB",
+        "action": "BUY",
+        "quantity": 1800,
+        "price": 21510.0,
+        "pb": 1.3962862138,
+        "reason": "P/B P37, WR 78%, ER 32.8%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q4",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 1000,
+        "price": 37140.0,
+        "pb": 1.7737789849,
+        "reason": "P/B P30, WR 67%, ER 16.3%",
+        "pnl": 0,
+        "pnl_percent": 0
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2010-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2011-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q1",
+        "value": 99982066.0,
+        "return": -0.017934,
+        "drawdown": 0.017934
+      },
+      {
+        "date": "2012-Q2",
+        "value": 99738066.0,
+        "return": -0.261934,
+        "drawdown": 0.261934
+      },
+      {
+        "date": "2012-Q4",
+        "value": 99372066.0,
+        "return": -0.627934,
+        "drawdown": 0.627934
+      },
+      {
+        "date": "2013-Q1",
+        "value": 99606349.5,
+        "return": -0.3936505,
+        "drawdown": 0.3936505
+      },
+      {
+        "date": "2013-Q2",
+        "value": 97787349.5,
+        "return": -2.2126505,
+        "drawdown": 2.2126505
+      },
+      {
+        "date": "2013-Q3",
+        "value": 94785349.5,
+        "return": -5.2146505,
+        "drawdown": 5.2146505
+      },
+      {
+        "date": "2013-Q4",
+        "value": 95351349.5,
+        "return": -4.6486505,
+        "drawdown": 4.6486505
+      },
+      {
+        "date": "2014-Q1",
+        "value": 108755317.5,
+        "return": 8.7553175,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2014-Q2",
+        "value": 103740317.5,
+        "return": 3.7403174999999997,
+        "drawdown": 4.611268777731259
+      },
+      {
+        "date": "2014-Q3",
+        "value": 102216317.5,
+        "return": 2.2163175,
+        "drawdown": 6.012579568810509
+      },
+      {
+        "date": "2014-Q4",
+        "value": 107927544.5,
+        "return": 7.9275445,
+        "drawdown": 0.7611333579160394
+      },
+      {
+        "date": "2015-Q1",
+        "value": 121839521.49999999,
+        "return": 21.839521499999982,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q2",
+        "value": 163629739.5,
+        "return": 63.62973950000001,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q3",
+        "value": 161147099.0,
+        "return": 61.147099000000004,
+        "drawdown": 1.5172306132040256
+      },
+      {
+        "date": "2015-Q4",
+        "value": 153551867.0,
+        "return": 53.551866999999994,
+        "drawdown": 6.158949180506395
+      },
+      {
+        "date": "2016-Q1",
+        "value": 130201040.99999999,
+        "return": 30.201040999999982,
+        "drawdown": 20.42947608554985
+      },
+      {
+        "date": "2016-Q2",
+        "value": 137112041.0,
+        "return": 37.112041,
+        "drawdown": 16.2059162234381
+      },
+      {
+        "date": "2016-Q3",
+        "value": 136677945.0,
+        "return": 36.677945,
+        "drawdown": 16.47120785155317
+      },
+      {
+        "date": "2016-Q4",
+        "value": 125155097.49999999,
+        "return": 25.155097499999986,
+        "drawdown": 23.51323305749076
+      },
+      {
+        "date": "2017-Q1",
+        "value": 146940621.0,
+        "return": 46.940621,
+        "drawdown": 10.19931862691745
+      },
+      {
+        "date": "2017-Q2",
+        "value": 165403347.0,
+        "return": 65.403347,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q3",
+        "value": 162274980.49999997,
+        "return": 62.27498049999996,
+        "drawdown": 1.8913562250950275
+      },
+      {
+        "date": "2017-Q4",
+        "value": 168792379.0,
+        "return": 68.792379,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2018-Q1",
+        "value": 183633309.0,
+        "return": 83.633309,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2018-Q2",
+        "value": 166464611.5,
+        "return": 66.4646115,
+        "drawdown": 9.349446237991605
+      },
+      {
+        "date": "2018-Q3",
+        "value": 165411022.0,
+        "return": 65.411022,
+        "drawdown": 9.923192638215761
+      },
+      {
+        "date": "2018-Q4",
+        "value": 157092244.99999997,
+        "return": 57.09224499999998,
+        "drawdown": 14.453295071865218
+      },
+      {
+        "date": "2019-Q1",
+        "value": 185230591.49999997,
+        "return": 85.23059149999997,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2019-Q2",
+        "value": 169965591.49999997,
+        "return": 69.96559149999997,
+        "drawdown": 8.24107933596919
+      },
+      {
+        "date": "2019-Q3",
+        "value": 175789591.49999997,
+        "return": 75.78959149999997,
+        "drawdown": 5.096890272576818
+      },
+      {
+        "date": "2019-Q4",
+        "value": 176121593.49999997,
+        "return": 76.12159349999997,
+        "drawdown": 4.917653140464113
+      },
+      {
+        "date": "2020-Q1",
+        "value": 135924985.49999997,
+        "return": 35.92498549999997,
+        "drawdown": 26.61850054071657
+      },
+      {
+        "date": "2020-Q2",
+        "value": 160256985.49999997,
+        "return": 60.25698549999997,
+        "drawdown": 13.48244142490902
+      },
+      {
+        "date": "2020-Q3",
+        "value": 187495405.49999997,
+        "return": 87.49540549999996,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q4",
+        "value": 205629645.49999997,
+        "return": 105.62964549999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q1",
+        "value": 205629645.49999997,
+        "return": 105.62964549999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q2",
+        "value": 205629645.49999997,
+        "return": 105.62964549999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q3",
+        "value": 205629645.49999997,
+        "return": 105.62964549999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q4",
+        "value": 205629645.49999997,
+        "return": 105.62964549999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q1",
+        "value": 205593247.99999997,
+        "return": 105.59324799999996,
+        "drawdown": 0.017700511962415462
+      },
+      {
+        "date": "2022-Q2",
+        "value": 197188526.49999997,
+        "return": 97.18852649999997,
+        "drawdown": 4.10501072424404
+      },
+      {
+        "date": "2022-Q3",
+        "value": 187439526.49999997,
+        "return": 87.43952649999997,
+        "drawdown": 8.846058629226205
+      },
+      {
+        "date": "2022-Q4",
+        "value": 199678342.49999997,
+        "return": 99.67834249999997,
+        "drawdown": 2.894185313372045
+      },
+      {
+        "date": "2023-Q1",
+        "value": 224482442.49999997,
+        "return": 124.48244249999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q2",
+        "value": 233656234.99999997,
+        "return": 133.65623499999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q3",
+        "value": 236114234.99999997,
+        "return": 136.11423499999998,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q4",
+        "value": 234110227.49999997,
+        "return": 134.11022749999998,
+        "drawdown": 0.8487448882529256
+      },
+      {
+        "date": "2024-Q1",
+        "value": 265161728.49999994,
+        "return": 165.16172849999995,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q2",
+        "value": 260634506.49999994,
+        "return": 160.63450649999993,
+        "drawdown": 1.7073436749753277
+      },
+      {
+        "date": "2024-Q3",
+        "value": 270350439.49999994,
+        "return": 170.35043949999994,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q4",
+        "value": 261834729.49999994,
+        "return": 161.83472949999992,
+        "drawdown": 3.1498783637080057
+      }
+    ]
+  },
+  "BOT5_AGGRESSIVE": {
+    "bot_name": "🔥 Aggressive Growth",
+    "bot_description": "Tập trung vào CP rẻ nhất, chấp nhận rủi ro cao để tìm lợi nhuận cao",
+    "config": {
+      "pb_percentile_max": 15,
+      "min_win_rate": 50,
+      "min_expected_return": 25,
+      "max_positions": 3,
+      "max_position_percent": 35,
+      "position_sizing": "kelly",
+      "take_profit": 80,
+      "stop_loss": 30
+    },
+    "performance": {
+      "initial_capital": 100000000,
+      "final_value": 194287681.0,
+      "total_return_percent": 94.287681,
+      "cagr_percent": 5.140358602101802,
+      "max_drawdown_percent": 25.243630397169625
+    },
+    "trades": {
+      "total_trades": 25,
+      "buy_trades": 14,
+      "sell_trades": 11,
+      "win_rate_percent": 81.81818181818183,
+      "avg_win_percent": 46.510847753543004,
+      "avg_loss_percent": -25.312726244343892,
+      "profit_factor": 5.3574772666598705
+    },
+    "current_positions": [
+      {
+        "symbol": "VPB",
+        "quantity": 2600,
+        "avg_price": 18260.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 1.0907888894
+      },
+      {
+        "symbol": "KLB",
+        "quantity": 7300,
+        "avg_price": 7440.0,
+        "buy_date": "2024-Q1",
+        "buy_pb": 0.7178219523
+      },
+      {
+        "symbol": "VIB",
+        "quantity": 4100,
+        "avg_price": 16620.0,
+        "buy_date": "2024-Q4",
+        "buy_pb": 1.3130084318
+      }
+    ],
+    "trade_history": [
+      {
+        "date": "2016-Q3",
+        "symbol": "ACB",
+        "action": "SELL",
+        "quantity": 1200,
+        "price": 2920.0,
+        "pb": 1.653325433,
+        "reason": "P/B P67 >= 60",
+        "pnl": 783240.0,
+        "pnl_percent": 28.88053097345133
+      },
+      {
+        "date": "2016-Q3",
+        "symbol": "SHB",
+        "action": "BUY",
+        "quantity": 2800,
+        "price": 1310.0,
+        "pb": 0.3885810974,
+        "reason": "P/B P2, WR 80%, ER 68.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2016-Q4",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 3800,
+        "price": 7510.0,
+        "pb": 1.3139478637,
+        "reason": "Stop loss: -36.9%",
+        "pnl": -16753345.0,
+        "pnl_percent": -37.048529411764704
+      },
+      {
+        "date": "2016-Q4",
+        "symbol": "BID",
+        "action": "BUY",
+        "quantity": 3700,
+        "price": 7510.0,
+        "pb": 1.3139478637,
+        "reason": "P/B P9, WR 100%, ER 46.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2017-Q1",
+        "symbol": "MBB",
+        "action": "SELL",
+        "quantity": 35600,
+        "price": 3150.0,
+        "pb": 1.3873364258,
+        "reason": "P/B P67 >= 60",
+        "pnl": 39235650.0,
+        "pnl_percent": 54.02573529411765
+      },
+      {
+        "date": "2017-Q3",
+        "symbol": "SHB",
+        "action": "SELL",
+        "quantity": 2800,
+        "price": 2450.0,
+        "pb": 0.9604700248,
+        "reason": "Take profit: +87.0%",
+        "pnl": 3174850.0,
+        "pnl_percent": 86.55534351145037
+      },
+      {
+        "date": "2017-Q3",
+        "symbol": "BID",
+        "action": "SELL",
+        "quantity": 3700,
+        "price": 10700.0,
+        "pb": 2.2811210778,
+        "reason": "P/B P81 >= 60",
+        "pnl": 11704025.0,
+        "pnl_percent": 42.120505992010656
+      },
+      {
+        "date": "2019-Q1",
+        "symbol": "SHB",
+        "action": "BUY",
+        "quantity": 16000,
+        "price": 2470.0,
+        "pb": 0.4652920069,
+        "reason": "P/B P8, WR 80%, ER 68.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q1",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 25300,
+        "price": 3650.0,
+        "pb": 1.2713374958,
+        "reason": "P/B P6, WR 67%, ER 153.5%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q2",
+        "symbol": "LPB",
+        "action": "BUY",
+        "quantity": 9500,
+        "price": 2800.0,
+        "pb": 0.5703244791,
+        "reason": "P/B P9, WR 100%, ER 59.1%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "SHB",
+        "action": "SELL",
+        "quantity": 16000,
+        "price": 2140.0,
+        "pb": 1.5080342188,
+        "reason": "P/B P92 >= 60",
+        "pnl": -5365600.0,
+        "pnl_percent": -13.576923076923078
+      },
+      {
+        "date": "2019-Q4",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 3500,
+        "price": 9560.0,
+        "pb": 0.9309312015,
+        "reason": "P/B P2, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2020-Q2",
+        "symbol": "VIB",
+        "action": "SELL",
+        "quantity": 25300,
+        "price": 4070.0000000000005,
+        "pb": 2.0286368471,
+        "reason": "P/B P80 >= 60",
+        "pnl": 10368572.500000015,
+        "pnl_percent": 11.228082191780837
+      },
+      {
+        "date": "2020-Q2",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 3500,
+        "price": 9860.0,
+        "pb": 1.3837464964,
+        "reason": "P/B P68 >= 60",
+        "pnl": 963725.0,
+        "pnl_percent": 2.8802301255230125
+      },
+      {
+        "date": "2020-Q4",
+        "symbol": "LPB",
+        "action": "SELL",
+        "quantity": 9500,
+        "price": 5390.0,
+        "pb": 1.4648957513,
+        "reason": "Take profit: +92.5%",
+        "pnl": 24476987.5,
+        "pnl_percent": 92.01875000000001
+      },
+      {
+        "date": "2022-Q2",
+        "symbol": "CTG",
+        "action": "BUY",
+        "quantity": 2900,
+        "price": 16050.0,
+        "pb": 1.055038073,
+        "reason": "P/B P9, WR 100%, ER 34.4%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2023-Q3",
+        "symbol": "CTG",
+        "action": "SELL",
+        "quantity": 2900,
+        "price": 18440.0,
+        "pb": 1.3960398892,
+        "reason": "P/B P70 >= 60",
+        "pnl": 6797310.0,
+        "pnl_percent": 14.60373831775701
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "VPB",
+        "action": "BUY",
+        "quantity": 2600,
+        "price": 18260.0,
+        "pb": 1.0907888894,
+        "reason": "P/B P9, WR 100%, ER 37.8%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q1",
+        "symbol": "KLB",
+        "action": "BUY",
+        "quantity": 7300,
+        "price": 7440.0,
+        "pb": 0.7178219523,
+        "reason": "P/B P9, WR 50%, ER 48.7%",
+        "pnl": 0,
+        "pnl_percent": 0
+      },
+      {
+        "date": "2024-Q4",
+        "symbol": "VIB",
+        "action": "BUY",
+        "quantity": 4100,
+        "price": 16620.0,
+        "pb": 1.3130084318,
+        "reason": "P/B P14, WR 100%, ER 27.0%",
+        "pnl": 0,
+        "pnl_percent": 0
+      }
+    ],
+    "equity_curve": [
+      {
+        "date": "2010-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2011-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q1",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q2",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2012-Q4",
+        "value": 100000000,
+        "return": 0.0,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2013-Q1",
+        "value": 99963497.5,
+        "return": -0.0365025,
+        "drawdown": 0.0365025
+      },
+      {
+        "date": "2013-Q2",
+        "value": 96925497.5,
+        "return": -3.0745025,
+        "drawdown": 3.0745025
+      },
+      {
+        "date": "2013-Q3",
+        "value": 95975493.5,
+        "return": -4.024506499999999,
+        "drawdown": 4.024506499999999
+      },
+      {
+        "date": "2013-Q4",
+        "value": 96649493.5,
+        "return": -3.3505065,
+        "drawdown": 3.3505065
+      },
+      {
+        "date": "2014-Q1",
+        "value": 118463493.5,
+        "return": 18.4634935,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2014-Q2",
+        "value": 106613493.5,
+        "return": 6.613493500000001,
+        "drawdown": 10.003081666673962
+      },
+      {
+        "date": "2014-Q3",
+        "value": 107908493.5,
+        "return": 7.9084935,
+        "drawdown": 8.909917889598622
+      },
+      {
+        "date": "2014-Q4",
+        "value": 114313493.5,
+        "return": 14.3134935,
+        "drawdown": 3.503188938117885
+      },
+      {
+        "date": "2015-Q1",
+        "value": 121027493.5,
+        "return": 21.0274935,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q2",
+        "value": 144131878.5,
+        "return": 44.1318785,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q3",
+        "value": 149200048.5,
+        "return": 49.2000485,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2015-Q4",
+        "value": 140852048.5,
+        "return": 40.8520485,
+        "drawdown": 5.595172443928528
+      },
+      {
+        "date": "2016-Q1",
+        "value": 131018048.5,
+        "return": 31.0180485,
+        "drawdown": 12.1863231163762
+      },
+      {
+        "date": "2016-Q2",
+        "value": 136586048.5,
+        "return": 36.586048500000004,
+        "drawdown": 8.454420844239872
+      },
+      {
+        "date": "2016-Q3",
+        "value": 135489786.5,
+        "return": 35.4897865,
+        "drawdown": 9.18918065901299
+      },
+      {
+        "date": "2016-Q4",
+        "value": 130674761.0,
+        "return": 30.674761,
+        "drawdown": 12.416408497347103
+      },
+      {
+        "date": "2017-Q1",
+        "value": 151779411.0,
+        "return": 51.779410999999996,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q2",
+        "value": 158990411.0,
+        "return": 58.990410999999995,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2017-Q3",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2017-Q4",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2018-Q1",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2018-Q2",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2018-Q3",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2018-Q4",
+        "value": 158877286.0,
+        "return": 58.877286,
+        "drawdown": 0.07115208979489963
+      },
+      {
+        "date": "2019-Q1",
+        "value": 158679488.5,
+        "return": 58.6794885,
+        "drawdown": 0.19556053603761048
+      },
+      {
+        "date": "2019-Q2",
+        "value": 144839588.5,
+        "return": 44.8395885,
+        "drawdown": 8.900425133186177
+      },
+      {
+        "date": "2019-Q3",
+        "value": 167217588.5,
+        "return": 67.2175885,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2019-Q4",
+        "value": 163058798.5,
+        "return": 63.0587985,
+        "drawdown": 2.4870529693112995
+      },
+      {
+        "date": "2020-Q1",
+        "value": 125005798.49999999,
+        "return": 25.005798499999987,
+        "drawdown": 25.243630397169625
+      },
+      {
+        "date": "2020-Q2",
+        "value": 168736096.0,
+        "return": 68.736096,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q3",
+        "value": 180801096.0,
+        "return": 80.801096,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2020-Q4",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q1",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q2",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q3",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2021-Q4",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q1",
+        "value": 189033083.5,
+        "return": 89.0330835,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2022-Q2",
+        "value": 188963266.0,
+        "return": 88.96326599999999,
+        "drawdown": 0.03693401107748422
+      },
+      {
+        "date": "2022-Q3",
+        "value": 183714266.0,
+        "return": 83.71426600000001,
+        "drawdown": 2.813696629986994
+      },
+      {
+        "date": "2022-Q4",
+        "value": 190935266.0,
+        "return": 90.935266,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q1",
+        "value": 194386266.0,
+        "return": 94.38626599999999,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q2",
+        "value": 194937266.0,
+        "return": 94.937266,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q3",
+        "value": 195760576.0,
+        "return": 95.760576,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2023-Q4",
+        "value": 195760576.0,
+        "return": 95.760576,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q1",
+        "value": 195607894.0,
+        "return": 95.607894,
+        "drawdown": 0.07799425355184897
+      },
+      {
+        "date": "2024-Q2",
+        "value": 195785894.0,
+        "return": 95.785894,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q3",
+        "value": 206313894.0,
+        "return": 106.313894,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2024-Q4",
+        "value": 194287681.0,
+        "return": 94.287681,
+        "drawdown": 5.829085364459264
+      }
+    ]
+  }
+}
