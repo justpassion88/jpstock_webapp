@@ -1,0 +1,135 @@
+/* JP Stock Webapp - Custom Styles */
+
+/* Badge styles */
+.badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge-strong-buy {
+    @apply bg-green-700 text-white;
+}
+
+.badge-buy {
+    @apply bg-green-500 text-white;
+}
+
+.badge-hold {
+    @apply bg-gray-500 text-white;
+}
+
+.badge-sell {
+    @apply bg-orange-500 text-white;
+}
+
+.badge-strong-sell {
+    @apply bg-red-600 text-white;
+}
+
+.badge-unknown {
+    @apply bg-gray-400 text-white;
+}
+
+/* Risk badges */
+.badge-risk-very-low {
+    @apply bg-green-100 text-green-800;
+}
+
+.badge-risk-low {
+    @apply bg-green-50 text-green-700;
+}
+
+.badge-risk-medium {
+    @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-risk-high {
+    @apply bg-orange-100 text-orange-800;
+}
+
+.badge-risk-very-high {
+    @apply bg-red-100 text-red-800;
+}
+
+/* Valuation colors */
+.valuation-extremely-cheap {
+    @apply text-green-700;
+}
+
+.valuation-cheap {
+    @apply text-green-500;
+}
+
+.valuation-fair {
+    @apply text-gray-500;
+}
+
+.valuation-expensive {
+    @apply text-orange-500;
+}
+
+.valuation-extremely-expensive {
+    @apply text-red-600;
+}
+
+.valuation-unknown {
+    @apply text-gray-400;
+}
+
+/* Filter buttons */
+.filter-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors;
+    @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+}
+
+.filter-btn.active {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+/* Table styles */
+.data-table {
+    @apply w-full;
+}
+
+.data-table th {
+    @apply bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider;
+    @apply cursor-pointer hover:bg-gray-100 transition-colors;
+}
+
+.data-table td {
+    @apply border-b border-gray-100;
+}
+
+.data-table tbody tr:hover {
+    @apply bg-blue-50;
+}
+
+/* Card hover effect */
+.stat-card {
+    @apply transition-transform duration-200 hover:scale-105;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .data-table th,
+    .data-table td {
+        @apply px-2 py-2 text-xs;
+    }
+    
+    .badge {
+        @apply px-2 py-0.5 text-xs;
+    }
+}
+
+/* Loading spinner */
+.spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+}
+
+/* Tooltip */
+.tooltip {
+    @apply invisible absolute bg-gray-900 text-white text-xs rounded py-1 px-2 -mt-8;
+}
+
+.has-tooltip:hover .tooltip {
+    @apply visible z-50;
+}

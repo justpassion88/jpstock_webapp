@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Chi tiết cổ phiếu | JP Stock Analysis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Plotly.js for charts -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    
+    <style>
+        /* Badge styles */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-strong-buy { background-color: #15803d; color: white; }
+        .badge-buy { background-color: #22c55e; color: white; }
+        .badge-hold { background-color: #6b7280; color: white; }
+        .badge-sell { background-color: #f97316; color: white; }
+        .badge-strong-sell { background-color: #dc2626; color: white; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center text-white hover:text-blue-100 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span class="font-semibold">Quay lại danh sách</span>
+                </a>
+                <h1 class="text-xl font-bold">📊 JP Stock Analysis</h1>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div id="stockContent">
+            <!-- Loading state -->
+            <div class="text-center py-12">
+                <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-500">Đang tải dữ liệu...</p>
+            </div>
+        </div>
+        
+        <!-- Back button -->
+        <div class="mt-8 text-center">
+            <a href="index.html" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Quay lại danh sách ngân hàng
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>JP Stock Analysis - Phân tích định lượng P/B cho ngành Ngân hàng Việt Nam</p>
+            <p class="mt-2 text-gray-500">⚠️ Đây chỉ là công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/stock.js"></script>
+</body>
+</html>

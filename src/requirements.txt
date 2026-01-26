@@ -1,0 +1,9 @@
+# Data fetching & analysis
+vnstock>=3.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+pytz>=2024.1
+
+# For running locally (optional)
+requests>=2.28.0
