@@ -283,13 +283,21 @@ function displayHistoricalReturns() {
 
 // Display P/B chart
 function displayPBChart() {
-    const history = stockData.pb_history || [];
+    let history = stockData.pb_history || [];
     const stats = stockData.pb_statistics || {};
     
     if (history.length === 0) {
         document.getElementById('pb-chart').innerHTML = '<div class="text-gray-500 text-center py-8">Không có dữ liệu biểu đồ</div>';
         return;
     }
+    
+    // Sort history by year and quarter (ascending: oldest to newest)
+    history = history.slice().sort((a, b) => {
+        if (a.year !== b.year) {
+            return a.year - b.year;
+        }
+        return a.quarter - b.quarter;
+    });
     
     const periods = history.map(h => h.period);
     const pbValues = history.map(h => h.pb);
