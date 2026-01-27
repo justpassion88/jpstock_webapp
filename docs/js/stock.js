@@ -11,16 +11,66 @@ function getSymbol() {
     return params.get('symbol') || 'VCB';
 }
 
+// Sector to file mapping
+const sectorFiles = {
+    'banks': 'banks_v2.json',
+    'realestate': 'realestate.json',
+    'securities': 'securities.json',
+    'retail': 'retail.json',
+    'construction': 'construction.json',
+    'energy': 'energy.json',
+    'steel': 'steel.json',
+    'technology': 'technology.json',
+    'oilgas': 'oilgas.json',
+    'insurance': 'insurance.json',
+    'chemicals': 'chemicals.json'
+};
+
 // Fetch stock data
 async function loadStock() {
     const symbol = getSymbol();
     
     try {
-        const response = await fetch('data/banks_v2.json');
-        const data = await response.json();
-        stockData = data.banks[symbol];
+        // Try to find stock in all sector files
+        let found = false;
         
-        if (!stockData) {
+        for (const [sector, filename] of Object.entries(sectorFiles)) {
+            try {
+                const response = await fetch(`data/${filename}`);
+                if (!response.ok) continue;
+                
+                const data = await response.json();
+                
+                // Handle different JSON structures
+                let stocksData = null;
+                
+                // Format 1: { "banks": { "VCB": {...}, "BID": {...} } } (banks_v2.json)
+                if (data.banks && data.banks[symbol]) {
+                    stocksData = data.banks[symbol];
+                }
+                // Format 2: { "stocks": { "HPG": {...} }, "sector_id": "steel", ... } (other sectors)
+                else if (data.stocks && data.stocks[symbol]) {
+                    stocksData = data.stocks[symbol];
+                }
+                // Format 3: { "realestate": { "VHM": {...} } } (if first key is sector name)
+                else {
+                    const firstKey = Object.keys(data)[0];
+                    if (data[firstKey] && typeof data[firstKey] === 'object' && data[firstKey][symbol]) {
+                        stocksData = data[firstKey][symbol];
+                    }
+                }
+                
+                if (stocksData) {
+                    stockData = stocksData;
+                    found = true;
+                    break;
+                }
+            } catch (e) {
+                continue;
+            }
+        }
+        
+        if (!found) {
             throw new Error(`Không tìm thấy dữ liệu cho ${symbol}`);
         }
         
@@ -267,13 +317,31 @@ function displayPBChart() {
         opacity: 0.7
     };
     
+    // Add mean line as a trace (easier to see than shape)
+    const trace3 = {
+        x: periods,
+        y: new Array(periods.length).fill(stats.mean),
+        type: 'scatter',
+        mode: 'lines',
+        name: `Mean P/B (${stats.mean?.toFixed(2)})`,
+        line: { color: '#FBBF24', width: 2, dash: 'dash' },
+        yaxis: 'y',
+        hoverinfo: 'y'
+    };
+    
     // Horizontal lines for percentiles
+    // Handle both naming conventions: p10/p25 or percentile_10/percentile_25
+    const p10 = stats.p10 ?? stats.percentile_10;
+    const p25 = stats.p25 ?? stats.percentile_25;
+    const p75 = stats.p75 ?? stats.percentile_75;
+    const p90 = stats.p90 ?? stats.percentile_90;
+    
     const shapes = [
-        { y: stats.percentile_10, color: '#10B981', dash: 'dot', label: 'P10' },
-        { y: stats.percentile_25, color: '#34D399', dash: 'dot', label: 'P25' },
-        { y: stats.mean, color: '#FBBF24', dash: 'solid', label: 'Mean' },
-        { y: stats.percentile_75, color: '#F97316', dash: 'dot', label: 'P75' },
-        { y: stats.percentile_90, color: '#EF4444', dash: 'dot', label: 'P90' },
+        { y: p10, color: '#10B981', dash: 'dot', label: 'P10' },
+        { y: p25, color: '#34D399', dash: 'dot', label: 'P25' },
+        // Mean is now a trace, not a shape
+        { y: p75, color: '#F97316', dash: 'dot', label: 'P75' },
+        { y: p90, color: '#EF4444', dash: 'dot', label: 'P90' },
     ].filter(s => s.y != null).map(s => ({
         type: 'line',
         x0: periods[0],
@@ -320,7 +388,7 @@ function displayPBChart() {
     
     const config = { responsive: true };
     
-    Plotly.newPlot('pb-chart-container', [trace1, trace2], layout, config);
+    Plotly.newPlot('pb-chart-container', [trace1, trace3, trace2], layout, config);
 }
 
 // Display quarterly data table

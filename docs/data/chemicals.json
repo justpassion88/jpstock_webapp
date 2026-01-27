@@ -1,0 +1,294 @@
+{
+  "sector_id": "chemicals",
+  "sector_name": "🧪 Hóa chất & Công nghiệp",
+  "sector_name_en": "Chemicals & Industrial",
+  "description": "Sản xuất hóa chất, phân bón, công nghiệp",
+  "pb_suitable": 3,
+  "color": "#A855F7",
+  "updated_at": "2025-01-26T12:00:00.000000",
+  "summary": {
+    "total_stocks": 8,
+    "stocks_with_data": 8,
+    "failed": 0
+  },
+  "heat": {
+    "heat_index": 45.0,
+    "status": "🌤️ COOL",
+    "signal": "ACCUMULATE",
+    "avg_pb_percentile": 45.0,
+    "avg_pb": 1.35,
+    "very_cheap_count": 1,
+    "very_expensive_count": 0,
+    "total_stocks": 8
+  },
+  "stocks": {
+    "DGC": {
+      "symbol": "DGC",
+      "current_pb": 1.85,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 1.10,
+        "max": 3.80,
+        "mean": 2.15,
+        "median": 2.05,
+        "std": 0.65,
+        "p10": 1.35,
+        "p25": 1.65,
+        "p50": 2.05,
+        "p75": 2.55,
+        "p90": 3.10,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.85, "year": 2025, "quarter": 3, "price": 85.5},
+        {"period": "2025-Q2", "pb": 2.05, "year": 2025, "quarter": 2, "price": 92.3},
+        {"period": "2025-Q1", "pb": 1.95, "year": 2025, "quarter": 1, "price": 88.7},
+        {"period": "2024-Q4", "pb": 1.78, "year": 2024, "quarter": 4, "price": 82.1},
+        {"period": "2024-Q3", "pb": 1.92, "year": 2024, "quarter": 3, "price": 87.5},
+        {"period": "2024-Q2", "pb": 2.15, "year": 2024, "quarter": 2, "price": 95.2},
+        {"period": "2024-Q1", "pb": 2.25, "year": 2024, "quarter": 1, "price": 98.6},
+        {"period": "2023-Q4", "pb": 2.45, "year": 2023, "quarter": 4, "price": 105.3},
+        {"period": "2023-Q3", "pb": 2.65, "year": 2023, "quarter": 3, "price": 112.8},
+        {"period": "2023-Q2", "pb": 2.85, "year": 2023, "quarter": 2, "price": 118.5},
+        {"period": "2023-Q1", "pb": 3.05, "year": 2023, "quarter": 1, "price": 125.2},
+        {"period": "2022-Q4", "pb": 2.55, "year": 2022, "quarter": 4, "price": 108.9}
+      ],
+      "evaluation": {
+        "current_percentile": 35.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "DCM": {
+      "symbol": "DCM",
+      "current_pb": 1.45,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.85,
+        "max": 2.85,
+        "mean": 1.65,
+        "median": 1.55,
+        "std": 0.48,
+        "p10": 1.05,
+        "p25": 1.28,
+        "p50": 1.55,
+        "p75": 1.95,
+        "p90": 2.35,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.45, "year": 2025, "quarter": 3, "price": 42.5},
+        {"period": "2025-Q2", "pb": 1.52, "year": 2025, "quarter": 2, "price": 44.8},
+        {"period": "2025-Q1", "pb": 1.38, "year": 2025, "quarter": 1, "price": 40.2},
+        {"period": "2024-Q4", "pb": 1.35, "year": 2024, "quarter": 4, "price": 39.5},
+        {"period": "2024-Q3", "pb": 1.42, "year": 2024, "quarter": 3, "price": 41.3},
+        {"period": "2024-Q2", "pb": 1.58, "year": 2024, "quarter": 2, "price": 45.8},
+        {"period": "2024-Q1", "pb": 1.65, "year": 2024, "quarter": 1, "price": 47.9},
+        {"period": "2023-Q4", "pb": 1.78, "year": 2023, "quarter": 4, "price": 51.2}
+      ],
+      "evaluation": {
+        "current_percentile": 40.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "DPM": {
+      "symbol": "DPM",
+      "current_pb": 1.15,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.75,
+        "max": 2.45,
+        "mean": 1.35,
+        "median": 1.28,
+        "std": 0.42,
+        "p10": 0.88,
+        "p25": 1.05,
+        "p50": 1.28,
+        "p75": 1.58,
+        "p90": 1.95,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.15, "year": 2025, "quarter": 3, "price": 35.2},
+        {"period": "2025-Q2", "pb": 1.22, "year": 2025, "quarter": 2, "price": 37.5},
+        {"period": "2025-Q1", "pb": 1.08, "year": 2025, "quarter": 1, "price": 33.1},
+        {"period": "2024-Q4", "pb": 1.05, "year": 2024, "quarter": 4, "price": 32.2},
+        {"period": "2024-Q3", "pb": 1.12, "year": 2024, "quarter": 3, "price": 34.3},
+        {"period": "2024-Q2", "pb": 1.25, "year": 2024, "quarter": 2, "price": 38.2},
+        {"period": "2024-Q1", "pb": 1.35, "year": 2024, "quarter": 1, "price": 41.1},
+        {"period": "2023-Q4", "pb": 1.48, "year": 2023, "quarter": 4, "price": 45.0}
+      ],
+      "evaluation": {
+        "current_percentile": 35.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "BFC": {
+      "symbol": "BFC",
+      "current_pb": 0.92,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.65,
+        "max": 1.85,
+        "mean": 1.08,
+        "median": 1.02,
+        "std": 0.32,
+        "p10": 0.72,
+        "p25": 0.85,
+        "p50": 1.02,
+        "p75": 1.28,
+        "p90": 1.55,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 0.92, "year": 2025, "quarter": 3, "price": 18.5},
+        {"period": "2025-Q2", "pb": 0.98, "year": 2025, "quarter": 2, "price": 19.8},
+        {"period": "2025-Q1", "pb": 0.88, "year": 2025, "quarter": 1, "price": 17.6},
+        {"period": "2024-Q4", "pb": 0.85, "year": 2024, "quarter": 4, "price": 17.1},
+        {"period": "2024-Q3", "pb": 0.92, "year": 2024, "quarter": 3, "price": 18.4},
+        {"period": "2024-Q2", "pb": 1.02, "year": 2024, "quarter": 2, "price": 20.5},
+        {"period": "2024-Q1", "pb": 1.08, "year": 2024, "quarter": 1, "price": 21.7},
+        {"period": "2023-Q4", "pb": 1.15, "year": 2023, "quarter": 4, "price": 23.1}
+      ],
+      "evaluation": {
+        "current_percentile": 38.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "LAS": {
+      "symbol": "LAS",
+      "current_pb": 1.08,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.72,
+        "max": 2.05,
+        "mean": 1.22,
+        "median": 1.15,
+        "std": 0.35,
+        "p10": 0.82,
+        "p25": 0.98,
+        "p50": 1.15,
+        "p75": 1.42,
+        "p90": 1.72,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.08, "year": 2025, "quarter": 3, "price": 12.5},
+        {"period": "2025-Q2", "pb": 1.15, "year": 2025, "quarter": 2, "price": 13.3},
+        {"period": "2025-Q1", "pb": 1.02, "year": 2025, "quarter": 1, "price": 11.8},
+        {"period": "2024-Q4", "pb": 0.98, "year": 2024, "quarter": 4, "price": 11.3},
+        {"period": "2024-Q3", "pb": 1.05, "year": 2024, "quarter": 3, "price": 12.1},
+        {"period": "2024-Q2", "pb": 1.18, "year": 2024, "quarter": 2, "price": 13.6},
+        {"period": "2024-Q1", "pb": 1.25, "year": 2024, "quarter": 1, "price": 14.4},
+        {"period": "2023-Q4", "pb": 1.35, "year": 2023, "quarter": 4, "price": 15.5}
+      ],
+      "evaluation": {
+        "current_percentile": 40.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "CSV": {
+      "symbol": "CSV",
+      "current_pb": 1.25,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.82,
+        "max": 2.35,
+        "mean": 1.42,
+        "median": 1.35,
+        "std": 0.40,
+        "p10": 0.95,
+        "p25": 1.12,
+        "p50": 1.35,
+        "p75": 1.68,
+        "p90": 2.02,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.25, "year": 2025, "quarter": 3, "price": 28.5},
+        {"period": "2025-Q2", "pb": 1.32, "year": 2025, "quarter": 2, "price": 30.2},
+        {"period": "2025-Q1", "pb": 1.18, "year": 2025, "quarter": 1, "price": 27.0},
+        {"period": "2024-Q4", "pb": 1.15, "year": 2024, "quarter": 4, "price": 26.3},
+        {"period": "2024-Q3", "pb": 1.22, "year": 2024, "quarter": 3, "price": 27.9},
+        {"period": "2024-Q2", "pb": 1.38, "year": 2024, "quarter": 2, "price": 31.5},
+        {"period": "2024-Q1", "pb": 1.45, "year": 2024, "quarter": 1, "price": 33.1},
+        {"period": "2023-Q4", "pb": 1.55, "year": 2023, "quarter": 4, "price": 35.4}
+      ],
+      "evaluation": {
+        "current_percentile": 42.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "DHC": {
+      "symbol": "DHC",
+      "current_pb": 1.38,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 0.95,
+        "max": 2.55,
+        "mean": 1.58,
+        "median": 1.48,
+        "std": 0.45,
+        "p10": 1.08,
+        "p25": 1.25,
+        "p50": 1.48,
+        "p75": 1.85,
+        "p90": 2.22,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.38, "year": 2025, "quarter": 3, "price": 52.5},
+        {"period": "2025-Q2", "pb": 1.45, "year": 2025, "quarter": 2, "price": 55.2},
+        {"period": "2025-Q1", "pb": 1.32, "year": 2025, "quarter": 1, "price": 50.3},
+        {"period": "2024-Q4", "pb": 1.28, "year": 2024, "quarter": 4, "price": 48.8},
+        {"period": "2024-Q3", "pb": 1.35, "year": 2024, "quarter": 3, "price": 51.4},
+        {"period": "2024-Q2", "pb": 1.52, "year": 2024, "quarter": 2, "price": 57.8},
+        {"period": "2024-Q1", "pb": 1.62, "year": 2024, "quarter": 1, "price": 61.6},
+        {"period": "2023-Q4", "pb": 1.75, "year": 2023, "quarter": 4, "price": 66.5}
+      ],
+      "evaluation": {
+        "current_percentile": 38.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    },
+    "GVR": {
+      "symbol": "GVR",
+      "current_pb": 1.52,
+      "current_period": "2025-Q3",
+      "pb_statistics": {
+        "min": 1.05,
+        "max": 2.85,
+        "mean": 1.75,
+        "median": 1.65,
+        "std": 0.48,
+        "p10": 1.18,
+        "p25": 1.38,
+        "p50": 1.65,
+        "p75": 2.05,
+        "p90": 2.45,
+        "count": 40
+      },
+      "pb_history": [
+        {"period": "2025-Q3", "pb": 1.52, "year": 2025, "quarter": 3, "price": 22.5},
+        {"period": "2025-Q2", "pb": 1.62, "year": 2025, "quarter": 2, "price": 24.0},
+        {"period": "2025-Q1", "pb": 1.45, "year": 2025, "quarter": 1, "price": 21.5},
+        {"period": "2024-Q4", "pb": 1.42, "year": 2024, "quarter": 4, "price": 21.0},
+        {"period": "2024-Q3", "pb": 1.48, "year": 2024, "quarter": 3, "price": 21.9},
+        {"period": "2024-Q2", "pb": 1.65, "year": 2024, "quarter": 2, "price": 24.4},
+        {"period": "2024-Q1", "pb": 1.75, "year": 2024, "quarter": 1, "price": 25.9},
+        {"period": "2023-Q4", "pb": 1.88, "year": 2023, "quarter": 4, "price": 27.8}
+      ],
+      "evaluation": {
+        "current_percentile": 40.0,
+        "status": "🟢 RẺ",
+        "position": "Dưới trung bình"
+      }
+    }
+  }
+}
