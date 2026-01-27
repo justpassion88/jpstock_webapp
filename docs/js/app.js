@@ -4,29 +4,23 @@
  */
 
 let banksData = null;
-let recommendations = null;
 let sectorHeat = null;
 
 // Fetch and display banks data
 async function loadBanks() {
     try {
-        const [banksRes, recRes, heatRes] = await Promise.all([
+        const [banksRes, heatRes] = await Promise.all([
             fetch('data/banks_v2.json'),
-            fetch('data/recommendations.json').catch(() => null),
             fetch('data/sector_heat.json').catch(() => null)
         ]);
         
         banksData = await banksRes.json();
-        if (recRes) {
-            recommendations = await recRes.json();
-        }
         if (heatRes) {
             sectorHeat = await heatRes.json();
         }
         
         displayHeatIndex();
         displaySummary(banksData);
-        displayRecommendations();
         displayBankList(banksData.banks);
     } catch (error) {
         console.error('Error loading banks:', error);
@@ -364,61 +358,6 @@ function getSignalColor(signal) {
         'BUY_HEAVY': 'text-purple-500'
     };
     return colors[signal] || 'text-gray-400';
-}
-
-// Display BOT recommendations
-function displayRecommendations() {
-    if (!recommendations || !recommendations.buy_signals || recommendations.buy_signals.length === 0) {
-        document.getElementById('recommendations').innerHTML = '';
-        return;
-    }
-    
-    const signals = recommendations.buy_signals.slice(0, 6);
-    
-    let cards = signals.map(sig => {
-        const strengthColor = sig.strength === 'STRONG' ? 'border-green-500 bg-green-900/20' :
-                             sig.strength === 'MODERATE' ? 'border-blue-500 bg-blue-900/20' :
-                             'border-gray-500 bg-gray-900/20';
-        const strengthBadge = sig.strength === 'STRONG' ? '🔥 STRONG' :
-                             sig.strength === 'MODERATE' ? '✅ MODERATE' : '📊 WEAK';
-        
-        return `
-            <a href="stock.html?symbol=${sig.symbol}" class="block p-4 rounded-lg border-2 ${strengthColor} hover:scale-[1.02] transition-all">
-                <div class="flex justify-between items-start mb-2">
-                    <div>
-                        <span class="text-xl font-bold text-white">${sig.symbol}</span>
-                        <span class="text-xs text-gray-400 ml-2">${sig.name}</span>
-                    </div>
-                    <span class="text-xs font-bold">${strengthBadge}</span>
-                </div>
-                <div class="text-sm text-gray-300 mb-2">
-                    P/B: ${sig.current_pb?.toFixed(2)} (${sig.zone})
-                </div>
-                <div class="flex justify-between text-xs">
-                    <span class="text-green-400">+${sig.expected_return_1y?.toFixed(0)}% kỳ vọng</span>
-                    <span class="text-blue-400">${sig.win_rate_1y?.toFixed(0)}% win</span>
-                </div>
-                <div class="text-xs text-gray-500 mt-1">
-                    ${sig.bots_agree}/5 BOTs đồng ý
-                </div>
-            </a>
-        `;
-    }).join('');
-    
-    document.getElementById('recommendations').innerHTML = `
-        <div class="bg-gray-800 rounded-lg p-6 mb-6">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-xl font-bold text-white">🤖 Khuyến nghị từ BOT</h2>
-                <a href="bot.html" class="text-blue-400 text-sm hover:underline">Xem chi tiết →</a>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                ${cards}
-            </div>
-            <div class="text-xs text-gray-500 mt-3 text-center">
-                Dựa trên consensus của 5 BOT | Cập nhật: ${new Date(recommendations.generated_at).toLocaleString('vi-VN')}
-            </div>
-        </div>
-    `;
 }
 
 // Display summary statistics
