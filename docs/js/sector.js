@@ -339,16 +339,38 @@ function displayStockList(stocks) {
     document.getElementById('stock-list').innerHTML = stocks.map(stock => createStockCard(stock)).join('');
 }
 
+// Helper: Map English zone to Vietnamese
+function getZoneVietnamese(zone) {
+    const zoneMap = {
+        'VERY_CHEAP': '🟢 CỰC RẺ',
+        'CHEAP': '🟢 RẺ',
+        'FAIR': '🟡 HỢP LÝ',
+        'EXPENSIVE': '🔴 ĐẮT',
+        'VERY_EXPENSIVE': '🔴 CỰC ĐẮT',
+        'OVERVALUED': '🔴 QUÁ ĐẮT'
+    };
+    return zoneMap[zone] || zone || 'N/A';
+}
+
 // Create individual stock card (giống bank card)
 function createStockCard(stock) {
     const eval = stock.evaluation || stock.valuation || {};
     const stats = stock.pb_statistics || {};
     
-    // Zone/Status color
-    const status = eval.status || eval.zone_vi || 'N/A';
-    const zoneColor = eval.status?.includes('RẺ') ? '#10B981' :
-                     eval.status?.includes('ĐẮT') ? '#EF4444' :
-                     eval.status?.includes('HỢPÝ') ? '#F59E0B' : '#6B7280';
+    // Zone/Status color - check both evaluation.status and valuation.zone
+    let status = 'N/A';
+    if (eval.status) {
+        status = eval.status;
+    } else if (eval.zone_vi) {
+        status = eval.zone_vi;
+    } else if (eval.zone) {
+        // Convert English zone to Vietnamese
+        status = getZoneVietnamese(eval.zone);
+    }
+    
+    const zoneColor = status.includes('RẺ') || status.includes('CHEAP') ? '#10B981' :
+                     status.includes('ĐẮT') || status.includes('EXPENSIVE') ? '#EF4444' :
+                     status.includes('HỢPÝ') || status.includes('HỢP LÝ') || status.includes('FAIR') ? '#F59E0B' : '#6B7280';
     
     // P/B values
     const currentPb = stock.current_pb?.toFixed(2) || 'N/A';
@@ -434,14 +456,25 @@ function filterByZone(zone, element) {
     let filtered = allStocks;
     if (zone !== 'all') {
         filtered = allStocks.filter(stock => {
-            const eval = stock.evaluation || {};
-            const status = eval.status || '';
+            const eval = stock.evaluation || stock.valuation || {};
+            const status = eval.status || eval.zone_vi || '';
+            const zoneEn = eval.zone || '';
             
-            if (zone === 'extremely_cheap') return status.includes('CỰC RẺ');
-            if (zone === 'cheap') return status.includes('RẺ');
-            if (zone === 'fair') return status.includes('HỢPÝ');
-            if (zone === 'expensive') return status.includes('ĐẮT');
-            if (zone === 'extremely_expensive') return status.includes('CỰC ĐẮT');
+            if (zone === 'extremely_cheap') {
+                return status.includes('CỰC RẺ') || zoneEn === 'VERY_CHEAP';
+            }
+            if (zone === 'cheap') {
+                return status.includes('RẺ') && !status.includes('CỰC') || zoneEn === 'CHEAP';
+            }
+            if (zone === 'fair') {
+                return status.includes('HỢPÝ') || status.includes('HỢP LÝ') || zoneEn === 'FAIR';
+            }
+            if (zone === 'expensive') {
+                return status.includes('ĐẮT') && !status.includes('CỰC') || zoneEn === 'EXPENSIVE';
+            }
+            if (zone === 'extremely_expensive') {
+                return status.includes('CỰC ĐẮT') || zoneEn === 'VERY_EXPENSIVE' || zoneEn === 'OVERVALUED';
+            }
             return true;
         });
     }
