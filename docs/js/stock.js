@@ -319,10 +319,12 @@ function displayPBChart() {
         y: priceValues,
         type: 'scatter',
         mode: 'lines',
-        name: 'Giá (nghìn đ)',
+        name: 'Giá',
         line: { color: '#10B981', width: 1, dash: 'dot' },
         yaxis: 'y2',
-        opacity: 0.7
+        opacity: 0.7,
+        customdata: priceValues.map(p => p ? p.toLocaleString('vi-VN') : 'N/A'),
+        hovertemplate: '<b>%{x}</b><br>Giá: %{customdata}đ<extra></extra>'
     };
     
     // Add mean line as a trace (easier to see than shape)
