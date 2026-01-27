@@ -19,7 +19,100 @@
     "avg_pb": 3.23,
     "very_cheap_count": 2,
     "very_expensive_count": 0,
-    "total_stocks": 9
+    "total_stocks": 9,
+    "history": [
+      {
+        "period": "2023-Q1",
+        "heat_index": 44.2,
+        "status": "COOL",
+        "avg_pb": 2.6,
+        "banks_count": 10
+      },
+      {
+        "period": "2023-Q2",
+        "heat_index": 35.1,
+        "status": "COOL",
+        "avg_pb": 2.38,
+        "banks_count": 10
+      },
+      {
+        "period": "2023-Q3",
+        "heat_index": 41.0,
+        "status": "COOL",
+        "avg_pb": 2.52,
+        "banks_count": 10
+      },
+      {
+        "period": "2023-Q4",
+        "heat_index": 34.7,
+        "status": "COLD",
+        "avg_pb": 2.37,
+        "banks_count": 10
+      },
+      {
+        "period": "2024-Q1",
+        "heat_index": 37.5,
+        "status": "COOL",
+        "avg_pb": 2.44,
+        "banks_count": 10
+      },
+      {
+        "period": "2024-Q2",
+        "heat_index": 23.7,
+        "status": "COLD",
+        "avg_pb": 2.09,
+        "banks_count": 10
+      },
+      {
+        "period": "2024-Q3",
+        "heat_index": 15.3,
+        "status": "ICE_COLD",
+        "avg_pb": 1.88,
+        "banks_count": 10
+      },
+      {
+        "period": "2024-Q4",
+        "heat_index": 15.6,
+        "status": "ICE_COLD",
+        "avg_pb": 1.89,
+        "banks_count": 10
+      },
+      {
+        "period": "2025-Q1",
+        "heat_index": 39.7,
+        "status": "COOL",
+        "avg_pb": 2.49,
+        "banks_count": 10
+      },
+      {
+        "period": "2025-Q2",
+        "heat_index": 38.1,
+        "status": "COOL",
+        "avg_pb": 2.45,
+        "banks_count": 10
+      },
+      {
+        "period": "2025-Q3",
+        "heat_index": 36.4,
+        "status": "COOL",
+        "avg_pb": 2.41,
+        "banks_count": 10
+      },
+      {
+        "period": "2025-Q4",
+        "heat_index": 21.0,
+        "status": "COLD",
+        "avg_pb": 2.03,
+        "banks_count": 10
+      }
+    ],
+    "analysis": {
+      "max_heat": 44.2,
+      "max_heat_period": "2023-Q1",
+      "min_heat": 15.3,
+      "min_heat_period": "2024-Q3",
+      "avg_heat": 31.9
+    }
   },
   "stocks": {
     "VNM": {

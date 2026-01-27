@@ -19,7 +19,100 @@
     "avg_pb": 1.76,
     "very_cheap_count": 1,
     "very_expensive_count": 0,
-    "total_stocks": 12
+    "total_stocks": 12,
+    "history": [
+      {
+        "period": "2023-Q1",
+        "heat_index": 41.8,
+        "status": "COOL",
+        "avg_pb": 2.54,
+        "banks_count": 12
+      },
+      {
+        "period": "2023-Q2",
+        "heat_index": 51.8,
+        "status": "NEUTRAL",
+        "avg_pb": 2.79,
+        "banks_count": 12
+      },
+      {
+        "period": "2023-Q3",
+        "heat_index": 41.7,
+        "status": "COOL",
+        "avg_pb": 2.54,
+        "banks_count": 12
+      },
+      {
+        "period": "2023-Q4",
+        "heat_index": 54.9,
+        "status": "NEUTRAL",
+        "avg_pb": 2.87,
+        "banks_count": 12
+      },
+      {
+        "period": "2024-Q1",
+        "heat_index": 42.3,
+        "status": "COOL",
+        "avg_pb": 2.56,
+        "banks_count": 12
+      },
+      {
+        "period": "2024-Q2",
+        "heat_index": 34.5,
+        "status": "COLD",
+        "avg_pb": 2.36,
+        "banks_count": 12
+      },
+      {
+        "period": "2024-Q3",
+        "heat_index": 42.7,
+        "status": "COOL",
+        "avg_pb": 2.57,
+        "banks_count": 12
+      },
+      {
+        "period": "2024-Q4",
+        "heat_index": 37.7,
+        "status": "COOL",
+        "avg_pb": 2.44,
+        "banks_count": 12
+      },
+      {
+        "period": "2025-Q1",
+        "heat_index": 30.8,
+        "status": "COLD",
+        "avg_pb": 2.27,
+        "banks_count": 12
+      },
+      {
+        "period": "2025-Q2",
+        "heat_index": 37.0,
+        "status": "COOL",
+        "avg_pb": 2.43,
+        "banks_count": 12
+      },
+      {
+        "period": "2025-Q3",
+        "heat_index": 34.8,
+        "status": "COLD",
+        "avg_pb": 2.37,
+        "banks_count": 12
+      },
+      {
+        "period": "2025-Q4",
+        "heat_index": 40.6,
+        "status": "COOL",
+        "avg_pb": 2.51,
+        "banks_count": 12
+      }
+    ],
+    "analysis": {
+      "max_heat": 54.9,
+      "max_heat_period": "2023-Q4",
+      "min_heat": 30.8,
+      "min_heat_period": "2025-Q1",
+      "avg_heat": 40.9
+    }
   },
   "stocks": {
     "SSI": {

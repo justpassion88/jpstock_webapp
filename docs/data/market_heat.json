@@ -95,5 +95,98 @@
     "status": "🌤️ COOL",
     "total_sectors": 11,
     "total_stocks": 124
+  },
+  "history": [
+    {
+      "period": "2023-Q1",
+      "heat_index": 49.2,
+      "status": "NEUTRAL",
+      "avg_pb": 2.73,
+      "banks_count": 0
+    },
+    {
+      "period": "2023-Q2",
+      "heat_index": 44.6,
+      "status": "COOL",
+      "avg_pb": 2.61,
+      "banks_count": 0
+    },
+    {
+      "period": "2023-Q3",
+      "heat_index": 52.7,
+      "status": "NEUTRAL",
+      "avg_pb": 2.82,
+      "banks_count": 0
+    },
+    {
+      "period": "2023-Q4",
+      "heat_index": 50.0,
+      "status": "NEUTRAL",
+      "avg_pb": 2.75,
+      "banks_count": 0
+    },
+    {
+      "period": "2024-Q1",
+      "heat_index": 42.4,
+      "status": "COOL",
+      "avg_pb": 2.56,
+      "banks_count": 0
+    },
+    {
+      "period": "2024-Q2",
+      "heat_index": 52.0,
+      "status": "NEUTRAL",
+      "avg_pb": 2.8,
+      "banks_count": 0
+    },
+    {
+      "period": "2024-Q3",
+      "heat_index": 39.2,
+      "status": "COOL",
+      "avg_pb": 2.48,
+      "banks_count": 0
+    },
+    {
+      "period": "2024-Q4",
+      "heat_index": 36.2,
+      "status": "COOL",
+      "avg_pb": 2.41,
+      "banks_count": 0
+    },
+    {
+      "period": "2025-Q1",
+      "heat_index": 62.1,
+      "status": "WARM",
+      "avg_pb": 3.05,
+      "banks_count": 0
+    },
+    {
+      "period": "2025-Q2",
+      "heat_index": 51.1,
+      "status": "NEUTRAL",
+      "avg_pb": 2.78,
+      "banks_count": 0
+    },
+    {
+      "period": "2025-Q3",
+      "heat_index": 63.8,
+      "status": "WARM",
+      "avg_pb": 3.09,
+      "banks_count": 0
+    },
+    {
+      "period": "2025-Q4",
+      "heat_index": 52.7,
+      "status": "NEUTRAL",
+      "avg_pb": 2.82,
+      "banks_count": 0
+    }
+  ],
+  "analysis": {
+    "max_heat": 63.8,
+    "max_heat_period": "2025-Q3",
+    "min_heat": 36.2,
+    "min_heat_period": "2024-Q4",
+    "avg_heat": 49.7
   }
 }

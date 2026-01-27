@@ -19,7 +19,100 @@
     "avg_pb": 1.38,
     "very_cheap_count": 1,
     "very_expensive_count": 1,
-    "total_stocks": 8
+    "total_stocks": 8,
+    "history": [
+      {
+        "period": "2023-Q1",
+        "heat_index": 40.0,
+        "status": "COOL",
+        "avg_pb": 2.5,
+        "banks_count": 8
+      },
+      {
+        "period": "2023-Q2",
+        "heat_index": 50.1,
+        "status": "NEUTRAL",
+        "avg_pb": 2.75,
+        "banks_count": 8
+      },
+      {
+        "period": "2023-Q3",
+        "heat_index": 53.7,
+        "status": "NEUTRAL",
+        "avg_pb": 2.84,
+        "banks_count": 8
+      },
+      {
+        "period": "2023-Q4",
+        "heat_index": 35.6,
+        "status": "COOL",
+        "avg_pb": 2.39,
+        "banks_count": 8
+      },
+      {
+        "period": "2024-Q1",
+        "heat_index": 43.4,
+        "status": "COOL",
+        "avg_pb": 2.59,
+        "banks_count": 8
+      },
+      {
+        "period": "2024-Q2",
+        "heat_index": 30.7,
+        "status": "COLD",
+        "avg_pb": 2.27,
+        "banks_count": 8
+      },
+      {
+        "period": "2024-Q3",
+        "heat_index": 55.6,
+        "status": "WARM",
+        "avg_pb": 2.89,
+        "banks_count": 8
+      },
+      {
+        "period": "2024-Q4",
+        "heat_index": 48.3,
+        "status": "NEUTRAL",
+        "avg_pb": 2.71,
+        "banks_count": 8
+      },
+      {
+        "period": "2025-Q1",
+        "heat_index": 51.4,
+        "status": "NEUTRAL",
+        "avg_pb": 2.78,
+        "banks_count": 8
+      },
+      {
+        "period": "2025-Q2",
+        "heat_index": 36.7,
+        "status": "COOL",
+        "avg_pb": 2.42,
+        "banks_count": 8
+      },
+      {
+        "period": "2025-Q3",
+        "heat_index": 32.9,
+        "status": "COLD",
+        "avg_pb": 2.32,
+        "banks_count": 8
+      },
+      {
+        "period": "2025-Q4",
+        "heat_index": 48.7,
+        "status": "NEUTRAL",
+        "avg_pb": 2.72,
+        "banks_count": 8
+      }
+    ],
+    "analysis": {
+      "max_heat": 55.6,
+      "max_heat_period": "2024-Q3",
+      "min_heat": 30.7,
+      "min_heat_period": "2024-Q2",
+      "avg_heat": 43.9
+    }
   },
   "stocks": {
     "PVD": {
