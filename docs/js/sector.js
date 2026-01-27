@@ -48,17 +48,13 @@ async function loadSectorData() {
         // Update page title
         document.title = `${config.name} | JP Stock Analysis V2`;
         
-        // Display sector header
-        displaySectorHeader(config);
-        
         // Get stocks array
         const stocks = sectorData.stocks || {};
         allStocks = Object.values(stocks);
         
-        // Display summary
+        // Display in order: heat index -> summary -> stock list
+        displayHeatIndex(config);
         displaySummary();
-        
-        // Display stock list
         displayStockList(allStocks);
     } catch (error) {
         console.error('Error loading sector data:', error);
@@ -66,12 +62,50 @@ async function loadSectorData() {
     }
 }
 
-// Display sector header
-function displaySectorHeader(config) {
-    document.getElementById('sector-header').innerHTML = `
-        <div class="mb-6">
-            <h2 class="text-3xl font-bold text-white mb-2">${config.name}</h2>
-            <p class="text-gray-400">${sectorData.description || 'Chi tiết ngành'}</p>
+// Display sector heat index
+function displayHeatIndex(config) {
+    const heat = sectorData.heat || {};
+    const heatIndex = heat.heat_index || 0;
+    const status = heat.status || '😐 NEUTRAL';
+    const signal = heat.signal || 'NORMAL';
+    
+    const heatColor = heatIndex < 20 ? 'text-blue-400' :
+                     heatIndex < 35 ? 'text-cyan-400' :
+                     heatIndex < 50 ? 'text-green-400' :
+                     heatIndex < 65 ? 'text-yellow-400' :
+                     heatIndex < 80 ? 'text-orange-400' : 'text-red-400';
+    
+    const signalColor = signal === 'BUY' ? 'text-green-400' :
+                       signal === 'ACCUMULATE' ? 'text-blue-400' :
+                       signal === 'HOLD' ? 'text-yellow-400' : 'text-gray-400';
+    
+    document.getElementById('heat-index').innerHTML = `
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 mb-6 border border-gray-700">
+            <h2 class="text-2xl font-bold text-white mb-4">🌡️ Chỉ Số Nhiệt Độ Ngành - ${config.name}</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
+                    <div class="text-3xl font-bold ${heatColor}">${heatIndex.toFixed(1)}</div>
+                    <div class="text-gray-400 text-sm mt-1">Heat Index</div>
+                </div>
+                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
+                    <div class="text-2xl font-bold text-white">${status}</div>
+                    <div class="text-gray-400 text-sm mt-1">Trạng thái</div>
+                </div>
+                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
+                    <div class="text-2xl font-bold ${signalColor}">${signal}</div>
+                    <div class="text-gray-400 text-sm mt-1">Tín hiệu</div>
+                </div>
+                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
+                    <div class="text-2xl font-bold text-purple-400">${allStocks.length}</div>
+                    <div class="text-gray-400 text-sm mt-1">Số mã</div>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                <p class="text-blue-300 text-sm">
+                    💡 <strong>Giải thích:</strong> Heat Index thấp (&lt;35) = Ngành đang rẻ, có thể tích lũy. 
+                    Heat Index cao (&gt;65) = Ngành đang đắt, cân nhắc chốt lời.
+                </p>
+            </div>
         </div>
     `;
 }
