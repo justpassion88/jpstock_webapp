@@ -5,6 +5,21 @@
 
 let stockData = null;
 
+// Helper to get current price
+function getCurrentPrice() {
+       if (stockData.current_price) {
+           return (stockData.current_price * 1000).toLocaleString('vi-VN');
+       }
+       if (stockData.pb_history && stockData.pb_history.length > 0) {
+           // pb_history is sorted oldest first, so get the last entry (most recent)
+           const latestEntry = stockData.pb_history[stockData.pb_history.length - 1];
+           if (latestEntry.price) {
+               return (latestEntry.price * 1000).toLocaleString('vi-VN');
+           }
+       }
+       return 'N/A';
+    }
+
 // Get symbol from URL
 function getSymbol() {
     const params = new URLSearchParams(window.location.search);
@@ -114,7 +129,7 @@ function displayStockHeader() {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">Giá hiện tại</div>
-                    <div class="text-2xl font-bold text-white">${stockData.current_price ? (stockData.current_price * 1000).toLocaleString('vi-VN') : 'N/A'}đ</div>
+                       <div class="text-2xl font-bold text-white">${getCurrentPrice()}đ</div>
                 </div>
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">P/B hiện tại</div>
