@@ -263,6 +263,28 @@ SECTORS = {
             "LHG",  # Long Hau Corp
         ],
     },
+    
+    # =========================================================================
+    # 🧪 HÓA CHẤT & CÔNG NGHIỆP - Chemicals & Industrial (8 mã)
+    # P/B analysis: ⭐⭐⭐ (Khá)
+    # =========================================================================
+    "chemicals": {
+        "name": "🧪 Hóa chất & Công nghiệp",
+        "name_en": "Chemicals & Industrial",
+        "description": "Sản xuất hóa chất, phân bón, công nghiệp",
+        "pb_suitable": 3,
+        "color": "#A855F7",  # Purple
+        "symbols": [
+            "DGC",  # Duc Giang Chemicals
+            "DCM",  # DCM Corp
+            "DPM",  # PetroVietnam Fertilizer
+            "BFC",  # Binh Dien Fertilizer
+            "LAS",  # Lam Thao Fertilizer
+            "CSV",  # CSV Construction
+            "DHC",  # Dong Hai Bentre
+            "GVR",  # Group Cao Su VN
+        ],
+    },
 }
 
 

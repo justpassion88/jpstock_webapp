@@ -182,18 +182,23 @@ async function showSectorDetail(sectorId) {
     // Render stock table
     const stocks = sectorData.stocks || {};
     const stocksArray = Object.values(stocks).sort((a, b) => {
-        const pctA = a.valuation?.percentile || 50;
-        const pctB = b.valuation?.percentile || 50;
+        // Support both valuation and evaluation fields
+        const valA = a.valuation || a.evaluation || {};
+        const valB = b.valuation || b.evaluation || {};
+        const pctA = valA.current_percentile || valA.percentile || 50;
+        const pctB = valB.current_percentile || valB.percentile || 50;
         return pctA - pctB;
     });
     
     document.getElementById('stock-table-body').innerHTML = stocksArray.map(stock => {
-        const zone = stock.valuation?.zone || 'FAIR';
-        const percentile = stock.valuation?.percentile || 50;
+        // Support both valuation and evaluation fields
+        const val = stock.valuation || stock.evaluation || {};
+        const zone = val.zone || val.status || 'FAIR';
+        const percentile = val.current_percentile || val.percentile || 50;
         const stats = stock.pb_statistics || {};
         
         return `
-            <tr class="stock-row">
+            <tr class="stock-row cursor-pointer hover:bg-gray-700 transition-colors" onclick="window.location.href='stock.html?symbol=${stock.symbol}'">
                 <td class="px-4 py-3 font-semibold text-white">${stock.symbol}</td>
                 <td class="px-4 py-3 text-right font-bold ${getHeatColor(percentile)}">${(stock.current_pb || 0).toFixed(2)}</td>
                 <td class="px-4 py-3 text-right text-green-400">${(stats.min || 0).toFixed(2)}</td>

@@ -1,91 +1,19 @@
 {
-  "updated_at": "2026-01-26T17:10:07.025354",
+  "updated_at": "2026-01-27T04:40:51.989903",
   "sectors": [
     {
-      "sector_id": "technology",
-      "sector_name": "💻 Công nghệ",
-      "heat_index": 68.2,
-      "status": "☀️ WARM",
-      "signal": "HOLD",
-      "stocks_count": 8
-    },
-    {
-      "sector_id": "insurance",
-      "sector_name": "🛡️ Bảo hiểm",
-      "heat_index": 46.8,
-      "status": "😐 NEUTRAL",
-      "signal": "NORMAL",
-      "stocks_count": 6
-    },
-    {
-      "sector_id": "oilgas",
-      "sector_name": "🛢️ Dầu khí",
-      "heat_index": 45.4,
+      "sector_id": "chemicals",
+      "sector_name": "🧪 Hóa chất & Công nghiệp",
+      "heat_index": 48.4,
       "status": "😐 NEUTRAL",
       "signal": "NORMAL",
       "stocks_count": 8
-    },
-    {
-      "sector_id": "steel",
-      "sector_name": "🏗️ Thép & Vật liệu",
-      "heat_index": 44.2,
-      "status": "🌤️ COOL",
-      "signal": "ACCUMULATE",
-      "stocks_count": 12
-    },
-    {
-      "sector_id": "banks",
-      "sector_name": "🏦 Ngân hàng",
-      "heat_index": 43.1,
-      "status": "🌤️ COOL",
-      "signal": "ACCUMULATE",
-      "stocks_count": 15
-    },
-    {
-      "sector_id": "securities",
-      "sector_name": "📈 Chứng khoán",
-      "heat_index": 41.3,
-      "status": "🌤️ COOL",
-      "signal": "ACCUMULATE",
-      "stocks_count": 12
-    },
-    {
-      "sector_id": "energy",
-      "sector_name": "⚡ Điện & Năng lượng",
-      "heat_index": 39.4,
-      "status": "🌤️ COOL",
-      "signal": "ACCUMULATE",
-      "stocks_count": 15
-    },
-    {
-      "sector_id": "retail",
-      "sector_name": "🛒 Bán lẻ & Tiêu dùng",
-      "heat_index": 30.2,
-      "status": "❄️ COLD",
-      "signal": "BUY",
-      "stocks_count": 10
-    },
-    {
-      "sector_id": "construction",
-      "sector_name": "🏗️ Xây dựng",
-      "heat_index": 29.0,
-      "status": "❄️ COLD",
-      "signal": "BUY",
-      "stocks_count": 10
-    },
-    {
-      "sector_id": "realestate",
-      "sector_name": "🏠 Bất động sản",
-      "heat_index": 26.2,
-      "status": "❄️ COLD",
-      "signal": "BUY",
-      "stocks_count": 20
     }
   ],
   "market_heat": {
-    "heat_index": 39.4,
-    "status": "🌤️ COOL",
-    "total_sectors": 10,
-    "total_stocks": 116
+    "heat_index": 48.4,
+    "status": "😐 NEUTRAL",
+    "total_sectors": 1,
+    "total_stocks": 8
   }
 }
