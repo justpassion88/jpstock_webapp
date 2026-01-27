@@ -79,7 +79,7 @@ function renderSectorCards() {
         return `
             <div class="sector-card bg-gray-800 rounded-xl p-4 cursor-pointer border-l-4 hover:bg-gray-750"
                  style="border-left-color: ${heatColor}"
-                 onclick="showSectorDetail('${sector.sector_id}')">
+                 onclick="goToSectorDetail('${sector.sector_id}')">
                 <div class="flex items-center justify-between mb-2">
                     <span class="text-lg">${sector.sector_name}</span>
                     <span class="text-xs text-gray-400">${sector.stocks_count} mã</span>
@@ -132,7 +132,16 @@ function renderRecommendations() {
         : '<p class="text-red-300/50 text-sm">Không có ngành nào</p>';
 }
 
-// Show sector detail
+// Go to sector detail page
+function goToSectorDetail(sectorId) {
+    if (sectorId === 'banks') {
+        window.location.href = 'bank.html';
+    } else {
+        window.location.href = `sector.html?sector=${sectorId}`;
+    }
+}
+
+// Show sector detail (legacy - kept for compatibility)
 async function showSectorDetail(sectorId) {
     const config = SECTORS[sectorId];
     if (!config) return;
@@ -180,7 +189,8 @@ async function showSectorDetail(sectorId) {
     `;
     
     // Render stock table
-    const stocks = sectorData.stocks || {};
+    // Handle both "stocks" field (for sectors) and "banks" field (for banks_v2.json)
+    const stocks = sectorData.stocks || sectorData.banks || {};
     const stocksArray = Object.values(stocks).sort((a, b) => {
         // Support both valuation and evaluation fields
         const valA = a.valuation || a.evaluation || {};
