@@ -14,7 +14,8 @@ const SECTORS = {
     construction: { name: '🏗️ Xây dựng', file: 'construction.json', color: '#F97316' },
     insurance: { name: '🛡️ Bảo hiểm', file: 'insurance.json', color: '#EC4899' },
     retail: { name: '🛒 Bán lẻ', file: 'retail.json', color: '#14B8A6' },
-    technology: { name: '💻 Công nghệ', file: 'technology.json', color: '#6366F1' }
+    technology: { name: '💻 Công nghệ', file: 'technology.json', color: '#6366F1' },
+    chemicals: { name: '🧪 Hóa chất', file: 'chemicals.json', color: '#A855F7' }
 };
 
 let marketData = null;
