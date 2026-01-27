@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JP Stock Analysis V2 - Phân Tích P/B Ngân Hàng với Backtest</title>
+    <title>JP Stock - Market Heat Map | Phân Tích Đa Ngành</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,28 +13,36 @@
     
     <style>
         body { background-color: #111827; }
-        .bank-card { transition: all 0.2s ease; }
+        .sector-card { transition: all 0.3s ease; }
+        .sector-card:hover { transform: translateY(-4px); }
+        .heat-gradient {
+            background: linear-gradient(90deg, 
+                #3B82F6 0%, 
+                #22C55E 25%, 
+                #EAB308 50%, 
+                #F97316 75%, 
+                #EF4444 100%
+            );
+        }
+        .stock-row:hover { background-color: rgba(59, 130, 246, 0.1); }
     </style>
 </head>
 <body class="bg-gray-900 min-h-screen text-gray-100">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-800 to-purple-800 text-white shadow-lg">
+    <header class="bg-gradient-to-r from-indigo-800 to-purple-800 text-white shadow-lg">
         <div class="container mx-auto px-4 py-6">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-bold">📊 JP Stock Analysis V2</h1>
-                    <p class="text-blue-200 mt-1">Phân tích P/B định lượng với Historical Backtest</p>
+                    <h1 class="text-2xl md:text-3xl font-bold">🌡️ Market Heat Map</h1>
+                    <p class="text-indigo-200 mt-1">Phân tích P/B đa ngành - 11 ngành, 124 mã VN</p>
                 </div>
-            <div class="mt-4 md:mt-0 flex gap-2">
-                    <a href="market.html" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg text-sm font-semibold">
-                        🌡️ Market Heat
+                <div class="mt-4 md:mt-0 flex gap-2">
+                    <a href="bank.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
+                        🏦 Banks Only
                     </a>
                     <a href="bot.html" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm font-semibold">
                         🤖 Trading BOT
                     </a>
-                    <span class="bg-green-600 px-3 py-2 rounded-lg text-sm font-semibold">
-                        ✨ Data theo Quý
-                    </span>
                 </div>
             </div>
         </div>
@@ -42,54 +50,120 @@
     
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-6">
-        <!-- Sector Heat Index -->
-        <div id="heat-index"></div>
-        
-        <!-- BOT Recommendations -->
-        <div id="recommendations"></div>
-        
-        <!-- Summary -->
-        <div id="summary"></div>
-        
-        <!-- Filters & Sort -->
-        <div class="bg-gray-800 rounded-lg p-4 mb-6">
-            <div class="flex flex-wrap gap-2 mb-3">
-                <span class="text-gray-400 mr-2">Lọc:</span>
-                <button onclick="filterByZone('all', this)" class="filter-btn bg-blue-600 text-white px-3 py-1 rounded text-sm ring-2 ring-blue-500">Tất cả</button>
-                <button onclick="filterByZone('extremely_cheap', this)" class="filter-btn bg-gray-700 text-green-400 px-3 py-1 rounded text-sm">Cực rẻ</button>
-                <button onclick="filterByZone('cheap', this)" class="filter-btn bg-gray-700 text-green-300 px-3 py-1 rounded text-sm">Rẻ</button>
-                <button onclick="filterByZone('fair', this)" class="filter-btn bg-gray-700 text-yellow-400 px-3 py-1 rounded text-sm">Hợp lý</button>
-                <button onclick="filterByZone('expensive', this)" class="filter-btn bg-gray-700 text-orange-400 px-3 py-1 rounded text-sm">Đắt</button>
-                <button onclick="filterByZone('extremely_expensive', this)" class="filter-btn bg-gray-700 text-red-400 px-3 py-1 rounded text-sm">Cực đắt</button>
-            </div>
-            <div class="flex flex-wrap gap-2">
-                <span class="text-gray-400 mr-2">Sắp xếp:</span>
-                <button onclick="sortBanks('return')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↑ Lợi nhuận cao</button>
-                <button onclick="sortBanks('winrate')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↑ Win rate cao</button>
-                <button onclick="sortBanks('cheap')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↓ P/B rẻ nhất</button>
-                <button onclick="sortBanks('risk')" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">↓ Rủi ro thấp</button>
+        <!-- Market Overview -->
+        <div id="market-overview" class="mb-8">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <h2 class="text-xl font-bold text-white">📊 Tổng Quan Thị Trường</h2>
+                    <div id="last-updated" class="text-gray-400 text-sm mt-2 md:mt-0"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-gray-700 rounded-lg p-4 text-center">
+                        <div id="market-heat" class="text-3xl font-bold text-blue-400">--</div>
+                        <div class="text-gray-400 text-sm">Market Heat</div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center">
+                        <div id="total-sectors" class="text-3xl font-bold text-green-400">--</div>
+                        <div class="text-gray-400 text-sm">Ngành</div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center">
+                        <div id="total-stocks" class="text-3xl font-bold text-purple-400">--</div>
+                        <div class="text-gray-400 text-sm">Mã CK</div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4 text-center">
+                        <div id="market-signal" class="text-xl font-bold text-yellow-400">--</div>
+                        <div class="text-gray-400 text-sm">Tín hiệu</div>
+                    </div>
+                </div>
+                
+                <!-- Heat Scale -->
+                <div class="mt-6">
+                    <div class="flex justify-between text-xs text-gray-400 mb-1">
+                        <span>0 - Cực lạnh</span>
+                        <span>50 - Trung tính</span>
+                        <span>100 - Cực nóng</span>
+                    </div>
+                    <div class="heat-gradient h-3 rounded-full relative">
+                        <div id="market-heat-marker" class="absolute w-4 h-4 bg-white rounded-full shadow-lg transform -translate-x-1/2 -top-0.5 transition-all duration-500" style="left: 50%"></div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <!-- Bank List -->
-        <div id="bank-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            <div class="col-span-full text-center py-8 text-gray-500">
-                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2"></div>
-                Đang tải dữ liệu...
+        <!-- Sector Heat Cards -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold text-white mb-4">🔥 Sector Heat Index</h2>
+            <div id="sector-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                <div class="col-span-full text-center py-8 text-gray-500">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-2"></div>
+                    Đang tải dữ liệu...
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sector Detail View -->
+        <div id="sector-detail" class="hidden mb-8">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 id="detail-title" class="text-xl font-bold text-white">📊 Chi tiết ngành</h2>
+                    <button onclick="closeSectorDetail()" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+                </div>
+                
+                <!-- Sector Stats -->
+                <div id="sector-stats" class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6"></div>
+                
+                <!-- Stock Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-700 text-gray-300">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Mã CK</th>
+                                <th class="px-4 py-3 text-right">P/B Hiện tại</th>
+                                <th class="px-4 py-3 text-right">P/B Min</th>
+                                <th class="px-4 py-3 text-right">P/B Max</th>
+                                <th class="px-4 py-3 text-center">Vùng giá</th>
+                                <th class="px-4 py-3 text-right">Percentile</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stock-table-body" class="divide-y divide-gray-700">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommendations -->
+        <div class="mb-8">
+            <h2 class="text-xl font-bold text-white mb-4">💡 Khuyến Nghị Theo Ngành</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gradient-to-br from-green-800 to-green-900 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-green-300 mb-3">🛒 Nên MUA (Heat &lt; 35)</h3>
+                    <div id="buy-sectors" class="space-y-2"></div>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-800 to-yellow-900 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-yellow-300 mb-3">📈 Tích lũy (Heat 35-50)</h3>
+                    <div id="accumulate-sectors" class="space-y-2"></div>
+                </div>
+                <div class="bg-gradient-to-br from-red-800 to-red-900 rounded-xl p-6">
+                    <h3 class="text-lg font-bold text-red-300 mb-3">🔥 Cẩn thận (Heat &gt; 65)</h3>
+                    <div id="caution-sectors" class="space-y-2"></div>
+                </div>
             </div>
         </div>
         
         <!-- Info Section -->
-        <div class="mt-8 bg-gray-800 rounded-lg p-6">
-            <h3 class="font-bold text-white mb-3">📘 Cách đọc dữ liệu</h3>
+        <div class="bg-gray-800 rounded-lg p-6">
+            <h3 class="font-bold text-white mb-3">📘 Cách đọc Heat Index</h3>
             <div class="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
                 <div>
-                    <p><strong class="text-white">P/B Percentile:</strong> P10 = rẻ hơn 90% lịch sử, P90 = đắt hơn 90% lịch sử</p>
-                    <p class="mt-2"><strong class="text-white">Kỳ vọng 1Y:</strong> Lợi nhuận trung bình khi mua ở vùng P/B này (backtest thực tế)</p>
+                    <p><strong class="text-blue-400">🥶 0-20 (ICE COLD):</strong> Ngành cực rẻ, cơ hội mua mạnh</p>
+                    <p class="mt-2"><strong class="text-cyan-400">❄️ 20-35 (COLD):</strong> Ngành rẻ, nên tích lũy</p>
+                    <p class="mt-2"><strong class="text-green-400">🌤️ 35-50 (COOL):</strong> Hơi rẻ, có thể mua từ từ</p>
                 </div>
                 <div>
-                    <p><strong class="text-white">Win Rate:</strong> % số lần có lãi sau 1 năm khi mua ở vùng P/B này</p>
-                    <p class="mt-2"><strong class="text-white">Rủi ro:</strong> Dựa trên vùng định giá và win rate lịch sử</p>
+                    <p><strong class="text-yellow-400">😐 50-65 (NEUTRAL):</strong> Trung tính, giữ nguyên</p>
+                    <p class="mt-2"><strong class="text-orange-400">☀️ 65-80 (WARM):</strong> Hơi đắt, cẩn thận</p>
+                    <p class="mt-2"><strong class="text-red-400">🔥 80-100 (HOT):</strong> Quá nóng, nên chốt lời</p>
                 </div>
             </div>
         </div>
@@ -98,13 +172,12 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-6 mt-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>JP Stock Analysis V2 - Phân tích P/B với Historical Backtest</p>
-            <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a> | 
-            P/B theo Quý + Giá cổ phiếu = Tính lợi nhuận thực tế</p>
+            <p>JP Stock Analysis - Market Heat Map | 10 Ngành - 116 Mã CK</p>
+            <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a></p>
             <p class="mt-2 text-gray-500">⚠️ Công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
         </div>
     </footer>
     
-    <script src="js/app.js"></script>
+    <script src="js/market.js"></script>
 </body>
 </html>

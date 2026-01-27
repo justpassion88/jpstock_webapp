@@ -5,7 +5,7 @@
 
 // Sector configuration
 const SECTORS = {
-    banks: { name: '🏦 Ngân hàng', file: 'banks.json', color: '#3B82F6' },
+    banks: { name: '🏦 Ngân hàng', file: 'banks_v2.json', color: '#3B82F6' },
     realestate: { name: '🏠 Bất động sản', file: 'realestate.json', color: '#10B981' },
     securities: { name: '📈 Chứng khoán', file: 'securities.json', color: '#8B5CF6' },
     energy: { name: '⚡ Điện & Năng lượng', file: 'energy.json', color: '#F59E0B' },
@@ -152,13 +152,13 @@ async function showSectorDetail(sectorId) {
     const sectorHeat = marketData.sectors.find(s => s.sector_id === sectorId);
     
     // Update title
-    document.getElementById('detail-title').textContent = `📊 ${sectorData.sector_name} - Chi tiết`;
+    document.getElementById('detail-title').textContent = `📊 ${sectorHeat?.sector_name || 'Chi tiết'} - Chi tiết`;
     
-    // Render stats
-    const heat = sectorData.heat || {};
+    // Render stats - use sectorHeat from market_heat.json or fall back to sectorData.heat
+    const heat = sectorData.heat || sectorHeat || {};
     document.getElementById('sector-stats').innerHTML = `
         <div class="bg-gray-700 rounded-lg p-3 text-center">
-            <div class="text-2xl font-bold ${getHeatColor(heat.heat_index || 0)}">${(heat.heat_index || 0).toFixed(1)}</div>
+            <div class="text-2xl font-bold ${getHeatColor(sectorHeat?.heat_index || heat.heat_index || 0)}">${(sectorHeat?.heat_index || heat.heat_index || 0).toFixed(1)}</div>
             <div class="text-gray-400 text-xs">Heat Index</div>
         </div>
         <div class="bg-gray-700 rounded-lg p-3 text-center">
@@ -174,7 +174,7 @@ async function showSectorDetail(sectorId) {
             <div class="text-gray-400 text-xs">Cực đắt</div>
         </div>
         <div class="bg-gray-700 rounded-lg p-3 text-center">
-            <div class="text-2xl font-bold text-purple-400">${sectorData.summary?.stocks_with_data || 0}</div>
+            <div class="text-2xl font-bold text-purple-400">${sectorHeat?.stocks_count || sectorData.summary?.stocks_with_data || 0}</div>
             <div class="text-gray-400 text-xs">Số mã</div>
         </div>
     `;
