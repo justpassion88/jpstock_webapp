@@ -1,0 +1,181 @@
+nohup: ignoring input
+=== BẮT ĐẦU CẬP NHẬT GIÁ ===
+
+
+📂 Xử lý banks_v2.json...
+   ➖ VCB    | Giá không đổi:  70600.0 VNĐ
+   ✅ BID    |     52.6 →  52600.0 VNĐ
+   ✅ CTG    |    38.25 →  38250.0 VNĐ
+   ✅ TCB    |    34.95 →  34950.0 VNĐ
+   ✅ MBB    |     26.5 →  26500.0 VNĐ
+   ✅ VPB    |     27.8 →  27800.0 VNĐ
+   ✅ ACB    |     24.7 →  24700.0 VNĐ
+   ✅ HDB    |     29.0 →  29000.0 VNĐ
+   ✅ STB    |     61.9 →  61900.0 VNĐ
+   ✅ TPB    |     17.2 →  17200.0 VNĐ
+   ✅ SHB    |    16.05 →  16050.0 VNĐ
+   ✅ LPB    |     42.0 →  42000.0 VNĐ
+   ✅ MSB    |     12.2 →  12200.0 VNĐ
+   ✅ OCB    |    11.75 →  11750.0 VNĐ
+   ✅ EIB    |     21.0 →  21000.0 VNĐ
+   ✅ SSB    |    17.45 →  17450.0 VNĐ
+   ✅ ABB    |     13.8 →  13800.0 VNĐ
+   ✅ VIB    |     17.4 →  17400.0 VNĐ
+   ✅ NAB    |    14.35 →  14350.0 VNĐ
+   ✅ PGB    |     12.5 →  12500.0 VNĐ
+   ✅ BVB    |     13.9 →  13900.0 VNĐ
+   ✅ VAB    |     11.3 →  11300.0 VNĐ
+   ✅ KLB    |     15.2 →  15200.0 VNĐ
+   ✅ BAB    |     12.5 →  12500.0 VNĐ
+   ✅ SGB    |     12.5 →  12500.0 VNĐ
+   ✅ NVB    |     12.8 →  12800.0 VNĐ
+   💾 Đã lưu 26 mã trong banks_v2.json
+
+📂 Xử lý retail.json...
+   ➖ VNM    | Giá không đổi:  67700.0 VNĐ
+   ❌ MSN    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ SAB    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PNJ    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ MWG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DGW    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ FRT    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HAX    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VGC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BCG    | Lỗi: unsupported format string passed to NoneType.__format__
+   💾 Đã lưu 1 mã trong retail.json
+   ⚠️  Thất bại: MSN, SAB, PNJ, MWG, DGW, FRT, HAX, VGC, BCG
+
+📂 Xử lý chemicals.json...
+   ❌ DGC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DCM    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DPM    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BFC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ LAS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ CSV    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DHC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ GVR    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: DGC, DCM, DPM, BFC, LAS, CSV, DHC, GVR
+
+📂 Xử lý construction.json...
+   ❌ CTD    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HBC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VCG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ FCN    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ LCG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HUT    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ C4G    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ CII    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HHV    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TV2    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: CTD, HBC, VCG, FCN, LCG, HUT, C4G, CII, HHV, TV2
+
+📂 Xử lý energy.json...
+   ❌ POW    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ GEG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ REE    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ NT2    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PPC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HND    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ SJD    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VSH    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TBC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HDG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PC1    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ QTP    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PGV    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ GAS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PLX    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: POW, GEG, REE, NT2, PPC, HND, SJD, VSH, TBC, HDG, PC1, QTP, PGV, GAS, PLX
+
+📂 Xử lý insurance.json...
+   ❌ BVH    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BMI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PVI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BIC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ MIG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ABI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: BVH, BMI, PVI, BIC, MIG, ABI
+
+📂 Xử lý oilgas.json...
+   ❌ PVD    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PVS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PVT    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BSR    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ OIL    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ CNG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PVC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PXS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: PVD, PVS, PVT, BSR, OIL, CNG, PVC, PXS
+
+📂 Xử lý realestate.json...
+   ➖ VHM    | Giá không đổi: 110600.0 VNĐ
+   ❌ VIC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ NVL    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ PDR    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DXG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ KDH    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ NLG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DIG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ CEO    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ KBC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BCM    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ IDC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ITA    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HDC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ LDG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ NBB    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TDC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VRE    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ SCR    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HPX    | Lỗi: unsupported format string passed to NoneType.__format__
+   💾 Đã lưu 1 mã trong realestate.json
+   ⚠️  Thất bại: VIC, NVL, PDR, DXG, KDH, NLG, DIG, CEO, KBC, BCM, IDC, ITA, HDC, LDG, NBB, TDC, VRE, SCR, HPX
+
+📂 Xử lý securities.json...
+   ❌ SSI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VND    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HCM    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VCI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ SHS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ MBS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ FTS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ BSI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ CTS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ORS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TVS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ AGR    | Lỗi: unsupported format string passed to NoneType.__format__
+   ⚠️  Thất bại: SSI, VND, HCM, VCI, SHS, MBS, FTS, BSI, CTS, ORS, TVS, AGR
+
+📂 Xử lý steel.json...
+   ➖ HPG    | Giá không đổi:  26450.0 VNĐ
+   ❌ HSG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ NKG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TLH    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ SMC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ POM    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ DTL    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VIS    | Lỗi: RetryError[<Future at 0x7429905492e0 state=finished raised ValueError>]
+   ❌ TVN    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ TIS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VGS    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ HMC    | Lỗi: unsupported format string passed to NoneType.__format__
+   💾 Đã lưu 1 mã trong steel.json
+   ⚠️  Thất bại: HSG, NKG, TLH, SMC, POM, DTL, VIS, TVN, TIS, VGS, HMC
+
+📂 Xử lý technology.json...
+   ➖ FPT    | Giá không đổi: 102100.0 VNĐ
+   ❌ CMG    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ VGI    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ FOX    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ELC    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ITD    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ ICT    | Lỗi: unsupported format string passed to NoneType.__format__
+   ❌ LHG    | Lỗi: unsupported format string passed to NoneType.__format__
+   💾 Đã lưu 1 mã trong technology.json
+   ⚠️  Thất bại: CMG, VGI, FOX, ELC, ITD, ICT, LHG
+
+
+=== TỔNG KẾT ===
+✅ Cập nhật thành công: 30 mã
+❌ Thất bại: 105 mã
+📅 Hoàn thành lúc: 2026-01-27 10:20:39
