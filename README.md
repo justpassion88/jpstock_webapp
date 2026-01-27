@@ -4,10 +4,10 @@
 
 ## 🎯 Giới Thiệu
 
-**JP Stock Webapp** là nền tảng phân tích định lượng toàn diện cho thị trường chứng khoán Việt Nam, tập trung vào phương pháp định giá P/B (Price-to-Book) với dữ liệu lịch sử 13+ năm (2012-2025).
+**JP Stock Webapp** là nền tảng phân tích định lượng toàn diện cho thị trường chứng khoán Việt Nam, tập trung vào phương pháp định giá P/B (Price-to-Book) với dữ liệu lịch sử 14+ năm (2012-2026).
 
 Hệ thống cung cấp:
-- 📊 Phân tích P/B định lượng cho **120+ cổ phiếu** thuộc **11 ngành**
+- 📊 Phân tích P/B định lượng cho **124 cổ phiếu** thuộc **11 ngành**
 - 🤖 **5 Trading BOT** với ML backtest trên dữ liệu thực
 - 🌡️ **Market Heat Index** đo nhiệt độ thị trường theo từng ngành
 - 📈 Visualization tương tác với biểu đồ P/B lịch sử
@@ -26,7 +26,7 @@ Hệ thống cung cấp:
 - **Biểu đồ P/B**: Hiển thị đường trung bình (mean) để dễ đánh giá
 
 ### 🤖 Trading BOT Simulator
-5 BOT với chiến lược khác nhau, backtest 10 năm (2015-2025):
+5 BOT với chiến lược khác nhau, backtest 11 năm (2015-2026):
 - **BOT #1 - Deep Value Hunter**: Mua cực rẻ (P/B < P10), hold 1 năm
 - **BOT #2 - Balanced Value**: Mua rẻ (P/B < P25), diversified, hold 6 tháng
 - **BOT #3 - Momentum Rider**: Mua moderate (P/B < P50), chốt lời nhanh
@@ -55,8 +55,9 @@ Chỉ số đo nhiệt độ thị trường cho **toàn ngành** và **từng s
 - Phân bổ vốn theo ngành
 
 ### 📈 Dashboard & Visualization
-- **Biểu đồ P/B lịch sử** tương tác với Plotly.js
-- **Heat map** theo ngành và thị trường
+- **Biểu đồ P/B lịch sử** tương tác với Plotly.js (có đường Mean)
+- **Heat map** theo ngành và thị trường  
+- **Heat History** lịch sử nhiệt độ theo quý
 - **BOT performance** charts
 - **Responsive design** cho mobile/desktop
 - **Dark mode** UI với Tailwind CSS
@@ -65,26 +66,27 @@ Chỉ số đo nhiệt độ thị trường cho **toàn ngành** và **từng s
 - **GitHub Actions**: Cập nhật dữ liệu daily (6:00 AM UTC / 1:00 PM VN)
 - **Auto-deploy**: GitHub Pages tự động update sau mỗi commit
 - **Error handling**: Retry logic cho API calls
+- **Price Update Script**: Cập nhật giá nhanh cho tất cả các mã
 
 ## 📊 Phạm Vi Phân Tích
 
-### 11 Ngành - 120+ Cổ Phiếu
+### 11 Ngành - 124 Cổ Phiếu
 
 | Ngành | Số mã | Ví dụ | P/B phù hợp |
 |-------|-------|-------|-------------|
 | 🏦 **Ngân hàng** | 15 | VCB, BID, CTG, TCB, MBB, VPB | ⭐⭐⭐⭐⭐ |
-| 🏠 **Bất động sản** | 20 | VHM, VIC, NVL, PDR, DXG | ⭐⭐⭐⭐⭐ |
-| 📈 **Chứng khoán** | 12 | SSI, VND, HCM, VCI, SHS | ⭐⭐⭐⭐⭐ |
-| 🛒 **Bán lẻ** | 10 | MWG, FRT, PNJ, DGW, VGC | ⭐⭐⭐⭐ |
-| 🏗️ **Xây dựng** | 10 | CTD, HBC, VCG, FCN, LCG | ⭐⭐⭐⭐ |
-| ⚡ **Năng lượng** | 15 | POW, NT2, PC1, REE, GEG | ⭐⭐⭐⭐ |
-| 🏭 **Thép** | 12 | HPG, HSG, NKG, TLH, VIS | ⭐⭐⭐ |
-| 💻 **Công nghệ** | 8 | FPT, CMG, VGI, SAM, ELC | ⭐⭐ |
-| 🛢️ **Dầu khí** | 8 | PLX, PVD, PVS, PVC, PVT | ⭐⭐⭐ |
-| 🛡️ **Bảo hiểm** | 6 | BVH, BMI, PVI, BIC, MIG | ⭐⭐⭐⭐ |
-| 🧪 **Hóa chất** | 8 | DGC, DCM, DPM, BFC, LAS | ⭐⭐⭐ |
+| 🏠 **Bất động sản** | 20 | VHM, VIC, NVL, PDR, DXG, KDH | ⭐⭐⭐⭐⭐ |
+| 📈 **Chứng khoán** | 12 | SSI, VND, HCM, VCI, SHS, MBS | ⭐⭐⭐⭐⭐ |
+| 🛒 **Bán lẻ & Tiêu dùng** | 10 | VNM, MSN, MWG, PNJ, FRT | ⭐⭐ |
+| 🏗️ **Xây dựng** | 10 | CTD, HBC, VCG, FCN, CII | ⭐⭐⭐⭐ |
+| ⚡ **Điện & Năng lượng** | 15 | POW, GAS, PLX, REE, PC1 | ⭐⭐⭐⭐ |
+| 🏗️ **Thép & Vật liệu** | 12 | HPG, HSG, NKG, SMC, POM | ⭐⭐⭐ |
+| 💻 **Công nghệ** | 8 | FPT, CMG, VGI, FOX, ELC | ⭐ |
+| 🛢️ **Dầu khí** | 8 | PVD, PVS, PVT, BSR, OIL | ⭐⭐⭐ |
+| 🛡️ **Bảo hiểm** | 6 | BVH, BMI, PVI, BIC, MIG, ABI | ⭐⭐⭐⭐ |
+| 🧪 **Hóa chất & Công nghiệp** | 8 | DGC, DCM, DPM, BFC, GVR | ⭐⭐⭐ |
 
-**Tổng: 120+ cổ phiếu** được theo dõi và cập nhật hàng ngày
+**Tổng: 124 cổ phiếu** được theo dõi và cập nhật hàng ngày
 
 ## 📊 Phương Pháp Định Giá
 
@@ -169,7 +171,7 @@ jpstock_webapp/
 │
 ├── 📂 src/                           # Backend Python scripts
 │   ├── config.py                    # Cấu hình ngân hàng
-│   ├── config_sectors.py            # Cấu hình 10 ngành - 115+ mã
+│   ├── config_sectors.py            # Cấu hình 11 ngành - 124 mã
 │   │
 │   ├── fetch_data.py                # Fetch P/B data cho ngân hàng
 │   ├── fetch_data_v2.py             # Version 2 với improvements
@@ -189,25 +191,26 @@ jpstock_webapp/
 │
 ├── 📂 docs/                          # Frontend (GitHub Pages)
 │   ├── index.html                   # 🏠 Dashboard chính
+│   ├── bank.html                    # 🏦 Trang chuyên ngân hàng
 │   ├── stock.html                   # 📊 Chi tiết từng cổ phiếu
+│   ├── sector.html                  # 📈 Phân tích theo ngành
 │   ├── market.html                  # 🌡️ Market Heat Index
-│   ├── bot.html                     # 🤖 Trading BOT results
 │   │
 │   ├── 📂 data/                     # JSON data files
 │   │   ├── banks.json               # Ngân hàng (main)
 │   │   ├── banks_v2.json            # Ngân hàng v2 với backtest
 │   │   ├── raw_bank_data*.json      # Raw data cho debugging
 │   │   │
-│   │   ├── realestate.json          # 🏠 BĐS
-│   │   ├── securities.json          # 📈 Chứng khoán
-│   │   ├── retail.json              # 🛒 Bán lẻ
-│   │   ├── construction.json        # 🏗️ Xây dựng
-│   │   ├── energy.json              # ⚡ Năng lượng
-│   │   ├── steel.json               # 🏭 Thép
-│   │   ├── technology.json          # 💻 Công nghệ
-│   │   ├── oilgas.json              # 🛢️ Dầu khí
-│   │   ├── insurance.json           # 🛡️ Bảo hiểm
-│   │   ├── chemicals.json           # 🧪 Hóa chất & Công nghiệp
+│   │   ├── realestate.json          # 🏠 BĐS (20 mã)
+│   │   ├── securities.json          # 📈 Chứng khoán (12 mã)
+│   │   ├── retail.json              # 🛒 Bán lẻ (10 mã)
+│   │   ├── construction.json        # 🏗️ Xây dựng (10 mã)
+│   │   ├── energy.json              # ⚡ Năng lượng (15 mã)
+│   │   ├── steel.json               # 🏭 Thép (12 mã)
+│   │   ├── technology.json          # 💻 Công nghệ (8 mã)
+│   │   ├── oilgas.json              # 🛢️ Dầu khí (8 mã)
+│   │   ├── insurance.json           # 🛡️ Bảo hiểm (6 mã)
+│   │   ├── chemicals.json           # 🧪 Hóa chất (8 mã)
 │   │   │
 │   │   ├── sector_heat.json         # Heat index từng ngành
 │   │   ├── market_heat.json         # Heat index toàn thị trường
@@ -217,13 +220,16 @@ jpstock_webapp/
 │   ├── 📂 js/                       # Frontend JavaScript
 │   │   ├── app.js                   # Main dashboard logic
 │   │   ├── stock.js                 # Stock detail page
-│   │   ├── market.js                # Market heat page
-│   │   └── bot.js                   # BOT results page
+│   │   ├── sector.js                # Sector analysis page
+│   │   └── market.js                # Market heat page
 │   │
 │   └── 📂 css/
 │       └── style.css                # Custom CSS styles
 │
 ├── 📄 README.md                      # Documentation (this file)
+├── 📄 add_heat_history.py            # Script thêm lịch sử heat index
+├── 📄 update_prices.py               # Script cập nhật giá nhanh
+├── 📄 update_log.txt                 # Log cập nhật dữ liệu
 └── 📄 vnstock-cli-installer.run      # vnstock CLI installer script
 ```
 
@@ -231,7 +237,7 @@ jpstock_webapp/
 
 ```
 1. GitHub Actions (Daily 1:00 PM VN)
-   └─> fetch_multi_sector.py       # Fetch P/B cho 120+ cổ phiếu
+   └─> fetch_multi_sector.py       # Fetch P/B cho 124 cổ phiếu
        └─> analyze_v2.py            # Phân tích + backtest
            └─> sector_heat.py       # Tính heat index
                └─> bot_*.py         # Chạy BOT simulation
@@ -479,10 +485,10 @@ class BOTConfig:
 
 ## 📊 Kết Quả & Performance
 
-### Historical Backtest (2015-2025)
+### Historical Backtest (2015-2026)
 
 **Dataset**: 15 mã ngân hàng blue-chip
-- Dữ liệu P/B theo quý từ 2015-2025 (40 quý)
+- Dữ liệu P/B theo quý từ 2015-2026 (44 quý)
 - Giá đóng cửa cuối mỗi quý
 - Transaction cost: 0.15% mỗi chiều + 0.1% thuế bán
 
@@ -490,13 +496,13 @@ class BOTConfig:
 ```
 Portfolio giả định: 100 triệu VND (2015)
                     
-BOT #1:  240-280 triệu VND (2025)  → 2.4-2.8x
-BOT #2:  220-260 triệu VND (2025)  → 2.2-2.6x
-BOT #3:  195-235 triệu VND (2025)  → 1.95-2.35x
-BOT #4:  210-250 triệu VND (2025)  → 2.1-2.5x
-BOT #5:  250-290 triệu VND (2025)  → 2.5-2.9x (BEST)
+BOT #1:  260-310 triệu VND (2026)  → 2.6-3.1x
+BOT #2:  240-290 triệu VND (2026)  → 2.4-2.9x
+BOT #3:  210-260 triệu VND (2026)  → 2.1-2.6x
+BOT #4:  230-280 triệu VND (2026)  → 2.3-2.8x
+BOT #5:  280-330 triệu VND (2026)  → 2.8-3.3x (BEST)
 
-VN-Index: 180-200 triệu VND (2025)  → 1.8-2.0x
+VN-Index: 195-220 triệu VND (2026)  → 1.95-2.2x
 ```
 
 **Key Insights**:
@@ -524,11 +530,11 @@ VN-Index: 180-200 triệu VND (2025)  → 1.8-2.0x
 
 ---
 
-### Live Performance (2024-2025)
+### Live Performance (2025-2026)
 
 **Cập nhật hàng ngày tại**: [Dashboard](https://justpassion88.github.io/jpstock_webapp/)
 
-**Thống kê hiện tại** (tính đến 27/01/2025):
+**Thống kê hiện tại** (tính đến 27/01/2026):
 - 🌡️ **Market Heat**: Xem tại [Market Heat page](https://justpassion88.github.io/jpstock_webapp/market.html)
 - 🤖 **BOT Signals**: Xem tại [BOT page](https://justpassion88.github.io/jpstock_webapp/bot.html)
 - 📊 **Top Picks**: Cổ phiếu có P/B < P20 + Win Rate > 70%
@@ -545,14 +551,16 @@ VN-Index: 180-200 triệu VND (2025)  → 1.8-2.0x
 - [x] Historical backtest với win rate thực tế
 
 ### ✅ Phase 2 - Multi-Sector (Hoàn thành)
-- [x] Mở rộng lên **11 ngành - 120+ cổ phiếu**
+- [x] Mở rộng lên **11 ngành - 124 cổ phiếu**
 - [x] Thêm ngành Hóa chất & Công nghiệp (DGC, DCM, DPM, ...)
 - [x] Market Heat Index (sector & overall market)
-- [x] 5 Trading BOT strategies với backtest 10 năm
+- [x] 5 Trading BOT strategies với backtest 11 năm
 - [x] Heat-Aware ML BOT (BOT #5)
-- [x] Dashboard tương tác với 4 pages (home, stock, market, bot)
+- [x] Dashboard tương tác với 5 pages (home, bank, stock, sector, market)
 - [x] Tự động load dữ liệu cho tất cả ngành trong stock detail page
 - [x] Biểu đồ P/B có đường mean để dễ đánh giá
+- [x] Heat History - Lịch sử nhiệt độ thị trường theo quý
+- [x] Script cập nhật giá nhanh (update_prices.py)
 
 ### 🚧 Phase 3 - AI & Optimization (Đang phát triển)
 - [ ] **AI Chatbot**: Hỏi đáp về cổ phiếu, recommendation
@@ -651,7 +659,7 @@ Công cụ này được phát triển cho mục đích **học tập và nghiê
 
 **MIT License**
 
-Copyright (c) 2025 [@justpassion88](https://github.com/justpassion88)
+Copyright (c) 2024-2026 [@justpassion88](https://github.com/justpassion88)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -688,8 +696,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [![GitHub Forks](https://img.shields.io/github/forks/justpassion88/jpstock_webapp?style=social)](https://github.com/justpassion88/jpstock_webapp/fork)
 
 [🏠 Home](https://justpassion88.github.io/jpstock_webapp/) • 
-[📊 Stock Analysis](https://justpassion88.github.io/jpstock_webapp/stock.html) • 
-[🌡️ Market Heat](https://justpassion88.github.io/jpstock_webapp/market.html) • 
-[🤖 Trading BOT](https://justpassion88.github.io/jpstock_webapp/bot.html)
+[🏦 Banks](https://justpassion88.github.io/jpstock_webapp/bank.html) • 
+[📊 Stock](https://justpassion88.github.io/jpstock_webapp/stock.html) • 
+[📈 Sector](https://justpassion88.github.io/jpstock_webapp/sector.html) • 
+[🌡️ Market Heat](https://justpassion88.github.io/jpstock_webapp/market.html)
 
 </div>

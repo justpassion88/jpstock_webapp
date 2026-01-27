@@ -47,7 +47,7 @@ async function loadMarketData() {
 
 // Render market overview
 function renderMarketOverview() {
-    const { market_heat, updated_at } = marketData;
+    const { market_heat, updated_at, history, analysis } = marketData;
     
     // Update stats
     document.getElementById('market-heat').textContent = market_heat.heat_index.toFixed(1);
@@ -63,6 +63,253 @@ function renderMarketOverview() {
     
     // Move heat marker
     document.getElementById('market-heat-marker').style.left = `${market_heat.heat_index}%`;
+    
+    // Render heat history chart and analysis
+    if (history && history.length > 0) {
+        renderHeatHistoryChart(history, market_heat.heat_index);
+        renderHeatAnalysis(analysis, market_heat.heat_index);
+        renderHeatHistoryTable(history);
+    }
+}
+
+// Render heat history chart
+function renderHeatHistoryChart(history, currentHeat) {
+    const periods = history.map(h => h.period);
+    const heatValues = history.map(h => h.heat_index);
+    const pbValues = history.map(h => h.avg_pb);
+    
+    // Add current data point
+    const currentPeriod = getCurrentQuarter();
+    periods.push(currentPeriod);
+    heatValues.push(currentHeat);
+    
+    // Define heat zones for background
+    const shapes = [
+        // ICE COLD zone (0-20) - Blue
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 0, y1: 20,
+            fillcolor: 'rgba(59, 130, 246, 0.1)', line: { width: 0 }
+        },
+        // COLD zone (20-35) - Cyan
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 20, y1: 35,
+            fillcolor: 'rgba(34, 211, 238, 0.1)', line: { width: 0 }
+        },
+        // COOL zone (35-50) - Green
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 35, y1: 50,
+            fillcolor: 'rgba(34, 197, 94, 0.1)', line: { width: 0 }
+        },
+        // NEUTRAL zone (50-65) - Yellow
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 50, y1: 65,
+            fillcolor: 'rgba(234, 179, 8, 0.1)', line: { width: 0 }
+        },
+        // WARM zone (65-80) - Orange
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 65, y1: 80,
+            fillcolor: 'rgba(249, 115, 22, 0.15)', line: { width: 0 }
+        },
+        // HOT zone (80-100) - Red
+        {
+            type: 'rect', xref: 'paper', yref: 'y',
+            x0: 0, x1: 1, y0: 80, y1: 100,
+            fillcolor: 'rgba(239, 68, 68, 0.15)', line: { width: 0 }
+        }
+    ];
+    
+    // Color each point based on heat value
+    const markerColors = heatValues.map(h => getHeatColorHex(h));
+    
+    const trace = {
+        x: periods,
+        y: heatValues,
+        type: 'scatter',
+        mode: 'lines+markers',
+        name: 'Heat Index',
+        line: { 
+            color: '#8B5CF6', 
+            width: 3,
+            shape: 'spline'
+        },
+        marker: { 
+            size: 10, 
+            color: markerColors,
+            line: { color: '#1F2937', width: 2 }
+        },
+        fill: 'tozeroy',
+        fillcolor: 'rgba(139, 92, 246, 0.1)',
+        hovertemplate: '<b>%{x}</b><br>Heat: %{y:.1f}<extra></extra>'
+    };
+    
+    // Average line
+    const avgHeat = heatValues.reduce((a, b) => a + b, 0) / heatValues.length;
+    const avgTrace = {
+        x: periods,
+        y: Array(periods.length).fill(avgHeat),
+        type: 'scatter',
+        mode: 'lines',
+        name: `TB: ${avgHeat.toFixed(1)}`,
+        line: { color: '#F59E0B', width: 2, dash: 'dash' },
+        hoverinfo: 'skip'
+    };
+    
+    // Warning lines
+    const warningLine = {
+        x: periods,
+        y: Array(periods.length).fill(65),
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Cẩn thận (65)',
+        line: { color: '#F97316', width: 1, dash: 'dot' },
+        hoverinfo: 'skip'
+    };
+    
+    const dangerLine = {
+        x: periods,
+        y: Array(periods.length).fill(80),
+        type: 'scatter',
+        mode: 'lines',
+        name: 'Nguy hiểm (80)',
+        line: { color: '#EF4444', width: 1, dash: 'dot' },
+        hoverinfo: 'skip'
+    };
+    
+    const layout = {
+        paper_bgcolor: 'rgba(0,0,0,0)',
+        plot_bgcolor: 'rgba(55, 65, 81, 0.5)',
+        font: { color: '#9CA3AF', size: 11 },
+        margin: { l: 50, r: 20, t: 30, b: 50 },
+        xaxis: {
+            gridcolor: 'rgba(75, 85, 99, 0.5)',
+            tickangle: -45
+        },
+        yaxis: {
+            title: 'Heat Index',
+            gridcolor: 'rgba(75, 85, 99, 0.5)',
+            range: [0, 100],
+            dtick: 20
+        },
+        shapes: shapes,
+        legend: {
+            orientation: 'h',
+            y: 1.15,
+            x: 0.5,
+            xanchor: 'center'
+        },
+        annotations: [
+            {
+                x: periods[periods.length - 1],
+                y: currentHeat,
+                xref: 'x',
+                yref: 'y',
+                text: `Hiện tại: ${currentHeat.toFixed(1)}`,
+                showarrow: true,
+                arrowhead: 2,
+                arrowcolor: '#8B5CF6',
+                ax: -50,
+                ay: -30,
+                font: { color: '#8B5CF6', size: 12, weight: 'bold' }
+            }
+        ],
+        hovermode: 'x unified'
+    };
+    
+    const config = {
+        responsive: true,
+        displayModeBar: false
+    };
+    
+    Plotly.newPlot('market-heat-history-chart', [trace, avgTrace, warningLine, dangerLine], layout, config);
+}
+
+// Render heat analysis stats
+function renderHeatAnalysis(analysis, currentHeat) {
+    if (!analysis) return;
+    
+    document.getElementById('max-heat').textContent = analysis.max_heat.toFixed(1);
+    document.getElementById('max-heat-period').innerHTML = `Nóng nhất<br><span class="text-red-300">${analysis.max_heat_period}</span>`;
+    
+    document.getElementById('min-heat').textContent = analysis.min_heat.toFixed(1);
+    document.getElementById('min-heat-period').innerHTML = `Lạnh nhất<br><span class="text-blue-300">${analysis.min_heat_period}</span>`;
+    
+    document.getElementById('avg-heat').textContent = analysis.avg_heat.toFixed(1);
+    
+    const diff = currentHeat - analysis.avg_heat;
+    const diffText = diff >= 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+    const diffColor = diff >= 0 ? 'text-red-400' : 'text-green-400';
+    document.getElementById('current-vs-avg').textContent = diffText;
+    document.getElementById('current-vs-avg').className = `text-xl font-bold ${diffColor}`;
+}
+
+// Render heat history table
+function renderHeatHistoryTable(history) {
+    const tableBody = document.getElementById('heat-history-table');
+    if (!tableBody) return;
+    
+    // Sort by period descending (newest first)
+    const sortedHistory = [...history].sort((a, b) => b.period.localeCompare(a.period));
+    
+    tableBody.innerHTML = sortedHistory.map(h => {
+        const signalText = getSignalTextFromHeat(h.heat_index);
+        const statusEmoji = getStatusEmoji(h.status);
+        
+        return `
+            <tr class="hover:bg-gray-600/50">
+                <td class="px-4 py-2 font-semibold text-white">${h.period}</td>
+                <td class="px-4 py-2 text-right font-bold ${getHeatColor(h.heat_index)}">${h.heat_index.toFixed(1)}</td>
+                <td class="px-4 py-2 text-center">${statusEmoji} ${h.status}</td>
+                <td class="px-4 py-2 text-right text-blue-400">${h.avg_pb.toFixed(2)}</td>
+                <td class="px-4 py-2 text-center ${getSignalColorFromHeat(h.heat_index)}">${signalText}</td>
+            </tr>
+        `;
+    }).join('');
+}
+
+// Get current quarter string
+function getCurrentQuarter() {
+    const now = new Date();
+    const quarter = Math.floor(now.getMonth() / 3) + 1;
+    return `${now.getFullYear()}-Q${quarter}`;
+}
+
+// Get signal text from heat value
+function getSignalTextFromHeat(heat) {
+    if (heat < 20) return 'MUA MẠNH';
+    if (heat < 35) return 'MUA';
+    if (heat < 50) return 'TÍCH LŨY';
+    if (heat < 65) return 'GIỮ';
+    if (heat < 80) return 'CẨN THẬN';
+    return 'CHỐT LỜI';
+}
+
+// Get signal color from heat value
+function getSignalColorFromHeat(heat) {
+    if (heat < 20) return 'text-blue-400 font-bold';
+    if (heat < 35) return 'text-green-400 font-bold';
+    if (heat < 50) return 'text-cyan-400';
+    if (heat < 65) return 'text-yellow-400';
+    if (heat < 80) return 'text-orange-400';
+    return 'text-red-400 font-bold';
+}
+
+// Get status emoji
+function getStatusEmoji(status) {
+    const emojiMap = {
+        'ICE_COLD': '🥶',
+        'COLD': '❄️',
+        'COOL': '🌤️',
+        'NEUTRAL': '😐',
+        'WARM': '☀️',
+        'HOT': '🔥',
+        'OVERHEATED': '🌋'
+    };
+    return emojiMap[status] || '📊';
 }
 
 // Render sector cards

@@ -34,11 +34,14 @@
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                     <h1 class="text-2xl md:text-3xl font-bold">🌡️ Market Heat Map</h1>
-                    <p class="text-indigo-200 mt-1">Phân tích P/B đa ngành - 115+ mã VN100</p>
+                    <p class="text-indigo-200 mt-1">Phân tích P/B đa ngành - 124 mã VN100</p>
                 </div>
                 <div class="mt-4 md:mt-0 flex gap-2">
                     <a href="index.html" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg text-sm font-semibold">
-                        🏦 Banks Only
+                        🏠 Home
+                    </a>
+                    <a href="bank.html" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-sm font-semibold">
+                        🏦 Banks
                     </a>
                 </div>
             </div>
@@ -83,6 +86,56 @@
                     <div class="heat-gradient h-3 rounded-full relative">
                         <div id="market-heat-marker" class="absolute w-4 h-4 bg-white rounded-full shadow-lg transform -translate-x-1/2 -top-0.5 transition-all duration-500" style="left: 50%"></div>
                     </div>
+                </div>
+                
+                <!-- Market Heat History Chart -->
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">📈 Lịch Sử Nhiệt Độ Thị Trường</h3>
+                    <div id="market-heat-history-chart" class="bg-gray-700 rounded-lg" style="height: 300px;"></div>
+                </div>
+                
+                <!-- Heat History Analysis -->
+                <div id="heat-analysis" class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
+                        <div id="max-heat" class="text-xl font-bold text-red-400">--</div>
+                        <div id="max-heat-period" class="text-xs text-gray-400">Nóng nhất</div>
+                    </div>
+                    <div class="bg-blue-900/30 rounded-lg p-3 text-center">
+                        <div id="min-heat" class="text-xl font-bold text-blue-400">--</div>
+                        <div id="min-heat-period" class="text-xs text-gray-400">Lạnh nhất</div>
+                    </div>
+                    <div class="bg-yellow-900/30 rounded-lg p-3 text-center">
+                        <div id="avg-heat" class="text-xl font-bold text-yellow-400">--</div>
+                        <div class="text-xs text-gray-400">Heat trung bình</div>
+                    </div>
+                    <div class="bg-purple-900/30 rounded-lg p-3 text-center">
+                        <div id="current-vs-avg" class="text-xl font-bold text-purple-400">--</div>
+                        <div class="text-xs text-gray-400">So với TB</div>
+                    </div>
+                </div>
+                
+                <!-- Heat History Table -->
+                <div class="mt-4">
+                    <details class="bg-gray-700 rounded-lg">
+                        <summary class="px-4 py-3 cursor-pointer text-white font-semibold hover:bg-gray-600 rounded-lg">
+                            📊 Bảng chi tiết lịch sử (click để xem)
+                        </summary>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-600 text-gray-300">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Quý</th>
+                                        <th class="px-4 py-2 text-right">Heat Index</th>
+                                        <th class="px-4 py-2 text-center">Trạng thái</th>
+                                        <th class="px-4 py-2 text-right">P/B TB</th>
+                                        <th class="px-4 py-2 text-center">Tín hiệu</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="heat-history-table" class="divide-y divide-gray-600">
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
                 </div>
             </div>
         </div>
@@ -169,7 +222,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-6 mt-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>JP Stock Analysis - Market Heat Map | 10 Ngành - 116 Mã CK</p>
+            <p>JP Stock Analysis - Market Heat Map | 11 Ngành - 124 Mã CK</p>
             <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a></p>
             <p class="mt-2 text-gray-500">⚠️ Công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
         </div>
