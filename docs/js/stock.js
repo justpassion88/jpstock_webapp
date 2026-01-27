@@ -7,18 +7,23 @@ let stockData = null;
 
 // Helper to get current price
 function getCurrentPrice() {
-       if (stockData.current_price) {
-           return (stockData.current_price * 1000).toLocaleString('vi-VN');
-       }
-       if (stockData.pb_history && stockData.pb_history.length > 0) {
-           // pb_history is sorted oldest first, so get the last entry (most recent)
-           const latestEntry = stockData.pb_history[stockData.pb_history.length - 1];
-           if (latestEntry.price) {
-               return (latestEntry.price * 1000).toLocaleString('vi-VN');
-           }
-       }
-       return 'N/A';
+    if (stockData.current_price) {
+        return (stockData.current_price * 1000).toLocaleString('vi-VN');
     }
+    if (stockData.pb_history && stockData.pb_history.length > 0) {
+        // Find the most recent entry by sorting by year and quarter
+        const sortedHistory = [...stockData.pb_history].sort((a, b) => {
+            if (a.year !== b.year) return b.year - a.year;
+            return b.quarter - a.quarter;
+        });
+        const latestEntry = sortedHistory[0];
+        if (latestEntry && latestEntry.price) {
+            // Price in JSON is in tiny units, multiply by 1,000,000 to get VND
+            return (latestEntry.price * 1000000).toLocaleString('vi-VN');
+        }
+    }
+    return 'N/A';
+}
 
 // Get symbol from URL
 function getSymbol() {

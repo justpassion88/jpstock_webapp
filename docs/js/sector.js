@@ -359,17 +359,22 @@ function createStockCard(stock) {
     // Percentile
     const percentile = (eval.current_percentile || eval.percentile || 0).toFixed(0);
     
-       // Current price - get from pb_history (latest entry)
-       let currentPrice = 'N/A';
-       if (stock.current_price) {
-           currentPrice = (stock.current_price * 1000).toLocaleString('vi-VN');
-       } else if (stock.pb_history && stock.pb_history.length > 0) {
-           // pb_history is sorted oldest first, get the last entry (most recent)
-           const latestEntry = stock.pb_history[stock.pb_history.length - 1];
-           if (latestEntry.price) {
-               currentPrice = (latestEntry.price * 1000).toLocaleString('vi-VN');
-           }
-       }
+    // Current price - get from pb_history (latest entry)
+    let currentPrice = 'N/A';
+    if (stock.current_price) {
+        currentPrice = (stock.current_price * 1000).toLocaleString('vi-VN');
+    } else if (stock.pb_history && stock.pb_history.length > 0) {
+        // Find the most recent entry by sorting by year and quarter
+        const sortedHistory = [...stock.pb_history].sort((a, b) => {
+            if (a.year !== b.year) return b.year - a.year;
+            return b.quarter - a.quarter;
+        });
+        const latestEntry = sortedHistory[0];
+        if (latestEntry && latestEntry.price) {
+            // Price in JSON is in tiny units, multiply by 1,000,000 to get VND
+            currentPrice = (latestEntry.price * 1000000).toLocaleString('vi-VN');
+        }
+    }
     
     return `
         <a href="stock.html?symbol=${stock.symbol}" class="bank-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
