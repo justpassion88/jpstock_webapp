@@ -181,64 +181,361 @@ function displayStockHeader() {
     `;
 }
 
+// Calculate simple backtest from pb_history when no official backtest available
+function calculateSimpleBacktest(pbHistory, currentPB, currentPercentile) {
+    // Sort by year and quarter
+    const sorted = [...pbHistory].sort((a, b) => {
+        if (a.year !== b.year) return a.year - b.year;
+        return a.quarter - b.quarter;
+    });
+    
+    // Calculate returns for 1 year and 2 years
+    const returns1y = [];
+    const returns2y = [];
+    
+    for (let i = 0; i < sorted.length - 4; i++) {
+        const startPrice = sorted[i].price;
+        const price1y = sorted[i + 4]?.price; // 4 quarters = 1 year
+        const price2y = sorted[i + 8]?.price; // 8 quarters = 2 years
+        
+        if (startPrice && price1y) {
+            const return1y = ((price1y - startPrice) / startPrice) * 100;
+            returns1y.push(return1y);
+        }
+        
+        if (startPrice && price2y) {
+            const return2y = ((price2y - startPrice) / startPrice) * 100;
+            returns2y.push(return2y);
+        }
+    }
+    
+    if (returns1y.length === 0) return null;
+    
+    // Calculate stats
+    const avgReturn1y = returns1y.reduce((a, b) => a + b, 0) / returns1y.length;
+    const avgReturn2y = returns2y.length > 0 ? returns2y.reduce((a, b) => a + b, 0) / returns2y.length : null;
+    const winRate1y = (returns1y.filter(r => r > 0).length / returns1y.length) * 100;
+    const winRate2y = returns2y.length > 0 ? (returns2y.filter(r => r > 0).length / returns2y.length) * 100 : 0;
+    
+    return {
+        return1y: avgReturn1y,
+        return2y: avgReturn2y,
+        winRate1y: winRate1y,
+        winRate2y: winRate2y,
+        sampleCount: returns1y.length,
+        expected_1y_min: Math.min(...returns1y),
+        expected_1y_max: Math.max(...returns1y),
+        expected_1y_median: returns1y.sort((a, b) => a - b)[Math.floor(returns1y.length / 2)],
+        isSimple: true
+    };
+}
+
 // Display valuation and expected returns
 function displayValuation() {
     const expectedReturn = stockData.expected_return || {};
     const risk = stockData.risk || {};
     const valuation = stockData.valuation || {};
+    const hasBacktest = expectedReturn.expected_1y != null;
     
-    const return1y = expectedReturn.expected_1y;
-    const return1yClass = (return1y || 0) >= 20 ? 'text-green-400' : 
-                          (return1y || 0) >= 0 ? 'text-yellow-400' : 'text-red-400';
+    // If no backtest, calculate simple stats from pb_history
+    let simpleBacktest = null;
+    if (!hasBacktest && stockData.pb_history && stockData.pb_history.length > 0) {
+        simpleBacktest = calculateSimpleBacktest(stockData.pb_history, stockData.current_pb, valuation.percentile);
+    }
+    
+    const return1y = expectedReturn.expected_1y || simpleBacktest?.return1y;
+    const return2y = expectedReturn.expected_2y || simpleBacktest?.return2y;
+    const winRate1y = expectedReturn.win_rate_1y || simpleBacktest?.winRate1y || 0;
+    const winRate2y = expectedReturn.win_rate_2y || simpleBacktest?.winRate2y || 0;
+    const sampleCount = expectedReturn.sample_count || simpleBacktest?.sampleCount || 0;
+    
+    // Get min/max values
+    const return1yMin = expectedReturn.expected_1y_min || simpleBacktest?.expected_1y_min;
+    const return1yMax = expectedReturn.expected_1y_max || simpleBacktest?.expected_1y_max;
+    const return1yMedian = expectedReturn.expected_1y_median || simpleBacktest?.expected_1y_median;
+    
+    // Check if we have any data to display
+    if (!return1y && return1y !== 0) {
+        document.getElementById('valuation-section').innerHTML = `
+            <div class="bg-gray-800 rounded-lg p-6 mb-6">
+                <h2 class="text-xl font-bold text-white mb-4">📊 Phân tích Backtest P/B</h2>
+                
+                <div class="bg-yellow-900/20 border-2 border-yellow-500/50 rounded-lg p-6 text-center">
+                    <div class="text-4xl mb-3">⚠️</div>
+                    <h3 class="text-lg font-bold text-yellow-300 mb-2">Chưa có dữ liệu Backtest</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Mã <strong class="text-white">${stockData.symbol}</strong> chưa có đủ dữ liệu lịch sử để tính toán backtest P/B.
+                        Có thể do:
+                    </p>
+                    <ul class="text-left text-sm text-gray-400 space-y-1 max-w-md mx-auto">
+                        <li>• Cổ phiếu mới niêm yết, chưa đủ lịch sử</li>
+                        <li>• Dữ liệu P/B không đủ ổn định để backtest</li>
+                        <li>• Hệ thống chưa cập nhật backtest cho mã này</li>
+                    </ul>
+                    
+                    <div class="mt-6 p-4 bg-blue-900/30 rounded-lg">
+                        <p class="text-sm text-blue-300 mb-2"><strong>💡 Bạn vẫn có thể:</strong></p>
+                        <ul class="text-left text-xs text-gray-300 space-y-1">
+                            <li>✓ Xem vị thế P/B hiện tại (Percentile P${valuation.percentile?.toFixed(0) || 'N/A'})</li>
+                            <li>✓ Xem biểu đồ lịch sử P/B bên dưới</li>
+                            <li>✓ So sánh với các mã khác trong ngành</li>
+                            <li>✓ Tự đánh giá dựa trên zone: ${getZoneVietnamese(valuation.zone || valuation.zone_vi)}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    // Determine if this is a good opportunity
+    const isGoodBuy = return1y >= 15 && winRate1y >= 70;
+    const isOkBuy = return1y >= 10 && winRate1y >= 60;
+    
+    const opportunityLevel = isGoodBuy ? 'Cơ hội TỐT' : isOkBuy ? 'Cơ hội KHẢ QUAN' : 'CÂN NHẮC';
+    const opportunityColor = isGoodBuy ? '#10B981' : isOkBuy ? '#F59E0B' : '#6B7280';
+    
+    // Tính toán ví dụ đầu tư với 100 triệu
+    const investment = 100; // triệu
+    const expected1yAmount = investment * (1 + return1y / 100);
+    const expected2yAmount = investment * (1 + return2y / 100);
+    const savingsRate = 5.0; // Lãi suất tiết kiệm giả định 5%/năm
+    const savings1yAmount = investment * (1 + savingsRate / 100);
+    const savings2yAmount = investment * Math.pow(1 + savingsRate / 100, 2);
     
     document.getElementById('valuation-section').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6 mb-6">
-            <h2 class="text-xl font-bold text-white mb-4">📊 Phân tích định giá</h2>
+            <h2 class="text-xl font-bold text-white mb-4">📊 Phân tích Backtest P/B</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <h3 class="text-lg text-gray-300 mb-3">Kỳ vọng lợi nhuận (từ Backtest)</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Lợi nhuận kỳ vọng 1 năm</span>
-                            <span class="${return1yClass} font-bold text-xl">
-                                ${return1y != null ? `${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%` : 'N/A'}
-                            </span>
+            ${simpleBacktest ? `
+            <div class="mb-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
+                <div class="flex items-center gap-2 text-sm text-blue-300">
+                    <span>ℹ️</span>
+                    <span><strong>Backtest Đơn Giản:</strong> Mã này chưa có backtest chính thức. Dữ liệu dưới đây được tính toán tự động từ ${sampleCount} mẫu lịch sử, chỉ mang tính tham khảo.</span>
+                </div>
+            </div>
+            ` : ''}
+            
+            <!-- Opportunity Summary -->
+            <div class="mb-6 p-4 rounded-lg border-2" style="background-color: ${opportunityColor}15; border-color: ${opportunityColor}">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-lg font-bold" style="color: ${opportunityColor}">
+                        ${opportunityLevel}
+                    </span>
+                    <span class="text-sm text-gray-400">Dựa trên ${sampleCount} mẫu lịch sử</span>
+                </div>
+                <div class="text-sm text-gray-300">
+                    ${isGoodBuy ? '✅ Kỳ vọng lợi nhuận cao và tỷ lệ thắng tốt' : 
+                      isOkBuy ? '⚠️ Kỳ vọng lợi nhuận trung bình' : 
+                      '⚠️ Cần thận trọng, kỳ vọng lợi nhuận thấp hoặc tỷ lệ thắng không cao'}
+                </div>
+            </div>
+            
+            <!-- Ví dụ Đầu tư Thực tế -->
+            <div class="mb-6 p-5 rounded-lg bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-500/30">
+                <h3 class="text-lg font-bold text-white mb-3">💰 Ví dụ: Đầu tư 100 triệu đồng</h3>
+                <div class="text-sm text-gray-300 mb-4">
+                    Nếu bạn mua <strong class="text-white">${stockData.symbol}</strong> ở mức P/B hiện tại <strong class="text-yellow-400">P${valuation.percentile?.toFixed(0) || 'N/A'}</strong>, theo lịch sử:
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 1 năm -->
+                    <div class="bg-gray-900/60 rounded-lg p-4 border border-gray-700">
+                        <div class="text-gray-400 text-xs mb-2">📅 Sau 1 năm</div>
+                        <div class="flex items-baseline justify-between mb-2">
+                            <div>
+                                <div class="text-2xl font-bold ${return1y >= 15 ? 'text-green-400' : return1y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
+                                    ${expected1yAmount.toFixed(1)}tr
+                                </div>
+                                <div class="text-xs text-gray-500">Giá trị dự kiến</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-bold ${return1y >= 0 ? 'text-green-400' : 'text-red-400'}">
+                                    ${return1y > 0 ? '+' : ''}${(expected1yAmount - investment).toFixed(1)}tr
+                                </div>
+                                <div class="text-xs text-gray-500">${return1y > 0 ? 'Lãi' : 'Lỗ'}: ${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%</div>
+                            </div>
                         </div>
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Median 1 năm</span>
-                            <span class="text-white font-bold">
-                                ${expectedReturn.expected_1y_median != null ? `${expectedReturn.expected_1y_median > 0 ? '+' : ''}${expectedReturn.expected_1y_median.toFixed(1)}%` : 'N/A'}
-                            </span>
+                        <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
+                            Tỷ lệ thắng: <strong class="text-white">${winRate1y.toFixed(0)}%</strong>
                         </div>
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Tỷ lệ thắng 1 năm</span>
-                            <span class="${(expectedReturn.win_rate_1y || 0) >= 70 ? 'text-green-400' : 'text-yellow-400'} font-bold text-xl">
-                                ${expectedReturn.win_rate_1y?.toFixed(0) || 'N/A'}%
-                            </span>
+                        <div class="mt-3 pt-3 border-t border-gray-700">
+                            <div class="text-xs text-gray-400 mb-1">So với gửi tiết kiệm ${savingsRate}%/năm:</div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Tiết kiệm: ${savings1yAmount.toFixed(1)}tr</span>
+                                <span class="${(expected1yAmount - savings1yAmount) >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
+                                    ${(expected1yAmount - savings1yAmount) >= 0 ? '+' : ''}${(expected1yAmount - savings1yAmount).toFixed(1)}tr
+                                </span>
+                            </div>
                         </div>
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Số mẫu backtest</span>
-                            <span class="text-white">${expectedReturn.sample_count || 'N/A'} quý</span>
+                    </div>
+                    
+                    <!-- 2 năm -->
+                    <div class="bg-gray-900/60 rounded-lg p-4 border border-gray-700">
+                        <div class="text-gray-400 text-xs mb-2">📅 Sau 2 năm</div>
+                        <div class="flex items-baseline justify-between mb-2">
+                            <div>
+                                <div class="text-2xl font-bold ${return2y >= 30 ? 'text-green-400' : return2y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
+                                    ${expected2yAmount.toFixed(1)}tr
+                                </div>
+                                <div class="text-xs text-gray-500">Giá trị dự kiến</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-lg font-bold ${return2y >= 0 ? 'text-green-400' : 'text-red-400'}">
+                                    ${return2y > 0 ? '+' : ''}${(expected2yAmount - investment).toFixed(1)}tr
+                                </div>
+                                <div class="text-xs text-gray-500">${return2y > 0 ? 'Lãi' : 'Lỗ'}: ${return2y > 0 ? '+' : ''}${return2y.toFixed(1)}%</div>
+                            </div>
+                        </div>
+                        <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
+                            Tỷ lệ thắng: <strong class="text-white">${winRate2y?.toFixed(0) || 'N/A'}%</strong>
+                        </div>
+                        <div class="mt-3 pt-3 border-t border-gray-700">
+                            <div class="text-xs text-gray-400 mb-1">So với gửi tiết kiệm ${savingsRate}%/năm:</div>
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-gray-400">Tiết kiệm: ${savings2yAmount.toFixed(1)}tr</span>
+                                <span class="${(expected2yAmount - savings2yAmount) >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
+                                    ${(expected2yAmount - savings2yAmount) >= 0 ? '+' : ''}${(expected2yAmount - savings2yAmount).toFixed(1)}tr
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
+                <div class="mt-4 text-xs text-gray-400 italic">
+                    💡 Số liệu trên là kỳ vọng trung bình dựa trên lịch sử. Thực tế có thể khác, từ ${return1yMin?.toFixed(1)}% đến ${return1yMax?.toFixed(1)}%
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Key Metrics -->
                 <div>
-                    <h3 class="text-lg text-gray-300 mb-3">Đánh giá rủi ro</h3>
+                    <h3 class="text-base font-semibold text-gray-300 mb-3">📈 Chỉ số chính</h3>
                     <div class="space-y-3">
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Mức rủi ro</span>
-                            <span class="${risk.level === 'LOW' ? 'text-green-400' : risk.level === 'MEDIUM' ? 'text-yellow-400' : 'text-red-400'} font-bold">
-                                ${risk.level_vi || 'N/A'}
-                            </span>
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">Lợi nhuận TB 1 năm</span>
+                                <span class="font-bold text-2xl ${return1y >= 20 ? 'text-green-400' : return1y >= 10 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${return1y != null ? `${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%` : 'N/A'}
+                                </span>
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                ${return1y >= 20 ? '🟢 Rất tốt (≥20%)' : return1y >= 15 ? '🟡 Tốt (≥15%)' : return1y >= 10 ? '🟠 Khá (≥10%)' : '⚪ Thấp (<10%)'}
+                            </div>
                         </div>
-                        <div class="flex justify-between items-center bg-gray-900 rounded p-3">
-                            <span class="text-gray-400">Điểm rủi ro</span>
-                            <span class="text-white">${risk.score || 'N/A'}/10</span>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">Tỷ lệ thắng</span>
+                                <span class="font-bold text-2xl ${winRate1y >= 80 ? 'text-green-400' : winRate1y >= 70 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${winRate1y.toFixed(0)}%
+                                </span>
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                ${winRate1y >= 80 ? '🟢 Rất cao (≥80%)' : winRate1y >= 70 ? '🟡 Cao (≥70%)' : winRate1y >= 60 ? '🟠 Trung bình (≥60%)' : '⚪ Thấp (<60%)'}
+                            </div>
                         </div>
-                        <div class="bg-gray-900 rounded p-3">
-                            <span class="text-gray-400 text-sm">${risk.description || ''}</span>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-1">Phạm vi lợi nhuận</div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-red-400 text-sm">
+                                    ${return1yMin != null ? `${return1yMin.toFixed(1)}%` : 'N/A'}
+                                </span>
+                                <span class="text-gray-500 text-xs">đến</span>
+                                <span class="text-green-400 text-sm">
+                                    ${return1yMax != null ? `+${return1yMax.toFixed(1)}%` : 'N/A'}
+                                </span>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-1">
+                                Median: ${return1yMedian != null ? `${return1yMedian.toFixed(1)}%` : 'N/A'}
+                            </div>
+                            <div class="mt-3 pt-3 border-t border-gray-700">
+                                <div class="text-xs text-gray-400 mb-2">📊 Phân bổ kết quả:</div>
+                                <div class="text-xs space-y-1">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Kịch bản tốt nhất:</span>
+                                        <span class="text-green-400 font-semibold">+${return1yMax?.toFixed(1)}%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Trung bình:</span>
+                                        <span class="text-yellow-400 font-semibold">+${return1y?.toFixed(1)}%</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-500">Kịch bản tệ nhất:</span>
+                                        <span class="text-red-400 font-semibold">${return1yMin?.toFixed(1)}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Backtest 2 năm -->
+                        <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">Lợi nhuận TB 2 năm</span>
+                                <span class="font-bold text-2xl ${return2y >= 40 ? 'text-green-400' : return2y >= 20 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${return2y != null ? `${return2y > 0 ? '+' : ''}${return2y.toFixed(1)}%` : 'N/A'}
+                                </span>
+                            </div>
+                            <div class="text-xs text-gray-500 mb-2">
+                                ${return2y >= 40 ? '🟢 Rất tốt (≥40%)' : return2y >= 30 ? '🟡 Tốt (≥30%)' : return2y >= 20 ? '🟠 Khá (≥20%)' : '⚪ Thấp (<20%)'}
+                            </div>
+                            <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
+                                Tỷ lệ thắng 2 năm: <strong class="text-white">${winRate2y?.toFixed(0) || 'N/A'}%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Risk & Explanation -->
+                <div>
+                    <h3 class="text-base font-semibold text-gray-300 mb-3">⚠️ Rủi ro & Giải thích</h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">Mức độ rủi ro</span>
+                                <span class="font-bold text-lg ${risk.level === 'LOW' ? 'text-green-400' : risk.level === 'MEDIUM' ? 'text-yellow-400' : 'text-red-400'}">
+                                    ${risk.level_vi || (simpleBacktest ? 'Chưa đánh giá' : 'N/A')}
+                                </span>
+                            </div>
+                            <div class="text-xs text-gray-500">
+                                ${risk.description || (simpleBacktest ? 'Chưa có đánh giá rủi ro chính thức cho mã này' : '')}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-900/20 border border-blue-500/30 rounded-lg p-4">
+                            <div class="text-blue-300 text-sm space-y-2">
+                                <p><strong>💡 Backtest là gì?</strong></p>
+                                <p>Kiểm tra xem trong lịch sử, nếu mua ở mức P/B tương tự (percentile ${valuation.percentile?.toFixed(0) || 'N/A'}), sau 1-2 năm có lãi bao nhiêu.</p>
+                                
+                                <p class="mt-3"><strong>📊 Cách đọc chỉ số:</strong></p>
+                                <ul class="list-disc list-inside space-y-1 text-xs">
+                                    <li><strong>Lợi nhuận TB:</strong> Trung bình cộng ${sampleCount} lần trong lịch sử</li>
+                                    <li><strong>Tỷ lệ thắng:</strong> Có bao nhiêu % lần có lãi sau 1/2 năm</li>
+                                    <li><strong>Phạm vi:</strong> Từ kịch bản tệ nhất đến tốt nhất có thể xảy ra</li>
+                                    <li><strong>Median:</strong> Giá trị nằm giữa (50% tốt hơn, 50% tệ hơn)</li>
+                                </ul>
+                                
+                                <p class="mt-3"><strong>🎯 Kịch bản thực tế:</strong></p>
+                                <div class="text-xs space-y-1 bg-gray-900/40 p-2 rounded">
+                                    <div>• Nếu <strong>${winRate1y.toFixed(0)}%</strong> lần có lãi → Cứ 10 lần mua, có ${Math.round(winRate1y/10)} lần lãi</div>
+                                    <div>• Lợi nhuận trung bình <strong>${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%</strong> → 100 triệu thành ${expected1yAmount.toFixed(1)} triệu sau 1 năm</div>
+                                    <div>• Tệ nhất từng là <strong>${return1yMin?.toFixed(1)}%</strong>, tốt nhất <strong>+${return1yMax?.toFixed(1)}%</strong></div>
+                                </div>
+                                
+                                <p class="mt-3 text-yellow-300"><strong>⚠️ Lưu ý:</strong> ${simpleBacktest ? 'Đây là backtest đơn giản, chỉ tính toán từ giá lịch sử. ' : ''}Quá khứ không đảm bảo tương lai. Chỉ tham khảo, không phải khuyến nghị đầu tư.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-900 rounded-lg p-4">
+                            <div class="text-gray-400 text-sm mb-2">Vị thế hiện tại</div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-white">P/B: <strong>${stockData.current_pb?.toFixed(2) || 'N/A'}</strong></span>
+                                <span class="text-white">Percentile: <strong>P${valuation.percentile?.toFixed(0) || 'N/A'}</strong></span>
+                            </div>
+                            <div class="text-xs text-gray-500 mt-2">
+                                ${valuation.description || ''}
+                            </div>
                         </div>
                     </div>
                 </div>
