@@ -541,7 +541,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 67700.0,
+      "last_updated": "2026-01-27T10:21:18.162870"
     },
     "MSN": {
       "symbol": "MSN",
@@ -976,7 +978,9 @@
         "quarters": 52,
         "years": 14,
         "has_prices": true
-      }
+      },
+      "current_price": 76700.0,
+      "last_updated": "2026-01-27T10:21:19.845012"
     },
     "SAB": {
       "symbol": "SAB",
@@ -1305,7 +1309,9 @@
         "quarters": 37,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 49550.0,
+      "last_updated": "2026-01-27T10:21:21.469407"
     },
     "PNJ": {
       "symbol": "PNJ",
@@ -1733,7 +1739,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 116000.0,
+      "last_updated": "2026-01-27T10:21:23.084583"
     },
     "MWG": {
       "symbol": "MWG",
@@ -2131,7 +2139,9 @@
         "quarters": 47,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 85000.0,
+      "last_updated": "2026-01-27T10:21:24.694674"
     },
     "DGW": {
       "symbol": "DGW",
@@ -2482,7 +2492,9 @@
         "quarters": 40,
         "years": 11,
         "has_prices": true
-      }
+      },
+      "current_price": 45200.0,
+      "last_updated": "2026-01-27T10:21:25.936280"
     },
     "FRT": {
       "symbol": "FRT",
@@ -2772,7 +2784,9 @@
         "quarters": 32,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 154700.0,
+      "last_updated": "2026-01-27T10:21:27.507055"
     },
     "HAX": {
       "symbol": "HAX",
@@ -3207,7 +3221,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 10750.0,
+      "last_updated": "2026-01-27T10:21:28.909353"
     },
     "VGC": {
       "symbol": "VGC",
@@ -3544,7 +3560,9 @@
         "quarters": 38,
         "years": 11,
         "has_prices": true
-      }
+      },
+      "current_price": 45000.0,
+      "last_updated": "2026-01-27T10:21:30.201772"
     },
     "BCG": {
       "symbol": "BCG",
@@ -3871,7 +3889,9 @@
         "quarters": 37,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 2530.0,
+      "last_updated": "2026-01-27T10:21:31.483229"
     }
   }
 }

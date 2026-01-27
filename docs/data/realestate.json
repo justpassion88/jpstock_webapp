@@ -381,7 +381,9 @@
         "quarters": 30,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 110600.0,
+      "last_updated": "2026-01-27T10:22:37.913522"
     },
     "VIC": {
       "symbol": "VIC",
@@ -806,7 +808,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 151000.0,
+      "last_updated": "2026-01-27T10:22:39.683693"
     },
     "NVL": {
       "symbol": "NVL",
@@ -1125,7 +1129,9 @@
         "quarters": 36,
         "years": 11,
         "has_prices": true
-      }
+      },
+      "current_price": 11400.0,
+      "last_updated": "2026-01-27T10:22:41.773616"
     },
     "PDR": {
       "symbol": "PDR",
@@ -1553,7 +1559,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 17300.0,
+      "last_updated": "2026-01-27T10:22:43.669071"
     },
     "DXG": {
       "symbol": "DXG",
@@ -1981,7 +1989,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 15000.0,
+      "last_updated": "2026-01-27T10:22:45.573567"
     },
     "KDH": {
       "symbol": "KDH",
@@ -2406,7 +2416,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 26700.0,
+      "last_updated": "2026-01-27T10:22:47.703970"
     },
     "NLG": {
       "symbol": "NLG",
@@ -2833,7 +2845,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 28050.0,
+      "last_updated": "2026-01-27T10:22:49.720182"
     },
     "DIG": {
       "symbol": "DIG",
@@ -3255,7 +3269,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 15600.0,
+      "last_updated": "2026-01-27T10:22:51.764495"
     },
     "CEO": {
       "symbol": "CEO",
@@ -3641,7 +3657,9 @@
         "quarters": 46,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 18300.0,
+      "last_updated": "2026-01-27T10:22:53.599867"
     },
     "KBC": {
       "symbol": "KBC",
@@ -4066,7 +4084,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 33850.0,
+      "last_updated": "2026-01-27T10:22:55.635072"
     },
     "BCM": {
       "symbol": "BCM",
@@ -4340,7 +4360,9 @@
         "quarters": 29,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 67100.0,
+      "last_updated": "2026-01-27T10:22:57.629031"
     },
     "IDC": {
       "symbol": "IDC",
@@ -4607,7 +4629,9 @@
         "quarters": 28,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 45400.0,
+      "last_updated": "2026-01-27T10:22:59.489451"
     },
     "ITA": {
       "symbol": "ITA",
@@ -5010,7 +5034,9 @@
         "quarters": 48,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 2350.0,
+      "last_updated": "2026-01-27T10:23:01.292198"
     },
     "HDC": {
       "symbol": "HDC",
@@ -5442,7 +5468,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 21000.0,
+      "last_updated": "2026-01-27T10:23:03.253394"
     },
     "LDG": {
       "symbol": "LDG",
@@ -5790,7 +5818,9 @@
         "quarters": 40,
         "years": 11,
         "has_prices": true
-      }
+      },
+      "current_price": 3930.0,
+      "last_updated": "2026-01-27T10:23:05.254784"
     },
     "NBB": {
       "symbol": "NBB",
@@ -6215,7 +6245,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 18000.0,
+      "last_updated": "2026-01-27T10:23:07.310638"
     },
     "TDC": {
       "symbol": "TDC",
@@ -6640,7 +6672,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 11550.0,
+      "last_updated": "2026-01-27T10:23:09.192239"
     },
     "VRE": {
       "symbol": "VRE",
@@ -6935,7 +6969,9 @@
         "quarters": 32,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 30900.0,
+      "last_updated": "2026-01-27T10:23:10.434676"
     },
     "SCR": {
       "symbol": "SCR",
@@ -7360,7 +7396,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 6890.0,
+      "last_updated": "2026-01-27T10:23:11.701013"
     },
     "HPX": {
       "symbol": "HPX",
@@ -7624,7 +7662,9 @@
         "quarters": 28,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 5270.0,
+      "last_updated": "2026-01-27T10:23:12.974397"
     }
   }
 }

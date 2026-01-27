@@ -541,7 +541,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 102100.0,
+      "last_updated": "2026-01-27T10:23:49.740125"
     },
     "CMG": {
       "symbol": "CMG",
@@ -966,7 +968,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 35250.0,
+      "last_updated": "2026-01-27T10:23:51.014720"
     },
     "VGI": {
       "symbol": "VGI",
@@ -1249,7 +1253,9 @@
         "quarters": 31,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 126800.0,
+      "last_updated": "2026-01-27T10:23:52.287164"
     },
     "FOX": {
       "symbol": "FOX",
@@ -1584,7 +1590,9 @@
         "quarters": 38,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 92900.0,
+      "last_updated": "2026-01-27T10:23:53.613728"
     },
     "ELC": {
       "symbol": "ELC",
@@ -2012,7 +2020,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 24050.0,
+      "last_updated": "2026-01-27T10:23:55.073068"
     },
     "ITD": {
       "symbol": "ITD",
@@ -2430,7 +2440,9 @@
         "quarters": 50,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 16950.0,
+      "last_updated": "2026-01-27T10:23:56.908867"
     },
     "ICT": {
       "symbol": "ICT",
@@ -2668,7 +2680,9 @@
         "quarters": 24,
         "years": 7,
         "has_prices": true
-      }
+      },
+      "current_price": 18100.0,
+      "last_updated": "2026-01-27T10:23:58.717643"
     },
     "LHG": {
       "symbol": "LHG",
@@ -3103,7 +3117,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 28900.0,
+      "last_updated": "2026-01-27T10:24:00.720404"
     }
   }
 }

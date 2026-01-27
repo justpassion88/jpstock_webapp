@@ -541,7 +541,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 29300.0,
+      "last_updated": "2026-01-27T10:22:26.228029"
     },
     "PVS": {
       "symbol": "PVS",
@@ -966,7 +968,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 40800.0,
+      "last_updated": "2026-01-27T10:22:27.757516"
     },
     "PVT": {
       "symbol": "PVT",
@@ -1394,7 +1398,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 20550.0,
+      "last_updated": "2026-01-27T10:22:29.315181"
     },
     "BSR": {
       "symbol": "BSR",
@@ -1653,7 +1659,9 @@
         "quarters": 27,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 21500.0,
+      "last_updated": "2026-01-27T10:22:30.611918"
     },
     "OIL": {
       "symbol": "OIL",
@@ -1921,7 +1929,9 @@
         "quarters": 29,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 14700.0,
+      "last_updated": "2026-01-27T10:22:31.806191"
     },
     "CNG": {
       "symbol": "CNG",
@@ -2356,7 +2366,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 26300.0,
+      "last_updated": "2026-01-27T10:22:33.548019"
     },
     "PVC": {
       "symbol": "PVC",
@@ -2781,7 +2793,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 14200.0,
+      "last_updated": "2026-01-27T10:22:34.987738"
     },
     "PXS": {
       "symbol": "PXS",
@@ -3206,7 +3220,9 @@
         "quarters": 52,
         "years": 14,
         "has_prices": true
-      }
+      },
+      "current_price": 3700.0,
+      "last_updated": "2026-01-27T10:22:36.734696"
     }
   }
 }

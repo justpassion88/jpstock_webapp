@@ -538,7 +538,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 26450.0,
+      "last_updated": "2026-01-27T10:23:30.313679"
     },
     "HSG": {
       "symbol": "HSG",
@@ -966,7 +968,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 15900.0,
+      "last_updated": "2026-01-27T10:23:31.571762"
     },
     "NKG": {
       "symbol": "NKG",
@@ -1394,7 +1398,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 14850.0,
+      "last_updated": "2026-01-27T10:23:32.912607"
     },
     "TLH": {
       "symbol": "TLH",
@@ -1822,7 +1828,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 5100.0,
+      "last_updated": "2026-01-27T10:23:34.191774"
     },
     "SMC": {
       "symbol": "SMC",
@@ -2250,7 +2258,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 12900.0,
+      "last_updated": "2026-01-27T10:23:35.444948"
     },
     "POM": {
       "symbol": "POM",
@@ -2658,7 +2668,9 @@
         "quarters": 49,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 7900.0,
+      "last_updated": "2026-01-27T10:23:36.779738"
     },
     "DTL": {
       "symbol": "DTL",
@@ -3086,7 +3098,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 13200.0,
+      "last_updated": "2026-01-27T10:23:38.118200"
     },
     "VIS": {
       "symbol": "VIS",
@@ -3720,7 +3734,9 @@
         "quarters": 41,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 8500.0,
+      "last_updated": "2026-01-27T10:23:44.674772"
     },
     "TIS": {
       "symbol": "TIS",
@@ -4113,7 +4129,9 @@
         "quarters": 46,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 5200.0,
+      "last_updated": "2026-01-27T10:23:45.858766"
     },
     "VGS": {
       "symbol": "VGS",
@@ -4541,7 +4559,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 25200.0,
+      "last_updated": "2026-01-27T10:23:47.008870"
     },
     "HMC": {
       "symbol": "HMC",
@@ -4973,7 +4993,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 11500.0,
+      "last_updated": "2026-01-27T10:23:48.259308"
     }
   }
 }

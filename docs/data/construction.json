@@ -541,7 +541,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 77300.0,
+      "last_updated": "2026-01-27T10:21:43.283299"
     },
     "HBC": {
       "symbol": "HBC",
@@ -957,7 +959,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 6200.0,
+      "last_updated": "2026-01-27T10:21:44.745188"
     },
     "VCG": {
       "symbol": "VCG",
@@ -1385,7 +1389,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 19800.0,
+      "last_updated": "2026-01-27T10:21:46.079225"
     },
     "FCN": {
       "symbol": "FCN",
@@ -1813,7 +1819,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 13800.0,
+      "last_updated": "2026-01-27T10:21:47.387529"
     },
     "LCG": {
       "symbol": "LCG",
@@ -2242,7 +2250,9 @@
         "quarters": 52,
         "years": 14,
         "has_prices": true
-      }
+      },
+      "current_price": 10050.0,
+      "last_updated": "2026-01-27T10:21:48.624870"
     },
     "HUT": {
       "symbol": "HUT",
@@ -2664,7 +2674,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 15900.0,
+      "last_updated": "2026-01-27T10:21:50.087811"
     },
     "C4G": {
       "symbol": "C4G",
@@ -2931,7 +2943,9 @@
         "quarters": 29,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 8000.0,
+      "last_updated": "2026-01-27T10:21:51.353672"
     },
     "CII": {
       "symbol": "CII",
@@ -3356,7 +3370,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 17250.0,
+      "last_updated": "2026-01-27T10:21:52.610904"
     },
     "HHV": {
       "symbol": "HHV",
@@ -3571,7 +3587,9 @@
         "quarters": 21,
         "years": 7,
         "has_prices": true
-      }
+      },
+      "current_price": 12100.0,
+      "last_updated": "2026-01-27T10:21:53.941091"
     },
     "TV2": {
       "symbol": "TV2",
@@ -3999,7 +4017,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 34250.0,
+      "last_updated": "2026-01-27T10:21:55.296467"
     }
   }
 }

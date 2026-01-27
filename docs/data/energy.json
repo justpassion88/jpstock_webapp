@@ -404,7 +404,9 @@
         "quarters": 32,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 14000.0,
+      "last_updated": "2026-01-27T10:21:56.703673"
     },
     "GEG": {
       "symbol": "GEG",
@@ -726,7 +728,9 @@
         "quarters": 36,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 14650.0,
+      "last_updated": "2026-01-27T10:21:58.079394"
     },
     "REE": {
       "symbol": "REE",
@@ -1154,7 +1158,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 62400.0,
+      "last_updated": "2026-01-27T10:21:59.423837"
     },
     "NT2": {
       "symbol": "NT2",
@@ -1583,7 +1589,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 26650.0,
+      "last_updated": "2026-01-27T10:22:00.856239"
     },
     "PPC": {
       "symbol": "PPC",
@@ -2018,7 +2026,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 10100.0,
+      "last_updated": "2026-01-27T10:22:02.532642"
     },
     "HND": {
       "symbol": "HND",
@@ -2360,7 +2370,9 @@
         "quarters": 39,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 10900.0,
+      "last_updated": "2026-01-27T10:22:04.057375"
     },
     "SJD": {
       "symbol": "SJD",
@@ -2785,7 +2797,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 14200.0,
+      "last_updated": "2026-01-27T10:22:05.330905"
     },
     "VSH": {
       "symbol": "VSH",
@@ -3213,7 +3227,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 44500.0,
+      "last_updated": "2026-01-27T10:22:06.738248"
     },
     "TBC": {
       "symbol": "TBC",
@@ -3641,7 +3657,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 36000.0,
+      "last_updated": "2026-01-27T10:22:08.080915"
     },
     "HDG": {
       "symbol": "HDG",
@@ -4083,7 +4101,9 @@
         "quarters": 53,
         "years": 15,
         "has_prices": true
-      }
+      },
+      "current_price": 25750.0,
+      "last_updated": "2026-01-27T10:22:09.496981"
     },
     "PC1": {
       "symbol": "PC1",
@@ -4412,7 +4432,9 @@
         "quarters": 37,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 22850.0,
+      "last_updated": "2026-01-27T10:22:10.799267"
     },
     "QTP": {
       "symbol": "QTP",
@@ -4741,7 +4763,9 @@
         "quarters": 37,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 12200.0,
+      "last_updated": "2026-01-27T10:22:12.238435"
     },
     "PGV": {
       "symbol": "PGV",
@@ -5032,7 +5056,9 @@
         "quarters": 32,
         "years": 9,
         "has_prices": true
-      }
+      },
+      "current_price": 22450.0,
+      "last_updated": "2026-01-27T10:22:13.562765"
     },
     "GAS": {
       "symbol": "GAS",
@@ -5460,7 +5486,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 115300.0,
+      "last_updated": "2026-01-27T10:22:14.832752"
     },
     "PLX": {
       "symbol": "PLX",
@@ -5775,7 +5803,9 @@
         "quarters": 36,
         "years": 10,
         "has_prices": true
-      }
+      },
+      "current_price": 60900.0,
+      "last_updated": "2026-01-27T10:22:16.134545"
     }
   }
 }

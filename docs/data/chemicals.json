@@ -505,7 +505,9 @@
         "quarters": 46,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 67500.0,
+      "last_updated": "2026-01-27T10:21:32.823875"
     },
     "DCM": {
       "symbol": "DCM",
@@ -856,7 +858,9 @@
         "quarters": 40,
         "years": 11,
         "has_prices": true
-      }
+      },
+      "current_price": 35800.0,
+      "last_updated": "2026-01-27T10:21:34.172308"
     },
     "DPM": {
       "symbol": "DPM",
@@ -1278,7 +1282,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 23300.0,
+      "last_updated": "2026-01-27T10:21:35.613933"
     },
     "BFC": {
       "symbol": "BFC",
@@ -1635,7 +1641,9 @@
         "quarters": 41,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 46000.0,
+      "last_updated": "2026-01-27T10:21:36.818627"
     },
     "LAS": {
       "symbol": "LAS",
@@ -2070,7 +2078,9 @@
         "quarters": 52,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 16300.0,
+      "last_updated": "2026-01-27T10:21:38.112631"
     },
     "CSV": {
       "symbol": "CSV",
@@ -2431,7 +2441,9 @@
         "quarters": 42,
         "years": 12,
         "has_prices": true
-      }
+      },
+      "current_price": 29150.0,
+      "last_updated": "2026-01-27T10:21:39.355267"
     },
     "DHC": {
       "symbol": "DHC",
@@ -2856,7 +2868,9 @@
         "quarters": 51,
         "years": 13,
         "has_prices": true
-      }
+      },
+      "current_price": 34000.0,
+      "last_updated": "2026-01-27T10:21:40.557351"
     },
     "GVR": {
       "symbol": "GVR",
@@ -3116,7 +3130,9 @@
         "quarters": 27,
         "years": 8,
         "has_prices": true
-      }
+      },
+      "current_price": 39850.0,
+      "last_updated": "2026-01-27T10:21:41.934848"
     }
   }
 }
