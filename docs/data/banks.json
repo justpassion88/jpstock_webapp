@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-01-27T06:43:30.474001",
-  "generated_at": "2026-01-27 06:43:30",
+  "last_updated": "2026-01-28T06:44:50.804063",
+  "generated_at": "2026-01-28 06:44:50",
   "total_banks": 26,
   "banks": [
     {
       "symbol": "VCB",
       "name": "Vietcombank",
-      "current_price": 69.2,
+      "current_price": 70.6,
       "current_pb": 1.6387128959,
       "pb_history": [
         {
@@ -208,8 +208,8 @@
     {
       "symbol": "VPB",
       "name": "VPBank",
-      "current_price": 27.85,
-      "current_pb": 1.3112685904,
+      "current_price": 27.95,
+      "current_pb": 1.3136312365,
       "pb_history": [
         {
           "year": 2013,
@@ -261,18 +261,18 @@
         },
         {
           "year": 2025,
-          "pb": 1.3112685904
+          "pb": 1.3136312365
         }
       ],
       "pb_statistics": {
         "count": 13,
         "years_of_data": 13,
-        "mean": 2.882356562546154,
+        "mean": 2.8825383045538464,
         "median": 3.4907775568,
-        "std": 1.4818011827289157,
+        "std": 1.4816086109813427,
         "min": 1.0290951924,
         "max": 4.9286260352,
-        "percentile_10": 1.1674318466400002,
+        "percentile_10": 1.16790437586,
         "percentile_25": 1.3370184264,
         "percentile_50": 3.4907775568,
         "percentile_75": 3.9713933355,
@@ -286,9 +286,9 @@
         "color": "#22c55e"
       },
       "expected_return": {
-        "return_to_mean": 119.81,
-        "return_to_median": 166.21,
-        "expected_return": 116.35,
+        "return_to_mean": 119.43,
+        "return_to_median": 165.73,
+        "expected_return": 116.01,
         "probability": 0.7,
         "confidence": "Cao"
       },
@@ -300,8 +300,8 @@
       },
       "mean_reversion": {
         "half_life_years": 3.26,
-        "reversion_speed": 0.191,
-        "ar1_coefficient": 0.809,
+        "reversion_speed": 0.192,
+        "ar1_coefficient": 0.808,
         "r_squared": 0.705
       },
       "data_quality": {
@@ -313,7 +313,7 @@
     {
       "symbol": "TPB",
       "name": "TPBank",
-      "current_price": 17.2,
+      "current_price": 17.0,
       "current_pb": 1.2017078892,
       "pb_history": [
         {
@@ -515,7 +515,7 @@
     {
       "symbol": "BAB",
       "name": "Bac A Bank",
-      "current_price": 12.5,
+      "current_price": 12.4,
       "current_pb": 0.9276839639,
       "pb_history": [
         {
@@ -616,7 +616,7 @@
     {
       "symbol": "OCB",
       "name": "OCB",
-      "current_price": 11.75,
+      "current_price": 11.7,
       "current_pb": 0.9303823086,
       "pb_history": [
         {
@@ -718,7 +718,7 @@
       "symbol": "PGB",
       "name": "PG Bank",
       "current_price": 12.5,
-      "current_pb": 1.0470676078,
+      "current_pb": 1.0348622689,
       "pb_history": [
         {
           "year": 2013,
@@ -770,18 +770,18 @@
         },
         {
           "year": 2025,
-          "pb": 1.0470676078
+          "pb": 1.0348622689
         }
       ],
       "pb_statistics": {
         "count": 13,
         "years_of_data": 13,
-        "mean": 1.715265790907692,
+        "mean": 1.714326918684615,
         "median": 1.884170868,
-        "std": 0.48180954455028935,
+        "std": 0.48312081348212793,
         "min": 0.9437019103,
         "max": 2.4495923564,
-        "percentile_10": 1.0152593806,
+        "percentile_10": 1.0128183128200001,
         "percentile_25": 1.1615830863,
         "percentile_50": 1.884170868,
         "percentile_75": 2.0596178803,
@@ -795,23 +795,23 @@
         "color": "#22c55e"
       },
       "expected_return": {
-        "return_to_mean": 63.82,
-        "return_to_median": 79.95,
-        "expected_return": 55.96,
+        "return_to_mean": 65.66,
+        "return_to_median": 82.07,
+        "expected_return": 57.45,
         "probability": 0.7,
         "confidence": "Cao"
       },
       "risk": {
-        "risk_score": 15.3,
-        "z_score": -1.39,
+        "risk_score": 14.8,
+        "z_score": -1.41,
         "risk_level": "VERY_LOW",
         "description": "Rủi ro rất thấp - P/B dưới trung bình đáng kể"
       },
       "mean_reversion": {
-        "half_life_years": 0.97,
-        "reversion_speed": 0.509,
-        "ar1_coefficient": 0.491,
-        "r_squared": 0.218
+        "half_life_years": 0.99,
+        "reversion_speed": 0.505,
+        "ar1_coefficient": 0.495,
+        "r_squared": 0.22
       },
       "data_quality": {
         "has_price_data": true,
@@ -822,7 +822,7 @@
     {
       "symbol": "ACB",
       "name": "ACB",
-      "current_price": 24.75,
+      "current_price": 24.0,
       "current_pb": 1.2844192948,
       "pb_history": [
         {
@@ -931,7 +931,7 @@
     {
       "symbol": "KLB",
       "name": "Kien Long Bank",
-      "current_price": 15.45,
+      "current_price": 15.15,
       "current_pb": 1.0513857834,
       "pb_history": [
         {
@@ -1137,7 +1137,7 @@
     {
       "symbol": "MBB",
       "name": "MB Bank",
-      "current_price": null,
+      "current_price": 26.55,
       "current_pb": 1.1970713752,
       "pb_history": [
         {
@@ -1242,7 +1242,7 @@
         "r_squared": 0.736
       },
       "data_quality": {
-        "has_price_data": false,
+        "has_price_data": true,
         "has_pb_data": true,
         "years_of_pb_data": 15
       }
@@ -1349,10 +1349,111 @@
       }
     },
     {
+      "symbol": "NAB",
+      "name": "Nam A Bank",
+      "current_price": 14.25,
+      "current_pb": 1.0175721285,
+      "pb_history": [
+        {
+          "year": 2013,
+          "pb": 1.8187090763
+        },
+        {
+          "year": 2014,
+          "pb": 1.7789846741
+        },
+        {
+          "year": 2015,
+          "pb": 1.7477814716
+        },
+        {
+          "year": 2016,
+          "pb": 1.7383880432
+        },
+        {
+          "year": 2017,
+          "pb": 1.6274675302
+        },
+        {
+          "year": 2018,
+          "pb": 1.5660434118
+        },
+        {
+          "year": 2019,
+          "pb": 1.549156103
+        },
+        {
+          "year": 2020,
+          "pb": 1.3419962155
+        },
+        {
+          "year": 2021,
+          "pb": 0.5332848382
+        },
+        {
+          "year": 2022,
+          "pb": 1.0321999025
+        },
+        {
+          "year": 2023,
+          "pb": 1.1072033735
+        },
+        {
+          "year": 2024,
+          "pb": 1.0175721285
+        }
+      ],
+      "pb_statistics": {
+        "count": 12,
+        "years_of_data": 12,
+        "mean": 1.4048988973666665,
+        "median": 1.5575997574,
+        "std": 0.3848694586029043,
+        "min": 0.5332848382,
+        "max": 1.8187090763,
+        "percentile_10": 1.0190349059,
+        "percentile_25": 1.0884525057499999,
+        "percentile_50": 1.5575997574,
+        "percentile_75": 1.7407364003,
+        "percentile_90": 1.7758643538499999
+      },
+      "valuation": {
+        "zone": "CHEAP",
+        "percentile": 16.7,
+        "label": "Rẻ",
+        "signal": "BUY",
+        "color": "#22c55e"
+      },
+      "expected_return": {
+        "return_to_mean": 38.06,
+        "return_to_median": 53.07,
+        "expected_return": 37.15,
+        "probability": 0.7,
+        "confidence": "Cao"
+      },
+      "risk": {
+        "risk_score": 24.8,
+        "z_score": -1.01,
+        "risk_level": "VERY_LOW",
+        "description": "Rủi ro rất thấp - P/B dưới trung bình đáng kể"
+      },
+      "mean_reversion": {
+        "half_life_years": 2.01,
+        "reversion_speed": 0.292,
+        "ar1_coefficient": 0.708,
+        "r_squared": 0.508
+      },
+      "data_quality": {
+        "has_price_data": true,
+        "has_pb_data": true,
+        "years_of_pb_data": 12
+      }
+    },
+    {
       "symbol": "SGB",
       "name": "Saigonbank",
-      "current_price": 12.5,
-      "current_pb": 1.0237289155,
+      "current_price": 12.4,
+      "current_pb": 1.0097387595,
       "pb_history": [
         {
           "year": 2013,
@@ -1401,39 +1502,43 @@
         {
           "year": 2024,
           "pb": 1.0237289155
+        },
+        {
+          "year": 2025,
+          "pb": 1.0097387595
         }
       ],
       "pb_statistics": {
-        "count": 12,
-        "years_of_data": 12,
-        "mean": 1.365712203375,
-        "median": 1.52661272085,
-        "std": 0.2539629764502819,
+        "count": 13,
+        "years_of_data": 13,
+        "mean": 1.3383296307692307,
+        "median": 1.5235061575,
+        "std": 0.2617891025764871,
         "min": 0.9310139411,
         "max": 1.5791732332,
-        "percentile_10": 0.99070363366,
-        "percentile_25": 1.083204355675,
-        "percentile_50": 1.52661272085,
-        "percentile_75": 1.5488560023,
-        "percentile_90": 1.56621699564
+        "percentile_10": 0.99157507822,
+        "percentile_25": 1.0237289155,
+        "percentile_50": 1.5235061575,
+        "percentile_75": 1.5454820343,
+        "percentile_90": 1.56541265238
       },
       "valuation": {
-        "zone": "FAIR",
-        "percentile": 25.0,
-        "label": "Hợp lý",
-        "signal": "HOLD",
-        "color": "#6b7280"
+        "zone": "CHEAP",
+        "percentile": 23.1,
+        "label": "Rẻ",
+        "signal": "BUY",
+        "color": "#22c55e"
       },
       "expected_return": {
-        "return_to_mean": 33.41,
-        "return_to_median": 49.12,
-        "expected_return": 34.39,
+        "return_to_mean": 32.54,
+        "return_to_median": 50.88,
+        "expected_return": 35.62,
         "probability": 0.7,
         "confidence": "Cao"
       },
       "risk": {
-        "risk_score": 16.3,
-        "z_score": -1.35,
+        "risk_score": 18.6,
+        "z_score": -1.26,
         "risk_level": "VERY_LOW",
         "description": "Rủi ro rất thấp - P/B dưới trung bình đáng kể"
       },
@@ -1441,18 +1546,123 @@
         "half_life_years": 7.71,
         "reversion_speed": 0.086,
         "ar1_coefficient": 0.914,
-        "r_squared": 0.725
+        "r_squared": 0.76
       },
       "data_quality": {
         "has_price_data": true,
         "has_pb_data": true,
-        "years_of_pb_data": 12
+        "years_of_pb_data": 13
+      }
+    },
+    {
+      "symbol": "TCB",
+      "name": "Techcombank",
+      "current_price": 34.85,
+      "current_pb": 1.4564663729,
+      "pb_history": [
+        {
+          "year": 2013,
+          "pb": 3.1506819585
+        },
+        {
+          "year": 2014,
+          "pb": 2.9265690599
+        },
+        {
+          "year": 2015,
+          "pb": 2.6648965139
+        },
+        {
+          "year": 2016,
+          "pb": 2.2391833151
+        },
+        {
+          "year": 2017,
+          "pb": 2.1379734047
+        },
+        {
+          "year": 2018,
+          "pb": 3.340172852
+        },
+        {
+          "year": 2019,
+          "pb": 2.7986597788
+        },
+        {
+          "year": 2020,
+          "pb": 2.3639976017
+        },
+        {
+          "year": 2021,
+          "pb": 0.9844087742
+        },
+        {
+          "year": 2022,
+          "pb": 0.9960117324
+        },
+        {
+          "year": 2023,
+          "pb": 0.6663883577
+        },
+        {
+          "year": 2024,
+          "pb": 1.6955353944
+        },
+        {
+          "year": 2025,
+          "pb": 1.4564663729
+        }
+      ],
+      "pb_statistics": {
+        "count": 13,
+        "years_of_data": 13,
+        "mean": 2.109303470476923,
+        "median": 2.2391833151,
+        "std": 0.8466267052217722,
+        "min": 0.6663883577,
+        "max": 3.340172852,
+        "percentile_10": 0.9867293658399999,
+        "percentile_25": 1.4564663729,
+        "percentile_50": 2.2391833151,
+        "percentile_75": 2.7986597788,
+        "percentile_90": 3.10585937878
+      },
+      "valuation": {
+        "zone": "FAIR",
+        "percentile": 30.8,
+        "label": "Hợp lý",
+        "signal": "HOLD",
+        "color": "#6b7280"
+      },
+      "expected_return": {
+        "return_to_mean": 44.82,
+        "return_to_median": 53.74,
+        "expected_return": 26.87,
+        "probability": 0.5,
+        "confidence": "Trung bình"
+      },
+      "risk": {
+        "risk_score": 30.7,
+        "z_score": -0.77,
+        "risk_level": "LOW",
+        "description": "Rủi ro thấp - P/B dưới trung bình"
+      },
+      "mean_reversion": {
+        "half_life_years": 1.73,
+        "reversion_speed": 0.33,
+        "ar1_coefficient": 0.67,
+        "r_squared": 0.489
+      },
+      "data_quality": {
+        "has_price_data": true,
+        "has_pb_data": true,
+        "years_of_pb_data": 13
       }
     },
     {
       "symbol": "BVB",
       "name": "Viet Capital Bank",
-      "current_price": 14.0,
+      "current_price": 13.8,
       "current_pb": 1.1890645831,
       "pb_history": [
         {
@@ -1551,115 +1761,10 @@
       }
     },
     {
-      "symbol": "TCB",
-      "name": "Techcombank",
-      "current_price": 35.0,
-      "current_pb": 1.4856373733,
-      "pb_history": [
-        {
-          "year": 2013,
-          "pb": 3.1506819585
-        },
-        {
-          "year": 2014,
-          "pb": 2.9265690599
-        },
-        {
-          "year": 2015,
-          "pb": 2.6648965139
-        },
-        {
-          "year": 2016,
-          "pb": 2.2391833151
-        },
-        {
-          "year": 2017,
-          "pb": 2.1379734047
-        },
-        {
-          "year": 2018,
-          "pb": 3.340172852
-        },
-        {
-          "year": 2019,
-          "pb": 2.7986597788
-        },
-        {
-          "year": 2020,
-          "pb": 2.3639976017
-        },
-        {
-          "year": 2021,
-          "pb": 0.9844087742
-        },
-        {
-          "year": 2022,
-          "pb": 0.9960117324
-        },
-        {
-          "year": 2023,
-          "pb": 0.6663883577
-        },
-        {
-          "year": 2024,
-          "pb": 1.6955353944
-        },
-        {
-          "year": 2025,
-          "pb": 1.4856373733
-        }
-      ],
-      "pb_statistics": {
-        "count": 13,
-        "years_of_data": 13,
-        "mean": 2.1115473935846154,
-        "median": 2.2391833151,
-        "std": 0.8449303922738304,
-        "min": 0.6663883577,
-        "max": 3.340172852,
-        "percentile_10": 0.9867293658399999,
-        "percentile_25": 1.4856373733,
-        "percentile_50": 2.2391833151,
-        "percentile_75": 2.7986597788,
-        "percentile_90": 3.10585937878
-      },
-      "valuation": {
-        "zone": "FAIR",
-        "percentile": 30.8,
-        "label": "Hợp lý",
-        "signal": "HOLD",
-        "color": "#6b7280"
-      },
-      "expected_return": {
-        "return_to_mean": 42.13,
-        "return_to_median": 50.72,
-        "expected_return": 25.36,
-        "probability": 0.5,
-        "confidence": "Trung bình"
-      },
-      "risk": {
-        "risk_score": 31.5,
-        "z_score": -0.74,
-        "risk_level": "LOW",
-        "description": "Rủi ro thấp - P/B dưới trung bình"
-      },
-      "mean_reversion": {
-        "half_life_years": 1.72,
-        "reversion_speed": 0.331,
-        "ar1_coefficient": 0.669,
-        "r_squared": 0.488
-      },
-      "data_quality": {
-        "has_price_data": true,
-        "has_pb_data": true,
-        "years_of_pb_data": 13
-      }
-    },
-    {
       "symbol": "VAB",
       "name": "VietABank",
-      "current_price": 11.5,
-      "current_pb": 0.9583435849,
+      "current_price": 11.0,
+      "current_pb": 0.9100237403,
       "pb_history": [
         {
           "year": 2013,
@@ -1711,15 +1816,15 @@
         },
         {
           "year": 2025,
-          "pb": 0.9583435849
+          "pb": 0.9100237403
         }
       ],
       "pb_statistics": {
         "count": 13,
         "years_of_data": 13,
-        "mean": 1.1444145673538464,
+        "mean": 1.1406976562307694,
         "median": 1.3789847094,
-        "std": 0.3981522131079871,
+        "std": 0.4000927249414557,
         "min": 0.5222704935,
         "max": 1.5327579264,
         "percentile_10": 0.56726333658,
@@ -1736,23 +1841,23 @@
         "color": "#6b7280"
       },
       "expected_return": {
-        "return_to_mean": 19.42,
-        "return_to_median": 43.89,
-        "expected_return": 21.95,
+        "return_to_mean": 25.35,
+        "return_to_median": 51.53,
+        "expected_return": 25.77,
         "probability": 0.5,
         "confidence": "Trung bình"
       },
       "risk": {
-        "risk_score": 38.3,
-        "z_score": -0.47,
+        "risk_score": 35.6,
+        "z_score": -0.58,
         "risk_level": "LOW",
         "description": "Rủi ro thấp - P/B dưới trung bình"
       },
       "mean_reversion": {
-        "half_life_years": 2.83,
-        "reversion_speed": 0.217,
-        "ar1_coefficient": 0.783,
-        "r_squared": 0.64
+        "half_life_years": 3.03,
+        "reversion_speed": 0.205,
+        "ar1_coefficient": 0.795,
+        "r_squared": 0.655
       },
       "data_quality": {
         "has_price_data": true,
@@ -1763,7 +1868,7 @@
     {
       "symbol": "BID",
       "name": "BIDV",
-      "current_price": 51.1,
+      "current_price": 53.1,
       "current_pb": 1.9209547958,
       "pb_history": [
         {
@@ -1864,7 +1969,7 @@
     {
       "symbol": "CTG",
       "name": "VietinBank",
-      "current_price": 38.2,
+      "current_price": 38.65,
       "current_pb": 1.3012405995,
       "pb_history": [
         {
@@ -1965,7 +2070,7 @@
     {
       "symbol": "EIB",
       "name": "Eximbank",
-      "current_price": 21.45,
+      "current_price": 21.05,
       "current_pb": 1.5859206302,
       "pb_history": [
         {
@@ -2066,7 +2171,7 @@
     {
       "symbol": "ABB",
       "name": "ABBank",
-      "current_price": 13.7,
+      "current_price": 13.8,
       "current_pb": 1.1715560726,
       "pb_history": [
         {
@@ -2167,7 +2272,7 @@
     {
       "symbol": "NVB",
       "name": "NCB",
-      "current_price": 12.9,
+      "current_price": 12.6,
       "current_pb": 2.6294105054,
       "pb_history": [
         {
@@ -2268,7 +2373,7 @@
     {
       "symbol": "STB",
       "name": "Sacombank",
-      "current_price": 62.9,
+      "current_price": 63.7,
       "current_pb": 1.9890557259,
       "pb_history": [
         {
@@ -2369,7 +2474,7 @@
     {
       "symbol": "HDB",
       "name": "HDBank",
-      "current_price": 28.15,
+      "current_price": 28.75,
       "current_pb": 1.9131788599,
       "pb_history": [
         {
@@ -2470,8 +2575,8 @@
     {
       "symbol": "LPB",
       "name": "LienVietPostBank",
-      "current_price": 42.25,
-      "current_pb": 2.6522686645,
+      "current_price": 42.15,
+      "current_pb": 2.6585986613,
       "pb_history": [
         {
           "year": 2013,
@@ -2523,17 +2628,17 @@
         },
         {
           "year": 2025,
-          "pb": 2.6522686645
+          "pb": 2.6585986613
         }
       ],
       "pb_statistics": {
         "count": 13,
         "years_of_data": 13,
-        "mean": 1.7837681457692307,
+        "mean": 1.7842550686,
         "median": 1.6838749896,
-        "std": 0.47334717769391904,
+        "std": 0.4742427450358371,
         "min": 0.938409176,
-        "max": 2.6522686645,
+        "max": 2.6585986613,
         "percentile_10": 1.2044907049200002,
         "percentile_25": 1.5320376294,
         "percentile_50": 1.6838749896,
@@ -2548,64 +2653,28 @@
         "color": "#dc2626"
       },
       "expected_return": {
-        "return_to_mean": -32.75,
-        "return_to_median": -36.51,
-        "expected_return": -7.3,
+        "return_to_mean": -32.89,
+        "return_to_median": -36.66,
+        "expected_return": -7.33,
         "probability": 0.2,
         "confidence": "Rất thấp"
       },
       "risk": {
-        "risk_score": 95.9,
-        "z_score": 1.83,
+        "risk_score": 96.1,
+        "z_score": 1.84,
         "risk_level": "VERY_HIGH",
         "description": "Rủi ro rất cao - P/B cao hơn trung bình đáng kể"
       },
       "mean_reversion": {
-        "half_life_years": 1.75,
-        "reversion_speed": 0.328,
-        "ar1_coefficient": 0.672,
-        "r_squared": 0.328
+        "half_life_years": 1.76,
+        "reversion_speed": 0.325,
+        "ar1_coefficient": 0.675,
+        "r_squared": 0.329
       },
       "data_quality": {
         "has_price_data": true,
         "has_pb_data": true,
         "years_of_pb_data": 13
-      }
-    },
-    {
-      "symbol": "NAB",
-      "name": "Nam A Bank",
-      "current_price": 14.3,
-      "current_pb": null,
-      "pb_history": null,
-      "pb_statistics": null,
-      "valuation": {
-        "zone": "UNKNOWN",
-        "percentile": null,
-        "label": "Không có dữ liệu",
-        "signal": "N/A",
-        "color": "#9ca3af"
-      },
-      "expected_return": {
-        "return_to_mean": null,
-        "return_to_median": null,
-        "expected_return": null,
-        "confidence": "N/A"
-      },
-      "risk": {
-        "risk_score": null,
-        "risk_level": "UNKNOWN",
-        "description": "Không có dữ liệu"
-      },
-      "mean_reversion": {
-        "half_life_years": null,
-        "reversion_speed": null,
-        "ar1_coefficient": null
-      },
-      "data_quality": {
-        "has_price_data": true,
-        "has_pb_data": false,
-        "years_of_pb_data": 0
       }
     }
   ],
@@ -2621,8 +2690,10 @@
       "VPB",
       "SSB",
       "VIB",
+      "NAB",
       "PGB",
-      "BAB"
+      "BAB",
+      "SGB"
     ],
     "fair": [
       "TCB",
@@ -2636,16 +2707,13 @@
       "ABB",
       "BVB",
       "VAB",
-      "KLB",
-      "SGB"
+      "KLB"
     ],
     "expensive": [],
     "extremely_expensive": [
       "LPB",
       "NVB"
     ],
-    "no_data": [
-      "NAB"
-    ]
+    "no_data": []
   }
 }
