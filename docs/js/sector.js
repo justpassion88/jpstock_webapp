@@ -398,11 +398,15 @@ function createStockCard(stock) {
         }
     }
     
+    const icopyBadge = isICopySymbol(stock.symbol) ? getICopyBadge('sm') : '';
+    
     return `
         <a href="stock.html?symbol=${stock.symbol}" class="bank-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
             <div class="flex justify-between items-start mb-3">
                 <div>
-                    <h3 class="text-xl font-bold text-white">${stock.symbol}</h3>
+                    <h3 class="text-xl font-bold text-white inline-flex items-center">
+                        ${stock.symbol}${icopyBadge}
+                    </h3>
                     <p class="text-sm text-gray-400">${stock.name || ''}</p>
                 </div>
                 <span class="px-3 py-1 rounded-full text-sm font-bold" 
