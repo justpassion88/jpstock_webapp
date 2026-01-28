@@ -84,6 +84,66 @@
                         <div id="market-heat-marker" class="absolute w-4 h-4 bg-white rounded-full shadow-lg transform -translate-x-1/2 -top-0.5 transition-all duration-500" style="left: 50%"></div>
                     </div>
                 </div>
+                
+                <!-- Market Heat History Chart -->
+                <div class="mt-6 border-t border-gray-700 pt-6">
+                    <h3 class="text-lg font-bold text-white mb-3">📈 Lịch sử nhiệt độ thị trường</h3>
+                    <div id="market-heat-history-chart" style="height: 350px;"></div>
+                </div>
+                
+                <!-- Heat Statistics -->
+                <div class="mt-6 border-t border-gray-700 pt-6">
+                    <h3 class="text-lg font-bold text-white mb-3">📊 Thống kê lịch sử</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="bg-gray-700 rounded-lg p-4 text-center">
+                            <div class="text-gray-400 text-xs mb-1">Cao nhất</div>
+                            <div id="max-heat" class="text-2xl font-bold text-red-400">--</div>
+                            <div id="max-heat-period" class="text-xs text-gray-500 mt-1">--</div>
+                        </div>
+                        <div class="bg-gray-700 rounded-lg p-4 text-center">
+                            <div class="text-gray-400 text-xs mb-1">Thấp nhất</div>
+                            <div id="min-heat" class="text-2xl font-bold text-blue-400">--</div>
+                            <div id="min-heat-period" class="text-xs text-gray-500 mt-1">--</div>
+                        </div>
+                        <div class="bg-gray-700 rounded-lg p-4 text-center">
+                            <div class="text-gray-400 text-xs mb-1">Trung bình</div>
+                            <div id="avg-heat" class="text-2xl font-bold text-yellow-400">--</div>
+                            <div class="text-xs text-gray-500 mt-1">Lịch sử</div>
+                        </div>
+                        <div class="bg-gray-700 rounded-lg p-4 text-center">
+                            <div class="text-gray-400 text-xs mb-1">So với TB</div>
+                            <div id="current-vs-avg" class="text-2xl font-bold text-green-400">--</div>
+                            <div class="text-xs text-gray-500 mt-1">Hiện tại</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Heat History Table -->
+                <div class="mt-6 border-t border-gray-700 pt-6">
+                    <details class="group">
+                        <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
+                            <span>📋 Xem bảng dữ liệu chi tiết lịch sử</span>
+                            <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="mt-3 max-h-64 overflow-y-auto">
+                            <table class="w-full text-xs">
+                                <thead class="sticky top-0 bg-gray-800">
+                                    <tr class="border-b border-gray-700">
+                                        <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
+                                        <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="heat-history-table">
+                                    <tr><td colspan="4" class="py-4 text-center text-gray-500">Đang tải...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
         
