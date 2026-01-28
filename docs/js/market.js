@@ -30,7 +30,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function loadMarketData() {
     try {
         const response = await fetch('data/market_heat.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         marketData = await response.json();
+        
+        console.log('Market data loaded:', marketData);
         
         renderMarketOverview();
         renderSectorCards();
@@ -40,6 +45,7 @@ async function loadMarketData() {
         document.getElementById('sector-cards').innerHTML = `
             <div class="col-span-full text-center py-8 text-red-400">
                 ❌ Lỗi tải dữ liệu. Vui lòng thử lại.
+                <div class="text-sm mt-2">Chi tiết: ${error.message}</div>
             </div>
         `;
     }
@@ -47,41 +53,80 @@ async function loadMarketData() {
 
 // Render market overview
 function renderMarketOverview() {
-    const { market_heat, updated_at, history, analysis } = marketData;
-    
-    // Update stats
-    document.getElementById('market-heat').textContent = market_heat.heat_index.toFixed(1);
-    document.getElementById('market-heat').className = `text-3xl font-bold ${getHeatColor(market_heat.heat_index)}`;
-    document.getElementById('total-sectors').textContent = market_heat.total_sectors;
-    document.getElementById('total-stocks').textContent = market_heat.total_stocks;
-    document.getElementById('market-signal').textContent = getSignalText(market_heat.heat_index);
-    document.getElementById('market-signal').className = `text-xl font-bold ${getHeatColor(market_heat.heat_index)}`;
-    
-    // Update timestamp
-    const date = new Date(updated_at);
-    document.getElementById('last-updated').textContent = `Cập nhật: ${date.toLocaleString('vi-VN')}`;
-    
-    // Move heat marker
-    document.getElementById('market-heat-marker').style.left = `${market_heat.heat_index}%`;
-    
-    // Render heat history chart and analysis
-    if (history && history.length > 0) {
-        renderHeatHistoryChart(history, market_heat.heat_index);
-        renderHeatAnalysis(analysis, market_heat.heat_index);
-        renderHeatHistoryTable(history);
+    try {
+        if (!marketData) {
+            console.error('Market data is null');
+            return;
+        }
+        
+        const { market_heat, updated_at, history, analysis } = marketData;
+        
+        if (!market_heat) {
+            console.error('market_heat is missing from data');
+            return;
+        }
+        
+        // Update stats
+        const marketHeatEl = document.getElementById('market-heat');
+        if (marketHeatEl) {
+            marketHeatEl.textContent = market_heat.heat_index.toFixed(1);
+            marketHeatEl.className = `text-3xl font-bold ${getHeatColor(market_heat.heat_index)}`;
+        }
+        
+        const totalSectorsEl = document.getElementById('total-sectors');
+        if (totalSectorsEl) totalSectorsEl.textContent = market_heat.total_sectors;
+        
+        const totalStocksEl = document.getElementById('total-stocks');
+        if (totalStocksEl) totalStocksEl.textContent = market_heat.total_stocks;
+        
+        const marketSignalEl = document.getElementById('market-signal');
+        if (marketSignalEl) {
+            marketSignalEl.textContent = getSignalText(market_heat.heat_index);
+            marketSignalEl.className = `text-xl font-bold ${getHeatColor(market_heat.heat_index)}`;
+        }
+        
+        // Update timestamp
+        const lastUpdatedEl = document.getElementById('last-updated');
+        if (lastUpdatedEl) {
+            const date = new Date(updated_at);
+            lastUpdatedEl.textContent = `Cập nhật: ${date.toLocaleString('vi-VN')}`;
+        }
+        
+        // Move heat marker
+        const markerEl = document.getElementById('market-heat-marker');
+        if (markerEl) {
+            markerEl.style.left = `${market_heat.heat_index}%`;
+        }
+        
+        // Render heat history chart and analysis (only if elements exist)
+        if (history && history.length > 0) {
+            if (document.getElementById('market-heat-history-chart')) {
+                renderHeatHistoryChart(history, market_heat.heat_index);
+            }
+            if (document.getElementById('max-heat')) {
+                renderHeatAnalysis(analysis, market_heat.heat_index);
+            }
+            if (document.getElementById('heat-history-table')) {
+                renderHeatHistoryTable(history);
+            }
+        }
+    } catch (error) {
+        console.error('Error rendering market overview:', error);
     }
 }
 
 // Render heat history chart
+// Render heat history chart
 function renderHeatHistoryChart(history, currentHeat) {
-    const periods = history.map(h => h.period);
-    const heatValues = history.map(h => h.heat_index);
-    const pbValues = history.map(h => h.avg_pb);
-    
-    // Add current data point
-    const currentPeriod = getCurrentQuarter();
-    periods.push(currentPeriod);
-    heatValues.push(currentHeat);
+    try {
+        const periods = history.map(h => h.period);
+        const heatValues = history.map(h => h.heat_index);
+        const pbValues = history.map(h => h.avg_pb);
+        
+        // Add current data point
+        const currentPeriod = getCurrentQuarter();
+        periods.push(currentPeriod);
+        heatValues.push(currentHeat);
     
     // Define heat zones for background
     const shapes = [
@@ -226,25 +271,32 @@ function renderHeatHistoryChart(history, currentHeat) {
     };
     
     Plotly.newPlot('market-heat-history-chart', [trace, avgTrace, warningLine, dangerLine], layout, config);
+    } catch (error) {
+        console.error('Error rendering heat history chart:', error);
+    }
 }
 
 // Render heat analysis stats
 function renderHeatAnalysis(analysis, currentHeat) {
-    if (!analysis) return;
-    
-    document.getElementById('max-heat').textContent = analysis.max_heat.toFixed(1);
-    document.getElementById('max-heat-period').innerHTML = `Nóng nhất<br><span class="text-red-300">${analysis.max_heat_period}</span>`;
-    
-    document.getElementById('min-heat').textContent = analysis.min_heat.toFixed(1);
-    document.getElementById('min-heat-period').innerHTML = `Lạnh nhất<br><span class="text-blue-300">${analysis.min_heat_period}</span>`;
-    
-    document.getElementById('avg-heat').textContent = analysis.avg_heat.toFixed(1);
-    
-    const diff = currentHeat - analysis.avg_heat;
-    const diffText = diff >= 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
-    const diffColor = diff >= 0 ? 'text-red-400' : 'text-green-400';
-    document.getElementById('current-vs-avg').textContent = diffText;
-    document.getElementById('current-vs-avg').className = `text-xl font-bold ${diffColor}`;
+    try {
+        if (!analysis) return;
+        
+        document.getElementById('max-heat').textContent = analysis.max_heat.toFixed(1);
+        document.getElementById('max-heat-period').innerHTML = `Nóng nhất<br><span class="text-red-300">${analysis.max_heat_period}</span>`;
+        
+        document.getElementById('min-heat').textContent = analysis.min_heat.toFixed(1);
+        document.getElementById('min-heat-period').innerHTML = `Lạnh nhất<br><span class="text-blue-300">${analysis.min_heat_period}</span>`;
+        
+        document.getElementById('avg-heat').textContent = analysis.avg_heat.toFixed(1);
+        
+        const diff = currentHeat - analysis.avg_heat;
+        const diffText = diff >= 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1);
+        const diffColor = diff >= 0 ? 'text-red-400' : 'text-green-400';
+        document.getElementById('current-vs-avg').textContent = diffText;
+        document.getElementById('current-vs-avg').className = `text-xl font-bold ${diffColor}`;
+    } catch (error) {
+        console.error('Error rendering heat analysis:', error);
+    }
 }
 
 // Render heat history table
@@ -314,35 +366,55 @@ function getStatusEmoji(status) {
 
 // Render sector cards
 function renderSectorCards() {
-    const container = document.getElementById('sector-cards');
-    
-    // Sort by heat index
-    const sortedSectors = [...marketData.sectors].sort((a, b) => a.heat_index - b.heat_index);
-    
-    container.innerHTML = sortedSectors.map(sector => {
-        const heatColor = getHeatColorHex(sector.heat_index);
-        const config = SECTORS[sector.sector_id] || {};
+    try {
+        const container = document.getElementById('sector-cards');
         
-        return `
-            <div class="sector-card bg-gray-800 rounded-xl p-4 cursor-pointer border-l-4 hover:bg-gray-750"
-                 style="border-left-color: ${heatColor}"
-                 onclick="goToSectorDetail('${sector.sector_id}')">
-                <div class="flex items-center justify-between mb-2">
-                    <span class="text-lg">${sector.sector_name}</span>
-                    <span class="text-xs text-gray-400">${sector.stocks_count} mã</span>
+        if (!marketData || !marketData.sectors) {
+            console.error('Market data or sectors is missing');
+            container.innerHTML = `
+                <div class="col-span-full text-center py-8 text-red-400">
+                    ❌ Không tìm thấy dữ liệu ngành.
                 </div>
-                <div class="flex items-end justify-between">
-                    <div>
-                        <div class="text-2xl font-bold ${getHeatColor(sector.heat_index)}">${sector.heat_index.toFixed(1)}</div>
-                        <div class="text-xs text-gray-400">${sector.status}</div>
+            `;
+            return;
+        }
+        
+        // Sort by heat index
+        const sortedSectors = [...marketData.sectors].sort((a, b) => a.heat_index - b.heat_index);
+        
+        container.innerHTML = sortedSectors.map(sector => {
+            const heatColor = getHeatColorHex(sector.heat_index);
+            const config = SECTORS[sector.sector_id] || {};
+            
+            return `
+                <div class="sector-card bg-gray-800 rounded-xl p-4 cursor-pointer border-l-4 hover:bg-gray-750"
+                     style="border-left-color: ${heatColor}"
+                     onclick="goToSectorDetail('${sector.sector_id}')">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-lg">${sector.sector_name}</span>
+                        <span class="text-xs text-gray-400">${sector.stocks_count} mã</span>
                     </div>
-                    <div class="text-right">
-                        <div class="text-sm font-semibold ${getSignalColor(sector.signal)}">${sector.signal}</div>
+                    <div class="flex items-end justify-between">
+                        <div>
+                            <div class="text-2xl font-bold ${getHeatColor(sector.heat_index)}">${sector.heat_index.toFixed(1)}</div>
+                            <div class="text-xs text-gray-400">${sector.status}</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-semibold ${getSignalColor(sector.signal)}">${sector.signal}</div>
+                        </div>
                     </div>
                 </div>
+            `;
+        }).join('');
+    } catch (error) {
+        console.error('Error rendering sector cards:', error);
+        const container = document.getElementById('sector-cards');
+        container.innerHTML = `
+            <div class="col-span-full text-center py-8 text-red-400">
+                ❌ Lỗi hiển thị dữ liệu ngành: ${error.message}
             </div>
         `;
-    }).join('');
+    }
 }
 
 // Render recommendations
