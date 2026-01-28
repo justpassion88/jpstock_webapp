@@ -384,7 +384,7 @@ function createStockCard(stock) {
     // Current price - get from pb_history (latest entry)
     let currentPrice = 'N/A';
     if (stock.current_price) {
-        currentPrice = (stock.current_price * 1000).toLocaleString('vi-VN');
+        currentPrice = stock.current_price.toLocaleString('vi-VN');
     } else if (stock.pb_history && stock.pb_history.length > 0) {
         // Find the most recent entry by sorting by year and quarter
         const sortedHistory = [...stock.pb_history].sort((a, b) => {
@@ -393,8 +393,8 @@ function createStockCard(stock) {
         });
         const latestEntry = sortedHistory[0];
         if (latestEntry && latestEntry.price) {
-            // Price in JSON is in tiny units, multiply by 1,000,000 to get VND
-            currentPrice = (latestEntry.price * 1000000).toLocaleString('vi-VN');
+            // Price in pb_history is in thousands, multiply by 1000 to get VND
+            currentPrice = (latestEntry.price * 1000).toLocaleString('vi-VN');
         }
     }
     

@@ -447,7 +447,7 @@ function createBankCard(bank) {
     const percentile = valuation.percentile != null ? valuation.percentile.toFixed(0) : 'N/A';
     
     const currentPb = bank.current_pb?.toFixed(2) || 'N/A';
-    const currentPrice = bank.current_price ? (bank.current_price * 1000).toLocaleString('vi-VN') : 'N/A';
+    const currentPrice = bank.current_price ? bank.current_price.toLocaleString('vi-VN') : 'N/A';
     const avgPb = stats.mean?.toFixed(2) || 'N/A';
     
     const return1y = expectedReturn.expected_1y != null ? 

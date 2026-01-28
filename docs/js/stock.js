@@ -33,7 +33,7 @@ function getZoneColor(zone, zone_vi) {
 // Helper to get current price
 function getCurrentPrice() {
     if (stockData.current_price) {
-        return (stockData.current_price * 1000).toLocaleString('vi-VN');
+        return stockData.current_price.toLocaleString('vi-VN');
     }
     if (stockData.pb_history && stockData.pb_history.length > 0) {
         // Find the most recent entry by sorting by year and quarter
@@ -43,8 +43,8 @@ function getCurrentPrice() {
         });
         const latestEntry = sortedHistory[0];
         if (latestEntry && latestEntry.price) {
-            // Price in JSON is in tiny units, multiply by 1,000,000 to get VND
-            return (latestEntry.price * 1000000).toLocaleString('vi-VN');
+            // Price in pb_history is in thousands, multiply by 1000 to get VND
+            return (latestEntry.price * 1000).toLocaleString('vi-VN');
         }
     }
     return 'N/A';
