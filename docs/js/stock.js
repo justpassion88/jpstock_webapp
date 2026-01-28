@@ -143,12 +143,15 @@ function displayStockHeader() {
     // Get zone display - try zone_vi first, then convert from zone
     const zoneDisplay = valuation.zone_vi || getZoneVietnamese(valuation.zone);
     const zoneColor = valuation.color || getZoneColor(valuation.zone, valuation.zone_vi);
+    const icopyBadge = isICopySymbol(stockData.symbol) ? getICopyBadge('md') : '';
     
     document.getElementById('stock-header').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6 mb-6">
             <div class="flex flex-wrap items-center justify-between mb-4">
                 <div>
-                    <h1 class="text-3xl font-bold text-white">${stockData.symbol}</h1>
+                    <h1 class="text-3xl font-bold text-white inline-flex items-center">
+                        ${stockData.symbol}${icopyBadge}
+                    </h1>
                     <p class="text-gray-400">${stockData.name || ''}</p>
                 </div>
                 <div class="text-right">

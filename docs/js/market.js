@@ -525,10 +525,15 @@ async function showSectorDetail(sectorId) {
         const zone = val.zone || val.status || 'FAIR';
         const percentile = val.current_percentile || val.percentile || 50;
         const stats = stock.pb_statistics || {};
+        const icopyBadge = isICopySymbol(stock.symbol) ? getICopyIcon() : '';
         
         return `
             <tr class="stock-row cursor-pointer hover:bg-gray-700 transition-colors" onclick="window.location.href='stock.html?symbol=${stock.symbol}'">
-                <td class="px-4 py-3 font-semibold text-white">${stock.symbol}</td>
+                <td class="px-4 py-3 font-semibold text-white">
+                    <span class="inline-flex items-center">
+                        ${stock.symbol}${icopyBadge}
+                    </span>
+                </td>
                 <td class="px-4 py-3 text-right font-bold ${getHeatColor(percentile)}">${(stock.current_pb || 0).toFixed(2)}</td>
                 <td class="px-4 py-3 text-right text-green-400">${(stats.min || 0).toFixed(2)}</td>
                 <td class="px-4 py-3 text-right text-red-400">${(stats.max || 0).toFixed(2)}</td>

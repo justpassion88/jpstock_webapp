@@ -9,7 +9,7 @@ P/B Analysis across VN100+ stocks
 
 SECTORS = {
     # =========================================================================
-    # 🏦 NGÂN HÀNG - Banks (15 mã)
+    # 🏦 NGÂN HÀNG - Banks (17 mã)
     # P/B analysis: ⭐⭐⭐⭐⭐ (Tuyệt vời)
     # =========================================================================
     "banks": {
@@ -34,11 +34,13 @@ SECTORS = {
             "MSB",  # MSB
             "OCB",  # OCB
             "EIB",  # Eximbank
+            "NAB",  # Nam A Bank (iCopy)
+            "BAF",  # Bac A Bank Finance (iCopy)
         ],
     },
     
     # =========================================================================
-    # 🏠 BẤT ĐỘNG SẢN - Real Estate (20 mã)
+    # 🏠 BẤT ĐỘNG SẢN - Real Estate (28 mã)
     # P/B analysis: ⭐⭐⭐⭐⭐ (Tuyệt vời)
     # =========================================================================
     "realestate": {
@@ -68,6 +70,14 @@ SECTORS = {
             "VRE",  # Vincom Retail
             "SCR",  # Sài Gòn Thương Tín
             "HPX",  # Hai Phat Land
+            "DXS",  # Dat Xanh Services (iCopy)
+            "DPG",  # Dat Phuong Group (iCopy)
+            "DHA",  # Hoa An (iCopy)
+            "NHA",  # Nha Ha Noi (iCopy)
+            "CRE",  # Cen Land (iCopy)
+            "IJC",  # IJC (iCopy)
+            "KHG",  # Khang Hoa (iCopy)
+            "SZC",  # Sonadezi Chau Duc (iCopy)
         ],
     },
     
