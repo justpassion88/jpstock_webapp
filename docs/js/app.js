@@ -462,13 +462,14 @@ function createBankCard(bank) {
                          (expectedReturn.win_rate_1y || 0) >= 50 ? 'text-yellow-400' : 'text-red-400';
     
     const icopyBadge = isICopySymbol(bank.symbol) ? getICopyBadge('sm') : '';
+    const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(bank.symbol)) ? getStarBadge('sm') : '';
     
     return `
         <a href="stock.html?symbol=${bank.symbol}" class="bank-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
             <div class="flex justify-between items-start mb-3">
                 <div>
                     <h3 class="text-xl font-bold text-white inline-flex items-center">
-                        ${bank.symbol}${icopyBadge}
+                        ${bank.symbol}${starBadge}${icopyBadge}
                     </h3>
                     <p class="text-sm text-gray-400">${bank.name}</p>
                 </div>

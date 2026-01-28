@@ -526,12 +526,14 @@ async function showSectorDetail(sectorId) {
         const percentile = val.current_percentile || val.percentile || 50;
         const stats = stock.pb_statistics || {};
         const icopyBadge = isICopySymbol(stock.symbol) ? getICopyIcon() : '';
+        const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(stock.symbol)) ? getStarIcon() : '';
+        const noteIcon = (typeof getStockNote === 'function' && getStockNote(stock.symbol)) ? getNoteIcon(getStockNote(stock.symbol)) : '';
         
         return `
             <tr class="stock-row cursor-pointer hover:bg-gray-700 transition-colors" onclick="window.location.href='stock.html?symbol=${stock.symbol}'">
                 <td class="px-4 py-3 font-semibold text-white">
                     <span class="inline-flex items-center">
-                        ${stock.symbol}${icopyBadge}
+                        ${stock.symbol}${starBadge}${icopyBadge}${noteIcon}
                     </span>
                 </td>
                 <td class="px-4 py-3 text-right font-bold ${getHeatColor(percentile)}">${(stock.current_pb || 0).toFixed(2)}</td>

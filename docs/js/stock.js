@@ -144,13 +144,25 @@ function displayStockHeader() {
     const zoneDisplay = valuation.zone_vi || getZoneVietnamese(valuation.zone);
     const zoneColor = valuation.color || getZoneColor(valuation.zone, valuation.zone_vi);
     const icopyBadge = isICopySymbol(stockData.symbol) ? getICopyBadge('md') : '';
+    const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(stockData.symbol)) ? getStarBadge('md') : '';
+    const stockNote = (typeof getStockNote === 'function') ? getStockNote(stockData.symbol) : null;
+    const noteHTML = stockNote ? `
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mt-4">
+            <div class="flex items-start gap-3">
+                <span class="text-yellow-400 text-xl">📝</span>
+                <div>
+                    <div class="text-yellow-300 font-semibold text-sm mb-1">Ghi chú cá nhân</div>
+                    <p class="text-gray-300">${stockNote}</p>
+                </div>
+            </div>
+        </div>` : '';
     
     document.getElementById('stock-header').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6 mb-6">
             <div class="flex flex-wrap items-center justify-between mb-4">
                 <div>
                     <h1 class="text-3xl font-bold text-white inline-flex items-center">
-                        ${stockData.symbol}${icopyBadge}
+                        ${stockData.symbol}${starBadge}${icopyBadge}
                     </h1>
                     <p class="text-gray-400">${stockData.name || ''}</p>
                 </div>
@@ -180,6 +192,7 @@ function displayStockHeader() {
                     <div class="text-2xl font-bold text-white">${stats.mean?.toFixed(2) || 'N/A'}</div>
                 </div>
             </div>
+            ${noteHTML}
         </div>
     `;
 }
