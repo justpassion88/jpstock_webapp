@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://justpassion88.github.io/jpstock_webapp/sitemap.xml
