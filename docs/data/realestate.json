@@ -662,8 +662,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 110600.0,
-      "last_updated": "2026-01-27T10:22:37.913522"
+      "current_price": 105500.0,
+      "last_updated": "2026-01-28T03:10:39.177368"
     },
     "VIC": {
       "symbol": "VIC",
@@ -1089,8 +1089,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 151000.0,
-      "last_updated": "2026-01-27T10:22:39.683693"
+      "current_price": 145100.0,
+      "last_updated": "2026-01-28T03:10:40.874927"
     },
     "NVL": {
       "symbol": "NVL",
@@ -1410,8 +1410,8 @@
         "years": 11,
         "has_prices": true
       },
-      "current_price": 11400.0,
-      "last_updated": "2026-01-27T10:22:41.773616"
+      "current_price": 11600.0,
+      "last_updated": "2026-01-28T03:10:42.661905"
     },
     "PDR": {
       "symbol": "PDR",
@@ -1840,8 +1840,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 17300.0,
-      "last_updated": "2026-01-27T10:22:43.669071"
+      "current_price": 16950.0,
+      "last_updated": "2026-01-28T03:10:44.240656"
     },
     "DXG": {
       "symbol": "DXG",
@@ -2270,8 +2270,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 15000.0,
-      "last_updated": "2026-01-27T10:22:45.573567"
+      "current_price": 14750.0,
+      "last_updated": "2026-01-28T03:10:45.542825"
     },
     "KDH": {
       "symbol": "KDH",
@@ -2697,8 +2697,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 26700.0,
-      "last_updated": "2026-01-27T10:22:47.703970"
+      "current_price": 26650.0,
+      "last_updated": "2026-01-28T03:10:47.073736"
     },
     "NLG": {
       "symbol": "NLG",
@@ -3126,8 +3126,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 28050.0,
-      "last_updated": "2026-01-27T10:22:49.720182"
+      "current_price": 28350.0,
+      "last_updated": "2026-01-28T03:10:48.683155"
     },
     "DIG": {
       "symbol": "DIG",
@@ -3550,8 +3550,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 15600.0,
-      "last_updated": "2026-01-27T10:22:51.764495"
+      "current_price": 15400.0,
+      "last_updated": "2026-01-28T03:10:50.058757"
     },
     "CEO": {
       "symbol": "CEO",
@@ -3938,8 +3938,8 @@
         "years": 12,
         "has_prices": true
       },
-      "current_price": 18300.0,
-      "last_updated": "2026-01-27T10:22:53.599867"
+      "current_price": 18200.0,
+      "last_updated": "2026-01-28T03:10:51.351891"
     },
     "KBC": {
       "symbol": "KBC",
@@ -4365,8 +4365,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 33850.0,
-      "last_updated": "2026-01-27T10:22:55.635072"
+      "current_price": 34000.0,
+      "last_updated": "2026-01-28T03:10:52.767444"
     },
     "BCM": {
       "symbol": "BCM",
@@ -4641,8 +4641,8 @@
         "years": 8,
         "has_prices": true
       },
-      "current_price": 67100.0,
-      "last_updated": "2026-01-27T10:22:57.629031"
+      "current_price": 67600.0,
+      "last_updated": "2026-01-28T03:10:54.776457"
     },
     "IDC": {
       "symbol": "IDC",
@@ -4910,8 +4910,8 @@
         "years": 8,
         "has_prices": true
       },
-      "current_price": 45400.0,
-      "last_updated": "2026-01-27T10:22:59.489451"
+      "current_price": 45900.0,
+      "last_updated": "2026-01-28T03:10:56.402898"
     },
     "ITA": {
       "symbol": "ITA",
@@ -5316,7 +5316,7 @@
         "has_prices": true
       },
       "current_price": 2350.0,
-      "last_updated": "2026-01-27T10:23:01.292198"
+      "last_updated": "2026-01-28T03:10:57.649538"
     },
     "HDC": {
       "symbol": "HDC",
@@ -5749,8 +5749,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 21000.0,
-      "last_updated": "2026-01-27T10:23:03.253394"
+      "current_price": 20850.0,
+      "last_updated": "2026-01-28T03:10:58.950285"
     },
     "LDG": {
       "symbol": "LDG",
@@ -6099,8 +6099,8 @@
         "years": 11,
         "has_prices": true
       },
-      "current_price": 3930.0,
-      "last_updated": "2026-01-27T10:23:05.254784"
+      "current_price": 3970.0,
+      "last_updated": "2026-01-28T03:11:00.252965"
     },
     "NBB": {
       "symbol": "NBB",
@@ -6526,8 +6526,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 18000.0,
-      "last_updated": "2026-01-27T10:23:07.310638"
+      "current_price": 17600.0,
+      "last_updated": "2026-01-28T03:11:01.659533"
     },
     "TDC": {
       "symbol": "TDC",
@@ -6953,8 +6953,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 11550.0,
-      "last_updated": "2026-01-27T10:23:09.192239"
+      "current_price": 11500.0,
+      "last_updated": "2026-01-28T03:11:03.232856"
     },
     "VRE": {
       "symbol": "VRE",
@@ -7250,8 +7250,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 30900.0,
-      "last_updated": "2026-01-27T10:23:10.434676"
+      "current_price": 30050.0,
+      "last_updated": "2026-01-28T03:11:04.644728"
     },
     "SCR": {
       "symbol": "SCR",
@@ -7677,8 +7677,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 6890.0,
-      "last_updated": "2026-01-27T10:23:11.701013"
+      "current_price": 6800.0,
+      "last_updated": "2026-01-28T03:11:06.235894"
     },
     "HPX": {
       "symbol": "HPX",
@@ -7943,8 +7943,8 @@
         "years": 8,
         "has_prices": true
       },
-      "current_price": 5270.0,
-      "last_updated": "2026-01-27T10:23:12.974397"
+      "current_price": 5290.0,
+      "last_updated": "2026-01-28T03:11:07.679657"
     }
   }
 }

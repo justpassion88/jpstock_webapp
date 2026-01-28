@@ -699,8 +699,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 14000.0,
-      "last_updated": "2026-01-27T10:21:56.703673"
+      "current_price": 14250.0,
+      "last_updated": "2026-01-28T03:09:52.815374"
     },
     "GEG": {
       "symbol": "GEG",
@@ -1024,7 +1024,7 @@
         "has_prices": true
       },
       "current_price": 14650.0,
-      "last_updated": "2026-01-27T10:21:58.079394"
+      "last_updated": "2026-01-28T03:09:54.259458"
     },
     "REE": {
       "symbol": "REE",
@@ -1454,7 +1454,7 @@
         "has_prices": true
       },
       "current_price": 62400.0,
-      "last_updated": "2026-01-27T10:21:59.423837"
+      "last_updated": "2026-01-28T03:09:55.756137"
     },
     "NT2": {
       "symbol": "NT2",
@@ -1885,7 +1885,7 @@
         "has_prices": true
       },
       "current_price": 26650.0,
-      "last_updated": "2026-01-27T10:22:00.856239"
+      "last_updated": "2026-01-28T03:09:57.368097"
     },
     "PPC": {
       "symbol": "PPC",
@@ -2321,8 +2321,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 10100.0,
-      "last_updated": "2026-01-27T10:22:02.532642"
+      "current_price": 10050.0,
+      "last_updated": "2026-01-28T03:09:58.897617"
     },
     "HND": {
       "symbol": "HND",
@@ -2665,8 +2665,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 10900.0,
-      "last_updated": "2026-01-27T10:22:04.057375"
+      "current_price": 10800.0,
+      "last_updated": "2026-01-28T03:10:00.343262"
     },
     "SJD": {
       "symbol": "SJD",
@@ -3092,8 +3092,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 14200.0,
-      "last_updated": "2026-01-27T10:22:05.330905"
+      "current_price": 14100.0,
+      "last_updated": "2026-01-28T03:10:02.370317"
     },
     "VSH": {
       "symbol": "VSH",
@@ -3523,7 +3523,7 @@
         "has_prices": true
       },
       "current_price": 44500.0,
-      "last_updated": "2026-01-27T10:22:06.738248"
+      "last_updated": "2026-01-28T03:10:03.910633"
     },
     "TBC": {
       "symbol": "TBC",
@@ -3953,7 +3953,7 @@
         "has_prices": true
       },
       "current_price": 36000.0,
-      "last_updated": "2026-01-27T10:22:08.080915"
+      "last_updated": "2026-01-28T03:10:05.721985"
     },
     "HDG": {
       "symbol": "HDG",
@@ -4396,8 +4396,8 @@
         "years": 15,
         "has_prices": true
       },
-      "current_price": 25750.0,
-      "last_updated": "2026-01-27T10:22:09.496981"
+      "current_price": 25700.0,
+      "last_updated": "2026-01-28T03:10:07.561365"
     },
     "PC1": {
       "symbol": "PC1",
@@ -4727,8 +4727,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 22850.0,
-      "last_updated": "2026-01-27T10:22:10.799267"
+      "current_price": 22900.0,
+      "last_updated": "2026-01-28T03:10:09.039669"
     },
     "QTP": {
       "symbol": "QTP",
@@ -5058,8 +5058,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 12200.0,
-      "last_updated": "2026-01-27T10:22:12.238435"
+      "current_price": 12300.0,
+      "last_updated": "2026-01-28T03:10:10.454283"
     },
     "PGV": {
       "symbol": "PGV",
@@ -5351,8 +5351,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 22450.0,
-      "last_updated": "2026-01-27T10:22:13.562765"
+      "current_price": 22800.0,
+      "last_updated": "2026-01-28T03:10:11.717477"
     },
     "GAS": {
       "symbol": "GAS",
@@ -5781,8 +5781,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 115300.0,
-      "last_updated": "2026-01-27T10:22:14.832752"
+      "current_price": 122700.0,
+      "last_updated": "2026-01-28T03:10:13.315406"
     },
     "PLX": {
       "symbol": "PLX",
@@ -6098,8 +6098,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 60900.0,
-      "last_updated": "2026-01-27T10:22:16.134545"
+      "current_price": 63600.0,
+      "last_updated": "2026-01-28T03:10:14.610462"
     }
   }
 }

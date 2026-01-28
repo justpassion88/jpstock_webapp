@@ -76,25 +76,33 @@ Chỉ số đo nhiệt độ thị trường cho **toàn ngành** và **từng s
 - **Error handling**: Retry logic cho API calls
 - **Price Update Script**: Cập nhật giá nhanh cho tất cả các mã
 
+### 📋 iCopy Portfolio Integration
+Đánh dấu **164 mã cổ phiếu** trong danh mục iCopy:
+- **Badge hiển thị**: Gradient tím-xanh trên tất cả trang
+- **Dễ nhận biết**: Mã nào trong iCopy có badge đặc biệt
+- **Tích hợp toàn diện**: Hiện trên bank, sector, stock, market pages
+- **Real-time sync**: Danh sách được cập nhật trung tâm trong `icopy-config.js`
+
 ## 📊 Phạm Vi Phân Tích
 
-### 11 Ngành - 124 Cổ Phiếu
+### 11 Ngành - 135+ Cổ Phiếu
 
 | Ngành | Số mã | Ví dụ | P/B phù hợp |
 |-------|-------|-------|-------------|
-| 🏦 **Ngân hàng** | 15 | VCB, BID, CTG, TCB, MBB, VPB | ⭐⭐⭐⭐⭐ |
-| 🏠 **Bất động sản** | 20 | VHM, VIC, NVL, PDR, DXG, KDH | ⭐⭐⭐⭐⭐ |
-| 📈 **Chứng khoán** | 12 | SSI, VND, HCM, VCI, SHS, MBS | ⭐⭐⭐⭐⭐ |
-| 🛒 **Bán lẻ & Tiêu dùng** | 10 | VNM, MSN, MWG, PNJ, FRT | ⭐⭐ |
-| 🏗️ **Xây dựng** | 10 | CTD, HBC, VCG, FCN, CII | ⭐⭐⭐⭐ |
-| ⚡ **Điện & Năng lượng** | 15 | POW, GAS, PLX, REE, PC1 | ⭐⭐⭐⭐ |
-| 🏗️ **Thép & Vật liệu** | 12 | HPG, HSG, NKG, SMC, POM | ⭐⭐⭐ |
-| 💻 **Công nghệ** | 8 | FPT, CMG, VGI, FOX, ELC | ⭐ |
-| 🛢️ **Dầu khí** | 8 | PVD, PVS, PVT, BSR, OIL | ⭐⭐⭐ |
-| 🛡️ **Bảo hiểm** | 6 | BVH, BMI, PVI, BIC, MIG, ABI | ⭐⭐⭐⭐ |
-| 🧪 **Hóa chất & Công nghiệp** | 8 | DGC, DCM, DPM, BFC, GVR | ⭐⭐⭐ |
+| 🏦 **Ngân hàng** | 17 | VCB, BID, CTG, TCB, MBB, VPB, ACB | ⭐⭐⭐⭐⭐ |
+| 🏠 **Bất động sản** | 20 | VHM, VIC, NVL, PDR, DXG, KDH, NLG | ⭐⭐⭐⭐⭐ |
+| 📈 **Chứng khoán** | 14 | SSI, VND, HCM, VCI, SHS, MBS, FTS | ⭐⭐⭐⭐⭐ |
+| 🛒 **Bán lẻ & Tiêu dùng** | 12 | VNM, MSN, MWG, PNJ, FRT, SAB | ⭐⭐ |
+| 🏗️ **Xây dựng** | 12 | CTD, HBC, VCG, FCN, CII, HUT | ⭐⭐⭐⭐ |
+| ⚡ **Điện & Năng lượng** | 15 | POW, GAS, PLX, REE, PC1, GEG | ⭐⭐⭐⭐ |
+| 🏗️ **Thép & Vật liệu** | 12 | HPG, HSG, NKG, SMC, POM, VGS | ⭐⭐⭐ |
+| 💻 **Công nghệ** | 10 | FPT, CMG, VGI, FOX, ELC, DGW | ⭐ |
+| 🛢️ **Dầu khí** | 10 | PVD, PVS, PVT, BSR, OIL, GAS | ⭐⭐⭐ |
+| 🛡️ **Bảo hiểm** | 7 | BVH, BMI, PVI, BIC, MIG, ABI | ⭐⭐⭐⭐ |
+| 🧪 **Hóa chất & Công nghiệp** | 10 | DGC, DCM, DPM, BFC, GVR, CSV | ⭐⭐⭐ |
 
-**Tổng: 124 cổ phiếu** được theo dõi và cập nhật hàng ngày
+**Tổng: 135+ cổ phiếu** được theo dõi và cập nhật hàng ngày
+**iCopy Portfolio: 164 mã** được đánh dấu đặc biệt
 
 ## 📊 Phương Pháp Định Giá
 
@@ -229,7 +237,8 @@ jpstock_webapp/
 │   │   ├── app.js                   # Main dashboard logic
 │   │   ├── stock.js                 # Stock detail page
 │   │   ├── sector.js                # Sector analysis page
-│   │   └── market.js                # Market heat page
+│   │   ├── market.js                # Market heat page
+│   │   └── icopy-config.js          # iCopy portfolio config (164 mã)
 │   │
 │   └── 📂 css/
 │       └── style.css                # Custom CSS styles

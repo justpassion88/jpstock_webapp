@@ -843,8 +843,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 30850.0,
-      "last_updated": "2026-01-27T10:23:14.272444"
+      "current_price": 30950.0,
+      "last_updated": "2026-01-28T03:11:08.972270"
     },
     "VND": {
       "symbol": "VND",
@@ -1288,7 +1288,7 @@
         "has_prices": true
       },
       "current_price": 18650.0,
-      "last_updated": "2026-01-27T10:23:15.463166"
+      "last_updated": "2026-01-28T03:11:10.911266"
     },
     "HCM": {
       "symbol": "HCM",
@@ -1738,8 +1738,8 @@
         "years": 15,
         "has_prices": true
       },
-      "current_price": 23350.0,
-      "last_updated": "2026-01-27T10:23:16.906467"
+      "current_price": 23550.0,
+      "last_updated": "2026-01-28T03:11:12.224706"
     },
     "VCI": {
       "symbol": "VCI",
@@ -2058,8 +2058,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 37000.0,
-      "last_updated": "2026-01-27T10:23:18.171342"
+      "current_price": 36650.0,
+      "last_updated": "2026-01-28T03:11:13.521214"
     },
     "SHS": {
       "symbol": "SHS",
@@ -2495,8 +2495,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 19000.0,
-      "last_updated": "2026-01-27T10:23:19.519914"
+      "current_price": 18900.0,
+      "last_updated": "2026-01-28T03:11:14.936854"
     },
     "MBS": {
       "symbol": "MBS",
@@ -2852,7 +2852,7 @@
         "has_prices": true
       },
       "current_price": 26100.0,
-      "last_updated": "2026-01-27T10:23:20.802174"
+      "last_updated": "2026-01-28T03:11:16.463804"
     },
     "FTS": {
       "symbol": "FTS",
@@ -3174,8 +3174,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 32250.0,
-      "last_updated": "2026-01-27T10:23:22.063264"
+      "current_price": 32400.0,
+      "last_updated": "2026-01-28T03:11:18.051149"
     },
     "BSI": {
       "symbol": "BSI",
@@ -3611,8 +3611,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 38550.0,
-      "last_updated": "2026-01-27T10:23:23.414616"
+      "current_price": 38500.0,
+      "last_updated": "2026-01-28T03:11:19.620182"
     },
     "CTS": {
       "symbol": "CTS",
@@ -4045,8 +4045,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 31450.0,
-      "last_updated": "2026-01-27T10:23:24.785082"
+      "current_price": 31400.0,
+      "last_updated": "2026-01-28T03:11:21.043460"
     },
     "ORS": {
       "symbol": "ORS",
@@ -4448,8 +4448,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 13650.0,
-      "last_updated": "2026-01-27T10:23:26.135732"
+      "current_price": 13450.0,
+      "last_updated": "2026-01-28T03:11:22.495325"
     },
     "TVS": {
       "symbol": "TVS",
@@ -4834,8 +4834,8 @@
         "years": 12,
         "has_prices": true
       },
-      "current_price": 14300.0,
-      "last_updated": "2026-01-27T10:23:27.534068"
+      "current_price": 14400.0,
+      "last_updated": "2026-01-28T03:11:23.850212"
     },
     "AGR": {
       "symbol": "AGR",
@@ -5259,8 +5259,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 15950.0,
-      "last_updated": "2026-01-27T10:23:28.861629"
+      "current_price": 16100.000000000002,
+      "last_updated": "2026-01-28T03:11:25.202265"
     }
   }
 }

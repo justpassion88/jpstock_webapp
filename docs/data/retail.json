@@ -829,8 +829,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 67700.0,
-      "last_updated": "2026-01-27T10:21:18.162870"
+      "current_price": 67600.0,
+      "last_updated": "2026-01-28T03:09:06.060062"
     },
     "MSN": {
       "symbol": "MSN",
@@ -1266,8 +1266,8 @@
         "years": 14,
         "has_prices": true
       },
-      "current_price": 76700.0,
-      "last_updated": "2026-01-27T10:21:19.845012"
+      "current_price": 77800.0,
+      "last_updated": "2026-01-28T03:09:07.937080"
     },
     "SAB": {
       "symbol": "SAB",
@@ -1597,8 +1597,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 49550.0,
-      "last_updated": "2026-01-27T10:21:21.469407"
+      "current_price": 49750.0,
+      "last_updated": "2026-01-28T03:09:09.442293"
     },
     "PNJ": {
       "symbol": "PNJ",
@@ -2027,8 +2027,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 116000.0,
-      "last_updated": "2026-01-27T10:21:23.084583"
+      "current_price": 118900.0,
+      "last_updated": "2026-01-28T03:09:12.562490"
     },
     "MWG": {
       "symbol": "MWG",
@@ -2427,8 +2427,8 @@
         "years": 12,
         "has_prices": true
       },
-      "current_price": 85000.0,
-      "last_updated": "2026-01-27T10:21:24.694674"
+      "current_price": 84900.0,
+      "last_updated": "2026-01-28T03:09:14.221126"
     },
     "DGW": {
       "symbol": "DGW",
@@ -2780,8 +2780,8 @@
         "years": 11,
         "has_prices": true
       },
-      "current_price": 45200.0,
-      "last_updated": "2026-01-27T10:21:25.936280"
+      "current_price": 45300.0,
+      "last_updated": "2026-01-28T03:09:15.704500"
     },
     "FRT": {
       "symbol": "FRT",
@@ -3072,8 +3072,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 154700.0,
-      "last_updated": "2026-01-27T10:21:27.507055"
+      "current_price": 158800.0,
+      "last_updated": "2026-01-28T03:09:17.132104"
     },
     "HAX": {
       "symbol": "HAX",
@@ -3510,7 +3510,7 @@
         "has_prices": true
       },
       "current_price": 10750.0,
-      "last_updated": "2026-01-27T10:21:28.909353"
+      "last_updated": "2026-01-28T03:09:18.600389"
     },
     "VGC": {
       "symbol": "VGC",
@@ -3848,8 +3848,8 @@
         "years": 11,
         "has_prices": true
       },
-      "current_price": 45000.0,
-      "last_updated": "2026-01-27T10:21:30.201772"
+      "current_price": 46450.0,
+      "last_updated": "2026-01-28T03:09:19.921891"
     },
     "BCG": {
       "symbol": "BCG",
@@ -4178,7 +4178,7 @@
         "has_prices": true
       },
       "current_price": 2530.0,
-      "last_updated": "2026-01-27T10:21:31.483229"
+      "last_updated": "2026-01-28T03:09:21.859992"
     }
   }
 }

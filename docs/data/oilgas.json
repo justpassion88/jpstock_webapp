@@ -829,8 +829,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 29300.0,
-      "last_updated": "2026-01-27T10:22:26.228029"
+      "current_price": 30750.0,
+      "last_updated": "2026-01-28T03:10:27.214027"
     },
     "PVS": {
       "symbol": "PVS",
@@ -1256,8 +1256,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 40800.0,
-      "last_updated": "2026-01-27T10:22:27.757516"
+      "current_price": 43000.0,
+      "last_updated": "2026-01-28T03:10:28.872937"
     },
     "PVT": {
       "symbol": "PVT",
@@ -1686,8 +1686,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 20550.0,
-      "last_updated": "2026-01-27T10:22:29.315181"
+      "current_price": 20950.0,
+      "last_updated": "2026-01-28T03:10:30.100752"
     },
     "BSR": {
       "symbol": "BSR",
@@ -1947,8 +1947,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 21500.0,
-      "last_updated": "2026-01-27T10:22:30.611918"
+      "current_price": 22400.0,
+      "last_updated": "2026-01-28T03:10:31.481910"
     },
     "OIL": {
       "symbol": "OIL",
@@ -2217,8 +2217,8 @@
         "years": 8,
         "has_prices": true
       },
-      "current_price": 14700.0,
-      "last_updated": "2026-01-27T10:22:31.806191"
+      "current_price": 15100.0,
+      "last_updated": "2026-01-28T03:10:32.963804"
     },
     "CNG": {
       "symbol": "CNG",
@@ -2654,8 +2654,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 26300.0,
-      "last_updated": "2026-01-27T10:22:33.548019"
+      "current_price": 27000.0,
+      "last_updated": "2026-01-28T03:10:34.687332"
     },
     "PVC": {
       "symbol": "PVC",
@@ -3081,8 +3081,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 14200.0,
-      "last_updated": "2026-01-27T10:22:34.987738"
+      "current_price": 14800.0,
+      "last_updated": "2026-01-28T03:10:36.035204"
     },
     "PXS": {
       "symbol": "PXS",
@@ -3509,7 +3509,7 @@
         "has_prices": true
       },
       "current_price": 3700.0,
-      "last_updated": "2026-01-27T10:22:36.734696"
+      "last_updated": "2026-01-28T03:10:37.489534"
     }
   }
 }

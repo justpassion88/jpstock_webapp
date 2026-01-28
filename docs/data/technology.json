@@ -822,8 +822,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 102100.0,
-      "last_updated": "2026-01-27T10:23:49.740125"
+      "current_price": 104700.0,
+      "last_updated": "2026-01-28T03:11:51.007547"
     },
     "CMG": {
       "symbol": "CMG",
@@ -1249,8 +1249,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 35250.0,
-      "last_updated": "2026-01-27T10:23:51.014720"
+      "current_price": 36050.0,
+      "last_updated": "2026-01-28T03:11:52.494980"
     },
     "VGI": {
       "symbol": "VGI",
@@ -1534,8 +1534,8 @@
         "years": 8,
         "has_prices": true
       },
-      "current_price": 126800.0,
-      "last_updated": "2026-01-27T10:23:52.287164"
+      "current_price": 133800.0,
+      "last_updated": "2026-01-28T03:11:54.032594"
     },
     "FOX": {
       "symbol": "FOX",
@@ -1871,8 +1871,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 92900.0,
-      "last_updated": "2026-01-27T10:23:53.613728"
+      "current_price": 97500.0,
+      "last_updated": "2026-01-28T03:11:55.877151"
     },
     "ELC": {
       "symbol": "ELC",
@@ -2301,8 +2301,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 24050.0,
-      "last_updated": "2026-01-27T10:23:55.073068"
+      "current_price": 24450.0,
+      "last_updated": "2026-01-28T03:11:57.351479"
     },
     "ITD": {
       "symbol": "ITD",
@@ -2721,8 +2721,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 16950.0,
-      "last_updated": "2026-01-27T10:23:56.908867"
+      "current_price": 16900.0,
+      "last_updated": "2026-01-28T03:11:58.925575"
     },
     "ICT": {
       "symbol": "ICT",
@@ -2961,8 +2961,8 @@
         "years": 7,
         "has_prices": true
       },
-      "current_price": 18100.0,
-      "last_updated": "2026-01-27T10:23:58.717643"
+      "current_price": 18500.0,
+      "last_updated": "2026-01-28T03:12:00.524908"
     },
     "LHG": {
       "symbol": "LHG",
@@ -3399,7 +3399,7 @@
         "has_prices": true
       },
       "current_price": 28900.0,
-      "last_updated": "2026-01-27T10:24:00.720404"
+      "last_updated": "2026-01-28T03:12:01.823981"
     }
   }
 }

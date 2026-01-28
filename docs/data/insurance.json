@@ -822,8 +822,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 69000.0,
-      "last_updated": "2026-01-27T10:22:17.459521"
+      "current_price": 70100.0,
+      "last_updated": "2026-01-28T03:10:16.380570"
     },
     "BMI": {
       "symbol": "BMI",
@@ -1252,8 +1252,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 18000.0,
-      "last_updated": "2026-01-27T10:22:18.817381"
+      "current_price": 18350.0,
+      "last_updated": "2026-01-28T03:10:18.299147"
     },
     "PVI": {
       "symbol": "PVI",
@@ -1683,8 +1683,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 90400.0,
-      "last_updated": "2026-01-27T10:22:20.152120"
+      "current_price": 89500.0,
+      "last_updated": "2026-01-28T03:10:19.654215"
     },
     "BIC": {
       "symbol": "BIC",
@@ -2113,8 +2113,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 24900.0,
-      "last_updated": "2026-01-27T10:22:21.487217"
+      "current_price": 25300.0,
+      "last_updated": "2026-01-28T03:10:21.294753"
     },
     "MIG": {
       "symbol": "MIG",
@@ -2427,8 +2427,8 @@
         "years": 10,
         "has_prices": true
       },
-      "current_price": 17800.0,
-      "last_updated": "2026-01-27T10:22:22.895826"
+      "current_price": 18050.0,
+      "last_updated": "2026-01-28T03:10:23.039520"
     },
     "ABI": {
       "symbol": "ABI",
@@ -2826,8 +2826,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 20200.0,
-      "last_updated": "2026-01-27T10:22:24.458159"
+      "current_price": 20100.0,
+      "last_updated": "2026-01-28T03:10:25.121216"
     }
   }
 }

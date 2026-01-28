@@ -6,9 +6,9 @@
     "VCB": {
       "symbol": "VCB",
       "name": "Vietcombank",
-      "current_price": 70600.0,
+      "current_price": 72100.0,
       "current_pb": 2.851781189,
-      "last_updated": "2026-01-27T10:20:32.016251",
+      "last_updated": "2026-01-28T03:08:26.802195",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,
@@ -475,9 +475,9 @@
     "BID": {
       "symbol": "BID",
       "name": "BIDV",
-      "current_price": 52600.0,
+      "current_price": 55300.0,
       "current_pb": 2.3541310128,
-      "last_updated": "2026-01-27T10:20:33.399130",
+      "last_updated": "2026-01-28T03:08:28.213073",
       "pb_statistics": {
         "count": 47,
         "years_of_data": 11.75,
@@ -924,9 +924,9 @@
     "CTG": {
       "symbol": "CTG",
       "name": "VietinBank",
-      "current_price": 38250.0,
+      "current_price": 39350.0,
       "current_pb": 1.908187043,
-      "last_updated": "2026-01-27T10:20:35.073532",
+      "last_updated": "2026-01-28T03:08:29.734891",
       "pb_statistics": {
         "count": 53,
         "years_of_data": 13.25,
@@ -1403,9 +1403,9 @@
     "TCB": {
       "symbol": "TCB",
       "name": "Techcombank",
-      "current_price": 34950.0,
+      "current_price": 35150.0,
       "current_pb": 1.5210593052,
-      "last_updated": "2026-01-27T10:20:36.692141",
+      "last_updated": "2026-01-28T03:08:32.991755",
       "pb_statistics": {
         "count": 31,
         "years_of_data": 7.75,
@@ -1772,9 +1772,9 @@
     "MBB": {
       "symbol": "MBB",
       "name": "MB Bank",
-      "current_price": 26500.0,
+      "current_price": 26750.0,
       "current_pb": 1.7159471718,
-      "last_updated": "2026-01-27T10:20:38.558966",
+      "last_updated": "2026-01-28T03:08:34.606400",
       "pb_statistics": {
         "count": 55,
         "years_of_data": 13.75,
@@ -2261,9 +2261,9 @@
     "VPB": {
       "symbol": "VPB",
       "name": "VPBank",
-      "current_price": 27800.0,
+      "current_price": 28100.0,
       "current_pb": 1.3467082822,
-      "last_updated": "2026-01-27T10:20:40.306121",
+      "last_updated": "2026-01-28T03:08:36.031594",
       "pb_statistics": {
         "count": 34,
         "years_of_data": 8.5,
@@ -2645,9 +2645,9 @@
     "ACB": {
       "symbol": "ACB",
       "name": "ACB",
-      "current_price": 24700.0,
+      "current_price": 24300.0,
       "current_pb": 1.3850887997,
-      "last_updated": "2026-01-27T10:20:42.062437",
+      "last_updated": "2026-01-28T03:08:37.427470",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,
@@ -3114,9 +3114,9 @@
     "HDB": {
       "symbol": "HDB",
       "name": "HDBank",
-      "current_price": 29000.0,
+      "current_price": 28700.0,
       "current_pb": 1.9911801653,
-      "last_updated": "2026-01-27T10:20:44.783782",
+      "last_updated": "2026-01-28T03:08:38.714205",
       "pb_statistics": {
         "count": 31,
         "years_of_data": 7.75,
@@ -3483,9 +3483,9 @@
     "STB": {
       "symbol": "STB",
       "name": "Sacombank",
-      "current_price": 61900.0,
+      "current_price": 64800.0,
       "current_pb": 1.6265131736,
-      "last_updated": "2026-01-27T10:20:47.100716",
+      "last_updated": "2026-01-28T03:08:40.512984",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,
@@ -3952,9 +3952,9 @@
     "TPB": {
       "symbol": "TPB",
       "name": "TPBank",
-      "current_price": 17200.0,
+      "current_price": 17100.0,
       "current_pb": 1.2138536221,
-      "last_updated": "2026-01-27T10:20:48.857806",
+      "last_updated": "2026-01-28T03:08:41.841200",
       "pb_statistics": {
         "count": 30,
         "years_of_data": 7.5,
@@ -4316,9 +4316,9 @@
     "SHB": {
       "symbol": "SHB",
       "name": "SHB",
-      "current_price": 16050.0,
+      "current_price": 15950.0,
       "current_pb": 1.166566115,
-      "last_updated": "2026-01-27T10:20:50.318421",
+      "last_updated": "2026-01-28T03:08:43.195920",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,
@@ -4787,7 +4787,7 @@
       "name": "LienVietPostBank",
       "current_price": 42000.0,
       "current_pb": 2.6839186486,
-      "last_updated": "2026-01-27T10:20:52.250836",
+      "last_updated": "2026-01-28T03:08:44.689220",
       "pb_statistics": {
         "count": 33,
         "years_of_data": 8.25,
@@ -5166,7 +5166,7 @@
       "name": "MSB",
       "current_price": 12200.0,
       "current_pb": 0.9693203166,
-      "last_updated": "2026-01-27T10:20:53.742783",
+      "last_updated": "2026-01-28T03:08:46.280592",
       "pb_statistics": {
         "count": 20,
         "years_of_data": 5.0,
@@ -5480,7 +5480,7 @@
       "name": "OCB",
       "current_price": 11750.0,
       "current_pb": 0.9869846772,
-      "last_updated": "2026-01-27T10:20:55.214510",
+      "last_updated": "2026-01-28T03:08:47.693178",
       "pb_statistics": {
         "count": 19,
         "years_of_data": 4.75,
@@ -5787,9 +5787,9 @@
     "EIB": {
       "symbol": "EIB",
       "name": "Eximbank",
-      "current_price": 21000.0,
+      "current_price": 21050.0,
       "current_pb": 1.6176893122,
-      "last_updated": "2026-01-27T10:20:56.944548",
+      "last_updated": "2026-01-28T03:08:49.179648",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,
@@ -6258,7 +6258,7 @@
       "name": "SeABank",
       "current_price": 17450.0,
       "current_pb": 1.2646650347,
-      "last_updated": "2026-01-27T10:20:58.469366",
+      "last_updated": "2026-01-28T03:08:50.648961",
       "pb_statistics": {
         "count": 19,
         "years_of_data": 4.75,
@@ -6567,7 +6567,7 @@
       "name": "ABBank",
       "current_price": 13800.0,
       "current_pb": 1.1036167515,
-      "last_updated": "2026-01-27T10:21:00.318073",
+      "last_updated": "2026-01-28T03:08:51.815759",
       "pb_statistics": {
         "count": 20,
         "years_of_data": 5.0,
@@ -6879,9 +6879,9 @@
     "VIB": {
       "symbol": "VIB",
       "name": "VIB",
-      "current_price": 17400.0,
+      "current_price": 17550.0,
       "current_pb": 1.3650690329,
-      "last_updated": "2026-01-27T10:21:01.955832",
+      "last_updated": "2026-01-28T03:08:53.217820",
       "pb_statistics": {
         "count": 35,
         "years_of_data": 8.75,
@@ -7270,7 +7270,7 @@
       "name": "Nam A Bank",
       "current_price": 14350.0,
       "current_pb": 1.1557434284,
-      "last_updated": "2026-01-27T10:21:04.112851",
+      "last_updated": "2026-01-28T03:08:54.628911",
       "pb_statistics": {
         "count": 20,
         "years_of_data": 5.0,
@@ -7584,7 +7584,7 @@
       "name": "PG Bank",
       "current_price": 12500.0,
       "current_pb": 1.9419162375,
-      "last_updated": "2026-01-27T10:21:06.382608",
+      "last_updated": "2026-01-28T03:08:56.309960",
       "pb_statistics": {
         "count": 21,
         "years_of_data": 5.25,
@@ -7901,9 +7901,9 @@
     "BVB": {
       "symbol": "BVB",
       "name": "Viet Capital Bank",
-      "current_price": 13900.0,
+      "current_price": 14100.0,
       "current_pb": 1.217517581,
-      "last_updated": "2026-01-27T10:21:08.156273",
+      "last_updated": "2026-01-28T03:08:57.676997",
       "pb_statistics": {
         "count": 21,
         "years_of_data": 5.25,
@@ -8220,9 +8220,9 @@
     "VAB": {
       "symbol": "VAB",
       "name": "VietABank",
-      "current_price": 11300.0,
+      "current_price": 11350.0,
       "current_pb": 0.9019704329,
-      "last_updated": "2026-01-27T10:21:09.566970",
+      "last_updated": "2026-01-28T03:08:58.965977",
       "pb_statistics": {
         "count": 17,
         "years_of_data": 4.25,
@@ -8519,9 +8519,9 @@
     "KLB": {
       "symbol": "KLB",
       "name": "Kien Long Bank",
-      "current_price": 15200.0,
+      "current_price": 15250.0,
       "current_pb": 1.0926261612,
-      "last_updated": "2026-01-27T10:21:11.238381",
+      "last_updated": "2026-01-28T03:09:00.256728",
       "pb_statistics": {
         "count": 34,
         "years_of_data": 8.5,
@@ -8903,9 +8903,9 @@
     "BAB": {
       "symbol": "BAB",
       "name": "Bac A Bank",
-      "current_price": 12500.0,
+      "current_price": 12400.0,
       "current_pb": 0.9974126965,
-      "last_updated": "2026-01-27T10:21:12.664750",
+      "last_updated": "2026-01-28T03:09:01.834247",
       "pb_statistics": {
         "count": 32,
         "years_of_data": 8.0,
@@ -9279,7 +9279,7 @@
       "name": "Saigonbank",
       "current_price": 12500.0,
       "current_pb": 1.063598195,
-      "last_updated": "2026-01-27T10:21:14.375402",
+      "last_updated": "2026-01-28T03:09:03.165602",
       "pb_statistics": {
         "count": 20,
         "years_of_data": 5.0,
@@ -9593,7 +9593,7 @@
       "name": "NCB",
       "current_price": 12800.0,
       "current_pb": 1.9822823354,
-      "last_updated": "2026-01-27T10:21:16.274956",
+      "last_updated": "2026-01-28T03:09:04.636356",
       "pb_statistics": {
         "count": 51,
         "years_of_data": 12.75,

@@ -822,8 +822,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 77300.0,
-      "last_updated": "2026-01-27T10:21:43.283299"
+      "current_price": 78100.0,
+      "last_updated": "2026-01-28T03:09:38.086345"
     },
     "HBC": {
       "symbol": "HBC",
@@ -1240,8 +1240,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 6200.0,
-      "last_updated": "2026-01-27T10:21:44.745188"
+      "current_price": 6300.0,
+      "last_updated": "2026-01-28T03:09:39.495706"
     },
     "VCG": {
       "symbol": "VCG",
@@ -1670,8 +1670,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 19800.0,
-      "last_updated": "2026-01-27T10:21:46.079225"
+      "current_price": 19600.0,
+      "last_updated": "2026-01-28T03:09:40.849128"
     },
     "FCN": {
       "symbol": "FCN",
@@ -2100,8 +2100,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 13800.0,
-      "last_updated": "2026-01-27T10:21:47.387529"
+      "current_price": 13950.0,
+      "last_updated": "2026-01-28T03:09:42.069334"
     },
     "LCG": {
       "symbol": "LCG",
@@ -2532,7 +2532,7 @@
         "has_prices": true
       },
       "current_price": 10050.0,
-      "last_updated": "2026-01-27T10:21:48.624870"
+      "last_updated": "2026-01-28T03:09:43.571141"
     },
     "HUT": {
       "symbol": "HUT",
@@ -2955,8 +2955,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 15900.0,
-      "last_updated": "2026-01-27T10:21:50.087811"
+      "current_price": 15700.0,
+      "last_updated": "2026-01-28T03:09:45.063776"
     },
     "C4G": {
       "symbol": "C4G",
@@ -3224,8 +3224,8 @@
         "years": 9,
         "has_prices": true
       },
-      "current_price": 8000.0,
-      "last_updated": "2026-01-27T10:21:51.353672"
+      "current_price": 8100.0,
+      "last_updated": "2026-01-28T03:09:47.054522"
     },
     "CII": {
       "symbol": "CII",
@@ -3651,8 +3651,8 @@
         "years": 13,
         "has_prices": true
       },
-      "current_price": 17250.0,
-      "last_updated": "2026-01-27T10:21:52.610904"
+      "current_price": 17200.0,
+      "last_updated": "2026-01-28T03:09:48.390541"
     },
     "HHV": {
       "symbol": "HHV",
@@ -3868,8 +3868,8 @@
         "years": 7,
         "has_prices": true
       },
-      "current_price": 12100.0,
-      "last_updated": "2026-01-27T10:21:53.941091"
+      "current_price": 12250.0,
+      "last_updated": "2026-01-28T03:09:49.714651"
     },
     "TV2": {
       "symbol": "TV2",
@@ -4299,7 +4299,7 @@
         "has_prices": true
       },
       "current_price": 34250.0,
-      "last_updated": "2026-01-27T10:21:55.296467"
+      "last_updated": "2026-01-28T03:09:51.380525"
     }
   }
 }
