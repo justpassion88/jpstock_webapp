@@ -12,7 +12,15 @@ Hệ thống cung cấp:
 - 🌡️ **Market Heat Index** đo nhiệt độ thị trường theo từng ngành
 - 📈 Visualization tương tác với biểu đồ P/B lịch sử
 
-**🌐 Live Demo:** [https://justpassion88.github.io/jpstock_webapp/](https://justpassion88.github.io/jpstock_webapp/)
+## 🚀 Live Demo
+
+**🌐 Website:** [https://justpassion88.github.io/jpstock_webapp/](https://justpassion88.github.io/jpstock_webapp/)
+
+**Các trang chính:**
+- 🌡️ [Market Heat Map](https://justpassion88.github.io/jpstock_webapp/) - Tổng quan thị trường đa ngành
+- 🏦 [Banks Analysis](https://justpassion88.github.io/jpstock_webapp/bank.html) - Phân tích chuyên sâu ngành Ngân hàng
+- 📊 [Sector Analysis](https://justpassion88.github.io/jpstock_webapp/sector.html) - Chi tiết từng ngành
+- 📈 [Stock Detail](https://justpassion88.github.io/jpstock_webapp/stock.html) - Phân tích từng mã cổ phiếu
 
 ## ✨ Tính Năng Chính
 
