@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:21:38.877152",
+  "last_updated": "2026-01-29T04:35:48.008215",
   "data_type": "daily",
   "data_source": "VCI",
   "sector": "🧪 Hóa chất & Công nghiệp",
@@ -12,9 +12,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 68100.0,
+        "price": 67200.0,
         "pb": 1.5577529533,
-        "bvps": 41020.6251666389
+        "bvps": 41020.6251666389,
+        "last_updated": "2026-01-29T04:35:40.188120",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -4020,9 +4022,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 36000.0,
+        "price": 36300.0,
         "pb": 1.8468860982,
-        "bvps": 19871.2849895523
+        "bvps": 19871.2849895523,
+        "last_updated": "2026-01-29T04:35:41.324541",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -8028,9 +8032,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 23600.0,
+        "price": 23550.0,
         "pb": 1.518893307,
-        "bvps": 16393.5148604599
+        "bvps": 16393.5148604599,
+        "last_updated": "2026-01-29T04:35:42.417300",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -12036,9 +12042,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 46000.0,
+        "price": 46450.0,
         "pb": 2.0855221461,
-        "bvps": 23447.3654912286
+        "bvps": 23447.3654912286,
+        "last_updated": "2026-01-29T04:35:43.415236",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -16044,9 +16052,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 16200.0,
+        "price": 16400.0,
         "pb": 1.2420540498,
-        "bvps": 13042.9106549651
+        "bvps": 13042.9106549651,
+        "last_updated": "2026-01-29T04:35:44.417417",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -20052,9 +20062,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 28800.0,
+        "price": 28400.0,
         "pb": 2.1987007373,
-        "bvps": 14031.0136242192
+        "bvps": 14031.0136242192,
+        "last_updated": "2026-01-29T04:35:45.536944",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -24060,9 +24072,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 33800.0,
+        "price": 34200.0,
         "pb": 1.5335158501,
-        "bvps": 22497.3220834824
+        "bvps": 22497.3220834824,
+        "last_updated": "2026-01-29T04:35:46.566153",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -28068,9 +28082,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 38200.0,
+        "price": 39400.0,
         "pb": 2.5055164041,
-        "bvps": 14507.9872320543
+        "bvps": 14507.9872320543,
+        "last_updated": "2026-01-29T04:35:47.708056",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:19:56.514372",
+  "last_updated": "2026-01-29T04:34:14.467362",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🛒 Bán lẻ & Tiêu dùng",
@@ -11,7 +11,8 @@
       "current": {
         "price": 67700.0,
         "pb": 4.1495135668,
-        "bvps": 16315.1653587256
+        "bvps": 16315.1653587256,
+        "last_updated": "2026-01-29T04:34:12.003957"
       },
       "valuation": {
         "zone": "fair",
@@ -260,7 +261,8 @@
       "current": {
         "price": 79500.0,
         "pb": 3.4196724152,
-        "bvps": 23247.840830468
+        "bvps": 23247.840830468,
+        "last_updated": "2026-01-29T04:34:12.003968"
       },
       "valuation": {
         "zone": "fair",
@@ -507,9 +509,11 @@
       "symbol": "SAB",
       "name": "SAB",
       "current": {
-        "price": 48950.0,
+        "price": 50500.0,
         "pb": 3.0351670062,
-        "bvps": 17692.601392414
+        "bvps": 17692.601392414,
+        "last_updated": "2026-01-29T04:34:14.167179",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -758,7 +762,8 @@
       "current": {
         "price": 118500.0,
         "pb": 2.8719351653,
-        "bvps": 35342.0234648833
+        "bvps": 35342.0234648833,
+        "last_updated": "2026-01-29T04:34:14.467322"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1007,7 +1012,8 @@
       "current": {
         "price": 85500.0,
         "pb": 4.0204348544,
-        "bvps": 21390.7209331822
+        "bvps": 21390.7209331822,
+        "last_updated": "2026-01-29T04:34:14.467343"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1256,7 +1262,8 @@
       "current": {
         "price": 44000.0,
         "pb": 2.9802116706,
-        "bvps": 14797.6066379556
+        "bvps": 14797.6066379556,
+        "last_updated": "2026-01-29T04:34:14.467347"
       },
       "valuation": {
         "zone": "expensive",
@@ -1503,9 +1510,11 @@
       "symbol": "FRT",
       "name": "FRT",
       "current": {
-        "price": 160300.0,
+        "price": 160100.0,
         "pb": 8.0039184412,
-        "bvps": 18116.1266278976
+        "bvps": 18116.1266278976,
+        "last_updated": "2026-01-29T04:34:14.467350",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -1754,7 +1763,8 @@
       "current": {
         "price": 10600.0,
         "pb": 1.0356952577,
-        "bvps": 10234.6707885143
+        "bvps": 10234.6707885143,
+        "last_updated": "2026-01-29T04:34:14.467353"
       },
       "valuation": {
         "zone": "expensive",
@@ -2003,7 +2013,8 @@
       "current": {
         "price": 46100.0,
         "pb": 2.3925789561,
-        "bvps": 19267.9116741898
+        "bvps": 19267.9116741898,
+        "last_updated": "2026-01-29T04:34:14.467356"
       },
       "valuation": {
         "zone": "expensive",
@@ -2252,7 +2263,8 @@
       "current": {
         "price": 2530.0,
         "pb": 0.2237306971,
-        "bvps": 11308.2381290813
+        "bvps": 11308.2381290813,
+        "last_updated": "2026-01-29T04:34:14.467359"
       },
       "valuation": {
         "zone": "extremely_cheap",

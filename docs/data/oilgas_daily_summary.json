@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:16:15.005648",
+  "last_updated": "2026-01-29T04:35:32.476889",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🛢️ Dầu khí",
@@ -11,7 +11,8 @@
       "current": {
         "price": 30500.0,
         "pb": 0.9756624423,
-        "bvps": 30440.8560919602
+        "bvps": 30440.8560919602,
+        "last_updated": "2026-01-29T04:35:32.476864"
       },
       "valuation": {
         "zone": "expensive",
@@ -260,7 +261,8 @@
       "current": {
         "price": 43500.0,
         "pb": 1.5500312627,
-        "bvps": 28063.950093033
+        "bvps": 28063.950093033,
+        "last_updated": "2026-01-29T04:35:32.476877"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -509,7 +511,8 @@
       "current": {
         "price": 21000.0,
         "pb": 1.1781478476,
-        "bvps": 17739.7090211529
+        "bvps": 17739.7090211529,
+        "last_updated": "2026-01-29T04:35:32.476879"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -758,7 +761,8 @@
       "current": {
         "price": 21900.0,
         "pb": 1.8661279,
-        "bvps": 11467.5955490148
+        "bvps": 11467.5955490148,
+        "last_updated": "2026-01-29T04:35:32.476881"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1007,7 +1011,8 @@
       "current": {
         "price": 15100.0,
         "pb": 1.3479546515,
-        "bvps": 10171.7071748166
+        "bvps": 10171.7071748166,
+        "last_updated": "2026-01-29T04:35:32.476882"
       },
       "valuation": {
         "zone": "fair",
@@ -1256,7 +1261,8 @@
       "current": {
         "price": 27200.0,
         "pb": 1.4988393585,
-        "bvps": 18147.3750644914
+        "bvps": 18147.3750644914,
+        "last_updated": "2026-01-29T04:35:32.476884"
       },
       "valuation": {
         "zone": "expensive",
@@ -1505,7 +1511,8 @@
       "current": {
         "price": 14300.0,
         "pb": 1.2623283689,
-        "bvps": 11645.1474610159
+        "bvps": 11645.1474610159,
+        "last_updated": "2026-01-29T04:35:32.476885"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1754,7 +1761,8 @@
       "current": {
         "price": 3600.0,
         "pb": 1.5474221933,
-        "bvps": 2003.3317432611
+        "bvps": 2003.3317432611,
+        "last_updated": "2026-01-29T04:35:32.476887"
       },
       "valuation": {
         "zone": "fair",

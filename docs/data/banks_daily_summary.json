@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:08:53.521498",
+  "last_updated": "2026-01-29T04:33:07.386426",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🏦 Ngân hàng",
@@ -11,7 +11,8 @@
       "current": {
         "price": 69600.0,
         "pb": 2.851781189,
-        "bvps": 26650.0109799506
+        "bvps": 26650.0109799506,
+        "last_updated": "2026-01-29T04:33:07.386365"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -260,7 +261,8 @@
       "current": {
         "price": 51900.0,
         "pb": 2.3541310128,
-        "bvps": 23150.7930970538
+        "bvps": 23150.7930970538,
+        "last_updated": "2026-01-29T04:33:07.386382"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -509,7 +511,8 @@
       "current": {
         "price": 38400.0,
         "pb": 1.908187043,
-        "bvps": 21722.1892114795
+        "bvps": 21722.1892114795,
+        "last_updated": "2026-01-29T04:33:07.386386"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -758,7 +761,8 @@
       "current": {
         "price": 34500.0,
         "pb": 1.437713587,
-        "bvps": 23996.4345550569
+        "bvps": 23996.4345550569,
+        "last_updated": "2026-01-29T04:33:07.386389"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1007,7 +1011,8 @@
       "current": {
         "price": 26550.0,
         "pb": 1.6780256873,
-        "bvps": 15822.1654177302
+        "bvps": 15822.1654177302,
+        "last_updated": "2026-01-29T04:33:07.386392"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1256,7 +1261,8 @@
       "current": {
         "price": 27750.0,
         "pb": 1.3112685904,
-        "bvps": 21162.7123558387
+        "bvps": 21162.7123558387,
+        "last_updated": "2026-01-29T04:33:07.386394"
       },
       "valuation": {
         "zone": "expensive",
@@ -1505,7 +1511,8 @@
       "current": {
         "price": 23900.0,
         "pb": 1.2988410677,
-        "bvps": 18401.0196437893
+        "bvps": 18401.0196437893,
+        "last_updated": "2026-01-29T04:33:07.386397"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1754,7 +1761,8 @@
       "current": {
         "price": 28500.0,
         "pb": 1.9911801653,
-        "bvps": 13886.2371584433
+        "bvps": 13886.2371584433,
+        "last_updated": "2026-01-29T04:33:07.386400"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2003,7 +2011,8 @@
       "current": {
         "price": 63200.0,
         "pb": 1.6265131736,
-        "bvps": 33261.3352773471
+        "bvps": 33261.3352773471,
+        "last_updated": "2026-01-29T04:33:07.386402"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2252,7 +2261,8 @@
       "current": {
         "price": 16900.0,
         "pb": 1.2138536221,
-        "bvps": 14416.8948222383
+        "bvps": 14416.8948222383,
+        "last_updated": "2026-01-29T04:33:07.386405"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2501,7 +2511,8 @@
       "current": {
         "price": 16000.0,
         "pb": 1.166566115,
-        "bvps": 14315.5195282748
+        "bvps": 14315.5195282748,
+        "last_updated": "2026-01-29T04:33:07.386408"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2750,7 +2761,8 @@
       "current": {
         "price": 42000.0,
         "pb": 2.6585986613,
-        "bvps": 15797.7962643702
+        "bvps": 15797.7962643702,
+        "last_updated": "2026-01-29T04:33:07.386410"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2991,7 +3003,8 @@
       "current": {
         "price": 12150.0,
         "pb": 0.9693203166,
-        "bvps": 12998.7990384615
+        "bvps": 12998.7990384615,
+        "last_updated": "2026-01-29T04:33:07.386413"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3240,7 +3253,8 @@
       "current": {
         "price": 11700.0,
         "pb": 0.9869846772,
-        "bvps": 12259.5621583012
+        "bvps": 12259.5621583012,
+        "last_updated": "2026-01-29T04:33:07.386415"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3473,7 +3487,8 @@
       "current": {
         "price": 20850.0,
         "pb": 1.6176893122,
-        "bvps": 14248.7187290778
+        "bvps": 14248.7187290778,
+        "last_updated": "2026-01-29T04:33:07.386418"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3722,7 +3737,8 @@
       "current": {
         "price": 14250.0,
         "pb": 1.1557434284,
-        "bvps": 12978.6591312417
+        "bvps": 12978.6591312417,
+        "last_updated": "2026-01-29T04:33:07.386421"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3963,7 +3979,8 @@
       "current": {
         "price": 35550.0,
         "pb": 2.7281901313,
-        "bvps": 14130.2468465748
+        "bvps": 14130.2468465748,
+        "last_updated": "2026-01-29T04:33:07.386423"
       },
       "valuation": {
         "zone": "extremely_expensive",

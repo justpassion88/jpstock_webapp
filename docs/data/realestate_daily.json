@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:10:38.589687",
+  "last_updated": "2026-01-29T04:33:44.714218",
   "data_type": "daily",
   "data_source": "VCI",
   "sector": "🏠 Bất động sản",
@@ -12,9 +12,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 104300.0,
+        "price": 104600.0,
         "pb": 2.3873365934,
-        "bvps": 52904.1444560184
+        "bvps": 52904.1444560184,
+        "last_updated": "2026-01-29T04:29:36.640722",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -4022,7 +4024,9 @@
       "current": {
         "price": 140500.0,
         "pb": 8.4723483187,
-        "bvps": 18908.5710330252
+        "bvps": 18908.5710330252,
+        "last_updated": "2026-01-29T04:33:09.599901",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -8028,9 +8032,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 11900.0,
+        "price": 11950.0,
         "pb": 0.6847111004,
-        "bvps": 18840.0626087449
+        "bvps": 18840.0626087449,
+        "last_updated": "2026-01-29T04:33:10.842983",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "cheap",
@@ -12036,9 +12042,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 17450.0,
+        "price": 17200.0,
         "pb": 1.4682835148,
-        "bvps": 12088.9459165517
+        "bvps": 12088.9459165517,
+        "last_updated": "2026-01-29T04:33:12.014299",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -16044,9 +16052,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 15200.0,
+        "price": 15150.0,
         "pb": 1.2433360234,
-        "bvps": 12788.1760850792
+        "bvps": 12788.1760850792,
+        "last_updated": "2026-01-29T04:33:13.137689",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -20054,7 +20064,9 @@
       "current": {
         "price": 26900.0,
         "pb": 1.8077023694,
-        "bvps": 16070.1233186889
+        "bvps": 16070.1233186889,
+        "last_updated": "2026-01-29T04:33:14.220651",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -24060,9 +24072,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 29000.0,
+        "price": 28350.0,
         "pb": 1.2209812325,
-        "bvps": 25389.4156399994
+        "bvps": 25389.4156399994,
+        "last_updated": "2026-01-29T04:33:15.654352",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -28070,7 +28084,9 @@
       "current": {
         "price": 15950.0,
         "pb": 1.3566379425,
-        "bvps": 12309.8429411889
+        "bvps": 12309.8429411889,
+        "last_updated": "2026-01-29T04:33:16.970088",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -32076,9 +32092,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 19100.0,
+        "price": 19300.0,
         "pb": 1.7559986236,
-        "bvps": 10877.001692148
+        "bvps": 10877.001692148,
+        "last_updated": "2026-01-29T04:33:18.452343",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -36084,9 +36102,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 34100.0,
+        "price": 33600.0,
         "pb": 1.4022188886,
-        "bvps": 25709.2528801407
+        "bvps": 25709.2528801407,
+        "last_updated": "2026-01-29T04:33:19.767348",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -40092,9 +40112,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 66000.0,
+        "price": 66500.0,
         "pb": 3.5347206343,
-        "bvps": 20765.4317255807
+        "bvps": 20765.4317255807,
+        "last_updated": "2026-01-29T04:33:21.078902",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -44100,9 +44122,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 46100.0,
+        "price": 45200.0,
         "pb": 2.7084505863,
-        "bvps": 17020.8015728101
+        "bvps": 17020.8015728101,
+        "last_updated": "2026-01-29T04:33:22.342089",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -48108,9 +48132,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 2300.0,
+        "price": 2350.0,
         "pb": 0.2071009034,
-        "bvps": 11105.6975699743
+        "bvps": 11105.6975699743,
+        "last_updated": "2026-01-29T04:33:23.363514",
+        "last_trade_date": "2024-09-25"
       },
       "valuation": {
         "zone": "extremely_cheap",
@@ -50436,9 +50462,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 21500.0,
+        "price": 21650.0,
         "pb": 1.4863220663,
-        "bvps": 14465.2363626963
+        "bvps": 14465.2363626963,
+        "last_updated": "2026-01-29T04:33:24.740808",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -54444,9 +54472,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 3940.0,
+        "price": 3960.0,
         "pb": 0.8335106158,
-        "bvps": 4798.9790703197
+        "bvps": 4798.9790703197,
+        "last_updated": "2026-01-29T04:33:26.005988",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -58454,7 +58484,9 @@
       "current": {
         "price": 18000.0,
         "pb": 1.0130088419,
-        "bvps": 18114.3532417174
+        "bvps": 18114.3532417174,
+        "last_updated": "2026-01-29T04:33:27.615095",
+        "last_trade_date": "2026-01-28"
       },
       "valuation": {
         "zone": "fair",
@@ -62462,7 +62494,9 @@
       "current": {
         "price": 11500.0,
         "pb": 0.9431975035,
-        "bvps": 12298.5906528673
+        "bvps": 12298.5906528673,
+        "last_updated": "2026-01-29T04:33:29.209824",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -66468,9 +66502,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 29100.0,
+        "price": 29250.0,
         "pb": 1.4010984745,
-        "bvps": 20769.4180877307
+        "bvps": 20769.4180877307,
+        "last_updated": "2026-01-29T04:33:30.376568",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "cheap",
@@ -70476,9 +70512,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 6890.0,
+        "price": 6970.0,
         "pb": 0.608957218,
-        "bvps": 12184.7640203265
+        "bvps": 12184.7640203265,
+        "last_updated": "2026-01-29T04:33:31.840074",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -74484,9 +74522,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 5230.0,
+        "price": 5270.0,
         "pb": 0.4153019211,
-        "bvps": 11461.5410090466
+        "bvps": 11461.5410090466,
+        "last_updated": "2026-01-29T04:33:33.182094",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "cheap",
@@ -78492,9 +78532,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 7260.0,
+        "price": 7350.0,
         "pb": 0.7498930868,
-        "bvps": 10934.8921120705
+        "bvps": 10934.8921120705,
+        "last_updated": "2026-01-29T04:33:34.659717",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -82500,9 +82542,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 43900.0,
+        "price": 43800.0,
         "pb": 1.9525247961,
-        "bvps": 20921.6293085731
+        "bvps": 20921.6293085731,
+        "last_updated": "2026-01-29T04:33:35.735237",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -86508,9 +86552,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 64800.0,
+        "price": 63800.0,
         "pb": 2.0688633153,
-        "bvps": 31901.5758615557
+        "bvps": 31901.5758615557,
+        "last_updated": "2026-01-29T04:33:37.219412",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -90516,9 +90562,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 15250.0,
+        "price": 15150.0,
         "pb": 1.2454823274,
-        "bvps": 12244.2524190701
+        "bvps": 12244.2524190701,
+        "last_updated": "2026-01-29T04:33:38.686068",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -94524,9 +94572,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 7410.0,
+        "price": 7600.0,
         "pb": 0.6694228759,
-        "bvps": 12249.3573124836
+        "bvps": 12249.3573124836,
+        "last_updated": "2026-01-29T04:33:39.810630",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -98532,9 +98582,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 10600.0,
+        "price": 10500.0,
         "pb": 0.8335769294,
-        "bvps": 12716.2828369166
+        "bvps": 12716.2828369166,
+        "last_updated": "2026-01-29T04:33:41.361770",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -102540,9 +102592,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 6700.0,
+        "price": 7050.0,
         "pb": 0.5990879298,
-        "bvps": 11734.5044870906
+        "bvps": 11734.5044870906,
+        "last_updated": "2026-01-29T04:33:42.895341",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -106548,9 +106602,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 30900.0,
+        "price": 30800.0,
         "pb": 1.7362525979,
-        "bvps": 17796.9496123926
+        "bvps": 17796.9496123926,
+        "last_updated": "2026-01-29T04:33:44.414050",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",

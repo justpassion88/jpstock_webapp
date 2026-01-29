@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:18:21.781480",
+  "last_updated": "2026-01-29T04:34:28.844137",
   "data_type": "daily",
   "data_source": "VCI",
   "sector": "🏗️ Xây dựng",
@@ -12,9 +12,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 76500.0,
+        "price": 76400.0,
         "pb": 0.8867181015,
-        "bvps": 86949.8433235803
+        "bvps": 86949.8433235803,
+        "last_updated": "2026-01-29T04:34:15.760721",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -4020,9 +4022,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 6300.0,
+        "price": 6200.0,
         "pb": 1.1184675559,
-        "bvps": 5603.2023163544
+        "bvps": 5603.2023163544,
+        "last_updated": "2026-01-29T04:34:16.978301",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -7988,9 +7992,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 19450.0,
+        "price": 19050.0,
         "pb": 1.3475676063,
-        "bvps": 17438.8282195294
+        "bvps": 17438.8282195294,
+        "last_updated": "2026-01-29T04:34:18.385339",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -11996,9 +12002,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 14000.0,
+        "price": 13900.0,
         "pb": 0.9001647364,
-        "bvps": 16052.6172774847
+        "bvps": 16052.6172774847,
+        "last_updated": "2026-01-29T04:34:19.971940",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -16004,9 +16012,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 10050.0,
+        "price": 10200.0,
         "pb": 0.7866854837,
-        "bvps": 12775.1181493004
+        "bvps": 12775.1181493004,
+        "last_updated": "2026-01-29T04:34:21.416569",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -20012,9 +20022,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 15800.0,
+        "price": 15600.0,
         "pb": 1.5979933664,
-        "bvps": 9949.9787258375
+        "bvps": 9949.9787258375,
+        "last_updated": "2026-01-29T04:34:22.818325",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -24022,7 +24034,9 @@
       "current": {
         "price": 8100.0,
         "pb": 0.7503841871,
-        "bvps": 11138.2944151889
+        "bvps": 11138.2944151889,
+        "last_updated": "2026-01-29T04:34:24.384250",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -28028,9 +28042,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 18250.0,
+        "price": 18350.0,
         "pb": 1.3015437039,
-        "bvps": 14252.3066608872
+        "bvps": 14252.3066608872,
+        "last_updated": "2026-01-29T04:34:25.953007",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -32038,7 +32054,9 @@
       "current": {
         "price": 12200.0,
         "pb": 1.043607444,
-        "bvps": 12360.9697060401
+        "bvps": 12360.9697060401,
+        "last_updated": "2026-01-29T04:34:27.244808",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -36044,9 +36062,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 34150.0,
+        "price": 34500.0,
         "pb": 1.8528257607,
-        "bvps": 19051.9803578065
+        "bvps": 19051.9803578065,
+        "last_updated": "2026-01-29T04:34:28.543972",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",

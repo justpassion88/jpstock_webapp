@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:19:19.809644",
+  "last_updated": "2026-01-29T04:35:39.348246",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🛡️ Bảo hiểm",
@@ -11,7 +11,8 @@
       "current": {
         "price": 68800.0,
         "pb": 2.0747924391,
-        "bvps": 33015.3506973875
+        "bvps": 33015.3506973875,
+        "last_updated": "2026-01-29T04:35:39.348188"
       },
       "valuation": {
         "zone": "fair",
@@ -260,7 +261,8 @@
       "current": {
         "price": 18200.0,
         "pb": 0.9563230798,
-        "bvps": 19449.4939979791
+        "bvps": 19449.4939979791,
+        "last_updated": "2026-01-29T04:35:39.348204"
       },
       "valuation": {
         "zone": "expensive",
@@ -509,7 +511,8 @@
       "current": {
         "price": 89400.0,
         "pb": 2.5597608295,
-        "bvps": 34925.1379145001
+        "bvps": 34925.1379145001,
+        "last_updated": "2026-01-29T04:35:39.348232"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -758,7 +761,8 @@
       "current": {
         "price": 24950.0,
         "pb": 1.5667313445,
-        "bvps": 15541.9115634519
+        "bvps": 15541.9115634519,
+        "last_updated": "2026-01-29T04:35:39.348237"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1007,7 +1011,8 @@
       "current": {
         "price": 17950.0,
         "pb": 1.4447815791,
-        "bvps": 12424.0232984743
+        "bvps": 12424.0232984743,
+        "last_updated": "2026-01-29T04:35:39.348240"
       },
       "valuation": {
         "zone": "expensive",
@@ -1256,7 +1261,8 @@
       "current": {
         "price": 20600.0,
         "pb": 1.1773514905,
-        "bvps": 17338.0678276232
+        "bvps": 17338.0678276232,
+        "last_updated": "2026-01-29T04:35:39.348243"
       },
       "valuation": {
         "zone": "extremely_expensive",

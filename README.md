@@ -6,9 +6,10 @@
 
 **JP Stock Webapp** là nền tảng phân tích định lượng toàn diện cho thị trường chứng khoán Việt Nam, tập trung vào phương pháp định giá P/B (Price-to-Book) với dữ liệu lịch sử 14+ năm (2012-2026).
 
-### 🆕 **Cập nhật 29/01/2026: Daily P/B Data**
+### 🆕 **Cập nhật 29/01/2026: Daily P/B Data + iCopy 164 mã**
 - ✅ **134 cổ phiếu** với dữ liệu **P/B hàng ngày** (thay vì dữ liệu quý)
 - ✅ **751 ngày** dữ liệu daily cho mỗi mã (~3 năm giao dịch)
+- ✅ **164 mã iCopy** được đánh dấu và cập nhật giá
 - ✅ Công thức: `P/B = Daily Close Price / Quarterly BVPS (từ finance.ratio)`
 - ✅ Nguồn dữ liệu: **VCI** với vnstock v3.4.1 (Bronze tier)
 
@@ -17,6 +18,7 @@ Hệ thống cung cấp:
 - 🤖 **5 Trading BOT** với ML backtest trên dữ liệu thực
 - 🌡️ **Market Heat Index** đo nhiệt độ thị trường theo từng ngành
 - 📈 Visualization tương tác với biểu đồ P/B lịch sử
+
 
 ## 🚀 Live Demo
 

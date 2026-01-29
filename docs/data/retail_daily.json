@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T00:19:56.514372",
+  "last_updated": "2026-01-29T04:34:11.947749",
   "data_type": "daily",
   "data_source": "VCI",
   "sector": "🛒 Bán lẻ & Tiêu dùng",
@@ -12,9 +12,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 67700.0,
+        "price": 70400.0,
         "pb": 4.1495135668,
-        "bvps": 16315.1653587256
+        "bvps": 16315.1653587256,
+        "last_updated": "2026-01-29T04:34:00.621473",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -4020,9 +4022,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 79500.0,
+        "price": 83000.0,
         "pb": 3.4196724152,
-        "bvps": 23247.840830468
+        "bvps": 23247.840830468,
+        "last_updated": "2026-01-29T04:34:01.916080",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -8028,9 +8032,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 48950.0,
+        "price": 50500.0,
         "pb": 3.0351670062,
-        "bvps": 17692.601392414
+        "bvps": 17692.601392414,
+        "last_updated": "2026-01-29T04:30:23.412335",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "fair",
@@ -12036,9 +12042,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 118500.0,
+        "price": 123300.0,
         "pb": 2.8719351653,
-        "bvps": 35342.0234648833
+        "bvps": 35342.0234648833,
+        "last_updated": "2026-01-29T04:34:03.231691",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -16044,9 +16052,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 85500.0,
+        "price": 86500.0,
         "pb": 4.0204348544,
-        "bvps": 21390.7209331822
+        "bvps": 21390.7209331822,
+        "last_updated": "2026-01-29T04:34:04.313069",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -20052,9 +20062,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 44000.0,
+        "price": 45900.0,
         "pb": 2.9802116706,
-        "bvps": 14797.6066379556
+        "bvps": 14797.6066379556,
+        "last_updated": "2026-01-29T04:34:07.380345",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -24060,9 +24072,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 160300.0,
+        "price": 160100.0,
         "pb": 8.0039184412,
-        "bvps": 18116.1266278976
+        "bvps": 18116.1266278976,
+        "last_updated": "2026-01-29T04:34:08.511246",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -28068,9 +28082,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 10600.0,
+        "price": 10650.0,
         "pb": 1.0356952577,
-        "bvps": 10234.6707885143
+        "bvps": 10234.6707885143,
+        "last_updated": "2026-01-29T04:34:09.554381",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -32076,9 +32092,11 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 46100.0,
+        "price": 46450.0,
         "pb": 2.3925789561,
-        "bvps": 19267.9116741898
+        "bvps": 19267.9116741898,
+        "last_updated": "2026-01-29T04:34:10.568830",
+        "last_trade_date": "2026-01-29"
       },
       "valuation": {
         "zone": "expensive",
@@ -36086,7 +36104,9 @@
       "current": {
         "price": 2530.0,
         "pb": 0.2237306971,
-        "bvps": 11308.2381290813
+        "bvps": 11308.2381290813,
+        "last_updated": "2026-01-29T04:34:11.647634",
+        "last_trade_date": "2025-10-08"
       },
       "valuation": {
         "zone": "extremely_cheap",

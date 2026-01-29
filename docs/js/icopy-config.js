@@ -1,250 +1,231 @@
 /**
  * iCopy Symbols Configuration
  * List of 164 symbols that are part of iCopy portfolio
- * Last updated: 2026-01-28
+ * Last updated: 2026-01-29
  */
 
 const ICOPY_SYMBOLS = new Set([
     // === A (6) ===
-    "AAA",  // An Phat Plastic
-    "ACB",  // ACB Bank
-    "AGG",  // An Gia Group
-    "AGR",  // Agribank Securities
-    "ANV",  // Nam Viet Corp
-    "ASM",  // Sao Mai Group
-    
+    "AAA",
+    "ACB",
+    "AGG",
+    "AGR",
+    "ANV",
+    "ASM",
+
     // === B (11) ===
-    "BAF",  // Bac A Fish
-    "BCM",  // Becamex
-    "BFC",  // Binh Dien Fertilizer
-    "BID",  // BIDV
-    "BMI",  // Bao Minh Insurance
-    "BMP",  // Binh Minh Plastics
-    "BSI",  // BVSC
-    "BSR",  // Binh Son Refining
-    "BVH",  // Bao Viet Holdings
-    "BVS",  // Bao Viet Securities
-    "BWE",  // Ba Ria Water
-    
+    "BAF",
+    "BCM",
+    "BFC",
+    "BID",
+    "BMI",
+    "BMP",
+    "BSI",
+    "BSR",
+    "BVH",
+    "BVS",
+    "BWE",
+
     // === C (11) ===
-    "CEO",  // C.E.O Group
-    "CII",  // Ho Chi Minh Infrastructure
-    "CMG",  // CMC Corp
-    "CRE",  // Cen Land
-    "CSM",  // Casumina
-    "CSV",  // Southern Seed
-    "CTD",  // Coteccons
-    "CTG",  // VietinBank
-    "CTI",  // Cotec Investment
-    "CTR",  // Viettel Construction
-    "CTS",  // Vietinbank Securities
-    
-    // === D (18) ===
-    "DBC",  // Dabaco
-    "DBD",  // Duoc Binh Dinh
-    "DCL",  // Cuu Long Pharmaceutical
-    "DCM",  // DCM Corp
-    "DGC",  // Duc Giang Chemicals
-    "DGW",  // Digiworld
-    "DHA",  // Hoa An
-    "DHC",  // Dong Hai Bentre
-    "DIG",  // DIC Corp
-    "DPG",  // Dat Phuong Group
-    "DPM",  // PetroVietnam Fertilizer
-    "DPR",  // Dong Phu Rubber
-    "DRC",  // Danang Rubber
-    "DSE",  // Vietnam Shipbuilding Securities
-    "DTD",  // DTD
-    "DXG",  // Dat Xanh Group
-    "DXS",  // Dat Xanh Services
-    
+    "CEO",
+    "CII",
+    "CMG",
+    "CRE",
+    "CSM",
+    "CSV",
+    "CTD",
+    "CTG",
+    "CTI",
+    "CTR",
+    "CTS",
+
+    // === D (17) ===
+    "DBC",
+    "DBD",
+    "DCL",
+    "DCM",
+    "DGC",
+    "DGW",
+    "DHA",
+    "DHC",
+    "DIG",
+    "DPG",
+    "DPM",
+    "DPR",
+    "DRC",
+    "DSE",
+    "DTD",
+    "DXG",
+    "DXS",
+
     // === E (3) ===
-    "EIB",  // Eximbank
-    "ELC",  // ELCOM
-    "EVF",  // EVN Finance
-    
+    "EIB",
+    "ELC",
+    "EVF",
+
     // === F (4) ===
-    "FCN",  // FECON
-    "FPT",  // FPT Corp
-    "FRT",  // FPT Retail
-    "FTS",  // FPT Securities
-    
+    "FCN",
+    "FPT",
+    "FRT",
+    "FTS",
+
     // === G (7) ===
-    "GAS",  // PV Gas
-    "GEE",  // Phu Tan Agr
-    "GEG",  // Gia Lai Electricity
-    "GEX",  // GELEX
-    "GIL",  // Binh Thanh Import Export
-    "GMD",  // Gemadept
-    "GVR",  // VN Rubber Group
-    
+    "GAS",
+    "GEE",
+    "GEG",
+    "GEX",
+    "GIL",
+    "GMD",
+    "GVR",
+
     // === H (13) ===
-    "HAG",  // Hoang Anh Gia Lai
-    "HAH",  // Hai An Transport
-    "HAX",  // HAX
-    "HCM",  // HCMC Securities
-    "HDB",  // HDBank
-    "HDC",  // Ba Ria Vung Tau Housing
-    "HDG",  // Ha Do Group
-    "HHS",  // Hoang Huy
-    "HHV",  // Hai Hung JSC
-    "HPG",  // Hoa Phat Group
-    "HSG",  // Hoa Sen Group
-    "HTN",  // Hung Thinh Incons
-    "HUT",  // Tasco
-    
+    "HAG",
+    "HAH",
+    "HAX",
+    "HCM",
+    "HDB",
+    "HDC",
+    "HDG",
+    "HHS",
+    "HHV",
+    "HPG",
+    "HSG",
+    "HTN",
+    "HUT",
+
     // === I (5) ===
-    "IDC",  // IDICO
-    "IDI",  // I.D.I
-    "IJC",  // Binh Duong Infrastructure
-    "IMP",  // Imexpharm
-    "IPA",  // IPA
-    
+    "IDC",
+    "IDI",
+    "IJC",
+    "IMP",
+    "IPA",
+
     // === K (5) ===
-    "KBC",  // Kinh Bac
-    "KDC",  // Kido
-    "KDH",  // Khang Dien
-    "KHG",  // Khang Hoa
-    "KSB",  // Khoang San Binh Dinh
-    
+    "KBC",
+    "KDC",
+    "KDH",
+    "KHG",
+    "KSB",
+
     // === L (3) ===
-    "LAS",  // Lam Thao Fertilizer
-    "LCG",  // LICOGI 16
-    "LPB",  // LienVietPostBank
-    
-    // === M (8) ===
-    "MBB",  // MB Bank
-    "MBS",  // MB Securities
-    "MIG",  // Military Insurance
-    "MSB",  // MSB
-    "MSH",  // May Song Hong
-    "MSN",  // Masan
-    "MWG",  // Mobile World
-    
+    "LAS",
+    "LCG",
+    "LPB",
+
+    // === M (7) ===
+    "MBB",
+    "MBS",
+    "MIG",
+    "MSB",
+    "MSH",
+    "MSN",
+    "MWG",
+
     // === N (7) ===
-    "NAB",  // Nam A Bank
-    "NAF",  // Nafoods
-    "NHA",  // Nha Ha Noi
-    "NKG",  // Nam Kim Steel
-    "NLG",  // Nam Long
-    "NTL",  // Tu Liem JSC
-    "NTP",  // Tien Phong Plastic
-    
+    "NAB",
+    "NAF",
+    "NHA",
+    "NKG",
+    "NLG",
+    "NTL",
+    "NTP",
+
     // === O (1) ===
-    "OCB",  // Orient Commercial Bank
-    
+    "OCB",
+
     // === P (14) ===
-    "PAC",  // Dry Cell Battery
-    "PAN",  // PAN Group
-    "PDR",  // Phat Dat
-    "PET",  // Petrovietnam General Services
-    "PHR",  // Phuoc Hoa Rubber
-    "PLC",  // Petrolimex Petrochemical
-    "PLX",  // Petrolimex
-    "PNJ",  // PNJ
-    "POW",  // PetroVietnam Power
-    "PTB",  // Phu Tai
-    "PVD",  // PV Drilling
-    "PVI",  // PVI Holdings
-    "PVS",  // PV Technical
-    "PVT",  // PV Trans
-    
+    "PAC",
+    "PAN",
+    "PDR",
+    "PET",
+    "PHR",
+    "PLC",
+    "PLX",
+    "PNJ",
+    "POW",
+    "PTB",
+    "PVD",
+    "PVI",
+    "PVS",
+    "PVT",
+
     // === R (1) ===
-    "REE",  // REE Corp
-    
+    "REE",
+
     // === S (12) ===
-    "SAB",  // Sabeco
-    "SBT",  // Bien Hoa Sugar
-    "SCR",  // TTC Land
-    "SCS",  // Saigon Cargo Service
-    "SHB",  // SHB
-    "SHI",  // Son Ha International
-    "SHS",  // SHS
-    "SIP",  // Song Da Urban Investment
-    "SSB",  // SeABank
-    "SSI",  // SSI Securities
-    "STB",  // Sacombank
-    "SZC",  // Sonadezi Chau Duc
-    
+    "SAB",
+    "SBT",
+    "SCR",
+    "SCS",
+    "SHB",
+    "SHI",
+    "SHS",
+    "SIP",
+    "SSB",
+    "SSI",
+    "STB",
+    "SZC",
+
     // === T (12) ===
-    "TCB",  // Techcombank
-    "TCH",  // Hoang Huy Investment
-    "TCM",  // TCM
-    "TCX",  // Tay Ninh Tapioca
-    "TDP",  // Thu Duc Pharmaceutical
-    "TIG",  // TIG
-    "TLG",  // Thien Long Group
-    "TNG",  // TNG Investment
-    "TNH",  // TNH
-    "TPB",  // TPBank
-    "TRC",  // Tay Ninh Rubber
-    "TVS",  // Thien Viet Securities
-    
-    // === V (19) ===
-    "VCB",  // Vietcombank
-    "VCG",  // Vinaconex
-    "VCI",  // Vietcap
-    "VCS",  // Vicostone
-    "VDS",  // VDSC
-    "VFS",  // Vietnam Forest Corp
-    "VGC",  // Viglacera
-    "VGS",  // VG Steel
-    "VHC",  // Vinh Hoan
-    "VHM",  // Vinhomes
-    "VIB",  // VIB
-    "VIC",  // Vingroup
-    "VIP",  // VIP Greenport
-    "VIX",  // VIX Securities
-    "VJC",  // Vietjet Air
-    "VND",  // VNDirect
-    "VNM",  // Vinamilk
-    "VOS",  // Vosco
-    "VPB",  // VPBank
-    "VPI",  // Van Phu Invest
-    "VPL",  // Vinpearl
-    "VRE",  // Vincom Retail
-    "VSC",  // Vietfracht
-    "VTP",  // Viettel Post
-    
+    "TCB",
+    "TCH",
+    "TCM",
+    "TCX",
+    "TDP",
+    "TIG",
+    "TLG",
+    "TNG",
+    "TNH",
+    "TPB",
+    "TRC",
+    "TVS",
+
+    // === V (24) ===
+    "VCB",
+    "VCG",
+    "VCI",
+    "VCS",
+    "VDS",
+    "VFS",
+    "VGC",
+    "VGS",
+    "VHC",
+    "VHM",
+    "VIB",
+    "VIC",
+    "VIP",
+    "VIX",
+    "VJC",
+    "VND",
+    "VNM",
+    "VOS",
+    "VPB",
+    "VPI",
+    "VPL",
+    "VRE",
+    "VSC",
+    "VTP",
+
     // === Y (1) ===
-    "YEG",  // Yeah1 Group
+    "YEG"
 ]);
 
-// Total: 164 symbols
-
-/**
- * Check if a symbol is in iCopy portfolio
- */
+// Check if a symbol is in iCopy
 function isICopySymbol(symbol) {
-    if (!symbol) return false;
-    return ICOPY_SYMBOLS.has(symbol.toUpperCase());
+    return ICOPY_SYMBOLS.has(symbol?.toUpperCase());
 }
 
-/**
- * Get iCopy badge HTML
- * @param {string} size - 'xs', 'sm', 'md', 'lg'
- */
+// Get iCopy badge HTML
 function getICopyBadge(size = 'sm') {
     const sizes = {
-        'xs': 'text-[8px] px-1 py-0.5',
-        'sm': 'text-[9px] px-1.5 py-0.5',
-        'md': 'text-xs px-2 py-1',
-        'lg': 'text-sm px-2.5 py-1'
+        'sm': 'text-xs px-1.5 py-0.5',
+        'md': 'text-sm px-2 py-1',
+        'lg': 'text-base px-3 py-1.5'
     };
-    
-    return `<span class="inline-flex items-center ${sizes[size]} font-semibold bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full shadow-sm ml-1" title="iCopy Portfolio - 164 mã">iCopy</span>`;
+    return `<span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white ${sizes[size] || sizes.sm} rounded-full font-semibold">iCopy</span>`;
 }
 
-/**
- * Get iCopy icon (smaller version for tables)
- */
-function getICopyIcon() {
-    return `<span class="inline-flex items-center justify-center w-4 h-4 text-[8px] font-bold bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full ml-1 shadow-sm" title="iCopy Portfolio">i</span>`;
-}
-
-/**
- * Get total iCopy symbols count
- */
-function getICopyCount() {
-    return ICOPY_SYMBOLS.size;
+// Export for use in other files
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { ICOPY_SYMBOLS, isICopySymbol, getICopyBadge };
 }
