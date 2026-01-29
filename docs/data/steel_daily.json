@@ -22362,34 +22362,34 @@
           },
           "returns": {
             "30d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 5.765407554671964,
               "min": -19.68911917098446,
-              "max": Infinity,
+              "max": null,
               "win_rate": 64.37246963562752,
               "sample_size": 247
             },
             "90d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 17.391304347826097,
               "min": -13.571428571428568,
-              "max": Infinity,
+              "max": null,
               "win_rate": 83.40080971659918,
               "sample_size": 247
             },
             "180d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 36.09671848013818,
               "min": 6.666666666666665,
-              "max": Infinity,
+              "max": null,
               "win_rate": 100.0,
               "sample_size": 247
             },
             "365d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 86.02031939352514,
               "min": 3.5653650254668934,
-              "max": Infinity,
+              "max": null,
               "win_rate": 100.0,
               "sample_size": 246
             }
@@ -26370,34 +26370,34 @@
           },
           "returns": {
             "30d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 5.882352941176472,
               "min": -24.242424242424242,
-              "max": Infinity,
+              "max": null,
               "win_rate": 59.38461538461538,
               "sample_size": 325
             },
             "90d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 14.999999999999991,
               "min": -32.432432432432435,
-              "max": Infinity,
+              "max": null,
               "win_rate": 62.76923076923077,
               "sample_size": 325
             },
             "180d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 23.529411764705888,
               "min": -22.499999999999996,
-              "max": Infinity,
+              "max": null,
               "win_rate": 80.61538461538461,
               "sample_size": 325
             },
             "365d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 48.57142857142858,
               "min": -23.076923076923073,
-              "max": Infinity,
+              "max": null,
               "win_rate": 81.84615384615384,
               "sample_size": 325
             }

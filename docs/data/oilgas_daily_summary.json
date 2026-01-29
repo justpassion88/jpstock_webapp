@@ -1047,34 +1047,34 @@
           },
           "returns": {
             "30d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 7.845934379457908,
               "min": -20.58414464534075,
-              "max": Infinity,
+              "max": null,
               "win_rate": 72.36180904522614,
               "sample_size": 199
             },
             "90d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 18.34862385321101,
               "min": -2.4423337856173677,
-              "max": Infinity,
+              "max": null,
               "win_rate": 96.4824120603015,
               "sample_size": 199
             },
             "180d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 46.26865671641791,
               "min": -2.5132275132275117,
-              "max": Infinity,
+              "max": null,
               "win_rate": 97.98994974874373,
               "sample_size": 199
             },
             "365d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 92.44505494505495,
               "min": 11.538461538461519,
-              "max": Infinity,
+              "max": null,
               "win_rate": 100.0,
               "sample_size": 199
             }

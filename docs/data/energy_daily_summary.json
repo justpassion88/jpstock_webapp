@@ -2790,34 +2790,34 @@
           },
           "returns": {
             "30d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 6.7314355775894175,
               "min": -5.845511482254695,
-              "max": Infinity,
+              "max": null,
               "win_rate": 81.08108108108108,
               "sample_size": 222
             },
             "90d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 19.977827050997774,
               "min": -100.0,
-              "max": Infinity,
+              "max": null,
               "win_rate": 99.54954954954955,
               "sample_size": 222
             },
             "180d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 31.672839921880257,
               "min": -2.4390243902439046,
-              "max": Infinity,
+              "max": null,
               "win_rate": 99.09909909909909,
               "sample_size": 222
             },
             "365d": {
-              "avg": Infinity,
+              "avg": null,
               "median": 40.81196581196582,
               "min": 16.82242990654206,
-              "max": Infinity,
+              "max": null,
               "win_rate": 100.0,
               "sample_size": 222
             }

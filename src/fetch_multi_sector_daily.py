@@ -220,13 +220,21 @@ def calculate_historical_returns(daily_pb_df: pd.DataFrame, holding_days: List[i
                 
                 for days in holding_days:
                     returns = zone_df[f'return_{days}d'].dropna()
+                    # Filter out infinite values
+                    returns = returns[~np.isinf(returns)]
                     if len(returns) > 0:
+                        def safe_float(val, default=0):
+                            """Convert to float, replacing inf/nan with default"""
+                            if np.isnan(val) or np.isinf(val):
+                                return default
+                            return float(val)
+                        
                         zone_data["returns"][f"{days}d"] = {
-                            "avg": float(returns.mean() * 100),
-                            "median": float(returns.median() * 100),
-                            "min": float(returns.min() * 100),
-                            "max": float(returns.max() * 100),
-                            "win_rate": float((returns > 0).mean() * 100),
+                            "avg": safe_float(returns.mean() * 100),
+                            "median": safe_float(returns.median() * 100),
+                            "min": safe_float(returns.min() * 100, -100),
+                            "max": safe_float(returns.max() * 100, 100),
+                            "win_rate": safe_float((returns > 0).mean() * 100),
                             "sample_size": len(returns),
                         }
                 
