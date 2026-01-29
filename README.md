@@ -216,7 +216,7 @@ jpstock_webapp/
 │   ├── index.html                   # 🏠 Dashboard chính
 │   ├── stock.html                   # 📊 Chi tiết từng cổ phiếu
 │   ├── sector.html                  # 📈 Phân tích theo ngành (bao gồm Ngân hàng)
-│   ├── market.html                  # 🌡️ Market Heat Index
+│   ├── index.html                  # 🌡️ Market Heat Index
 │   │
 │   ├── 📂 data/                     # JSON data files
 │   │   │
@@ -562,7 +562,7 @@ VN-Index: 195-220 triệu VND (2026)  → 1.95-2.2x
 **Cập nhật hàng ngày tại**: [Dashboard](https://justpassion88.github.io/jpstock_webapp/)
 
 **Thống kê hiện tại** (tính đến 27/01/2026):
-- 🌡️ **Market Heat**: Xem tại [Market Heat page](https://justpassion88.github.io/jpstock_webapp/market.html)
+- 🌡️ **Market Heat**: Xem tại [Market Heat page](https://justpassion88.github.io/jpstock_webapp/index.html)
 - 🤖 **BOT Signals**: Xem tại [BOT page](https://justpassion88.github.io/jpstock_webapp/bot.html)
 - 📊 **Top Picks**: Cổ phiếu có P/B < P20 + Win Rate > 70%
 
@@ -771,6 +771,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [🏠 Home](https://justpassion88.github.io/jpstock_webapp/) • 
 [📊 Sector](https://justpassion88.github.io/jpstock_webapp/sector.html) • 
 [📈 Stock](https://justpassion88.github.io/jpstock_webapp/stock.html) • 
-[🌡️ Market Heat](https://justpassion88.github.io/jpstock_webapp/market.html)
+[🌡️ Market Heat](https://justpassion88.github.io/jpstock_webapp/index.html)
 
 </div>

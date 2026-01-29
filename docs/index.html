@@ -28,14 +28,28 @@
     </style>
 </head>
 <body class="bg-gray-900 min-h-screen text-gray-100">
-    <!-- Header -->
+    <!-- Header with Navigation -->
     <header class="bg-gradient-to-r from-indigo-800 to-purple-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
+        <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
-                    <h1 class="text-2xl md:text-3xl font-bold">🌡️ Market Heat Map</h1>
-                    <p class="text-indigo-200 mt-1">Phân tích P/B đa ngành - 11 ngành (bao gồm Ngân hàng), 134 mã VN</p>
+                    <h1 class="text-2xl md:text-3xl font-bold">🌡️ JP Stock - Market Heat Map</h1>
+                    <p class="text-indigo-200 mt-1">Phân tích P/B đa ngành - 11 ngành, 134 mã VN</p>
                 </div>
+                <nav class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <a href="index.html" class="bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏠 Trang chủ
+                    </a>
+                    <a href="sector.html?sector=banks" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏦 Ngân hàng
+                    </a>
+                    <a href="sector.html?sector=realestate" class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏠 BĐS
+                    </a>
+                    <a href="sector.html?sector=securities" class="bg-purple-600 hover:bg-purple-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        📈 Chứng khoán
+                    </a>
+                </nav>
             </div>
         </div>
     </header>
@@ -81,59 +95,49 @@
                 </div>
                 
                 <!-- Market Heat History Chart -->
-                <div class="mt-6 border-t border-gray-700 pt-6">
-                    <h3 class="text-lg font-bold text-white mb-3">📈 Lịch sử nhiệt độ thị trường</h3>
-                    <div id="market-heat-history-chart" style="height: 350px;"></div>
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold text-white mb-3">📈 Lịch Sử Nhiệt Độ Thị Trường</h3>
+                    <div id="market-heat-history-chart" class="bg-gray-700 rounded-lg" style="height: 300px;"></div>
                 </div>
                 
-                <!-- Heat Statistics -->
-                <div class="mt-6 border-t border-gray-700 pt-6">
-                    <h3 class="text-lg font-bold text-white mb-3">📊 Thống kê lịch sử</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-gray-700 rounded-lg p-4 text-center">
-                            <div class="text-gray-400 text-xs mb-1">Cao nhất</div>
-                            <div id="max-heat" class="text-2xl font-bold text-red-400">--</div>
-                            <div id="max-heat-period" class="text-xs text-gray-500 mt-1">--</div>
-                        </div>
-                        <div class="bg-gray-700 rounded-lg p-4 text-center">
-                            <div class="text-gray-400 text-xs mb-1">Thấp nhất</div>
-                            <div id="min-heat" class="text-2xl font-bold text-blue-400">--</div>
-                            <div id="min-heat-period" class="text-xs text-gray-500 mt-1">--</div>
-                        </div>
-                        <div class="bg-gray-700 rounded-lg p-4 text-center">
-                            <div class="text-gray-400 text-xs mb-1">Trung bình</div>
-                            <div id="avg-heat" class="text-2xl font-bold text-yellow-400">--</div>
-                            <div class="text-xs text-gray-500 mt-1">Lịch sử</div>
-                        </div>
-                        <div class="bg-gray-700 rounded-lg p-4 text-center">
-                            <div class="text-gray-400 text-xs mb-1">So với TB</div>
-                            <div id="current-vs-avg" class="text-2xl font-bold text-green-400">--</div>
-                            <div class="text-xs text-gray-500 mt-1">Hiện tại</div>
-                        </div>
+                <!-- Heat History Analysis -->
+                <div id="heat-analysis" class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
+                        <div id="max-heat" class="text-xl font-bold text-red-400">--</div>
+                        <div id="max-heat-period" class="text-xs text-gray-400">Nóng nhất</div>
+                    </div>
+                    <div class="bg-blue-900/30 rounded-lg p-3 text-center">
+                        <div id="min-heat" class="text-xl font-bold text-blue-400">--</div>
+                        <div id="min-heat-period" class="text-xs text-gray-400">Lạnh nhất</div>
+                    </div>
+                    <div class="bg-yellow-900/30 rounded-lg p-3 text-center">
+                        <div id="avg-heat" class="text-xl font-bold text-yellow-400">--</div>
+                        <div class="text-xs text-gray-400">Heat trung bình</div>
+                    </div>
+                    <div class="bg-purple-900/30 rounded-lg p-3 text-center">
+                        <div id="current-vs-avg" class="text-xl font-bold text-purple-400">--</div>
+                        <div class="text-xs text-gray-400">So với TB</div>
                     </div>
                 </div>
                 
                 <!-- Heat History Table -->
-                <div class="mt-6 border-t border-gray-700 pt-6">
-                    <details class="group">
-                        <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
-                            <span>📋 Xem bảng dữ liệu chi tiết lịch sử</span>
-                            <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
+                <div class="mt-4">
+                    <details class="bg-gray-700 rounded-lg">
+                        <summary class="px-4 py-3 cursor-pointer text-white font-semibold hover:bg-gray-600 rounded-lg">
+                            📊 Bảng chi tiết lịch sử (click để xem)
                         </summary>
-                        <div class="mt-3 max-h-64 overflow-y-auto">
-                            <table class="w-full text-xs">
-                                <thead class="sticky top-0 bg-gray-800">
-                                    <tr class="border-b border-gray-700">
-                                        <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
-                                        <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
-                                        <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
-                                        <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm">
+                                <thead class="bg-gray-600 text-gray-300">
+                                    <tr>
+                                        <th class="px-4 py-2 text-left">Quý</th>
+                                        <th class="px-4 py-2 text-right">Heat Index</th>
+                                        <th class="px-4 py-2 text-center">Trạng thái</th>
+                                        <th class="px-4 py-2 text-right">P/B TB</th>
+                                        <th class="px-4 py-2 text-center">Tín hiệu</th>
                                     </tr>
                                 </thead>
-                                <tbody id="heat-history-table">
-                                    <tr><td colspan="4" class="py-4 text-center text-gray-500">Đang tải...</td></tr>
+                                <tbody id="heat-history-table" class="divide-y divide-gray-600">
                                 </tbody>
                             </table>
                         </div>
@@ -203,6 +207,102 @@
             </div>
         </div>
         
+        <!-- All Stocks List -->
+        <div class="mb-8">
+            <div class="bg-gray-800 rounded-xl p-6 shadow-lg">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
+                    <h2 class="text-xl font-bold text-white">📋 Danh Sách Toàn Bộ Mã Cổ Phiếu</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Search -->
+                        <div class="relative">
+                            <input type="text" id="stock-search" placeholder="🔍 Tìm mã CK..." 
+                                class="bg-gray-700 text-white px-4 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 w-40">
+                        </div>
+                        <!-- Filter by Zone -->
+                        <select id="zone-filter" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Tất cả vùng</option>
+                            <option value="extremely_cheap">🔥 Cực rẻ</option>
+                            <option value="cheap">💰 Rẻ</option>
+                            <option value="fair">⚖️ Hợp lý</option>
+                            <option value="expensive">⚠️ Đắt</option>
+                            <option value="extremely_expensive">🚨 Cực đắt</option>
+                        </select>
+                        <!-- Filter by Sector -->
+                        <select id="sector-filter" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">Tất cả ngành</option>
+                        </select>
+                        <!-- Sort -->
+                        <select id="stock-sort" class="bg-gray-700 text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="symbol">Theo mã</option>
+                            <option value="pb_asc">P/B tăng dần</option>
+                            <option value="pb_desc">P/B giảm dần</option>
+                            <option value="percentile_asc">Percentile tăng</option>
+                            <option value="percentile_desc">Percentile giảm</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Summary Stats -->
+                <div id="all-stocks-summary" class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-4">
+                    <div class="bg-gray-700 rounded-lg p-3 text-center">
+                        <div id="total-display" class="text-xl font-bold text-white">--</div>
+                        <div class="text-xs text-gray-400">Tổng cộng</div>
+                    </div>
+                    <div class="bg-green-900/30 rounded-lg p-3 text-center">
+                        <div id="extremely-cheap-count" class="text-xl font-bold text-green-400">--</div>
+                        <div class="text-xs text-gray-400">🔥 Cực rẻ</div>
+                    </div>
+                    <div class="bg-emerald-900/30 rounded-lg p-3 text-center">
+                        <div id="cheap-count" class="text-xl font-bold text-emerald-400">--</div>
+                        <div class="text-xs text-gray-400">💰 Rẻ</div>
+                    </div>
+                    <div class="bg-yellow-900/30 rounded-lg p-3 text-center">
+                        <div id="fair-count" class="text-xl font-bold text-yellow-400">--</div>
+                        <div class="text-xs text-gray-400">⚖️ Hợp lý</div>
+                    </div>
+                    <div class="bg-orange-900/30 rounded-lg p-3 text-center">
+                        <div id="expensive-count" class="text-xl font-bold text-orange-400">--</div>
+                        <div class="text-xs text-gray-400">⚠️ Đắt</div>
+                    </div>
+                    <div class="bg-red-900/30 rounded-lg p-3 text-center">
+                        <div id="extremely-expensive-count" class="text-xl font-bold text-red-400">--</div>
+                        <div class="text-xs text-gray-400">🚨 Cực đắt</div>
+                    </div>
+                </div>
+                
+                <!-- Stock Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-700 text-gray-300 sticky top-0">
+                            <tr>
+                                <th class="px-3 py-3 text-center w-12">#</th>
+                                <th class="px-3 py-3 text-left">Mã CK</th>
+                                <th class="px-3 py-3 text-left">Ngành</th>
+                                <th class="px-3 py-3 text-right">P/B</th>
+                                <th class="px-3 py-3 text-right">P/B Min</th>
+                                <th class="px-3 py-3 text-right">P/B Max</th>
+                                <th class="px-3 py-3 text-right">P/B TB</th>
+                                <th class="px-3 py-3 text-center">Vùng giá</th>
+                                <th class="px-3 py-3 text-right">%ile</th>
+                                <th class="px-3 py-3 text-center">Tín hiệu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="all-stocks-table" class="divide-y divide-gray-700">
+                            <tr>
+                                <td colspan="10" class="text-center py-8 text-gray-500">
+                                    <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-blue-500 mx-auto mb-2"></div>
+                                    Đang tải danh sách...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination info -->
+                <div id="pagination-info" class="mt-4 text-center text-gray-400 text-sm"></div>
+            </div>
+        </div>
+        
         <!-- Info Section -->
         <div class="bg-gray-800 rounded-lg p-6">
             <h3 class="font-bold text-white mb-3">📘 Cách đọc Heat Index</h3>
@@ -224,9 +324,8 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-gray-400 py-6 mt-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>JP Stock Analysis V2 - Market Heat Map | 11 Ngành (bao gồm Ngân hàng) - 134 Mã CK</p>
-            <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a> | 
-            P/B theo Ngày + Giá cổ phiếu = Backtest thực tế</p>
+            <p>JP Stock Analysis - Market Heat Map | 11 Ngành - 134 Mã CK</p>
+            <p class="mt-2">Data từ <a href="https://github.com/thinh-vu/vnstock" class="text-blue-400 hover:underline">vnstock</a></p>
             <p class="mt-2 text-gray-500">⚠️ Công cụ phân tích tham khảo, không phải khuyến nghị đầu tư.</p>
         </div>
     </footer>

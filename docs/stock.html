@@ -16,17 +16,30 @@
     </style>
 </head>
 <body class="bg-gray-900 min-h-screen text-gray-100">
-    <!-- Header -->
+    <!-- Header with Navigation -->
     <header class="bg-gradient-to-r from-blue-800 to-purple-800 text-white shadow-lg">
         <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center text-white hover:text-blue-200 transition-colors">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                    </svg>
-                    <span class="font-semibold">Quay lại</span>
-                </a>
-                <h1 class="text-xl font-bold">📊 JP Stock Analysis V2</h1>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-4">
+                    <a href="javascript:history.back()" class="flex items-center text-white hover:text-blue-200 transition-colors">
+                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        <span class="font-semibold">Quay lại</span>
+                    </a>
+                    <h1 class="text-xl font-bold">📊 JP Stock Analysis</h1>
+                </div>
+                <nav class="flex flex-wrap gap-2">
+                    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 px-3 py-1.5 rounded-lg text-sm font-semibold">
+                        🏠 Trang chủ
+                    </a>
+                    <a href="sector.html?sector=banks" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-1.5 rounded-lg text-sm font-semibold">
+                        🏦 Ngân hàng
+                    </a>
+                    <a href="sector.html?sector=realestate" class="bg-green-600 hover:bg-green-700 px-3 py-1.5 rounded-lg text-sm font-semibold">
+                        🏠 BĐS
+                    </a>
+                </nav>
             </div>
         </div>
     </header>

@@ -75,20 +75,14 @@ async function loadSectorData() {
     }
 }
 
-// Display Sector Heat Index - Đồng bộ UI với bank.html
+// Display Sector Heat Index - Tính từ daily data
 function displayHeatIndex() {
-    // Get heat data from sector_heat.json or sectorData.heat
-    let heat = sectorData.heat || {};
-    
-    // If we have sector_heat.json, use that for the current sector
-    if (sectorHeat && sectorHeat.current) {
-        heat = sectorHeat.current;
-    }
+    // Calculate heat index from stocks data
+    const stocks = Object.values(sectorData.stocks || {});
+    const heat = calculateHeatFromStocks(stocks);
     
     const heatIndex = heat.heat_index || 0;
     const metrics = heat.metrics || {};
-    const trend = sectorHeat?.trend || {};
-    const recs = sectorHeat?.recommendations || [];
     
     const config = SECTORS[currentSector];
     
@@ -98,9 +92,9 @@ function displayHeatIndex() {
         #8B5CF6 0%, #3B82F6 20%, #22C55E 40%, #EAB308 60%, #F97316 80%, #EF4444 100%)`;
     
     // Determine signal and status
-    const signal = heat.signal || getSignalFromHeat(heatIndex);
-    const status = heat.status || getStatusFromHeat(heatIndex);
-    const description = heat.description || getDescriptionFromHeat(heatIndex);
+    const signal = getSignalFromHeat(heatIndex);
+    const status = getStatusFromHeat(heatIndex);
+    const description = getDescriptionFromHeat(heatIndex);
     const heatColor = getHeatColorHex(heatIndex);
     
     document.getElementById('heat-index').innerHTML = `
@@ -111,7 +105,7 @@ function displayHeatIndex() {
                         🌡️ Chỉ số Nhiệt độ Ngành ${config.name}
                         <span class="text-sm font-normal text-gray-400">(Sector Heat Index)</span>
                     </h2>
-                    <p class="text-gray-400 text-sm mt-1">Đo lường độ nóng/lạnh dựa trên P/B toàn ngành</p>
+                    <p class="text-gray-400 text-sm mt-1">Đo lường độ nóng/lạnh dựa trên P/B toàn ngành - Data: ${sectorData.last_updated?.split('T')[0] || 'N/A'}</p>
                 </div>
                 <div class="mt-3 md:mt-0 text-right">
                     <div class="text-4xl font-bold" style="color: ${heatColor}">${heatIndex.toFixed(1)}</div>
@@ -145,14 +139,14 @@ function displayHeatIndex() {
                     <div class="text-xs text-gray-500 mt-1">${description}</div>
                 </div>
                 <div class="bg-gray-900/50 rounded-lg p-4">
-                    <div class="text-gray-400 text-sm mb-1">Xu hướng</div>
-                    <div class="text-2xl font-bold text-white">${trend.emoji || '📊'} ${(trend.direction || 'stable').replace('_', ' ')}</div>
-                    <div class="text-xs text-gray-500 mt-1">${trend.description || 'Đang theo dõi'}</div>
+                    <div class="text-gray-400 text-sm mb-1">Tín hiệu</div>
+                    <div class="text-2xl font-bold ${getSignalClass(signal)}">${signal}</div>
+                    <div class="text-xs text-gray-500 mt-1">Dựa trên mức nhiệt độ hiện tại</div>
                 </div>
                 <div class="bg-gray-900/50 rounded-lg p-4">
-                    <div class="text-gray-400 text-sm mb-1">Tín hiệu</div>
-                    <div class="text-2xl font-bold ${getSignalColor(signal)}">${signal}</div>
-                    <div class="text-xs text-gray-500 mt-1">Dựa trên nhiệt độ hiện tại</div>
+                    <div class="text-gray-400 text-sm mb-1">Số mã phân tích</div>
+                    <div class="text-2xl font-bold text-white">${stocks.length} mã</div>
+                    <div class="text-xs text-gray-500 mt-1">Trong ngành ${config.name}</div>
                 </div>
             </div>
             
@@ -160,117 +154,100 @@ function displayHeatIndex() {
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                 <div class="bg-gray-900/30 rounded p-3 text-center">
                     <div class="text-gray-400 text-xs">Avg P/B Percentile</div>
-                    <div class="text-white font-bold">P${metrics.avg_pb_percentile || Math.round(heatIndex)}</div>
+                    <div class="text-white font-bold">P${Math.round(heatIndex)}</div>
                 </div>
                 <div class="bg-gray-900/30 rounded p-3 text-center">
                     <div class="text-gray-400 text-xs">Avg P/B</div>
-                    <div class="text-white font-bold">${(heat.avg_pb || calculateAvgPB()).toFixed(2)}x</div>
+                    <div class="text-white font-bold">${metrics.avg_pb?.toFixed(2) || 'N/A'}x</div>
                 </div>
                 <div class="bg-gray-900/30 rounded p-3 text-center">
-                    <div class="text-gray-400 text-xs">CP rẻ (P<35)</div>
-                    <div class="text-green-400 font-bold">${countCheapStocks()}/${allStocks.length}</div>
+                    <div class="text-gray-400 text-xs">CP rẻ (P&lt;35)</div>
+                    <div class="text-green-400 font-bold">${metrics.cheap_count || 0}/${stocks.length}</div>
                 </div>
                 <div class="bg-gray-900/30 rounded p-3 text-center">
-                    <div class="text-gray-400 text-xs">CP đắt (P>65)</div>
-                    <div class="text-red-400 font-bold">${countExpensiveStocks()}/${allStocks.length}</div>
+                    <div class="text-gray-400 text-xs">CP đắt (P&gt;65)</div>
+                    <div class="text-red-400 font-bold">${metrics.expensive_count || 0}/${stocks.length}</div>
                 </div>
             </div>
             
-            <!-- Recommendations -->
-            ${recs.length > 0 ? `
-                <div class="border-t border-gray-700 pt-4 mb-4">
-                    <div class="text-sm font-semibold text-gray-300 mb-2">💡 Khuyến nghị:</div>
-                    ${recs.map(r => `
-                        <div class="flex items-start gap-2 text-sm mb-1">
-                            <span class="${r.priority === 'HIGH' ? 'text-red-400' : r.priority === 'MEDIUM' ? 'text-yellow-400' : 'text-gray-400'}">[${r.priority}]</span>
-                            <span class="text-gray-300">${r.message}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            ` : ''}
-            
-            <!-- Historical Heat Chart -->
+            <!-- Recommendations based on heat -->
             <div class="border-t border-gray-700 pt-4">
-                <div class="flex justify-between items-center mb-3">
-                    <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Nhiệt độ ngành (${sectorHeat?.history?.length || heat.history?.length || 0} quý)</div>
-                    ${sectorHeat?.analysis || heat.analysis ? `
-                    <div class="text-xs text-gray-500">
-                        🔥 Max: <span class="text-red-400 font-bold">${(sectorHeat?.analysis?.max_heat || heat.analysis?.max_heat || 0).toFixed(1)}</span> (${sectorHeat?.analysis?.max_heat_period || heat.analysis?.max_heat_period || 'N/A'}) | 
-                        ❄️ Min: <span class="text-blue-400 font-bold">${(sectorHeat?.analysis?.min_heat || heat.analysis?.min_heat || 0).toFixed(1)}</span> (${sectorHeat?.analysis?.min_heat_period || heat.analysis?.min_heat_period || 'N/A'}) |
-                        📊 Avg: <span class="text-yellow-400">${(sectorHeat?.analysis?.avg_heat || heat.analysis?.avg_heat || 0).toFixed(1)}</span>
-                    </div>
-                    ` : ''}
-                </div>
-                <div id="heat-history-chart" style="height: 300px; background: rgba(17,24,39,0.5); border-radius: 8px;"></div>
-                
-                <!-- Historical Data Table -->
-                <div class="mt-4">
-                    <details class="group">
-                        <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
-                            <span>📋 Xem bảng dữ liệu chi tiết</span>
-                            <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </summary>
-                        <div class="mt-3 max-h-64 overflow-y-auto">
-                            <table class="w-full text-xs">
-                                <thead class="sticky top-0 bg-gray-800">
-                                    <tr class="border-b border-gray-700">
-                                        <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
-                                        <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
-                                        <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
-                                        <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
-                                        <th class="py-2 px-2 text-right text-gray-400">Mã</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${(sectorHeat?.history || heat.history || []).slice().reverse().map(h => `
-                                        <tr class="border-b border-gray-700/50 hover:bg-gray-700/30">
-                                            <td class="py-1 px-2 text-gray-300">${h.period}</td>
-                                            <td class="py-1 px-2 text-right font-bold" style="color: ${getHeatColorHex(h.heat_index)}">${h.heat_index?.toFixed(1)}</td>
-                                            <td class="py-1 px-2 text-center">${getStatusEmoji(h.status)}</td>
-                                            <td class="py-1 px-2 text-right text-cyan-400">${h.avg_pb?.toFixed(2)}x</td>
-                                            <td class="py-1 px-2 text-right text-gray-500">${h.banks_count || h.stocks_count || 0}</td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-                    </details>
+                <div class="text-sm font-semibold text-gray-300 mb-2">💡 Khuyến nghị:</div>
+                <div class="text-sm text-gray-300">
+                    ${getRecommendationFromHeat(heatIndex)}
                 </div>
             </div>
         </div>
     `;
+}
+
+// Calculate heat index from stocks data
+function calculateHeatFromStocks(stocks) {
+    if (!stocks || stocks.length === 0) {
+        return { heat_index: 50, metrics: {} };
+    }
     
-    // Draw heat history chart after DOM is ready
-    setTimeout(() => {
-        drawHeatHistoryChart();
-    }, 100);
+    let totalPercentile = 0;
+    let totalPB = 0;
+    let validCount = 0;
+    let cheapCount = 0;
+    let expensiveCount = 0;
+    
+    stocks.forEach(stock => {
+        const percentile = stock.valuation?.percentile;
+        const pb = stock.current?.pb;
+        
+        if (percentile !== undefined && percentile !== null) {
+            totalPercentile += percentile;
+            validCount++;
+            
+            if (percentile < 35) cheapCount++;
+            if (percentile > 65) expensiveCount++;
+        }
+        
+        if (pb !== undefined && pb !== null) {
+            totalPB += pb;
+        }
+    });
+    
+    const avgPercentile = validCount > 0 ? totalPercentile / validCount : 50;
+    const avgPB = validCount > 0 ? totalPB / validCount : 0;
+    
+    return {
+        heat_index: avgPercentile,
+        metrics: {
+            avg_pb_percentile: avgPercentile,
+            avg_pb: avgPB,
+            cheap_count: cheapCount,
+            expensive_count: expensiveCount,
+            total_stocks: stocks.length
+        }
+    };
 }
 
-// Calculate average P/B from stocks
-function calculateAvgPB() {
-    if (allStocks.length === 0) return 0;
-    const total = allStocks.reduce((sum, s) => sum + (s.current?.pb || s.current_pb || 0), 0);
-    return total / allStocks.length;
+// Get recommendation based on heat index
+function getRecommendationFromHeat(heat) {
+    if (heat < 20) return '🔥 <span class="text-blue-400 font-bold">MUA MẠNH</span> - Ngành đang cực rẻ, đây là cơ hội hiếm có để tích lũy dài hạn';
+    if (heat < 35) return '🛒 <span class="text-green-400 font-bold">MUA</span> - Ngành đang rẻ, nên tích lũy từ từ các mã tốt';
+    if (heat < 50) return '📈 <span class="text-cyan-400 font-bold">TÍCH LŨY</span> - Ngành hơi rẻ, có thể mua thêm dần';
+    if (heat < 65) return '⏸️ <span class="text-yellow-400 font-bold">GIỮ</span> - Ngành trung tính, giữ nguyên danh mục';
+    if (heat < 80) return '⚠️ <span class="text-orange-400 font-bold">CẨN THẬN</span> - Ngành hơi đắt, hạn chế mua thêm';
+    return '🚨 <span class="text-red-400 font-bold">CHỐT LỜI</span> - Ngành quá nóng, nên giảm tỷ trọng';
 }
 
-// Count cheap stocks (percentile < 35)
+// Helper functions for heat calculation
 function countCheapStocks() {
-    return allStocks.filter(s => {
-        const val = s.valuation || {};
-        const percentile = val.percentile || 50;
-        return percentile < 35;
-    }).length;
+    return allStocks.filter(s => (s.valuation?.percentile || 50) < 35).length;
 }
 
-// Count expensive stocks (percentile > 65)
 function countExpensiveStocks() {
-    return allStocks.filter(s => {
-        const val = s.valuation || {};
-        const percentile = val.percentile || 50;
-        return percentile > 65;
-    }).length;
+    return allStocks.filter(s => (s.valuation?.percentile || 50) > 65).length;
+}
+
+function calculateAvgPB() {
+    const validStocks = allStocks.filter(s => s.current?.pb);
+    if (validStocks.length === 0) return 0;
+    return validStocks.reduce((sum, s) => sum + s.current.pb, 0) / validStocks.length;
 }
 
 // Get signal from heat index

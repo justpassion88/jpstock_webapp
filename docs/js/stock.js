@@ -5,6 +5,24 @@
 
 let stockData = null;
 
+// Helper: Safe toFixed - avoid "Cannot read properties of undefined (reading 'toFixed')"
+function safeToFixed(value, decimals = 2, fallback = 'N/A') {
+    if (value === null || value === undefined || isNaN(value)) {
+        return fallback;
+    }
+    return Number(value).toFixed(decimals);
+}
+
+// Helper: Safe number formatting with sign
+function safeFormatPercent(value, decimals = 1, showPlus = true) {
+    if (value === null || value === undefined || isNaN(value)) {
+        return 'N/A';
+    }
+    const num = Number(value);
+    const prefix = showPlus && num > 0 ? '+' : '';
+    return `${prefix}${num.toFixed(decimals)}%`;
+}
+
 // Helper: Map English zone to Vietnamese
 function getZoneVietnamese(zone) {
     const zoneMap = {
@@ -14,9 +32,11 @@ function getZoneVietnamese(zone) {
         'EXPENSIVE': '🔴 ĐẮT',
         'VERY_EXPENSIVE': '🔴 CỰC ĐẮT',
         'OVERVALUED': '🔴 QUÁ ĐẮT',
-        'fair': '🟡 HỢP LÝ',
+        'extremely_cheap': '🟢 CỰC RẺ',
         'cheap': '🟢 RẺ',
-        'expensive': '🔴 ĐẮT'
+        'fair': '🟡 HỢP LÝ',
+        'expensive': '🔴 ĐẮT',
+        'extremely_expensive': '🔴 CỰC ĐẮT'
     };
     return zoneMap[zone] || zone || 'N/A';
 }
@@ -353,19 +373,27 @@ function displayValuation() {
     }
     
     // Determine if this is a good opportunity
-    const isGoodBuy = return1y >= 15 && winRate1y >= 70;
-    const isOkBuy = return1y >= 10 && winRate1y >= 60;
+    const isGoodBuy = (return1y || 0) >= 15 && (winRate1y || 0) >= 70;
+    const isOkBuy = (return1y || 0) >= 10 && (winRate1y || 0) >= 60;
     
     const opportunityLevel = isGoodBuy ? 'Cơ hội TỐT' : isOkBuy ? 'Cơ hội KHẢ QUAN' : 'CÂN NHẮC';
     const opportunityColor = isGoodBuy ? '#10B981' : isOkBuy ? '#F59E0B' : '#6B7280';
     
-    // Tính toán ví dụ đầu tư với 100 triệu
+    // Tính toán ví dụ đầu tư với 100 triệu - handle null/undefined
     const investment = 100; // triệu
-    const expected1yAmount = investment * (1 + return1y / 100);
-    const expected2yAmount = investment * (1 + return2y / 100);
+    const r1y = return1y || 0;
+    const r2y = return2y || 0;
+    const expected1yAmount = investment * (1 + r1y / 100);
+    const expected2yAmount = investment * (1 + r2y / 100);
     const savingsRate = 5.0; // Lãi suất tiết kiệm giả định 5%/năm
     const savings1yAmount = investment * (1 + savingsRate / 100);
     const savings2yAmount = investment * Math.pow(1 + savingsRate / 100, 2);
+    
+    // Safe formatting helpers
+    const fmtPct = (v) => safeToFixed(v, 1, 'N/A');
+    const fmtAmt = (v) => safeToFixed(v, 1, 'N/A');
+    const wr1y = winRate1y || 0;
+    const wr2y = winRate2y || 0;
     
     document.getElementById('valuation-section').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6 mb-6">
@@ -375,7 +403,7 @@ function displayValuation() {
             <div class="mb-4 p-3 bg-blue-900/20 border border-blue-500/30 rounded-lg">
                 <div class="flex items-center gap-2 text-sm text-blue-300">
                     <span>ℹ️</span>
-                    <span><strong>Backtest Đơn Giản:</strong> Mã này chưa có backtest chính thức. Dữ liệu dưới đây được tính toán tự động từ ${sampleCount} mẫu lịch sử, chỉ mang tính tham khảo.</span>
+                    <span><strong>Backtest Đơn Giản:</strong> Mã này chưa có backtest chính thức. Dữ liệu dưới đây được tính toán tự động từ ${sampleCount || 0} mẫu lịch sử, chỉ mang tính tham khảo.</span>
                 </div>
             </div>
             ` : ''}
@@ -399,7 +427,7 @@ function displayValuation() {
             <div class="mb-6 p-5 rounded-lg bg-gradient-to-br from-blue-900/40 to-purple-900/40 border border-blue-500/30">
                 <h3 class="text-lg font-bold text-white mb-3">💰 Ví dụ: Đầu tư 100 triệu đồng</h3>
                 <div class="text-sm text-gray-300 mb-4">
-                    Nếu bạn mua <strong class="text-white">${stockData.symbol}</strong> ở mức P/B hiện tại <strong class="text-yellow-400">P${valuation.percentile?.toFixed(0) || 'N/A'}</strong>, theo lịch sử:
+                    Nếu bạn mua <strong class="text-white">${stockData.symbol}</strong> ở mức P/B hiện tại <strong class="text-yellow-400">P${safeToFixed(valuation.percentile, 0)}</strong>, theo lịch sử:
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -408,27 +436,27 @@ function displayValuation() {
                         <div class="text-gray-400 text-xs mb-2">📅 Sau 1 năm</div>
                         <div class="flex items-baseline justify-between mb-2">
                             <div>
-                                <div class="text-2xl font-bold ${return1y >= 15 ? 'text-green-400' : return1y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
-                                    ${expected1yAmount.toFixed(1)}tr
+                                <div class="text-2xl font-bold ${r1y >= 15 ? 'text-green-400' : r1y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
+                                    ${fmtAmt(expected1yAmount)}tr
                                 </div>
                                 <div class="text-xs text-gray-500">Giá trị dự kiến</div>
                             </div>
                             <div class="text-right">
-                                <div class="text-lg font-bold ${return1y >= 0 ? 'text-green-400' : 'text-red-400'}">
-                                    ${return1y > 0 ? '+' : ''}${(expected1yAmount - investment).toFixed(1)}tr
+                                <div class="text-lg font-bold ${r1y >= 0 ? 'text-green-400' : 'text-red-400'}">
+                                    ${r1y > 0 ? '+' : ''}${fmtAmt(expected1yAmount - investment)}tr
                                 </div>
-                                <div class="text-xs text-gray-500">${return1y > 0 ? 'Lãi' : 'Lỗ'}: ${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%</div>
+                                <div class="text-xs text-gray-500">${r1y > 0 ? 'Lãi' : 'Lỗ'}: ${safeFormatPercent(r1y)}</div>
                             </div>
                         </div>
                         <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
-                            Tỷ lệ thắng: <strong class="text-white">${winRate1y.toFixed(0)}%</strong>
+                            Tỷ lệ thắng: <strong class="text-white">${safeToFixed(wr1y, 0)}%</strong>
                         </div>
                         <div class="mt-3 pt-3 border-t border-gray-700">
                             <div class="text-xs text-gray-400 mb-1">So với gửi tiết kiệm ${savingsRate}%/năm:</div>
                             <div class="flex items-center justify-between text-xs">
-                                <span class="text-gray-400">Tiết kiệm: ${savings1yAmount.toFixed(1)}tr</span>
+                                <span class="text-gray-400">Tiết kiệm: ${fmtAmt(savings1yAmount)}tr</span>
                                 <span class="${(expected1yAmount - savings1yAmount) >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
-                                    ${(expected1yAmount - savings1yAmount) >= 0 ? '+' : ''}${(expected1yAmount - savings1yAmount).toFixed(1)}tr
+                                    ${(expected1yAmount - savings1yAmount) >= 0 ? '+' : ''}${fmtAmt(expected1yAmount - savings1yAmount)}tr
                                 </span>
                             </div>
                         </div>
@@ -439,27 +467,27 @@ function displayValuation() {
                         <div class="text-gray-400 text-xs mb-2">📅 Sau 2 năm</div>
                         <div class="flex items-baseline justify-between mb-2">
                             <div>
-                                <div class="text-2xl font-bold ${return2y >= 30 ? 'text-green-400' : return2y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
-                                    ${expected2yAmount.toFixed(1)}tr
+                                <div class="text-2xl font-bold ${r2y >= 30 ? 'text-green-400' : r2y >= 0 ? 'text-yellow-400' : 'text-red-400'}">
+                                    ${fmtAmt(expected2yAmount)}tr
                                 </div>
                                 <div class="text-xs text-gray-500">Giá trị dự kiến</div>
                             </div>
                             <div class="text-right">
-                                <div class="text-lg font-bold ${return2y >= 0 ? 'text-green-400' : 'text-red-400'}">
-                                    ${return2y > 0 ? '+' : ''}${(expected2yAmount - investment).toFixed(1)}tr
+                                <div class="text-lg font-bold ${r2y >= 0 ? 'text-green-400' : 'text-red-400'}">
+                                    ${r2y > 0 ? '+' : ''}${fmtAmt(expected2yAmount - investment)}tr
                                 </div>
-                                <div class="text-xs text-gray-500">${return2y > 0 ? 'Lãi' : 'Lỗ'}: ${return2y > 0 ? '+' : ''}${return2y.toFixed(1)}%</div>
+                                <div class="text-xs text-gray-500">${r2y > 0 ? 'Lãi' : 'Lỗ'}: ${safeFormatPercent(r2y)}</div>
                             </div>
                         </div>
                         <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
-                            Tỷ lệ thắng: <strong class="text-white">${winRate2y?.toFixed(0) || 'N/A'}%</strong>
+                            Tỷ lệ thắng: <strong class="text-white">${safeToFixed(wr2y, 0)}%</strong>
                         </div>
                         <div class="mt-3 pt-3 border-t border-gray-700">
                             <div class="text-xs text-gray-400 mb-1">So với gửi tiết kiệm ${savingsRate}%/năm:</div>
                             <div class="flex items-center justify-between text-xs">
-                                <span class="text-gray-400">Tiết kiệm: ${savings2yAmount.toFixed(1)}tr</span>
+                                <span class="text-gray-400">Tiết kiệm: ${fmtAmt(savings2yAmount)}tr</span>
                                 <span class="${(expected2yAmount - savings2yAmount) >= 0 ? 'text-green-400' : 'text-red-400'} font-bold">
-                                    ${(expected2yAmount - savings2yAmount) >= 0 ? '+' : ''}${(expected2yAmount - savings2yAmount).toFixed(1)}tr
+                                    ${(expected2yAmount - savings2yAmount) >= 0 ? '+' : ''}${fmtAmt(expected2yAmount - savings2yAmount)}tr
                                 </span>
                             </div>
                         </div>
@@ -467,7 +495,7 @@ function displayValuation() {
                 </div>
                 
                 <div class="mt-4 text-xs text-gray-400 italic">
-                    💡 Số liệu trên là kỳ vọng trung bình dựa trên lịch sử. Thực tế có thể khác, từ ${return1yMin?.toFixed(1)}% đến ${return1yMax?.toFixed(1)}%
+                    💡 Số liệu trên là kỳ vọng trung bình dựa trên lịch sử. Thực tế có thể khác, từ ${fmtPct(return1yMin)}% đến ${fmtPct(return1yMax)}%
                 </div>
             </div>
             
@@ -479,24 +507,24 @@ function displayValuation() {
                         <div class="bg-gray-900 rounded-lg p-4">
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-gray-400 text-sm">Lợi nhuận TB 1 năm</span>
-                                <span class="font-bold text-2xl ${return1y >= 20 ? 'text-green-400' : return1y >= 10 ? 'text-yellow-400' : 'text-gray-400'}">
-                                    ${return1y != null ? `${return1y > 0 ? '+' : ''}${return1y.toFixed(1)}%` : 'N/A'}
+                                <span class="font-bold text-2xl ${r1y >= 20 ? 'text-green-400' : r1y >= 10 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${safeFormatPercent(return1y)}
                                 </span>
                             </div>
                             <div class="text-xs text-gray-500">
-                                ${return1y >= 20 ? '🟢 Rất tốt (≥20%)' : return1y >= 15 ? '🟡 Tốt (≥15%)' : return1y >= 10 ? '🟠 Khá (≥10%)' : '⚪ Thấp (<10%)'}
+                                ${r1y >= 20 ? '🟢 Rất tốt (≥20%)' : r1y >= 15 ? '🟡 Tốt (≥15%)' : r1y >= 10 ? '🟠 Khá (≥10%)' : '⚪ Thấp (<10%)'}
                             </div>
                         </div>
                         
                         <div class="bg-gray-900 rounded-lg p-4">
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-gray-400 text-sm">Tỷ lệ thắng</span>
-                                <span class="font-bold text-2xl ${winRate1y >= 80 ? 'text-green-400' : winRate1y >= 70 ? 'text-yellow-400' : 'text-gray-400'}">
-                                    ${winRate1y.toFixed(0)}%
+                                <span class="font-bold text-2xl ${wr1y >= 80 ? 'text-green-400' : wr1y >= 70 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${safeToFixed(wr1y, 0)}%
                                 </span>
                             </div>
                             <div class="text-xs text-gray-500">
-                                ${winRate1y >= 80 ? '🟢 Rất cao (≥80%)' : winRate1y >= 70 ? '🟡 Cao (≥70%)' : winRate1y >= 60 ? '🟠 Trung bình (≥60%)' : '⚪ Thấp (<60%)'}
+                                ${wr1y >= 80 ? '🟢 Rất cao (≥80%)' : wr1y >= 70 ? '🟡 Cao (≥70%)' : wr1y >= 60 ? '🟠 Trung bình (≥60%)' : '⚪ Thấp (<60%)'}
                             </div>
                         </div>
                         
@@ -504,30 +532,30 @@ function displayValuation() {
                             <div class="text-gray-400 text-sm mb-1">Phạm vi lợi nhuận</div>
                             <div class="flex justify-between items-center">
                                 <span class="text-red-400 text-sm">
-                                    ${return1yMin != null ? `${return1yMin.toFixed(1)}%` : 'N/A'}
+                                    ${fmtPct(return1yMin)}%
                                 </span>
                                 <span class="text-gray-500 text-xs">đến</span>
                                 <span class="text-green-400 text-sm">
-                                    ${return1yMax != null ? `+${return1yMax.toFixed(1)}%` : 'N/A'}
+                                    +${fmtPct(return1yMax)}%
                                 </span>
                             </div>
                             <div class="text-xs text-gray-500 mt-1">
-                                Median: ${return1yMedian != null ? `${return1yMedian.toFixed(1)}%` : 'N/A'}
+                                Median: ${fmtPct(return1yMedian)}%
                             </div>
                             <div class="mt-3 pt-3 border-t border-gray-700">
                                 <div class="text-xs text-gray-400 mb-2">📊 Phân bổ kết quả:</div>
                                 <div class="text-xs space-y-1">
                                     <div class="flex justify-between">
                                         <span class="text-gray-500">Kịch bản tốt nhất:</span>
-                                        <span class="text-green-400 font-semibold">+${return1yMax?.toFixed(1)}%</span>
+                                        <span class="text-green-400 font-semibold">+${fmtPct(return1yMax)}%</span>
                                     </div>
                                     <div class="flex justify-between">
                                         <span class="text-gray-500">Trung bình:</span>
-                                        <span class="text-yellow-400 font-semibold">+${return1y?.toFixed(1)}%</span>
+                                        <span class="text-yellow-400 font-semibold">${safeFormatPercent(return1y)}</span>
                                     </div>
                                     <div class="flex justify-between">
                                         <span class="text-gray-500">Kịch bản tệ nhất:</span>
-                                        <span class="text-red-400 font-semibold">${return1yMin?.toFixed(1)}%</span>
+                                        <span class="text-red-400 font-semibold">${fmtPct(return1yMin)}%</span>
                                     </div>
                                 </div>
                             </div>
@@ -537,15 +565,15 @@ function displayValuation() {
                         <div class="bg-gray-900 rounded-lg p-4 border-l-4 border-purple-500">
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-gray-400 text-sm">Lợi nhuận TB 2 năm</span>
-                                <span class="font-bold text-2xl ${return2y >= 40 ? 'text-green-400' : return2y >= 20 ? 'text-yellow-400' : 'text-gray-400'}">
-                                    ${return2y != null ? `${return2y > 0 ? '+' : ''}${return2y.toFixed(1)}%` : 'N/A'}
+                                <span class="font-bold text-2xl ${r2y >= 40 ? 'text-green-400' : r2y >= 20 ? 'text-yellow-400' : 'text-gray-400'}">
+                                    ${safeFormatPercent(return2y)}
                                 </span>
                             </div>
                             <div class="text-xs text-gray-500 mb-2">
-                                ${return2y >= 40 ? '🟢 Rất tốt (≥40%)' : return2y >= 30 ? '🟡 Tốt (≥30%)' : return2y >= 20 ? '🟠 Khá (≥20%)' : '⚪ Thấp (<20%)'}
+                                ${r2y >= 40 ? '🟢 Rất tốt (≥40%)' : r2y >= 30 ? '🟡 Tốt (≥30%)' : r2y >= 20 ? '🟠 Khá (≥20%)' : '⚪ Thấp (<20%)'}
                             </div>
                             <div class="text-xs text-gray-400 pt-2 border-t border-gray-700">
-                                Tỷ lệ thắng 2 năm: <strong class="text-white">${winRate2y?.toFixed(0) || 'N/A'}%</strong>
+                                Tỷ lệ thắng 2 năm: <strong class="text-white">${safeToFixed(wr2y, 0)}%</strong>
                             </div>
                         </div>
                     </div>

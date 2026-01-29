@@ -17,22 +17,28 @@
     </style>
 </head>
 <body class="bg-gray-900 min-h-screen text-gray-100">
-    <!-- Header -->
+    <!-- Header with Navigation -->
     <header class="bg-gradient-to-r from-blue-800 to-purple-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-6">
+        <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                     <h1 id="sectorTitle" class="text-2xl md:text-3xl font-bold">📊 Chi tiết Ngành</h1>
                     <p id="sectorDesc" class="text-blue-200 mt-1">Phân tích P/B định lượng với Historical Backtest</p>
                 </div>
-                <div class="mt-4 md:mt-0 flex gap-2">
-                    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-lg text-sm font-semibold">
-                        🌡️ Market Heat
+                <nav class="mt-4 md:mt-0 flex flex-wrap gap-2">
+                    <a href="index.html" class="bg-indigo-600 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏠 Trang chủ
                     </a>
-                    <span class="bg-green-600 px-3 py-2 rounded-lg text-sm font-semibold">
-                        ✨ Data theo Ngày
+                    <a href="sector.html?sector=banks" class="bg-emerald-600 hover:bg-emerald-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏦 Ngân hàng
+                    </a>
+                    <a href="sector.html?sector=realestate" class="bg-green-600 hover:bg-green-700 px-3 py-2 rounded-lg text-sm font-semibold">
+                        🏠 BĐS
+                    </a>
+                    <span class="bg-yellow-600 px-3 py-2 rounded-lg text-sm font-semibold">
+                        ✨ Data Ngày
                     </span>
-                </div>
+                </nav>
             </div>
         </div>
     </header>
