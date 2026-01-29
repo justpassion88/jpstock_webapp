@@ -1,31 +1,33 @@
 /**
  * JP Stock Webapp - Sector Detail
- * Hiển thị chi tiết các ngành (không phải ngân hàng)
- * Updated: 2026-01-29 - Sử dụng Daily P/B Data
+ * Hiển thị chi tiết tất cả các ngành (bao gồm ngân hàng)
+ * Updated: 2026-01-29 - Sử dụng Daily P/B Data + Đồng bộ UI với bank
  */
 
 let sectorData = null;
+let sectorHeat = null;
 let currentSector = null;
 let allStocks = [];
 
-// Sector configuration - Updated to use daily data files
+// Sector configuration - Updated to use daily data files (bao gồm banks)
 const SECTORS = {
-    realestate: { name: '🏠 Bất động sản', file: 'realestate_daily_summary.json' },
-    securities: { name: '📈 Chứng khoán', file: 'securities_daily_summary.json' },
-    energy: { name: '⚡ Điện & Năng lượng', file: 'energy_daily_summary.json' },
-    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas_daily_summary.json' },
-    steel: { name: '🏗️ Thép & Vật liệu', file: 'steel_daily_summary.json' },
-    construction: { name: '🏗️ Xây dựng', file: 'construction_daily_summary.json' },
-    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance_daily_summary.json' },
-    retail: { name: '🛒 Bán lẻ & Tiêu dùng', file: 'retail_daily_summary.json' },
-    technology: { name: '💻 Công nghệ', file: 'technology_daily_summary.json' },
-    chemicals: { name: '🧪 Hóa chất & Công nghiệp', file: 'chemicals_daily_summary.json' }
+    banks: { name: '🏦 Ngân hàng', file: 'banks_daily_summary.json', icon: '🏦' },
+    realestate: { name: '🏠 Bất động sản', file: 'realestate_daily_summary.json', icon: '🏠' },
+    securities: { name: '📈 Chứng khoán', file: 'securities_daily_summary.json', icon: '📈' },
+    energy: { name: '⚡ Điện & Năng lượng', file: 'energy_daily_summary.json', icon: '⚡' },
+    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas_daily_summary.json', icon: '🛢️' },
+    steel: { name: '🏗️ Thép & Vật liệu', file: 'steel_daily_summary.json', icon: '🏗️' },
+    construction: { name: '🏗️ Xây dựng', file: 'construction_daily_summary.json', icon: '🏗️' },
+    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance_daily_summary.json', icon: '🛡️' },
+    retail: { name: '🛒 Bán lẻ & Tiêu dùng', file: 'retail_daily_summary.json', icon: '🛒' },
+    technology: { name: '💻 Công nghệ', file: 'technology_daily_summary.json', icon: '💻' },
+    chemicals: { name: '🧪 Hóa chất & Công nghiệp', file: 'chemicals_daily_summary.json', icon: '🧪' }
 };
 
 // Get sector from URL
 function getSector() {
     const params = new URLSearchParams(window.location.search);
-    return params.get('sector') || 'realestate';
+    return params.get('sector') || 'banks';
 }
 
 // Initialize
@@ -43,18 +45,28 @@ async function loadSectorData() {
     }
 
     try {
-        const response = await fetch(`data/${config.file}`);
-        sectorData = await response.json();
+        // Load sector data and sector heat (for heat history)
+        const [sectorRes, heatRes] = await Promise.all([
+            fetch(`data/${config.file}`),
+            fetch('data/sector_heat.json').catch(() => null)
+        ]);
         
-        // Update page title
+        sectorData = await sectorRes.json();
+        if (heatRes) {
+            sectorHeat = await heatRes.json();
+        }
+        
+        // Update page title and header
         document.title = `${config.name} | JP Stock Analysis V2`;
+        document.getElementById('sectorTitle').innerHTML = `${config.icon} JP Stock Analysis V2 - ${config.name}`;
+        document.getElementById('sectorDesc').textContent = 'Phân tích P/B định lượng với Historical Backtest';
         
         // Get stocks array
         const stocks = sectorData.stocks || {};
         allStocks = Object.values(stocks);
         
         // Display in order: heat index -> summary -> stock list
-        displayHeatIndex(config);
+        displayHeatIndex();
         displaySummary();
         displayStockList(allStocks);
     } catch (error) {
@@ -63,166 +75,236 @@ async function loadSectorData() {
     }
 }
 
-// Display sector heat index
-function displayHeatIndex(config) {
-    const heat = sectorData.heat || {};
-    const heatIndex = heat.heat_index || 0;
-    const status = heat.status || '😐 NEUTRAL';
-    const signal = heat.signal || 'NORMAL';
+// Display Sector Heat Index - Đồng bộ UI với bank.html
+function displayHeatIndex() {
+    // Get heat data from sector_heat.json or sectorData.heat
+    let heat = sectorData.heat || {};
     
-    const heatColor = heatIndex < 20 ? 'text-blue-400' :
-                     heatIndex < 35 ? 'text-cyan-400' :
-                     heatIndex < 50 ? 'text-green-400' :
-                     heatIndex < 65 ? 'text-yellow-400' :
-                     heatIndex < 80 ? 'text-orange-400' : 'text-red-400';
-    
-    const signalColor = signal === 'BUY' ? 'text-green-400' :
-                       signal === 'ACCUMULATE' ? 'text-blue-400' :
-                       signal === 'HOLD' ? 'text-yellow-400' : 'text-gray-400';
-    
-    document.getElementById('heat-index').innerHTML = `
-        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 mb-6 border border-gray-700">
-            <h2 class="text-2xl font-bold text-white mb-4">🌡️ Chỉ Số Nhiệt Độ Ngành - ${config.name}</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
-                    <div class="text-3xl font-bold ${heatColor}">${heatIndex.toFixed(1)}</div>
-                    <div class="text-gray-400 text-sm mt-1">Heat Index</div>
-                </div>
-                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
-                    <div class="text-2xl font-bold text-white">${status}</div>
-                    <div class="text-gray-400 text-sm mt-1">Trạng thái</div>
-                </div>
-                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
-                    <div class="text-2xl font-bold ${signalColor}">${signal}</div>
-                    <div class="text-gray-400 text-sm mt-1">Tín hiệu</div>
-                </div>
-                <div class="text-center p-4 bg-gray-700/50 rounded-lg">
-                    <div class="text-2xl font-bold text-purple-400">${allStocks.length}</div>
-                    <div class="text-gray-400 text-sm mt-1">Số mã</div>
-                </div>
-            </div>
-            <div class="mt-4 p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg">
-                <p class="text-blue-300 text-sm">
-                    💡 <strong>Giải thích:</strong> Heat Index thấp (&lt;35) = Ngành đang rẻ, có thể tích lũy. 
-                    Heat Index cao (&gt;65) = Ngành đang đắt, cân nhắc chốt lời.
-                </p>
-            </div>
-        </div>
-    `;
-}
-
-// Display summary
-function displaySummary() {
-    const heat = sectorData.heat || {};
-    const summary = sectorData.summary || {};
-    
-    const cheapCount = allStocks.filter(s => {
-        const eval = s.evaluation || {};
-        return eval.status === '🟢 RẺ' || eval.status === '🟢 CỰC RẺ';
-    }).length;
-    
-    const expensiveCount = allStocks.filter(s => {
-        const eval = s.evaluation || {};
-        return eval.status === '🔴 ĐẮT' || eval.status === '🔴 CỰC ĐẮT';
-    }).length;
-    
-    document.getElementById('summary').innerHTML = `
-        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-            <div class="bg-gray-800 rounded-lg p-4 text-center">
-                <div class="text-2xl font-bold text-blue-400">${(heat.heat_index || 0).toFixed(1)}</div>
-                <div class="text-gray-400 text-sm">Heat Index</div>
-            </div>
-            <div class="bg-gray-800 rounded-lg p-4 text-center">
-                <div class="text-2xl font-bold text-blue-400">${(heat.avg_pb || 0).toFixed(2)}</div>
-                <div class="text-gray-400 text-sm">P/B Trung bình</div>
-            </div>
-            <div class="bg-gray-800 rounded-lg p-4 text-center">
-                <div class="text-2xl font-bold text-green-400">${cheapCount}</div>
-                <div class="text-gray-400 text-sm">Cực rẻ</div>
-            </div>
-            <div class="bg-gray-800 rounded-lg p-4 text-center">
-                <div class="text-2xl font-bold text-red-400">${expensiveCount}</div>
-                <div class="text-gray-400 text-sm">Cực đắt</div>
-            </div>
-            <div class="bg-gray-800 rounded-lg p-4 text-center">
-                <div class="text-2xl font-bold text-purple-400">${summary.stocks_with_data || allStocks.length}</div>
-                <div class="text-gray-400 text-sm">Số mã</div>
-            </div>
-        </div>
-    `;
-    
-    // Display heat history chart
-    displayHeatHistory(heat);
-}
-
-// Display heat history
-function displayHeatHistory(heat) {
-    const history = heat.history || [];
-    const analysis = heat.analysis || {};
-    
-    if (history.length === 0) {
-        document.getElementById('heat-history').innerHTML = '';
-        return;
+    // If we have sector_heat.json, use that for the current sector
+    if (sectorHeat && sectorHeat.current) {
+        heat = sectorHeat.current;
     }
     
-    document.getElementById('heat-history').innerHTML = `
-        <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-6 border border-gray-700">
-            <div class="flex justify-between items-center mb-4">
-                <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Nhiệt độ ngành (${history.length} quý)</div>
-                <div class="text-xs text-gray-500">
-                    🔥 Max: <span class="text-red-400 font-bold">${analysis.max_heat || 0}</span> (${analysis.max_heat_period || 'N/A'}) | 
-                    ❄️ Min: <span class="text-blue-400 font-bold">${analysis.min_heat || 0}</span> (${analysis.min_heat_period || 'N/A'}) |
-                    📊 Avg: <span class="text-yellow-400">${analysis.avg_heat || 0}</span>
+    const heatIndex = heat.heat_index || 0;
+    const metrics = heat.metrics || {};
+    const trend = sectorHeat?.trend || {};
+    const recs = sectorHeat?.recommendations || [];
+    
+    const config = SECTORS[currentSector];
+    
+    // Heat gauge gradient
+    const heatPercent = heatIndex;
+    const gaugeGradient = `linear-gradient(to right, 
+        #8B5CF6 0%, #3B82F6 20%, #22C55E 40%, #EAB308 60%, #F97316 80%, #EF4444 100%)`;
+    
+    // Determine signal and status
+    const signal = heat.signal || getSignalFromHeat(heatIndex);
+    const status = heat.status || getStatusFromHeat(heatIndex);
+    const description = heat.description || getDescriptionFromHeat(heatIndex);
+    const heatColor = getHeatColorHex(heatIndex);
+    
+    document.getElementById('heat-index').innerHTML = `
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg p-6 mb-6 border border-gray-700">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                        🌡️ Chỉ số Nhiệt độ Ngành ${config.name}
+                        <span class="text-sm font-normal text-gray-400">(Sector Heat Index)</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm mt-1">Đo lường độ nóng/lạnh dựa trên P/B toàn ngành</p>
+                </div>
+                <div class="mt-3 md:mt-0 text-right">
+                    <div class="text-4xl font-bold" style="color: ${heatColor}">${heatIndex.toFixed(1)}</div>
+                    <div class="text-sm text-gray-400">/ 100</div>
                 </div>
             </div>
-            <div id="heat-chart" style="height: 300px;"></div>
             
-            <!-- Historical Data Table -->
-            <div class="mt-4">
-                <details class="group">
-                    <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
-                        <span>📋 Xem bảng dữ liệu chi tiết</span>
-                        <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </summary>
-                    <div class="mt-3 max-h-64 overflow-y-auto">
-                        <table class="w-full text-xs">
-                            <thead class="sticky top-0 bg-gray-800">
-                                <tr class="border-b border-gray-700">
-                                    <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
-                                    <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
-                                    <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
-                                    <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
-                                    <th class="py-2 px-2 text-right text-gray-400">Mã</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${history.slice().reverse().map(h => `
-                                    <tr class="border-b border-gray-700/50 hover:bg-gray-700/30">
-                                        <td class="py-1 px-2 text-gray-300">${h.period}</td>
-                                        <td class="py-1 px-2 text-right font-bold" style="color: ${getHeatColor(h.heat_index)}">${h.heat_index?.toFixed(1)}</td>
-                                        <td class="py-1 px-2 text-center">${getStatusEmoji(h.status)}</td>
-                                        <td class="py-1 px-2 text-right text-cyan-400">${h.avg_pb?.toFixed(2)}x</td>
-                                        <td class="py-1 px-2 text-right text-gray-500">${h.banks_count}</td>
-                                    </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
+            <!-- Heat Gauge -->
+            <div class="mb-4">
+                <div class="h-4 rounded-full overflow-hidden" style="background: ${gaugeGradient}">
+                    <div class="relative h-full">
+                        <div class="absolute top-0 h-full w-1 bg-white shadow-lg" 
+                             style="left: ${heatPercent}%; transform: translateX(-50%);">
+                        </div>
                     </div>
-                </details>
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>🥶 Cực lạnh</span>
+                    <span>❄️ Lạnh</span>
+                    <span>😐 Bình thường</span>
+                    <span>🌡️ Nóng</span>
+                    <span>🔥 Quá nóng</span>
+                </div>
+            </div>
+            
+            <!-- Status & Signal -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Trạng thái</div>
+                    <div class="text-2xl font-bold" style="color: ${heatColor}">${status}</div>
+                    <div class="text-xs text-gray-500 mt-1">${description}</div>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Xu hướng</div>
+                    <div class="text-2xl font-bold text-white">${trend.emoji || '📊'} ${(trend.direction || 'stable').replace('_', ' ')}</div>
+                    <div class="text-xs text-gray-500 mt-1">${trend.description || 'Đang theo dõi'}</div>
+                </div>
+                <div class="bg-gray-900/50 rounded-lg p-4">
+                    <div class="text-gray-400 text-sm mb-1">Tín hiệu</div>
+                    <div class="text-2xl font-bold ${getSignalColor(signal)}">${signal}</div>
+                    <div class="text-xs text-gray-500 mt-1">Dựa trên nhiệt độ hiện tại</div>
+                </div>
+            </div>
+            
+            <!-- Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">Avg P/B Percentile</div>
+                    <div class="text-white font-bold">P${metrics.avg_pb_percentile || Math.round(heatIndex)}</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">Avg P/B</div>
+                    <div class="text-white font-bold">${(heat.avg_pb || calculateAvgPB()).toFixed(2)}x</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">CP rẻ (P<35)</div>
+                    <div class="text-green-400 font-bold">${countCheapStocks()}/${allStocks.length}</div>
+                </div>
+                <div class="bg-gray-900/30 rounded p-3 text-center">
+                    <div class="text-gray-400 text-xs">CP đắt (P>65)</div>
+                    <div class="text-red-400 font-bold">${countExpensiveStocks()}/${allStocks.length}</div>
+                </div>
+            </div>
+            
+            <!-- Recommendations -->
+            ${recs.length > 0 ? `
+                <div class="border-t border-gray-700 pt-4 mb-4">
+                    <div class="text-sm font-semibold text-gray-300 mb-2">💡 Khuyến nghị:</div>
+                    ${recs.map(r => `
+                        <div class="flex items-start gap-2 text-sm mb-1">
+                            <span class="${r.priority === 'HIGH' ? 'text-red-400' : r.priority === 'MEDIUM' ? 'text-yellow-400' : 'text-gray-400'}">[${r.priority}]</span>
+                            <span class="text-gray-300">${r.message}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+            
+            <!-- Historical Heat Chart -->
+            <div class="border-t border-gray-700 pt-4">
+                <div class="flex justify-between items-center mb-3">
+                    <div class="text-sm font-semibold text-gray-300">📈 Lịch sử Nhiệt độ ngành (${sectorHeat?.history?.length || heat.history?.length || 0} quý)</div>
+                    ${sectorHeat?.analysis || heat.analysis ? `
+                    <div class="text-xs text-gray-500">
+                        🔥 Max: <span class="text-red-400 font-bold">${(sectorHeat?.analysis?.max_heat || heat.analysis?.max_heat || 0).toFixed(1)}</span> (${sectorHeat?.analysis?.max_heat_period || heat.analysis?.max_heat_period || 'N/A'}) | 
+                        ❄️ Min: <span class="text-blue-400 font-bold">${(sectorHeat?.analysis?.min_heat || heat.analysis?.min_heat || 0).toFixed(1)}</span> (${sectorHeat?.analysis?.min_heat_period || heat.analysis?.min_heat_period || 'N/A'}) |
+                        📊 Avg: <span class="text-yellow-400">${(sectorHeat?.analysis?.avg_heat || heat.analysis?.avg_heat || 0).toFixed(1)}</span>
+                    </div>
+                    ` : ''}
+                </div>
+                <div id="heat-history-chart" style="height: 300px; background: rgba(17,24,39,0.5); border-radius: 8px;"></div>
+                
+                <!-- Historical Data Table -->
+                <div class="mt-4">
+                    <details class="group">
+                        <summary class="cursor-pointer text-sm text-gray-400 hover:text-white flex items-center gap-2">
+                            <span>📋 Xem bảng dữ liệu chi tiết</span>
+                            <svg class="w-4 h-4 transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </summary>
+                        <div class="mt-3 max-h-64 overflow-y-auto">
+                            <table class="w-full text-xs">
+                                <thead class="sticky top-0 bg-gray-800">
+                                    <tr class="border-b border-gray-700">
+                                        <th class="py-2 px-2 text-left text-gray-400">Kỳ</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Heat Index</th>
+                                        <th class="py-2 px-2 text-center text-gray-400">Trạng thái</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Avg P/B</th>
+                                        <th class="py-2 px-2 text-right text-gray-400">Mã</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${(sectorHeat?.history || heat.history || []).slice().reverse().map(h => `
+                                        <tr class="border-b border-gray-700/50 hover:bg-gray-700/30">
+                                            <td class="py-1 px-2 text-gray-300">${h.period}</td>
+                                            <td class="py-1 px-2 text-right font-bold" style="color: ${getHeatColorHex(h.heat_index)}">${h.heat_index?.toFixed(1)}</td>
+                                            <td class="py-1 px-2 text-center">${getStatusEmoji(h.status)}</td>
+                                            <td class="py-1 px-2 text-right text-cyan-400">${h.avg_pb?.toFixed(2)}x</td>
+                                            <td class="py-1 px-2 text-right text-gray-500">${h.banks_count || h.stocks_count || 0}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
     `;
     
-    // Draw chart after DOM is ready
+    // Draw heat history chart after DOM is ready
     setTimeout(() => {
-        drawHeatChart(history);
+        drawHeatHistoryChart();
     }, 100);
 }
 
-// Get heat color
-function getHeatColor(heat) {
+// Calculate average P/B from stocks
+function calculateAvgPB() {
+    if (allStocks.length === 0) return 0;
+    const total = allStocks.reduce((sum, s) => sum + (s.current?.pb || s.current_pb || 0), 0);
+    return total / allStocks.length;
+}
+
+// Count cheap stocks (percentile < 35)
+function countCheapStocks() {
+    return allStocks.filter(s => {
+        const val = s.valuation || {};
+        const percentile = val.percentile || 50;
+        return percentile < 35;
+    }).length;
+}
+
+// Count expensive stocks (percentile > 65)
+function countExpensiveStocks() {
+    return allStocks.filter(s => {
+        const val = s.valuation || {};
+        const percentile = val.percentile || 50;
+        return percentile > 65;
+    }).length;
+}
+
+// Get signal from heat index
+function getSignalFromHeat(heat) {
+    if (heat < 20) return 'BUY_HEAVY';
+    if (heat < 35) return 'BUY';
+    if (heat < 50) return 'ACCUMULATE';
+    if (heat < 65) return 'HOLD';
+    if (heat < 80) return 'REDUCE';
+    return 'SELL';
+}
+
+// Get status from heat index
+function getStatusFromHeat(heat) {
+    if (heat < 20) return '🥶 ICE COLD';
+    if (heat < 35) return '❄️ COLD';
+    if (heat < 50) return '🌤️ COOL';
+    if (heat < 65) return '😐 NEUTRAL';
+    if (heat < 80) return '☀️ WARM';
+    return '🔥 HOT';
+}
+
+// Get description from heat
+function getDescriptionFromHeat(heat) {
+    if (heat < 20) return 'Ngành cực lạnh, cơ hội mua mạnh';
+    if (heat < 35) return 'Ngành lạnh, nên tích lũy';
+    if (heat < 50) return 'Hơi rẻ, có thể mua từ từ';
+    if (heat < 65) return 'Trung tính, giữ nguyên';
+    if (heat < 80) return 'Hơi đắt, cẩn thận';
+    return 'Quá nóng, cân nhắc chốt lời';
+}
+
+// Get heat color hex
+function getHeatColorHex(heat) {
     if (heat >= 85) return '#EF4444';
     if (heat >= 70) return '#F97316';
     if (heat >= 55) return '#EAB308';
@@ -246,15 +328,31 @@ function getStatusEmoji(status) {
     return emojis[status] || '❓';
 }
 
-// Draw heat chart
-function drawHeatChart(history) {
-    if (!history || history.length === 0) return;
+// Get signal color class
+function getSignalColor(signal) {
+    const colors = {
+        'SELL_ALL': 'text-red-500',
+        'SELL': 'text-red-500',
+        'REDUCE': 'text-orange-400',
+        'HOLD': 'text-yellow-400',
+        'NORMAL': 'text-green-400',
+        'ACCUMULATE': 'text-blue-400',
+        'BUY': 'text-blue-500',
+        'BUY_HEAVY': 'text-purple-500'
+    };
+    return colors[signal] || 'text-gray-400';
+}
+
+// Draw heat history chart
+function drawHeatHistoryChart() {
+    const history = sectorHeat?.history || sectorData?.heat?.history || [];
+    if (history.length === 0) return;
     
     const periods = history.map(h => h.period);
     const heatValues = history.map(h => h.heat_index);
     
     // Color based on heat level
-    const colors = heatValues.map(h => getHeatColor(h));
+    const colors = heatValues.map(h => getHeatColorHex(h));
     
     // Heat line
     const trace1 = {
@@ -269,75 +367,192 @@ function drawHeatChart(history) {
         fillcolor: 'rgba(249, 115, 22, 0.1)'
     };
     
-    // Reference lines
+    // Zone lines
     const overheatedLine = {
-        x: periods,
-        y: periods.map(() => 85),
+        x: [periods[0], periods[periods.length-1]],
+        y: [85, 85],
+        type: 'scatter',
         mode: 'lines',
         name: 'Overheated (85)',
-        line: { color: 'rgba(239, 68, 68, 0.5)', width: 1, dash: 'dash' },
-        hoverinfo: 'skip',
-        showlegend: false
+        line: { color: '#EF4444', width: 1, dash: 'dash' }
     };
     
     const hotLine = {
-        x: periods,
-        y: periods.map(() => 70),
+        x: [periods[0], periods[periods.length-1]],
+        y: [70, 70],
+        type: 'scatter',
         mode: 'lines',
         name: 'Hot (70)',
-        line: { color: 'rgba(249, 115, 22, 0.5)', width: 1, dash: 'dash' },
-        hoverinfo: 'skip',
-        showlegend: false
+        line: { color: '#F97316', width: 1, dash: 'dot' }
     };
     
     const coldLine = {
-        x: periods,
-        y: periods.map(() => 35),
+        x: [periods[0], periods[periods.length-1]],
+        y: [35, 35],
+        type: 'scatter',
         mode: 'lines',
         name: 'Cold (35)',
-        line: { color: 'rgba(59, 130, 246, 0.5)', width: 1, dash: 'dash' },
-        hoverinfo: 'skip',
-        showlegend: false
+        line: { color: '#3B82F6', width: 1, dash: 'dot' }
     };
     
     const iceColdLine = {
-        x: periods,
-        y: periods.map(() => 20),
+        x: [periods[0], periods[periods.length-1]],
+        y: [20, 20],
+        type: 'scatter',
         mode: 'lines',
         name: 'Ice Cold (20)',
-        line: { color: 'rgba(139, 92, 246, 0.5)', width: 1, dash: 'dash' },
-        hoverinfo: 'skip',
-        showlegend: false
+        line: { color: '#8B5CF6', width: 1, dash: 'dash' }
     };
     
     const layout = {
-        title: '',
-        xaxis: { title: '' },
-        yaxis: { title: 'Heat Index', range: [0, 100] },
-        hovermode: 'x unified',
-        plot_bgcolor: 'rgba(17,24,39,0.5)',
-        paper_bgcolor: 'rgba(0,0,0,0)',
-        font: { color: '#9CA3AF', family: 'system-ui' },
-        margin: { l: 50, r: 50, t: 20, b: 40 },
-        showlegend: true,
+        paper_bgcolor: 'transparent',
+        plot_bgcolor: 'transparent',
+        font: { color: '#9ca3af', size: 10 },
+        margin: { t: 10, b: 50, l: 40, r: 10 },
+        xaxis: {
+            gridcolor: '#374151',
+            tickangle: -45,
+            tickfont: { size: 9 }
+        },
+        yaxis: {
+            title: 'Heat Index',
+            gridcolor: '#374151',
+            range: [0, 100],
+            tickfont: { size: 9 }
+        },
         legend: {
-            x: 0.02,
-            y: 0.98,
-            bgcolor: 'rgba(0,0,0,0.5)',
-            bordercolor: 'rgba(255,255,255,0.2)',
-            borderwidth: 1
-        }
+            x: 0,
+            y: 1.15,
+            orientation: 'h',
+            font: { size: 9 }
+        },
+        shapes: [
+            // Overheated zone (red)
+            {
+                type: 'rect',
+                xref: 'paper', yref: 'y',
+                x0: 0, x1: 1, y0: 85, y1: 100,
+                fillcolor: 'rgba(239, 68, 68, 0.1)',
+                line: { width: 0 }
+            },
+            // Cold zone (blue)
+            {
+                type: 'rect',
+                xref: 'paper', yref: 'y',
+                x0: 0, x1: 1, y0: 0, y1: 35,
+                fillcolor: 'rgba(59, 130, 246, 0.1)',
+                line: { width: 0 }
+            }
+        ],
+        annotations: heatValues.length > 0 ? [
+            {
+                x: periods[periods.length-1],
+                y: heatValues[heatValues.length-1],
+                text: `${heatValues[heatValues.length-1].toFixed(0)}`,
+                showarrow: true,
+                arrowhead: 2,
+                arrowsize: 1,
+                arrowcolor: '#F97316',
+                font: { color: '#F97316', size: 12, weight: 'bold' },
+                ax: 30,
+                ay: -20
+            }
+        ] : []
     };
     
-    Plotly.newPlot('heat-chart', [trace1, overheatedLine, hotLine, coldLine, iceColdLine], layout, { 
+    Plotly.newPlot('heat-history-chart', [trace1, overheatedLine, hotLine, coldLine, iceColdLine], layout, { 
         responsive: true,
         displayModeBar: false
     });
 }
 
+// Display summary statistics - Đồng bộ với bank.html
+function displaySummary() {
+    // Count by zone
+    const zoneCounts = {
+        'extremely_cheap': 0,
+        'cheap': 0,
+        'fair': 0,
+        'expensive': 0,
+        'extremely_expensive': 0
+    };
+    
+    let totalReturn = 0, countReturn = 0;
+    
+    allStocks.forEach(stock => {
+        const zone = stock.valuation?.zone || 'fair';
+        // Map zone names
+        let mappedZone = zone.toLowerCase().replace('very_', 'extremely_').replace('overvalued', 'extremely_expensive');
+        if (mappedZone === 'extremely_cheap' || mappedZone === 'cheap' || mappedZone === 'fair' || mappedZone === 'expensive' || mappedZone === 'extremely_expensive') {
+            zoneCounts[mappedZone]++;
+        } else if (zone.includes('CỰC RẺ') || zone === 'VERY_CHEAP') {
+            zoneCounts.extremely_cheap++;
+        } else if (zone.includes('RẺ') || zone === 'CHEAP') {
+            zoneCounts.cheap++;
+        } else if (zone.includes('ĐẮT') && zone.includes('CỰC') || zone === 'VERY_EXPENSIVE') {
+            zoneCounts.extremely_expensive++;
+        } else if (zone.includes('ĐẮT') || zone === 'EXPENSIVE') {
+            zoneCounts.expensive++;
+        } else {
+            zoneCounts.fair++;
+        }
+        
+        // Calculate expected return from historical_returns
+        const hr = stock.historical_returns || {};
+        const zoneReturns = hr[zone] || hr.fair || {};
+        if (zoneReturns.returns && zoneReturns.returns['365d']) {
+            totalReturn += zoneReturns.returns['365d'].avg || 0;
+            countReturn++;
+        }
+    });
+    
+    const avgReturn = countReturn > 0 ? (totalReturn / countReturn).toFixed(1) : 'N/A';
+    
+    document.getElementById('summary').innerHTML = `
+        <div class="bg-gray-800 rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-bold text-white mb-4">📊 Tổng quan ${SECTORS[currentSector]?.name || 'ngành'}</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-4">
+                <div class="text-center p-3 bg-green-900/30 rounded-lg">
+                    <div class="text-3xl font-bold text-green-400">${zoneCounts.extremely_cheap}</div>
+                    <div class="text-sm text-gray-400">Cực rẻ</div>
+                </div>
+                <div class="text-center p-3 bg-green-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-green-300">${zoneCounts.cheap}</div>
+                    <div class="text-sm text-gray-400">Rẻ</div>
+                </div>
+                <div class="text-center p-3 bg-yellow-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-yellow-400">${zoneCounts.fair}</div>
+                    <div class="text-sm text-gray-400">Hợp lý</div>
+                </div>
+                <div class="text-center p-3 bg-orange-800/30 rounded-lg">
+                    <div class="text-3xl font-bold text-orange-400">${zoneCounts.expensive}</div>
+                    <div class="text-sm text-gray-400">Đắt</div>
+                </div>
+                <div class="text-center p-3 bg-red-900/30 rounded-lg">
+                    <div class="text-3xl font-bold text-red-400">${zoneCounts.extremely_expensive}</div>
+                    <div class="text-sm text-gray-400">Cực đắt</div>
+                </div>
+            </div>
+            <div class="text-sm text-gray-400 text-center border-t border-gray-700 pt-3">
+                <span class="mr-4">📅 Cập nhật: ${new Date(sectorData.last_updated).toLocaleString('vi-VN')}</span>
+                <span>📈 Dựa trên backtest lịch sử P/B theo ngày</span>
+            </div>
+        </div>
+    `;
+}
+
 // Display stock list
 function displayStockList(stocks) {
-    document.getElementById('stock-list').innerHTML = stocks.map(stock => createStockCard(stock)).join('');
+    const container = document.getElementById('stock-list');
+    
+    // Sort by valuation score (best buys first - lowest percentile)
+    const sortedStocks = [...stocks].sort((a, b) => {
+        const pctA = a.valuation?.percentile ?? 50;
+        const pctB = b.valuation?.percentile ?? 50;
+        return pctA - pctB;
+    });
+    
+    container.innerHTML = sortedStocks.map(stock => createStockCard(stock)).join('');
 }
 
 // Helper: Map English zone to Vietnamese
@@ -348,62 +563,83 @@ function getZoneVietnamese(zone) {
         'FAIR': '🟡 HỢP LÝ',
         'EXPENSIVE': '🔴 ĐẮT',
         'VERY_EXPENSIVE': '🔴 CỰC ĐẮT',
-        'OVERVALUED': '🔴 QUÁ ĐẮT'
+        'OVERVALUED': '🔴 QUÁ ĐẮT',
+        'extremely_cheap': '🟢 CỰC RẺ',
+        'cheap': '🟢 RẺ',
+        'fair': '🟡 HỢP LÝ',
+        'expensive': '🔴 ĐẮT',
+        'extremely_expensive': '🔴 CỰC ĐẮT'
     };
     return zoneMap[zone] || zone || 'N/A';
 }
 
-// Create individual stock card (giống bank card)
+// Create individual stock card - Đồng bộ với bank.html
 function createStockCard(stock) {
-    const eval = stock.evaluation || stock.valuation || {};
-    const stats = stock.pb_statistics || {};
+    const valuation = stock.valuation || {};
+    const stats = stock.statistics || stock.pb_statistics || {};
+    const historicalReturns = stock.historical_returns || {};
     
-    // Zone/Status color - check both evaluation.status and valuation.zone
-    let status = 'N/A';
-    if (eval.status) {
-        status = eval.status;
-    } else if (eval.zone_vi) {
-        status = eval.zone_vi;
-    } else if (eval.zone) {
-        // Convert English zone to Vietnamese
-        status = getZoneVietnamese(eval.zone);
-    }
+    // Zone/Status - convert to Vietnamese
+    const zone = valuation.zone || 'fair';
+    const zoneVi = valuation.zone_vi || getZoneVietnamese(zone);
     
-    const zoneColor = status.includes('RẺ') || status.includes('CHEAP') ? '#10B981' :
-                     status.includes('ĐẮT') || status.includes('EXPENSIVE') ? '#EF4444' :
-                     status.includes('HỢPÝ') || status.includes('HỢP LÝ') || status.includes('FAIR') ? '#F59E0B' : '#6B7280';
+    // Zone color
+    const zoneColor = zoneVi.includes('RẺ') ? '#10B981' :
+                     zoneVi.includes('ĐẮT') ? '#EF4444' :
+                     zoneVi.includes('HỢP') ? '#F59E0B' : '#6B7280';
     
     // P/B values
-    const currentPb = stock.current_pb?.toFixed(2) || 'N/A';
+    const currentPb = stock.current?.pb?.toFixed(2) || stock.current_pb?.toFixed(2) || 'N/A';
     const avgPb = stats.mean?.toFixed(2) || 'N/A';
-    const minPb = stats.min?.toFixed(2) || 'N/A';
-    const maxPb = stats.max?.toFixed(2) || 'N/A';
     
     // Percentile
-    const percentile = (eval.current_percentile || eval.percentile || 0).toFixed(0);
+    const percentile = (valuation.percentile || 50).toFixed(0);
     
-    // Current price - get from pb_history (latest entry)
+    // Current price
     let currentPrice = 'N/A';
-    if (stock.current_price) {
+    if (stock.current?.price) {
+        currentPrice = stock.current.price.toLocaleString('vi-VN');
+    } else if (stock.current_price) {
         currentPrice = stock.current_price.toLocaleString('vi-VN');
-    } else if (stock.pb_history && stock.pb_history.length > 0) {
-        // Find the most recent entry by sorting by year and quarter
-        const sortedHistory = [...stock.pb_history].sort((a, b) => {
-            if (a.year !== b.year) return b.year - a.year;
-            return b.quarter - a.quarter;
-        });
-        const latestEntry = sortedHistory[0];
-        if (latestEntry && latestEntry.price) {
-            // Price in pb_history is in thousands, multiply by 1000 to get VND
-            currentPrice = (latestEntry.price * 1000).toLocaleString('vi-VN');
+    }
+    
+    // Expected return from backtest (use zone's historical returns)
+    let return1y = 'N/A';
+    let winRate = 'N/A';
+    let returnClass = 'text-gray-400';
+    let winRateClass = 'text-gray-400';
+    
+    // Try to get returns from historical_returns based on zone
+    const zoneKey = zone.toLowerCase().replace('very_', 'extremely_');
+    const zoneReturns = historicalReturns[zoneKey] || historicalReturns[zone] || historicalReturns.fair;
+    
+    if (zoneReturns && zoneReturns.returns && zoneReturns.returns['365d']) {
+        const returns365 = zoneReturns.returns['365d'];
+        if (returns365.avg != null) {
+            return1y = `${returns365.avg > 0 ? '+' : ''}${returns365.avg.toFixed(1)}%`;
+            returnClass = returns365.avg >= 20 ? 'text-green-400' : 
+                         returns365.avg >= 0 ? 'text-yellow-400' : 'text-red-400';
+        }
+        if (returns365.win_rate != null) {
+            winRate = `${returns365.win_rate.toFixed(0)}%`;
+            winRateClass = returns365.win_rate >= 70 ? 'text-green-400' :
+                          returns365.win_rate >= 50 ? 'text-yellow-400' : 'text-red-400';
         }
     }
     
-    const icopyBadge = isICopySymbol(stock.symbol) ? getICopyBadge('sm') : '';
+    // Risk level (derived from zone)
+    let riskLevel = 'Trung bình';
+    if (zone.includes('expensive') || zone.includes('EXPENSIVE') || zone.includes('ĐẮT')) {
+        riskLevel = 'Cao';
+    } else if (zone.includes('cheap') || zone.includes('CHEAP') || zone.includes('RẺ')) {
+        riskLevel = 'Thấp';
+    }
+    
+    const icopyBadge = (typeof isICopySymbol === 'function' && isICopySymbol(stock.symbol)) ? getICopyBadge('sm') : '';
     const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(stock.symbol)) ? getStarBadge('sm') : '';
     
     return `
-        <a href="stock.html?symbol=${stock.symbol}" class="bank-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
+        <a href="stock.html?symbol=${stock.symbol}" class="stock-card block bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-all hover:scale-[1.02]">
             <div class="flex justify-between items-start mb-3">
                 <div>
                     <h3 class="text-xl font-bold text-white inline-flex items-center">
@@ -413,7 +649,7 @@ function createStockCard(stock) {
                 </div>
                 <span class="px-3 py-1 rounded-full text-sm font-bold" 
                       style="background-color: ${zoneColor}25; color: ${zoneColor}; border: 2px solid ${zoneColor}">
-                    ${status}
+                    ${zoneVi}
                 </span>
             </div>
             
@@ -429,76 +665,126 @@ function createStockCard(stock) {
                     <div class="text-gray-500 text-xs">vs lịch sử</div>
                 </div>
                 <div class="bg-gray-900/50 rounded p-2">
-                    <div class="text-gray-500 text-xs">P/B Min</div>
-                    <div class="text-green-400 font-bold text-lg">${minPb}</div>
-                    <div class="text-gray-500 text-xs">thấp nhất</div>
+                    <div class="text-gray-500 text-xs">Kỳ vọng 1Y</div>
+                    <div class="${returnClass} font-bold text-lg">${return1y}</div>
+                    <div class="text-gray-500 text-xs">từ backtest</div>
                 </div>
                 <div class="bg-gray-900/50 rounded p-2">
-                    <div class="text-gray-500 text-xs">P/B Max</div>
-                    <div class="text-red-400 font-bold text-lg">${maxPb}</div>
-                    <div class="text-gray-500 text-xs">cao nhất</div>
+                    <div class="text-gray-500 text-xs">Win Rate 1Y</div>
+                    <div class="${winRateClass} font-bold text-lg">${winRate}</div>
+                    <div class="text-gray-500 text-xs">tỷ lệ có lãi</div>
                 </div>
             </div>
             
             <div class="flex justify-between items-center text-xs pt-2 border-t border-gray-700">
                 <span class="text-gray-500">💰 ${currentPrice}đ</span>
-                <span class="text-gray-500">📊 ${eval.position || 'N/A'}</span>
+                <span class="text-gray-500">⚠️ Rủi ro: ${riskLevel}</span>
             </div>
         </a>
     `;
 }
 
-// Filter by zone
-function filterByZone(zone, element) {
-    // Update button style
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('bg-blue-600', 'text-white', 'ring-2', 'ring-blue-500');
-        btn.classList.add('bg-gray-700');
-    });
-    element.classList.remove('bg-gray-700');
-    element.classList.add('bg-blue-600', 'text-white', 'ring-2', 'ring-blue-500');
+// Filter by zone - Đồng bộ với bank.html
+function filterByZone(zone, btn) {
+    if (!sectorData) return;
     
-    // Filter stocks
     let filtered = allStocks;
     if (zone !== 'all') {
         filtered = allStocks.filter(stock => {
-            const eval = stock.evaluation || stock.valuation || {};
-            const status = eval.status || eval.zone_vi || '';
-            const zoneEn = eval.zone || '';
+            const val = stock.valuation || {};
+            const stockZone = (val.zone || '').toLowerCase();
+            const stockZoneVi = val.zone_vi || '';
             
             if (zone === 'extremely_cheap') {
-                return status.includes('CỰC RẺ') || zoneEn === 'VERY_CHEAP';
+                return stockZone.includes('extremely_cheap') || stockZone === 'very_cheap' || stockZoneVi.includes('CỰC RẺ');
             }
             if (zone === 'cheap') {
-                return status.includes('RẺ') && !status.includes('CỰC') || zoneEn === 'CHEAP';
+                return (stockZone === 'cheap' || stockZoneVi.includes('RẺ')) && !stockZone.includes('extremely') && !stockZoneVi.includes('CỰC');
             }
             if (zone === 'fair') {
-                return status.includes('HỢPÝ') || status.includes('HỢP LÝ') || zoneEn === 'FAIR';
+                return stockZone === 'fair' || stockZoneVi.includes('HỢP LÝ');
             }
             if (zone === 'expensive') {
-                return status.includes('ĐẮT') && !status.includes('CỰC') || zoneEn === 'EXPENSIVE';
+                return (stockZone === 'expensive' || stockZoneVi.includes('ĐẮT')) && !stockZone.includes('extremely') && !stockZoneVi.includes('CỰC');
             }
             if (zone === 'extremely_expensive') {
-                return status.includes('CỰC ĐẮT') || zoneEn === 'VERY_EXPENSIVE' || zoneEn === 'OVERVALUED';
+                return stockZone.includes('extremely_expensive') || stockZone === 'very_expensive' || stockZone === 'overvalued' || stockZoneVi.includes('CỰC ĐẮT') || stockZoneVi.includes('QUÁ ĐẮT');
             }
             return true;
         });
     }
     
     displayStockList(filtered);
+    
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('ring-2', 'ring-blue-500', 'bg-blue-600');
+        b.classList.add('bg-gray-700');
+    });
+    btn.classList.remove('bg-gray-700');
+    btn.classList.add('ring-2', 'ring-blue-500', 'bg-blue-600');
 }
 
-// Sort stocks
-function sortStocks(type) {
+// Sort stocks - Đồng bộ với bank.html
+function sortStocks(field) {
+    if (!sectorData) return;
+    
     const sorted = [...allStocks].sort((a, b) => {
-        if (type === 'percentile') {
-            const pctA = (a.evaluation?.current_percentile || 0);
-            const pctB = (b.evaluation?.current_percentile || 0);
-            return pctA - pctB;
-        } else if (type === 'current_pb') {
-            return (a.current_pb || 0) - (b.current_pb || 0);
+        let valA, valB;
+        
+        switch(field) {
+            case 'return':
+                valA = getExpectedReturn(a);
+                valB = getExpectedReturn(b);
+                return valB - valA;
+            case 'winrate':
+                valA = getWinRate(a);
+                valB = getWinRate(b);
+                return valB - valA;
+            case 'cheap':
+            case 'percentile':
+                valA = a.valuation?.percentile ?? 999;
+                valB = b.valuation?.percentile ?? 999;
+                return valA - valB;
+            case 'risk':
+                valA = getRiskScore(a);
+                valB = getRiskScore(b);
+                return valA - valB;
+            case 'current_pb':
+                valA = a.current?.pb || a.current_pb || 0;
+                valB = b.current?.pb || b.current_pb || 0;
+                return valA - valB;
+            default:
+                return (a.valuation?.percentile ?? 50) - (b.valuation?.percentile ?? 50);
         }
-        return 0;
     });
+    
     displayStockList(sorted);
+}
+
+// Helper: Get expected 1Y return from backtest
+function getExpectedReturn(stock) {
+    const historicalReturns = stock.historical_returns || {};
+    const zone = (stock.valuation?.zone || 'fair').toLowerCase();
+    const zoneReturns = historicalReturns[zone] || historicalReturns.fair;
+    if (zoneReturns && zoneReturns.returns && zoneReturns.returns['365d']) {
+        return zoneReturns.returns['365d'].avg || -999;
+    }
+    return -999;
+}
+
+// Helper: Get win rate
+function getWinRate(stock) {
+    const historicalReturns = stock.historical_returns || {};
+    const zone = (stock.valuation?.zone || 'fair').toLowerCase();
+    const zoneReturns = historicalReturns[zone] || historicalReturns.fair;
+    if (zoneReturns && zoneReturns.returns && zoneReturns.returns['365d']) {
+        return zoneReturns.returns['365d'].win_rate || -999;
+    }
+    return -999;
+}
+
+// Helper: Get risk score (based on zone - higher percentile = higher risk)
+function getRiskScore(stock) {
+    return stock.valuation?.percentile ?? 50;
 }

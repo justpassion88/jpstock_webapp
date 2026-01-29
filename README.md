@@ -24,8 +24,7 @@ Hệ thống cung cấp:
 
 **Các trang chính:**
 - 🌡️ [Market Heat Map](https://justpassion88.github.io/jpstock_webapp/) - Tổng quan thị trường đa ngành
-- 🏦 [Banks Analysis](https://justpassion88.github.io/jpstock_webapp/bank.html) - Phân tích chuyên sâu ngành Ngân hàng
-- 📊 [Sector Analysis](https://justpassion88.github.io/jpstock_webapp/sector.html) - Chi tiết từng ngành
+- 📊 [Sector Analysis](https://justpassion88.github.io/jpstock_webapp/sector.html) - Chi tiết từng ngành (bao gồm Ngân hàng)
 - 📈 [Stock Detail](https://justpassion88.github.io/jpstock_webapp/stock.html) - Phân tích từng mã cổ phiếu
 
 ## ✨ Tính Năng Chính
@@ -215,9 +214,8 @@ jpstock_webapp/
 │
 ├── 📂 docs/                          # Frontend (GitHub Pages)
 │   ├── index.html                   # 🏠 Dashboard chính
-│   ├── bank.html                    # 🏦 Trang chuyên ngân hàng
 │   ├── stock.html                   # 📊 Chi tiết từng cổ phiếu
-│   ├── sector.html                  # 📈 Phân tích theo ngành
+│   ├── sector.html                  # 📈 Phân tích theo ngành (bao gồm Ngân hàng)
 │   ├── market.html                  # 🌡️ Market Heat Index
 │   │
 │   ├── 📂 data/                     # JSON data files
@@ -246,11 +244,11 @@ jpstock_webapp/
 │   │   └── recommendations.json     # Trading signals từ BOT
 │   │
 │   ├── 📂 js/                       # Frontend JavaScript
-│   │   ├── app.js                   # Main dashboard logic
 │   │   ├── stock.js                 # Stock detail page
-│   │   ├── sector.js                # Sector analysis page
+│   │   ├── sector.js                # Sector analysis page (tất cả ngành)
 │   │   ├── market.js                # Market heat page
-│   │   └── icopy-config.js          # iCopy portfolio config (164 mã)
+│   │   ├── icopy-config.js          # iCopy portfolio config (164 mã)
+│   │   └── notes-config.js          # Stock notes config
 │   │
 │   └── 📂 css/
 │       └── style.css                # Custom CSS styles
@@ -771,9 +769,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [![GitHub Forks](https://img.shields.io/github/forks/justpassion88/jpstock_webapp?style=social)](https://github.com/justpassion88/jpstock_webapp/fork)
 
 [🏠 Home](https://justpassion88.github.io/jpstock_webapp/) • 
-[🏦 Banks](https://justpassion88.github.io/jpstock_webapp/bank.html) • 
-[📊 Stock](https://justpassion88.github.io/jpstock_webapp/stock.html) • 
-[📈 Sector](https://justpassion88.github.io/jpstock_webapp/sector.html) • 
+[📊 Sector](https://justpassion88.github.io/jpstock_webapp/sector.html) • 
+[📈 Stock](https://justpassion88.github.io/jpstock_webapp/stock.html) • 
 [🌡️ Market Heat](https://justpassion88.github.io/jpstock_webapp/market.html)
 
 </div>

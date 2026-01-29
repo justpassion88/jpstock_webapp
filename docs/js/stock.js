@@ -30,20 +30,24 @@ function getZoneColor(zone, zone_vi) {
     return '#6B7280';
 }
 
-// Helper to get current price
+// Helper to get current price - updated for daily data
 function getCurrentPrice() {
+    // Priority 1: Use current.price from daily data
+    if (stockData.current && stockData.current.price) {
+        return stockData.current.price.toLocaleString('vi-VN');
+    }
+    // Priority 2: Use current_price field
     if (stockData.current_price) {
         return stockData.current_price.toLocaleString('vi-VN');
     }
+    // Priority 3: Calculate from pb_history (legacy support)
     if (stockData.pb_history && stockData.pb_history.length > 0) {
-        // Find the most recent entry by sorting by year and quarter
         const sortedHistory = [...stockData.pb_history].sort((a, b) => {
             if (a.year !== b.year) return b.year - a.year;
             return b.quarter - a.quarter;
         });
         const latestEntry = sortedHistory[0];
         if (latestEntry && latestEntry.price) {
-            // Price in pb_history is in thousands, multiply by 1000 to get VND
             return (latestEntry.price * 1000).toLocaleString('vi-VN');
         }
     }
@@ -56,19 +60,19 @@ function getSymbol() {
     return params.get('symbol') || 'VCB';
 }
 
-// Sector to file mapping
+// Sector to file mapping - Updated to use daily files
 const sectorFiles = {
-    'banks': 'banks_v2.json',
-    'realestate': 'realestate.json',
-    'securities': 'securities.json',
-    'retail': 'retail.json',
-    'construction': 'construction.json',
-    'energy': 'energy.json',
-    'steel': 'steel.json',
-    'technology': 'technology.json',
-    'oilgas': 'oilgas.json',
-    'insurance': 'insurance.json',
-    'chemicals': 'chemicals.json'
+    'banks': 'banks_daily.json',
+    'realestate': 'realestate_daily.json',
+    'securities': 'securities_daily.json',
+    'retail': 'retail_daily.json',
+    'construction': 'construction_daily.json',
+    'energy': 'energy_daily.json',
+    'steel': 'steel_daily.json',
+    'technology': 'technology_daily.json',
+    'oilgas': 'oilgas_daily.json',
+    'insurance': 'insurance_daily.json',
+    'chemicals': 'chemicals_daily.json'
 };
 
 // Fetch stock data
@@ -86,18 +90,18 @@ async function loadStock() {
                 
                 const data = await response.json();
                 
-                // Handle different JSON structures
+                // Handle different JSON structures - UPDATED for daily data
                 let stocksData = null;
                 
-                // Format 1: { "banks": { "VCB": {...}, "BID": {...} } } (banks_v2.json)
-                if (data.banks && data.banks[symbol]) {
-                    stocksData = data.banks[symbol];
-                }
-                // Format 2: { "stocks": { "HPG": {...} }, "sector_id": "steel", ... } (other sectors)
-                else if (data.stocks && data.stocks[symbol]) {
+                // Format 1 (daily): { "stocks": { "VCB": {...} }, "data_type": "daily", ... }
+                if (data.stocks && data.stocks[symbol]) {
                     stocksData = data.stocks[symbol];
                 }
-                // Format 3: { "realestate": { "VHM": {...} } } (if first key is sector name)
+                // Format 2 (legacy banks_v2): { "banks": { "VCB": {...}, "BID": {...} } }
+                else if (data.banks && data.banks[symbol]) {
+                    stocksData = data.banks[symbol];
+                }
+                // Format 3: First key is sector name { "realestate": { "VHM": {...} } }
                 else {
                     const firstKey = Object.keys(data)[0];
                     if (data[firstKey] && typeof data[firstKey] === 'object' && data[firstKey][symbol]) {
@@ -135,17 +139,21 @@ async function loadStock() {
     }
 }
 
-// Display stock header
+// Display stock header - updated for daily data
 function displayStockHeader() {
     const valuation = stockData.valuation || {};
-    const stats = stockData.pb_statistics || {};
+    const stats = stockData.statistics || stockData.pb_statistics || {};
     
     // Get zone display - try zone_vi first, then convert from zone
     const zoneDisplay = valuation.zone_vi || getZoneVietnamese(valuation.zone);
     const zoneColor = valuation.color || getZoneColor(valuation.zone, valuation.zone_vi);
-    const icopyBadge = isICopySymbol(stockData.symbol) ? getICopyBadge('md') : '';
+    const icopyBadge = (typeof isICopySymbol === 'function' && isICopySymbol(stockData.symbol)) ? getICopyBadge('md') : '';
     const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(stockData.symbol)) ? getStarBadge('md') : '';
     const stockNote = (typeof getStockNote === 'function') ? getStockNote(stockData.symbol) : null;
+    
+    // Get current P/B
+    const currentPB = stockData.current?.pb || stockData.current_pb;
+    
     const noteHTML = stockNote ? `
         <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mt-4">
             <div class="flex items-start gap-3">
@@ -181,7 +189,7 @@ function displayStockHeader() {
                 </div>
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">P/B hiện tại</div>
-                    <div class="text-2xl font-bold text-white">${stockData.current_pb?.toFixed(2) || 'N/A'}</div>
+                    <div class="text-2xl font-bold text-white">${currentPB?.toFixed(2) || 'N/A'}</div>
                 </div>
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">Percentile</div>
@@ -246,29 +254,69 @@ function calculateSimpleBacktest(pbHistory, currentPB, currentPercentile) {
     };
 }
 
-// Display valuation and expected returns
+// Display valuation and expected returns - UPDATED for daily data
 function displayValuation() {
     const expectedReturn = stockData.expected_return || {};
     const risk = stockData.risk || {};
     const valuation = stockData.valuation || {};
-    const hasBacktest = expectedReturn.expected_1y != null;
+    const historicalReturns = stockData.historical_returns || {};
+    
+    // Check for backtest data in multiple places
+    let hasBacktest = expectedReturn.expected_1y != null;
+    
+    // NEW: Try to get from historical_returns based on current zone
+    let zoneReturns = null;
+    if (!hasBacktest && historicalReturns && valuation.zone) {
+        zoneReturns = historicalReturns[valuation.zone];
+        if (zoneReturns && zoneReturns.returns && zoneReturns.returns['365d']) {
+            hasBacktest = true;
+        }
+    }
     
     // If no backtest, calculate simple stats from pb_history
     let simpleBacktest = null;
     if (!hasBacktest && stockData.pb_history && stockData.pb_history.length > 0) {
-        simpleBacktest = calculateSimpleBacktest(stockData.pb_history, stockData.current_pb, valuation.percentile);
+        const currentPB = stockData.current?.pb || stockData.current_pb;
+        simpleBacktest = calculateSimpleBacktest(stockData.pb_history, currentPB, valuation.percentile);
     }
     
-    const return1y = expectedReturn.expected_1y || simpleBacktest?.return1y;
-    const return2y = expectedReturn.expected_2y || simpleBacktest?.return2y;
-    const winRate1y = expectedReturn.win_rate_1y || simpleBacktest?.winRate1y || 0;
-    const winRate2y = expectedReturn.win_rate_2y || simpleBacktest?.winRate2y || 0;
-    const sampleCount = expectedReturn.sample_count || simpleBacktest?.sampleCount || 0;
+    // Get return values - priority: expected_return > historical_returns > simpleBacktest
+    let return1y, return2y, winRate1y, winRate2y, sampleCount;
+    let return1yMin, return1yMax, return1yMedian;
     
-    // Get min/max values
-    const return1yMin = expectedReturn.expected_1y_min || simpleBacktest?.expected_1y_min;
-    const return1yMax = expectedReturn.expected_1y_max || simpleBacktest?.expected_1y_max;
-    const return1yMedian = expectedReturn.expected_1y_median || simpleBacktest?.expected_1y_median;
+    if (expectedReturn.expected_1y != null) {
+        // Use expected_return (legacy format)
+        return1y = expectedReturn.expected_1y;
+        return2y = expectedReturn.expected_2y;
+        winRate1y = expectedReturn.win_rate_1y || 0;
+        winRate2y = expectedReturn.win_rate_2y || 0;
+        sampleCount = expectedReturn.sample_count || 0;
+        return1yMin = expectedReturn.expected_1y_min;
+        return1yMax = expectedReturn.expected_1y_max;
+        return1yMedian = expectedReturn.expected_1y_median;
+    } else if (zoneReturns) {
+        // Use historical_returns (new daily format)
+        const returns365 = zoneReturns.returns['365d'];
+        const returns730 = zoneReturns.returns['730d'];
+        return1y = returns365.avg;
+        return2y = returns730?.avg;
+        winRate1y = returns365.win_rate || 0;
+        winRate2y = returns730?.win_rate || 0;
+        sampleCount = returns365.sample_size || 0;
+        return1yMin = returns365.min;
+        return1yMax = returns365.max;
+        return1yMedian = returns365.median;
+    } else if (simpleBacktest) {
+        // Use simple backtest calculation
+        return1y = simpleBacktest.return1y;
+        return2y = simpleBacktest.return2y;
+        winRate1y = simpleBacktest.winRate1y;
+        winRate2y = simpleBacktest.winRate2y;
+        sampleCount = simpleBacktest.sampleCount;
+        return1yMin = simpleBacktest.expected_1y_min;
+        return1yMax = simpleBacktest.expected_1y_max;
+        return1yMedian = simpleBacktest.expected_1y_median;
+    }
     
     // Check if we have any data to display
     if (!return1y && return1y !== 0) {
@@ -560,7 +608,7 @@ function displayValuation() {
     `;
 }
 
-// Display historical returns by zone
+// Display historical returns by zone - UPDATED for daily data
 function displayHistoricalReturns() {
     const returns = stockData.historical_returns || {};
     
@@ -577,10 +625,33 @@ function displayHistoricalReturns() {
     zones.forEach(zone => {
         const data = returns[zone.key];
         if (data) {
-            const returnClass = (data.return_1y_avg || 0) >= 20 ? 'text-green-400' : 
-                              (data.return_1y_avg || 0) >= 0 ? 'text-yellow-400' : 'text-red-400';
-            const winClass = (data.win_rate_1y || 0) >= 70 ? 'text-green-400' : 
-                           (data.win_rate_1y || 0) >= 50 ? 'text-yellow-400' : 'text-red-400';
+            // Check if using new daily format (has .returns.365d) or old format
+            let return1yAvg, return2yAvg, winRate1y, winRate2y, count, pbMin, pbMax;
+            
+            if (data.returns && data.returns['365d']) {
+                // New daily format
+                return1yAvg = data.returns['365d'].avg;
+                return2yAvg = data.returns['730d']?.avg;
+                winRate1y = data.returns['365d'].win_rate;
+                winRate2y = data.returns['730d']?.win_rate;
+                count = data.count;
+                pbMin = data.pb_range?.min;
+                pbMax = data.pb_range?.max;
+            } else {
+                // Old format
+                return1yAvg = data.return_1y_avg;
+                return2yAvg = data.return_2y_avg;
+                winRate1y = data.win_rate_1y;
+                winRate2y = data.win_rate_2y;
+                count = data.count;
+                pbMin = data.pb_min;
+                pbMax = data.pb_max;
+            }
+            
+            const returnClass = (return1yAvg || 0) >= 20 ? 'text-green-400' : 
+                              (return1yAvg || 0) >= 0 ? 'text-yellow-400' : 'text-red-400';
+            const winClass = (winRate1y || 0) >= 70 ? 'text-green-400' : 
+                           (winRate1y || 0) >= 50 ? 'text-yellow-400' : 'text-red-400';
             
             tableRows += `
                 <tr class="border-b border-gray-700">
@@ -589,16 +660,16 @@ function displayHistoricalReturns() {
                             ${zone.name}
                         </span>
                     </td>
-                    <td class="py-3 px-4 text-white">${data.pb_min?.toFixed(2)} - ${data.pb_max?.toFixed(2)}</td>
-                    <td class="py-3 px-4 text-white text-center">${data.count}</td>
+                    <td class="py-3 px-4 text-white">${pbMin?.toFixed(2) || 'N/A'} - ${pbMax?.toFixed(2) || 'N/A'}</td>
+                    <td class="py-3 px-4 text-white text-center">${count || 'N/A'}</td>
                     <td class="py-3 px-4 ${returnClass} font-bold text-center">
-                        ${data.return_1y_avg != null ? `${data.return_1y_avg > 0 ? '+' : ''}${data.return_1y_avg.toFixed(1)}%` : 'N/A'}
+                        ${return1yAvg != null ? `${return1yAvg > 0 ? '+' : ''}${return1yAvg.toFixed(1)}%` : 'N/A'}
                     </td>
                     <td class="py-3 px-4 ${winClass} font-bold text-center">
-                        ${data.win_rate_1y?.toFixed(0) || 'N/A'}%
+                        ${winRate1y?.toFixed(0) || 'N/A'}%
                     </td>
                     <td class="py-3 px-4 text-gray-400 text-center">
-                        ${data.return_2y_avg != null ? `${data.return_2y_avg > 0 ? '+' : ''}${data.return_2y_avg.toFixed(1)}%` : 'N/A'}
+                        ${return2yAvg != null ? `${return2yAvg > 0 ? '+' : ''}${return2yAvg.toFixed(1)}%` : 'N/A'}
                     </td>
                 </tr>
             `;
@@ -642,27 +713,41 @@ function displayHistoricalReturns() {
     `;
 }
 
-// Display P/B chart
+// Display P/B chart - Updated to support both daily and quarterly data
 function displayPBChart() {
     let history = stockData.pb_history || [];
-    const stats = stockData.pb_statistics || {};
+    const stats = stockData.statistics || stockData.pb_statistics || {};
     
     if (history.length === 0) {
         document.getElementById('pb-chart').innerHTML = '<div class="text-gray-500 text-center py-8">Không có dữ liệu biểu đồ</div>';
         return;
     }
     
-    // Sort history by year and quarter (ascending: oldest to newest)
+    // Sort history - support both daily (date string) and quarterly (year/quarter) formats
     history = history.slice().sort((a, b) => {
-        if (a.year !== b.year) {
-            return a.year - b.year;
+        // Daily format: { date: "2024-01-15", pb: 1.5, price: 50000 }
+        if (a.date && b.date) {
+            return new Date(a.date) - new Date(b.date);
         }
-        return a.quarter - b.quarter;
+        // Quarterly format: { year: 2024, quarter: 1, pb: 1.5 }
+        if (a.year !== undefined) {
+            if (a.year !== b.year) {
+                return a.year - b.year;
+            }
+            return (a.quarter || 0) - (b.quarter || 0);
+        }
+        return 0;
     });
     
-    const periods = history.map(h => h.period);
+    // Build periods array based on data format
+    const periods = history.map(h => h.period || h.date || `${h.year}-Q${h.quarter}`);
     const pbValues = history.map(h => h.pb);
-    const priceValues = history.map(h => h.price ? h.price * 1000 : null);
+    const priceValues = history.map(h => {
+        // Daily format: price is already in đồng
+        if (h.date) return h.price;
+        // Quarterly format: price might be in nghìn đồng
+        return h.price ? h.price * 1000 : null;
+    });
     
     const trace1 = {
         x: periods,
@@ -701,11 +786,12 @@ function displayPBChart() {
     };
     
     // Horizontal lines for percentiles
-    // Handle both naming conventions: p10/p25 or percentile_10/percentile_25
-    const p10 = stats.p10 ?? stats.percentile_10;
-    const p25 = stats.p25 ?? stats.percentile_25;
-    const p75 = stats.p75 ?? stats.percentile_75;
-    const p90 = stats.p90 ?? stats.percentile_90;
+    // Handle both naming conventions: p10/p25 or percentile_10/percentile_25 or percentiles.p10
+    const percentiles = stats.percentiles || {};
+    const p10 = stats.p10 ?? stats.percentile_10 ?? percentiles.p10;
+    const p25 = stats.p25 ?? stats.percentile_25 ?? percentiles.p25;
+    const p75 = stats.p75 ?? stats.percentile_75 ?? percentiles.p75;
+    const p90 = stats.p90 ?? stats.percentile_90 ?? percentiles.p90;
     
     const shapes = [
         { y: p10, color: '#10B981', dash: 'dot', label: 'P10' },
@@ -725,7 +811,7 @@ function displayPBChart() {
     
     const layout = {
         title: {
-            text: `Biểu đồ P/B theo quý - ${stockData.symbol}`,
+            text: `Biểu đồ P/B - ${stockData.symbol}`,
             font: { color: '#fff' }
         },
         paper_bgcolor: '#1f2937',
@@ -762,26 +848,55 @@ function displayPBChart() {
     Plotly.newPlot('pb-chart-container', [trace1, trace3, trace2], layout, config);
 }
 
-// Display quarterly data table
+// Display data table - Updated to support both daily and quarterly data
 function displayQuarterlyTable() {
-    const data = stockData.quarterly_data || [];
+    const data = stockData.pb_history || stockData.quarterly_data || [];
     
-    let rows = data.reverse().slice(0, 20).map(q => `
-        <tr class="border-b border-gray-700 hover:bg-gray-700">
-            <td class="py-2 px-4 text-white">${q.period}</td>
-            <td class="py-2 px-4 text-white text-right">${q.pb?.toFixed(2) || 'N/A'}</td>
-            <td class="py-2 px-4 text-white text-right">${q.price ? (q.price * 1000).toLocaleString('vi-VN') : 'N/A'}</td>
-        </tr>
-    `).join('');
+    if (data.length === 0) {
+        document.getElementById('quarterly-table').innerHTML = `
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h2 class="text-xl font-bold text-white mb-4">📋 Lịch sử P/B</h2>
+                <div class="text-gray-500 text-center py-4">Chưa có dữ liệu</div>
+            </div>
+        `;
+        return;
+    }
+    
+    // Sort and get recent data (most recent first for display)
+    const sortedData = data.slice().sort((a, b) => {
+        if (a.date && b.date) return new Date(b.date) - new Date(a.date);
+        if (a.year !== undefined) {
+            if (a.year !== b.year) return b.year - a.year;
+            return (b.quarter || 0) - (a.quarter || 0);
+        }
+        return 0;
+    }).slice(0, 30); // Show last 30 records
+    
+    const isDaily = sortedData[0]?.date !== undefined;
+    
+    let rows = sortedData.map(q => {
+        const period = q.period || q.date || `${q.year}-Q${q.quarter}`;
+        const pb = q.pb?.toFixed(2) || 'N/A';
+        // Handle both price formats
+        const price = q.price ? (isDaily ? q.price : q.price * 1000).toLocaleString('vi-VN') : 'N/A';
+        
+        return `
+            <tr class="border-b border-gray-700 hover:bg-gray-700">
+                <td class="py-2 px-4 text-white">${period}</td>
+                <td class="py-2 px-4 text-white text-right">${pb}</td>
+                <td class="py-2 px-4 text-white text-right">${price}</td>
+            </tr>
+        `;
+    }).join('');
     
     document.getElementById('quarterly-table').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6">
-            <h2 class="text-xl font-bold text-white mb-4">📋 Dữ liệu theo quý (gần nhất)</h2>
+            <h2 class="text-xl font-bold text-white mb-4">📋 Lịch sử P/B ${isDaily ? '(theo ngày)' : '(theo quý)'}</h2>
             <div class="overflow-x-auto max-h-96 overflow-y-auto">
                 <table class="w-full">
                     <thead class="sticky top-0 bg-gray-800">
                         <tr class="border-b border-gray-600">
-                            <th class="py-2 px-4 text-left text-gray-400">Kỳ</th>
+                            <th class="py-2 px-4 text-left text-gray-400">${isDaily ? 'Ngày' : 'Kỳ'}</th>
                             <th class="py-2 px-4 text-right text-gray-400">P/B</th>
                             <th class="py-2 px-4 text-right text-gray-400">Giá</th>
                         </tr>

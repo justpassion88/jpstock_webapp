@@ -3,19 +3,19 @@
  * JP Stock Analysis
  */
 
-// Sector configuration
+// Sector configuration - Updated to use daily_summary files
 const SECTORS = {
-    banks: { name: '🏦 Ngân hàng', file: 'banks_v2.json', color: '#3B82F6' },
-    realestate: { name: '🏠 Bất động sản', file: 'realestate.json', color: '#10B981' },
-    securities: { name: '📈 Chứng khoán', file: 'securities.json', color: '#8B5CF6' },
-    energy: { name: '⚡ Điện & Năng lượng', file: 'energy.json', color: '#F59E0B' },
-    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas.json', color: '#78716C' },
-    steel: { name: '🏗️ Thép', file: 'steel.json', color: '#6B7280' },
-    construction: { name: '🏗️ Xây dựng', file: 'construction.json', color: '#F97316' },
-    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance.json', color: '#EC4899' },
-    retail: { name: '🛒 Bán lẻ', file: 'retail.json', color: '#14B8A6' },
-    technology: { name: '💻 Công nghệ', file: 'technology.json', color: '#6366F1' },
-    chemicals: { name: '🧪 Hóa chất', file: 'chemicals.json', color: '#A855F7' }
+    banks: { name: '🏦 Ngân hàng', file: 'banks_daily_summary.json', color: '#3B82F6' },
+    realestate: { name: '🏠 Bất động sản', file: 'realestate_daily_summary.json', color: '#10B981' },
+    securities: { name: '📈 Chứng khoán', file: 'securities_daily_summary.json', color: '#8B5CF6' },
+    energy: { name: '⚡ Điện & Năng lượng', file: 'energy_daily_summary.json', color: '#F59E0B' },
+    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas_daily_summary.json', color: '#78716C' },
+    steel: { name: '🏗️ Thép', file: 'steel_daily_summary.json', color: '#6B7280' },
+    construction: { name: '🏗️ Xây dựng', file: 'construction_daily_summary.json', color: '#F97316' },
+    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance_daily_summary.json', color: '#EC4899' },
+    retail: { name: '🛒 Bán lẻ', file: 'retail_daily_summary.json', color: '#14B8A6' },
+    technology: { name: '💻 Công nghệ', file: 'technology_daily_summary.json', color: '#6366F1' },
+    chemicals: { name: '🧪 Hóa chất', file: 'chemicals_daily_summary.json', color: '#A855F7' }
 };
 
 let marketData = null;
@@ -453,11 +453,8 @@ function renderRecommendations() {
 
 // Go to sector detail page
 function goToSectorDetail(sectorId) {
-    if (sectorId === 'banks') {
-        window.location.href = 'bank.html';
-    } else {
-        window.location.href = `sector.html?sector=${sectorId}`;
-    }
+    // All sectors now go to sector.html (including banks)
+    window.location.href = `sector.html?sector=${sectorId}`;
 }
 
 // Show sector detail (legacy - kept for compatibility)
