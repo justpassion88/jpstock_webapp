@@ -9,7 +9,7 @@ P/B Analysis across VN100+ stocks
 
 SECTORS = {
     # =========================================================================
-    # 🏦 NGÂN HÀNG - Banks (17 mã)
+    # 🏦 NGÂN HÀNG - Banks (20 mã)
     # P/B analysis: ⭐⭐⭐⭐⭐ (Tuyệt vời)
     # =========================================================================
     "banks": {
@@ -19,28 +19,31 @@ SECTORS = {
         "pb_suitable": 5,  # 1-5 rating
         "color": "#3B82F6",  # Blue
         "symbols": [
-            "VCB",  # Vietcombank
+            "ACB",  # ACB
+            "BAF",  # Bac A Bank Finance (iCopy)
             "BID",  # BIDV
             "CTG",  # VietinBank
-            "TCB",  # Techcombank
-            "MBB",  # MB Bank
-            "VPB",  # VPBank
-            "ACB",  # ACB
-            "HDB",  # HDBank
-            "STB",  # Sacombank
-            "TPB",  # TPBank
-            "SHB",  # SHB
-            "LPB",  # LienVietPostBank
-            "MSB",  # MSB
-            "OCB",  # OCB
             "EIB",  # Eximbank
+            "HDB",  # HDBank
+            "LPB",  # LienVietPostBank
+            "MBB",  # MB Bank
+            "MSB",  # MSB
             "NAB",  # Nam A Bank (iCopy)
-            "BAF",  # Bac A Bank Finance (iCopy)
+            "OCB",  # OCB
+            "SHB",  # SHB
+            "SHI",  # SHI (iCopy)
+            "SSB",  # SSB (iCopy)
+            "STB",  # Sacombank
+            "TCB",  # Techcombank
+            "TPB",  # TPBank
+            "VCB",  # Vietcombank
+            "VIB",  # VIB (iCopy)
+            "VPB",  # VPBank
         ],
     },
     
     # =========================================================================
-    # 🏠 BẤT ĐỘNG SẢN - Real Estate (28 mã)
+    # 🏠 BẤT ĐỘNG SẢN - Real Estate (39 mã)
     # P/B analysis: ⭐⭐⭐⭐⭐ (Tuyệt vời)
     # =========================================================================
     "realestate": {
@@ -50,39 +53,51 @@ SECTORS = {
         "pb_suitable": 5,
         "color": "#10B981",  # Green
         "symbols": [
-            "VHM",  # Vinhomes
-            "VIC",  # Vingroup
-            "NVL",  # Novaland
-            "PDR",  # Phát Đạt
-            "DXG",  # Đất Xanh
-            "KDH",  # Khang Điền
-            "NLG",  # Nam Long
-            "DIG",  # DIC Corp
-            "CEO",  # C.E.O Group
-            "KBC",  # Kinh Bắc
+            "AAA",  # AAA (iCopy)
             "BCM",  # Becamex
-            "IDC",  # IDICO
-            "ITA",  # Itaco
+            "CEO",  # C.E.O Group
+            "CRE",  # Cen Land (iCopy)
+            "DHA",  # Hoa An (iCopy)
+            "DHC",  # DHC (iCopy)
+            "DIG",  # DIC Corp
+            "DPG",  # Dat Phuong Group (iCopy)
+            "DPR",  # Phát Đạt (iCopy)
+            "DRC",  # DRC (iCopy)
+            "DTD",  # DTD (iCopy)
+            "DXG",  # Đất Xanh
+            "DXS",  # Dat Xanh Services (iCopy)
+            "HAG",  # HAG (iCopy)
+            "HAH",  # HAH (iCopy)
             "HDC",  # HDC
+            "HPX",  # Hai Phat Land
+            "IDC",  # IDICO
+            "IJC",  # IJC (iCopy)
+            "IMP",  # IMP (iCopy)
+            "ITA",  # Itaco
+            "KBC",  # Kinh Bắc
+            "KDH",  # Khang Điền
+            "KHG",  # Khang Hoa (iCopy)
             "LDG",  # LDG Investment
             "NBB",  # NBB
-            "TDC",  # Thu Duc Housing
-            "VRE",  # Vincom Retail
-            "SCR",  # Sài Gòn Thương Tín
-            "HPX",  # Hai Phat Land
-            "DXS",  # Dat Xanh Services (iCopy)
-            "DPG",  # Dat Phuong Group (iCopy)
-            "DHA",  # Hoa An (iCopy)
             "NHA",  # Nha Ha Noi (iCopy)
-            "CRE",  # Cen Land (iCopy)
-            "IJC",  # IJC (iCopy)
-            "KHG",  # Khang Hoa (iCopy)
+            "NLG",  # Nam Long
+            "NTL",  # NTL (iCopy)
+            "NVL",  # Novaland
+            "PDR",  # Phát Đạt
+            "PHR",  # PHR (iCopy)
+            "PLC",  # PLC (iCopy)
+            "SCR",  # Sài Gòn Thương Tín
             "SZC",  # Sonadezi Chau Duc (iCopy)
+            "TDC",  # Thu Duc Housing
+            "VHC",  # VHC (iCopy)
+            "VHM",  # Vinhomes
+            "VIC",  # Vingroup
+            "VRE",  # Vincom Retail
         ],
     },
     
     # =========================================================================
-    # 📈 CHỨNG KHOÁN - Securities (12 mã)
+    # 📈 CHỨNG KHOÁN - Securities (22 mã)
     # P/B analysis: ⭐⭐⭐⭐⭐ (Tuyệt vời)
     # =========================================================================
     "securities": {
@@ -92,23 +107,33 @@ SECTORS = {
         "pb_suitable": 5,
         "color": "#8B5CF6",  # Purple
         "symbols": [
-            "SSI",  # SSI Securities
-            "VND",  # VNDirect
-            "HCM",  # HCMC Securities
-            "VCI",  # Vietcap
-            "SHS",  # SHS
-            "MBS",  # MB Securities
-            "FTS",  # FPT Securities
+            "AGR",  # Agribank Securities (iCopy)
             "BSI",  # BVSC
+            "BVS",  # BVS (iCopy)
+            "CSM",  # CSM (iCopy)
             "CTS",  # Vietinbank Securities
+            "EVF",  # EVF (iCopy)
+            "FTS",  # FPT Securities
+            "HCM",  # HCMC Securities
+            "IPA",  # IPA (iCopy)
+            "MBS",  # MB Securities
             "ORS",  # ORS
+            "SCS",  # SCS (iCopy)
+            "SHS",  # SHS
+            "SIP",  # SIP (iCopy)
+            "SSI",  # SSI Securities
             "TVS",  # Thien Viet
-            "AGR",  # Agribank Securities
+            "VCI",  # Vietcap
+            "VCS",  # VCS (iCopy)
+            "VDS",  # VDS (iCopy)
+            "VFS",  # VFS (iCopy)
+            "VIX",  # VIX (iCopy)
+            "VND",  # VNDirect
         ],
     },
     
     # =========================================================================
-    # ⚡ ĐIỆN & NĂNG LƯỢNG - Energy & Utilities (15 mã)
+    # ⚡ ĐIỆN & NĂNG LƯỢNG - Energy & Utilities (19 mã)
     # P/B analysis: ⭐⭐⭐⭐ (Tốt)
     # =========================================================================
     "energy": {
@@ -118,26 +143,30 @@ SECTORS = {
         "pb_suitable": 4,
         "color": "#F59E0B",  # Yellow
         "symbols": [
-            "POW",  # PetroVietnam Power
-            "GEG",  # Gia Lai Electricity
-            "REE",  # REE Corp
-            "NT2",  # NT2
-            "PPC",  # Pha Lai Thermal Power
-            "HND",  # Hai Phong Power
-            "SJD",  # Can Don Hydro
-            "VSH",  # Vinh Son Song Hinh
-            "TBC",  # Thac Ba Power
-            "HDG",  # Ha Do
-            "PC1",  # Power Construction 1
-            "QTP",  # Quang Ninh Power
-            "PGV",  # PV Power
             "GAS",  # PV Gas
+            "GEE",  # GEE (iCopy)
+            "GEG",  # Gia Lai Electricity
+            "GEX",  # GEX (iCopy)
+            "HDG",  # Ha Do
+            "HND",  # Hai Phong Power
+            "NT2",  # NT2
+            "PC1",  # Power Construction 1
+            "PGV",  # PV Power
             "PLX",  # Petrolimex
+            "POW",  # PetroVietnam Power
+            "PPC",  # Pha Lai Thermal Power
+            "QTP",  # Quang Ninh Power
+            "REE",  # REE Corp
+            "SJD",  # Can Don Hydro
+            "TBC",  # Thac Ba Power
+            "VSC",  # VSC (iCopy)
+            "VSH",  # Vinh Son Song Hinh
+            "YEG",  # YEG (iCopy)
         ],
     },
     
     # =========================================================================
-    # 🛢️ DẦU KHÍ - Oil & Gas (8 mã)
+    # 🛢️ DẦU KHÍ - Oil & Gas (10 mã)
     # P/B analysis: ⭐⭐⭐ (Khá)
     # =========================================================================
     "oilgas": {
@@ -147,19 +176,21 @@ SECTORS = {
         "pb_suitable": 3,
         "color": "#78716C",  # Gray
         "symbols": [
+            "BSR",  # Binh Son Refining
+            "CNG",  # CNG Vietnam
+            "OIL",  # PV Oil
+            "PVC",  # PVC
             "PVD",  # PV Drilling
             "PVS",  # PV Technical
             "PVT",  # PV Trans
-            "BSR",  # Binh Son Refining
-            "OIL",  # PV Oil
-            "CNG",  # CNG Vietnam
-            "PVC",  # PVC
+            "PVL",  # PVL (iCopy)
             "PXS",  # PXS
+            "VPL",  # VPL (iCopy)
         ],
     },
     
     # =========================================================================
-    # 🏗️ THÉP & VẬT LIỆU - Steel & Materials (12 mã)
+    # 🏗️ THÉP & VẬT LIỆU - Steel & Materials (13 mã)
     # P/B analysis: ⭐⭐⭐ (Khá)
     # =========================================================================
     "steel": {
@@ -169,23 +200,24 @@ SECTORS = {
         "pb_suitable": 3,
         "color": "#6B7280",  # Gray
         "symbols": [
+            "DTL",  # Dai Thien Loc
+            "HMC",  # Ho Chi Minh Metal
             "HPG",  # Hoa Phat
             "HSG",  # Hoa Sen
             "NKG",  # Nam Kim
-            "TLH",  # Thep Lao Hai
-            "SMC",  # SMC
+            "NTP",  # NTP (iCopy)
             "POM",  # Pomina
-            "DTL",  # Dai Thien Loc
-            "VIS",  # Vietnam Italy Steel
-            "TVN",  # Thep Viet Nhat
+            "SMC",  # SMC
             "TIS",  # TIS
+            "TLH",  # Thep Lao Hai
+            "TVN",  # Thep Viet Nhat
             "VGS",  # VG Steel
-            "HMC",  # Ho Chi Minh Metal
+            "VIS",  # Vietnam Italy Steel
         ],
     },
     
     # =========================================================================
-    # 🏗️ XÂY DỰNG - Construction (10 mã)
+    # 🏗️ XÂY DỰNG - Construction (19 mã)
     # P/B analysis: ⭐⭐⭐⭐ (Tốt)
     # =========================================================================
     "construction": {
@@ -195,21 +227,30 @@ SECTORS = {
         "pb_suitable": 4,
         "color": "#F97316",  # Orange
         "symbols": [
-            "CTD",  # Coteccons
-            "HBC",  # Hoa Binh Corp
-            "VCG",  # Vinaconex
-            "FCN",  # FECON
-            "LCG",  # LICOGI 16
-            "HUT",  # HUDVN
+            "ANV",  # ANV (iCopy)
             "C4G",  # CIENCO 4
             "CII",  # Ho Chi Minh Infrastructure
+            "CTD",  # Coteccons
+            "CTI",  # CTI (iCopy)
+            "CTR",  # CTR (iCopy)
+            "DCL",  # DCL (iCopy)
+            "FCN",  # FECON
+            "HBC",  # Hoa Binh Corp
             "HHV",  # Hai Hung JSC
+            "HHS",  # HHS (iCopy)
+            "HTN",  # HTN (iCopy)
+            "HUT",  # HUDVN
+            "LCG",  # LICOGI 16
+            "PTB",  # PTB (iCopy)
+            "TNG",  # TNG (iCopy)
+            "TRC",  # TRC (iCopy)
             "TV2",  # Tu Liem Urban
+            "VCG",  # Vinaconex
         ],
     },
     
     # =========================================================================
-    # 🛡️ BẢO HIỂM - Insurance (5 mã)
+    # 🛡️ BẢO HIỂM - Insurance (7 mã)
     # P/B analysis: ⭐⭐⭐⭐ (Tốt)
     # =========================================================================
     "insurance": {
@@ -219,17 +260,18 @@ SECTORS = {
         "pb_suitable": 4,
         "color": "#EC4899",  # Pink
         "symbols": [
-            "BVH",  # Bao Viet Holdings
-            "BMI",  # Bao Minh Insurance
-            "PVI",  # PVI Holdings
-            "BIC",  # BIC Corp
-            "MIG",  # Military Insurance
             "ABI",  # Agribank Insurance
+            "BIC",  # BIC Corp
+            "BMI",  # Bao Minh Insurance
+            "BVH",  # Bao Viet Holdings
+            "MIG",  # Military Insurance
+            "PVI",  # PVI Holdings
+            "VPI",  # VPI (iCopy)
         ],
     },
     
     # =========================================================================
-    # 🛒 BÁN LẺ & TIÊU DÙNG - Retail & Consumer (10 mã)
+    # 🛒 BÁN LẺ & TIÊU DÙNG - Retail & Consumer (23 mã)
     # P/B analysis: ⭐⭐ (P/E phù hợp hơn)
     # =========================================================================
     "retail": {
@@ -239,21 +281,34 @@ SECTORS = {
         "pb_suitable": 2,
         "color": "#14B8A6",  # Teal
         "symbols": [
-            "VNM",  # Vinamilk
-            "MSN",  # Masan
-            "SAB",  # Sabeco
-            "PNJ",  # PNJ
-            "MWG",  # The Gioi Di Dong
+            "ASM",  # ASM (iCopy)
+            "BCG",  # Bamboo Capital
+            "BMP",  # BMP (iCopy)
+            "DBC",  # DBC (iCopy)
+            "DBD",  # DBD (iCopy)
             "DGW",  # Digiworld
             "FRT",  # FPT Retail
+            "GMD",  # GMD (iCopy)
             "HAX",  # HAX
+            "KDC",  # KDC (iCopy)
+            "MSN",  # Masan
+            "MWG",  # The Gioi Di Dong
+            "NAF",  # NAF (iCopy)
+            "PAC",  # PAC (iCopy)
+            "PAN",  # PAN (iCopy)
+            "PET",  # PET (iCopy)
+            "PNJ",  # PNJ
+            "SAB",  # Sabeco
+            "SBT",  # SBT (iCopy)
             "VGC",  # Viglacera
-            "BCG",  # Bamboo Capital
+            "VJC",  # VJC (iCopy)
+            "VNM",  # Vinamilk
+            "VOS",  # VOS (iCopy)
         ],
     },
     
     # =========================================================================
-    # 💻 CÔNG NGHỆ - Technology (8 mã)
+    # 💻 CÔNG NGHỆ - Technology (16 mã)
     # P/B analysis: ⭐ (P/E, PS phù hợp hơn)
     # =========================================================================
     "technology": {
@@ -263,19 +318,27 @@ SECTORS = {
         "pb_suitable": 1,
         "color": "#06B6D4",  # Cyan
         "symbols": [
-            "FPT",  # FPT Corp
+            "AGG",  # AGG (iCopy)
+            "BWE",  # BWE (iCopy)
             "CMG",  # CMC Corp
-            "VGI",  # Viettel Global
-            "FOX",  # FPT Online
+            "DSE",  # DSE (iCopy)
             "ELC",  # ELCOM
-            "ITD",  # Intelli Development
+            "FOX",  # FPT Online
+            "FPT",  # FPT Corp
             "ICT",  # ICT Corp
+            "IDI",  # IDI (iCopy)
+            "ITD",  # Intelli Development
             "LHG",  # Long Hau Corp
+            "TCH",  # TCH (iCopy)
+            "TCM",  # TCM (iCopy)
+            "VGI",  # Viettel Global
+            "VIP",  # VIP (iCopy)
+            "VTP",  # VTP (iCopy)
         ],
     },
     
     # =========================================================================
-    # 🧪 HÓA CHẤT & CÔNG NGHIỆP - Chemicals & Industrial (8 mã)
+    # 🧪 HÓA CHẤT & CÔNG NGHIỆP - Chemicals & Industrial (16 mã)
     # P/B analysis: ⭐⭐⭐ (Khá)
     # =========================================================================
     "chemicals": {
@@ -285,14 +348,22 @@ SECTORS = {
         "pb_suitable": 3,
         "color": "#A855F7",  # Purple
         "symbols": [
-            "DGC",  # Duc Giang Chemicals
-            "DCM",  # DCM Corp
-            "DPM",  # PetroVietnam Fertilizer
             "BFC",  # Binh Dien Fertilizer
-            "LAS",  # Lam Thao Fertilizer
             "CSV",  # CSV Construction
+            "DCM",  # DCM Corp
+            "DGC",  # Duc Giang Chemicals
             "DHC",  # Dong Hai Bentre
+            "DPM",  # PetroVietnam Fertilizer
+            "GIL",  # GIL (iCopy)
             "GVR",  # Group Cao Su VN
+            "KSB",  # KSB (iCopy)
+            "LAS",  # Lam Thao Fertilizer
+            "MSH",  # MSH (iCopy)
+            "TCX",  # TCX (iCopy)
+            "TDP",  # TDP (iCopy)
+            "TIG",  # TIG (iCopy)
+            "TLG",  # TLG (iCopy)
+            "TNH",  # TNH (iCopy)
         ],
     },
 }

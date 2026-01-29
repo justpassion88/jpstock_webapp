@@ -1,4 +1,4 @@
-name: Update Bank Data Daily
+name: Update Stock Data Daily
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # Tăng timeout vì rate limit
+    timeout-minutes: 90  # Tăng timeout cho 204 stocks
     
     permissions:
       contents: write
@@ -32,25 +32,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r src/requirements.txt
       
-      - name: Fetch bank data from vnstock
+      - name: Update stock prices (Fast)
         run: |
-          cd src
-          python fetch_data.py
+          python update_prices_daily.py
         env:
           PYTHONUNBUFFERED: "1"
-        timeout-minutes: 20  # Timeout cho fetch (rate limit ~4s/request)
+        timeout-minutes: 20
       
-      - name: Run P/B analysis
+      - name: Generate market heat
         run: |
-          cd src
-          python analyze.py
+          python generate_market_heat_daily.py
         env:
           PYTHONUNBUFFERED: "1"
+        timeout-minutes: 10
       
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/data/
-          git diff --staged --quiet || git commit -m "📊 Auto-update bank data $(date +'%Y-%m-%d %H:%M')"
+          git diff --staged --quiet || git commit -m "📊 Auto-update stock data - 204 stocks $(date +'%Y-%m-%d %H:%M')"
           git push

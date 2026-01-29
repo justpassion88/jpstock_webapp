@@ -7,14 +7,14 @@
 **JP Stock Webapp** là nền tảng phân tích định lượng toàn diện cho thị trường chứng khoán Việt Nam, tập trung vào phương pháp định giá P/B (Price-to-Book) với dữ liệu lịch sử 14+ năm (2012-2026).
 
 ### 🆕 **Cập nhật 29/01/2026: Daily P/B Data + iCopy 164 mã**
-- ✅ **134 cổ phiếu** với dữ liệu **P/B hàng ngày** (thay vì dữ liệu quý)
-- ✅ **751 ngày** dữ liệu daily cho mỗi mã (~3 năm giao dịch)
+- ✅ **204 cổ phiếu** với dữ liệu **P/B hàng ngày** (thay vì dữ liệu quý)
+- ✅ **752 ngày** dữ liệu daily cho mỗi mã (~3 năm giao dịch)
 - ✅ **164 mã iCopy** được đánh dấu và cập nhật giá
 - ✅ Công thức: `P/B = Daily Close Price / Quarterly BVPS (từ finance.ratio)`
 - ✅ Nguồn dữ liệu: **VCI** với vnstock v3.4.1 (Bronze tier)
 
 Hệ thống cung cấp:
-- 📊 Phân tích P/B định lượng cho **134 cổ phiếu** thuộc **11 ngành**
+- 📊Phân tích P/B định lượng cho **204 cổ phiếu** thuộc **11 ngành**
 - 🤖 **5 Trading BOT** với ML backtest trên dữ liệu thực
 - 🌡️ **Market Heat Index** đo nhiệt độ thị trường theo từng ngành
 - 📈 Visualization tương tác với biểu đồ P/B lịch sử
@@ -92,23 +92,23 @@ Chỉ số đo nhiệt độ thị trường cho **toàn ngành** và **từng s
 
 ## 📊 Phạm Vi Phân Tích
 
-### 11 Ngành - 135+ Cổ Phiếu
+### 11 Ngành - 204 Cổ Phiếu
 
 | Ngành | Số mã | Ví dụ | P/B phù hợp |
 |-------|-------|-------|-------------|
-| 🏦 **Ngân hàng** | 17 | VCB, BID, CTG, TCB, MBB, VPB, ACB | ⭐⭐⭐⭐⭐ |
-| 🏠 **Bất động sản** | 20 | VHM, VIC, NVL, PDR, DXG, KDH, NLG | ⭐⭐⭐⭐⭐ |
-| 📈 **Chứng khoán** | 14 | SSI, VND, HCM, VCI, SHS, MBS, FTS | ⭐⭐⭐⭐⭐ |
-| 🛒 **Bán lẻ & Tiêu dùng** | 12 | VNM, MSN, MWG, PNJ, FRT, SAB | ⭐⭐ |
-| 🏗️ **Xây dựng** | 12 | CTD, HBC, VCG, FCN, CII, HUT | ⭐⭐⭐⭐ |
-| ⚡ **Điện & Năng lượng** | 15 | POW, GAS, PLX, REE, PC1, GEG | ⭐⭐⭐⭐ |
-| 🏗️ **Thép & Vật liệu** | 12 | HPG, HSG, NKG, SMC, POM, VGS | ⭐⭐⭐ |
-| 💻 **Công nghệ** | 10 | FPT, CMG, VGI, FOX, ELC, DGW | ⭐ |
-| 🛢️ **Dầu khí** | 10 | PVD, PVS, PVT, BSR, OIL, GAS | ⭐⭐⭐ |
-| 🛡️ **Bảo hiểm** | 7 | BVH, BMI, PVI, BIC, MIG, ABI | ⭐⭐⭐⭐ |
-| 🧪 **Hóa chất & Công nghiệp** | 10 | DGC, DCM, DPM, BFC, GVR, CSV | ⭐⭐⭐ |
+| 🏦 **Ngân hàng** | 20 | VCB, BID, CTG, TCB, MBB, VPB, ACB, SSB, VIB | ⭐⭐⭐⭐⭐ |
+| 🏠 **Bất động sản** | 39 | VHM, VIC, NVL, PDR, DXG, KDH, NLG, AAA, DPR, DRC | ⭐⭐⭐⭐⭐ |
+| 📈 **Chứng khoán** | 22 | SSI, VND, HCM, VCI, SHS, MBS, FTS, AGR, BVS, CSM | ⭐⭐⭐⭐⭐ |
+| 🛍️ **Bán lẻ & Tiêu dùng** | 23 | VNM, MSN, MWG, PNJ, FRT, SAB, DGW, KDC, VJC | ⭐⭐ |
+| 🏭 **Xây dựng** | 19 | CTD, HBC, VCG, FCN, CII, HUT, ANV, CTI, DCL | ⭐⭐⭐⭐ |
+| ⚡ **Điện & Năng lượng** | 19 | POW, GAS, PLX, REE, PC1, GEG, GEE, GEX, VSC | ⭐⭐⭐⭐ |
+| 🏭 **Thép & Vật liệu** | 13 | HPG, HSG, NKG, SMC, POM, VGS, NTP | ⭐⭐⭐ |
+| 💻 **Công nghệ** | 16 | FPT, CMG, VGI, FOX, ELC, DGW, AGG, BWE, VIP | ⭐ |
+| 🛢️ **Dầu khí** | 10 | PVD, PVS, PVT, BSR, OIL, GAS, PVL, VPL | ⭐⭐⭐ |
+| 🛡️ **Bảo hiểm** | 7 | BVH, BMI, PVI, BIC, MIG, ABI, VPI | ⭐⭐⭐⭐ |
+| 🧪 **Hóa chất & Công nghiệp** | 16 | DGC, DCM, DPM, BFC, GVR, CSV, GIL, TIG | ⭐⭐⭐ |
 
-**Tổng: 135+ cổ phiếu** được theo dõi và cập nhật hàng ngày
+**Tổng: 204 cổ phiếu** được theo dõi và cập nhật hàng ngày  
 **iCopy Portfolio: 164 mã** được đánh dấu đặc biệt
 
 ## 📊 Phương Pháp Định Giá
