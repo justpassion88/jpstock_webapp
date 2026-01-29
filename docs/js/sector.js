@@ -305,6 +305,21 @@ function getStatusEmoji(status) {
     return emojis[status] || '❓';
 }
 
+// Get signal CSS class (alias for getSignalColor)
+function getSignalClass(signal) {
+    const classes = {
+        'SELL_ALL': 'text-red-500',
+        'SELL': 'text-red-500',
+        'REDUCE': 'text-orange-400',
+        'HOLD': 'text-yellow-400',
+        'NORMAL': 'text-green-400',
+        'ACCUMULATE': 'text-cyan-400',
+        'BUY': 'text-blue-500',
+        'BUY_HEAVY': 'text-purple-500'
+    };
+    return classes[signal] || 'text-gray-400';
+}
+
 // Get signal color class
 function getSignalColor(signal) {
     const colors = {
