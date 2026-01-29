@@ -28,7 +28,10 @@ MAX_RETRIES = 3
 RATE_LIMIT_WAIT = 35  # seconds to wait when rate limited
 
 # Quarter periods mapping
+# BVPS should apply AFTER financial reports are published (typically 30-45 days after quarter end)
 QUARTER_START = {1: '-01-01', 2: '-04-01', 3: '-07-01', 4: '-10-01'}
+QUARTER_END = {1: '-03-31', 2: '-06-30', 3: '-09-30', 4: '-12-31'}
+REPORT_PUBLISH_DELAY_DAYS = 45  # Days after quarter end when reports are typically published
 
 
 def get_output_dir():
@@ -143,10 +146,13 @@ def fetch_quarterly_bvps(symbol: str) -> Optional[pd.DataFrame]:
             result['year'] = result['year'].astype(int)
             result['quarter'] = result['quarter'].astype(int)
             
-            result['apply_from'] = result.apply(
-                lambda row: f"{int(row['year'])}{QUARTER_START[int(row['quarter'])]}", axis=1
+            # CRITICAL FIX: BVPS chỉ nên được áp dụng SAU KHI báo cáo tài chính được công bố
+            # Thông thường là 30-45 ngày sau khi kết thúc quý
+            result['quarter_end'] = result.apply(
+                lambda row: f"{int(row['year'])}{QUARTER_END[int(row['quarter'])]}", axis=1
             )
-            result['apply_from'] = pd.to_datetime(result['apply_from'], format='%Y-%m-%d')
+            result['quarter_end'] = pd.to_datetime(result['quarter_end'], format='%Y-%m-%d')
+            result['apply_from'] = result['quarter_end'] + pd.Timedelta(days=REPORT_PUBLISH_DELAY_DAYS)
             result = result.sort_values('apply_from').reset_index(drop=True)
             result = result[result['bvps'] > 0]
             
@@ -374,20 +380,39 @@ def fetch_single_stock_daily(symbol: str, name: str, years: int = 15) -> Dict:
         "name": name,
         "data_type": "daily",
         "years_of_data": years,
-        "current": {"price": None, "pb": None, "bvps": None},
+        "current": {
+            "price": None,
+            "pb_vnstock": None,  # Official P/B from vnstock (preferred for current valuation)
+            "pb_calculated": None,  # Manual calculation using latest BVPS (for consistency check)
+            "bvps": None,
+            "pb_source": "vnstock"  # Which P/B to use: 'vnstock' (more accurate) or 'calculated'
+        },
         "valuation": {},
         "statistics": {},
         "historical_returns": {},
         "daily_data": [],
+        "data_quality": {  # NEW: Data quality metrics
+            "latest_date": None,
+            "data_age_days": None,
+            "bvps_latest_quarter": None,
+            "bvps_age_days": None
+        }
     }
     
     try:
         # 1. Fetch realtime data
         time.sleep(REQUEST_DELAY)
-        current_price, current_pb, current_bvps = fetch_realtime_data(symbol)
+        current_price, current_pb_vnstock, current_bvps = fetch_realtime_data(symbol)
         stock_data["current"]["price"] = current_price
-        stock_data["current"]["pb"] = current_pb
+        stock_data["current"]["pb_vnstock"] = current_pb_vnstock  # Official vnstock P/B
         stock_data["current"]["bvps"] = current_bvps
+        
+        # Calculate P/B manually for comparison (if we have price and BVPS)
+        if current_price and current_bvps and current_bvps > 0:
+            stock_data["current"]["pb_calculated"] = round(current_price / current_bvps, 3)
+        
+        # Use vnstock P/B as primary source (more accurate, accounts for all adjustments)
+        current_pb = current_pb_vnstock if current_pb_vnstock else stock_data["current"]["pb_calculated"]
         
         # 2. Fetch daily prices
         time.sleep(REQUEST_DELAY)
@@ -412,15 +437,26 @@ def fetch_single_stock_daily(symbol: str, name: str, years: int = 15) -> Dict:
                 if current_pb:
                     stock_data["valuation"] = get_current_valuation(current_pb, stock_data["statistics"])
                 
-                # 8. Store daily data (last 3 years)
-                recent_data = daily_pb_df[daily_pb_df['date'] >= (datetime.now() - timedelta(days=3*365))]
+                # 8. Add data quality metrics
+                latest_date = daily_pb_df['date'].max()
+                stock_data["data_quality"]["latest_date"] = latest_date.strftime('%Y-%m-%d')
+                stock_data["data_quality"]["data_age_days"] = (datetime.now() - latest_date).days
+                
+                if not bvps_df.empty:
+                    latest_bvps_date = bvps_df['quarter_end'].max()
+                    stock_data["data_quality"]["bvps_latest_quarter"] = latest_bvps_date.strftime('%Y-%m-%d')
+                    stock_data["data_quality"]["bvps_age_days"] = (datetime.now() - latest_bvps_date).days
+                
+                # 9. Store ALL daily data (REMOVED 3-year limit for complete history)
+                # IMPORTANT: Lưu toàn bộ lịch sử để có đủ context cho phân tích dài hạn
                 stock_data["daily_data"] = [
                     {
                         "date": row['date'].strftime('%Y-%m-%d'),
                         "price": round(row['price'], 0),
                         "pb": round(row['pb'], 3),
+                        "bvps": round(row['bvps'], 0)  # Add BVPS to track which quarterly value was used
                     }
-                    for _, row in recent_data.iterrows()
+                    for _, row in daily_pb_df.iterrows()
                 ]
                 
                 return stock_data, len(stock_data['daily_data'])

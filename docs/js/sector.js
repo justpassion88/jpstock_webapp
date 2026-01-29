@@ -86,6 +86,34 @@ function displayHeatIndex() {
     const stocks = Object.values(sectorData.stocks || {});
     const config = SECTORS[currentSector];
     
+    // Check data quality across sector stocks
+    let dataWarnings = [];
+    let staleDataCount = 0;
+    let oldBvpsCount = 0;
+    
+    stocks.forEach(stock => {
+        const dq = stock.data_quality || {};
+        if (dq.data_age_days > 1) staleDataCount++;
+        if (dq.bvps_age_days > 120) oldBvpsCount++;
+    });
+    
+    if (staleDataCount > stocks.length * 0.2) {
+        dataWarnings.push(`⚠️ ${staleDataCount}/${stocks.length} mã có dữ liệu giá cũ >1 ngày`);
+    }
+    if (oldBvpsCount > stocks.length * 0.3) {
+        dataWarnings.push(`⚠️ ${oldBvpsCount}/${stocks.length} mã có BVPS cũ >4 tháng`);
+    }
+    
+    const warningHTML = dataWarnings.length > 0 ? `
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3 mb-4">
+            <div class="flex items-start gap-2">
+                <span class="text-orange-400 text-lg">⚠️</span>
+                <div class="text-sm">
+                    ${dataWarnings.map(w => `<div class="text-orange-300">${w}</div>`).join('')}
+                </div>
+            </div>
+        </div>` : '';
+    
     // Use heat from market_heat.json (sectorHeat) if available, otherwise calculate
     let heatIndex, status, signal, metrics;
     
@@ -116,6 +144,7 @@ function displayHeatIndex() {
     
     document.getElementById('heat-index').innerHTML = `
         <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg p-6 mb-6 border border-gray-700">
+            ${warningHTML}
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>
                     <h2 class="text-xl font-bold text-white flex items-center gap-2">

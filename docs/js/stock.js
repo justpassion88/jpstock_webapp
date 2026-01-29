@@ -163,6 +163,7 @@ async function loadStock() {
 function displayStockHeader() {
     const valuation = stockData.valuation || {};
     const stats = stockData.statistics || stockData.pb_statistics || {};
+    const dataQuality = stockData.data_quality || {};
     
     // Get zone display - try zone_vi first, then convert from zone
     const zoneDisplay = valuation.zone_vi || getZoneVietnamese(valuation.zone);
@@ -171,8 +172,35 @@ function displayStockHeader() {
     const starBadge = (typeof isStarSymbol === 'function' && isStarSymbol(stockData.symbol)) ? getStarBadge('md') : '';
     const stockNote = (typeof getStockNote === 'function') ? getStockNote(stockData.symbol) : null;
     
-    // Get current P/B
-    const currentPB = stockData.current?.pb || stockData.current_pb;
+    // Check data quality and create warnings
+    let dataWarnings = [];
+    if (dataQuality.data_age_days !== undefined && dataQuality.data_age_days > 1) {
+        dataWarnings.push(`⚠️ Dữ liệu giá cũ ${dataQuality.data_age_days} ngày (${dataQuality.latest_date})`);
+    }
+    if (dataQuality.bvps_age_days !== undefined && dataQuality.bvps_age_days > 120) {
+        dataWarnings.push(`⚠️ BVPS cũ ${Math.floor(dataQuality.bvps_age_days/30)} tháng (Quý ${dataQuality.bvps_latest_quarter})`);
+    }
+    
+    const warningHTML = dataWarnings.length > 0 ? `
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3 mt-4">
+            <div class="flex items-start gap-2">
+                <span class="text-orange-400 text-lg">⚠️</span>
+                <div class="text-sm">
+                    ${dataWarnings.map(w => `<div class="text-orange-300">${w}</div>`).join('')}
+                </div>
+            </div>
+        </div>` : '';
+    
+    // Get current P/B - check for dual P/B tracking
+    const pbVnstock = stockData.current?.pb_vnstock;
+    const pbCalculated = stockData.current?.pb_calculated;
+    const currentPB = pbVnstock || stockData.current?.pb || stockData.current_pb;
+    
+    // Show P/B source info if both exist
+    const pbSourceInfo = (pbVnstock && pbCalculated && Math.abs(pbVnstock - pbCalculated) > 0.1) ? `
+        <div class="text-xs text-gray-400 mt-1">
+            P/B từ vnstock: ${pbVnstock.toFixed(2)} | Tính toán: ${pbCalculated.toFixed(2)}
+        </div>` : '';
     
     const noteHTML = stockNote ? `
         <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mt-4">
@@ -187,6 +215,7 @@ function displayStockHeader() {
     
     document.getElementById('stock-header').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6 mb-6">
+            ${warningHTML}
             <div class="flex flex-wrap items-center justify-between mb-4">
                 <div>
                     <h1 class="text-3xl font-bold text-white inline-flex items-center">
@@ -210,6 +239,7 @@ function displayStockHeader() {
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">P/B hiện tại</div>
                     <div class="text-2xl font-bold text-white">${currentPB?.toFixed(2) || 'N/A'}</div>
+                    ${pbSourceInfo}
                 </div>
                 <div class="bg-gray-900 rounded-lg p-4">
                     <div class="text-gray-500 text-sm">Percentile</div>
