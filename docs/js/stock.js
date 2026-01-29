@@ -147,7 +147,7 @@ async function loadStock() {
         displayValuation();
         displayHistoricalReturns();
         displayPBChart();
-        displayQuarterlyTable();
+        displayDailyTable();
         
     } catch (error) {
         console.error('Error:', error);
@@ -293,11 +293,12 @@ function displayValuation() {
         }
     }
     
-    // If no backtest, calculate simple stats from pb_history
+    // If no backtest, calculate simple stats from daily_data or pb_history
     let simpleBacktest = null;
-    if (!hasBacktest && stockData.pb_history && stockData.pb_history.length > 0) {
+    const historyData = stockData.daily_data || stockData.pb_history || [];
+    if (!hasBacktest && historyData.length > 0) {
         const currentPB = stockData.current?.pb || stockData.current_pb;
-        simpleBacktest = calculateSimpleBacktest(stockData.pb_history, currentPB, valuation.percentile);
+        simpleBacktest = calculateSimpleBacktest(historyData, currentPB, valuation.percentile);
     }
     
     // Get return values - priority: expected_return > historical_returns > simpleBacktest
@@ -414,7 +415,7 @@ function displayValuation() {
                     <span class="text-lg font-bold" style="color: ${opportunityColor}">
                         ${opportunityLevel}
                     </span>
-                    <span class="text-sm text-gray-400">Dựa trên ${sampleCount} mẫu lịch sử</span>
+                    <span class="text-sm text-gray-400">Dựa trên ${sampleCount} mẫu ở vùng P/B này</span>
                 </div>
                 <div class="text-sm text-gray-300">
                     ${isGoodBuy ? '✅ Kỳ vọng lợi nhuận cao và tỷ lệ thắng tốt' : 
@@ -718,7 +719,7 @@ function displayHistoricalReturns() {
                         <tr class="border-b border-gray-600">
                             <th class="py-3 px-4 text-left text-gray-400">Vùng P/B</th>
                             <th class="py-3 px-4 text-left text-gray-400">Khoảng P/B</th>
-                            <th class="py-3 px-4 text-center text-gray-400">Số quý</th>
+                            <th class="py-3 px-4 text-center text-gray-400">Số mẫu</th>
                             <th class="py-3 px-4 text-center text-gray-400">LN 1 năm</th>
                             <th class="py-3 px-4 text-center text-gray-400">Win Rate 1Y</th>
                             <th class="py-3 px-4 text-center text-gray-400">LN 2 năm</th>
@@ -741,9 +742,10 @@ function displayHistoricalReturns() {
     `;
 }
 
-// Display P/B chart - Updated to support both daily and quarterly data
+// Display P/B chart - Uses daily_data format
 function displayPBChart() {
-    let history = stockData.pb_history || [];
+    // Use daily_data (new format) or pb_history (old format)
+    let history = stockData.daily_data || stockData.pb_history || [];
     const stats = stockData.statistics || stockData.pb_statistics || {};
     
     if (history.length === 0) {
@@ -751,31 +753,15 @@ function displayPBChart() {
         return;
     }
     
-    // Sort history - support both daily (date string) and quarterly (year/quarter) formats
+    // Sort history by date (ascending for chart)
     history = history.slice().sort((a, b) => {
-        // Daily format: { date: "2024-01-15", pb: 1.5, price: 50000 }
-        if (a.date && b.date) {
-            return new Date(a.date) - new Date(b.date);
-        }
-        // Quarterly format: { year: 2024, quarter: 1, pb: 1.5 }
-        if (a.year !== undefined) {
-            if (a.year !== b.year) {
-                return a.year - b.year;
-            }
-            return (a.quarter || 0) - (b.quarter || 0);
-        }
-        return 0;
+        return new Date(a.date) - new Date(b.date);
     });
     
-    // Build periods array based on data format
-    const periods = history.map(h => h.period || h.date || `${h.year}-Q${h.quarter}`);
+    // Build periods array - use date string directly
+    const periods = history.map(h => h.date);
     const pbValues = history.map(h => h.pb);
-    const priceValues = history.map(h => {
-        // Daily format: price is already in đồng
-        if (h.date) return h.price;
-        // Quarterly format: price might be in nghìn đồng
-        return h.price ? h.price * 1000 : null;
-    });
+    const priceValues = history.map(h => h.price);
     
     const trace1 = {
         x: periods,
@@ -876,9 +862,10 @@ function displayPBChart() {
     Plotly.newPlot('pb-chart-container', [trace1, trace3, trace2], layout, config);
 }
 
-// Display data table - Updated to support both daily and quarterly data
-function displayQuarterlyTable() {
-    const data = stockData.pb_history || stockData.quarterly_data || [];
+// Display data table - Uses daily_data format
+function displayDailyTable() {
+    // Use daily_data (new format) or pb_history (old format)
+    const data = stockData.daily_data || stockData.pb_history || [];
     
     if (data.length === 0) {
         document.getElementById('quarterly-table').innerHTML = `
@@ -890,41 +877,35 @@ function displayQuarterlyTable() {
         return;
     }
     
-    // Sort and get recent data (most recent first for display)
+    // Sort by date descending (most recent first for display)
     const sortedData = data.slice().sort((a, b) => {
-        if (a.date && b.date) return new Date(b.date) - new Date(a.date);
-        if (a.year !== undefined) {
-            if (a.year !== b.year) return b.year - a.year;
-            return (b.quarter || 0) - (a.quarter || 0);
-        }
-        return 0;
-    }).slice(0, 30); // Show last 30 records
-    
-    const isDaily = sortedData[0]?.date !== undefined;
+        return new Date(b.date) - new Date(a.date);
+    }).slice(0, 50); // Show last 50 records
     
     let rows = sortedData.map(q => {
-        const period = q.period || q.date || `${q.year}-Q${q.quarter}`;
+        const date = q.date || 'N/A';
         const pb = q.pb?.toFixed(2) || 'N/A';
-        // Handle both price formats
-        const price = q.price ? (isDaily ? q.price : q.price * 1000).toLocaleString('vi-VN') : 'N/A';
+        const price = q.price ? q.price.toLocaleString('vi-VN') : 'N/A';
         
         return `
             <tr class="border-b border-gray-700 hover:bg-gray-700">
-                <td class="py-2 px-4 text-white">${period}</td>
+                <td class="py-2 px-4 text-white">${date}</td>
                 <td class="py-2 px-4 text-white text-right">${pb}</td>
                 <td class="py-2 px-4 text-white text-right">${price}</td>
             </tr>
         `;
     }).join('');
     
+    const totalSamples = data.length;
+    
     document.getElementById('quarterly-table').innerHTML = `
         <div class="bg-gray-800 rounded-lg p-6">
-            <h2 class="text-xl font-bold text-white mb-4">📋 Lịch sử P/B ${isDaily ? '(theo ngày)' : '(theo quý)'}</h2>
+            <h2 class="text-xl font-bold text-white mb-4">📋 Lịch sử P/B (${totalSamples} ngày dữ liệu)</h2>
             <div class="overflow-x-auto max-h-96 overflow-y-auto">
                 <table class="w-full">
                     <thead class="sticky top-0 bg-gray-800">
                         <tr class="border-b border-gray-600">
-                            <th class="py-2 px-4 text-left text-gray-400">${isDaily ? 'Ngày' : 'Kỳ'}</th>
+                            <th class="py-2 px-4 text-left text-gray-400">Ngày</th>
                             <th class="py-2 px-4 text-right text-gray-400">P/B</th>
                             <th class="py-2 px-4 text-right text-gray-400">Giá</th>
                         </tr>

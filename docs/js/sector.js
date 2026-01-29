@@ -45,15 +45,21 @@ async function loadSectorData() {
     }
 
     try {
-        // Load sector data and sector heat (for heat history)
-        const [sectorRes, heatRes] = await Promise.all([
+        // Load sector data and market heat (for consistent heat index)
+        const [sectorRes, marketHeatRes] = await Promise.all([
             fetch(`data/${config.file}`),
-            fetch('data/sector_heat.json').catch(() => null)
+            fetch('data/market_heat.json').catch(() => null)
         ]);
         
         sectorData = await sectorRes.json();
-        if (heatRes) {
-            sectorHeat = await heatRes.json();
+        
+        // Get sector heat from market_heat.json for consistency
+        if (marketHeatRes) {
+            const marketHeat = await marketHeatRes.json();
+            const sectorHeatData = (marketHeat.sectors || []).find(s => s.sector_id === currentSector);
+            if (sectorHeatData) {
+                sectorHeat = sectorHeatData;
+            }
         }
         
         // Update page title and header
@@ -75,25 +81,36 @@ async function loadSectorData() {
     }
 }
 
-// Display Sector Heat Index - Tính từ daily data
+// Display Sector Heat Index - Sử dụng heat từ market_heat.json
 function displayHeatIndex() {
-    // Calculate heat index from stocks data
     const stocks = Object.values(sectorData.stocks || {});
-    const heat = calculateHeatFromStocks(stocks);
-    
-    const heatIndex = heat.heat_index || 0;
-    const metrics = heat.metrics || {};
-    
     const config = SECTORS[currentSector];
+    
+    // Use heat from market_heat.json (sectorHeat) if available, otherwise calculate
+    let heatIndex, status, signal, metrics;
+    
+    if (sectorHeat && sectorHeat.heat_index !== undefined) {
+        // Use pre-calculated values from market_heat.json
+        heatIndex = sectorHeat.heat_index;
+        status = sectorHeat.status || getStatusFromHeat(heatIndex);
+        signal = sectorHeat.signal || getSignalFromHeat(heatIndex);
+        // Calculate metrics from stocks for display
+        const calculated = calculateHeatFromStocks(stocks);
+        metrics = calculated.metrics || {};
+    } else {
+        // Fallback: calculate from stocks
+        const calculated = calculateHeatFromStocks(stocks);
+        heatIndex = calculated.heat_index || 0;
+        metrics = calculated.metrics || {};
+        status = getStatusFromHeat(heatIndex);
+        signal = getSignalFromHeat(heatIndex);
+    }
     
     // Heat gauge gradient
     const heatPercent = heatIndex;
     const gaugeGradient = `linear-gradient(to right, 
         #8B5CF6 0%, #3B82F6 20%, #22C55E 40%, #EAB308 60%, #F97316 80%, #EF4444 100%)`;
     
-    // Determine signal and status
-    const signal = getSignalFromHeat(heatIndex);
-    const status = getStatusFromHeat(heatIndex);
     const description = getDescriptionFromHeat(heatIndex);
     const heatColor = getHeatColorHex(heatIndex);
     
@@ -180,6 +197,7 @@ function displayHeatIndex() {
         </div>
     `;
 }
+
 
 // Calculate heat index from stocks data
 function calculateHeatFromStocks(stocks) {
@@ -335,10 +353,19 @@ function getSignalColor(signal) {
     return colors[signal] || 'text-gray-400';
 }
 
-// Draw heat history chart
+// Draw heat history chart - Only show if we have daily data (not quarterly)
 function drawHeatHistoryChart() {
     const history = sectorHeat?.history || sectorData?.heat?.history || [];
+    
+    // Skip if no data or if data is quarterly (contains Q1-Q4 in period)
     if (history.length === 0) return;
+    
+    // Check if this is quarterly data (old format) - skip if so
+    const firstPeriod = history[0]?.period || '';
+    if (firstPeriod.includes('-Q') || firstPeriod.match(/\d{4}-Q\d/)) {
+        console.log('Skipping heat history chart - data is quarterly format');
+        return;
+    }
     
     const periods = history.map(h => h.period);
     const heatValues = history.map(h => h.heat_index);

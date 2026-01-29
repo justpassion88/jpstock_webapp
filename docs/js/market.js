@@ -118,16 +118,30 @@ function renderMarketOverview() {
     }
 }
 
-// Render heat history chart
-// Render heat history chart
+// Render heat history chart - Skip if data is quarterly (old format)
 function renderHeatHistoryChart(history, currentHeat) {
     try {
+        // Check if this is quarterly data (old format) - skip if so
+        const firstPeriod = history[0]?.period || '';
+        if (firstPeriod.includes('-Q') || firstPeriod.match(/\d{4}-Q\d/)) {
+            console.log('Skipping heat history chart - data is quarterly format');
+            const chartEl = document.getElementById('market-heat-history-chart');
+            if (chartEl) {
+                chartEl.innerHTML = `
+                    <div class="text-gray-500 text-center py-8">
+                        📊 Biểu đồ lịch sử Heat Index đang được cập nhật sang dữ liệu daily
+                    </div>
+                `;
+            }
+            return;
+        }
+        
         const periods = history.map(h => h.period);
         const heatValues = history.map(h => h.heat_index);
         const pbValues = history.map(h => h.avg_pb);
         
         // Add current data point
-        const currentPeriod = getCurrentQuarter();
+        const currentPeriod = new Date().toISOString().split('T')[0];
         periods.push(currentPeriod);
         heatValues.push(currentHeat);
     
@@ -302,10 +316,22 @@ function renderHeatAnalysis(analysis, currentHeat) {
     }
 }
 
-// Render heat history table
+// Render heat history table - Skip if data is quarterly
 function renderHeatHistoryTable(history) {
     const tableBody = document.getElementById('heat-history-table');
     if (!tableBody) return;
+    
+    // Check if this is quarterly data (old format) - skip if so
+    const firstPeriod = history[0]?.period || '';
+    if (firstPeriod.includes('-Q') || firstPeriod.match(/\d{4}-Q\d/)) {
+        console.log('Skipping heat history table - data is quarterly format');
+        tableBody.innerHTML = `
+            <tr><td colspan="5" class="py-4 text-center text-gray-500">
+                📊 Bảng lịch sử Heat Index đang được cập nhật sang dữ liệu daily
+            </td></tr>
+        `;
+        return;
+    }
     
     // Sort by period descending (newest first)
     const sortedHistory = [...history].sort((a, b) => b.period.localeCompare(a.period));
