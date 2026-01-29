@@ -53,7 +53,6 @@ SECTORS = {
         "pb_suitable": 5,
         "color": "#10B981",  # Green
         "symbols": [
-            "AAA",  # AAA (iCopy)
             "BCM",  # Becamex
             "CEO",  # C.E.O Group
             "CRE",  # Cen Land (iCopy)
@@ -204,6 +203,7 @@ SECTORS = {
             "HMC",  # Ho Chi Minh Metal
             "HPG",  # Hoa Phat
             "HSG",  # Hoa Sen
+            "VGC",  # Viglacera
             "NKG",  # Nam Kim
             "NTP",  # NTP (iCopy)
             "POM",  # Pomina
@@ -246,6 +246,7 @@ SECTORS = {
             "TRC",  # TRC (iCopy)
             "TV2",  # Tu Liem Urban
             "VCG",  # Vinaconex
+            "CSV",  # CSV Construction
         ],
     },
     
@@ -300,7 +301,6 @@ SECTORS = {
             "PNJ",  # PNJ
             "SAB",  # Sabeco
             "SBT",  # SBT (iCopy)
-            "VGC",  # Viglacera
             "VJC",  # VJC (iCopy)
             "VNM",  # Vinamilk
             "VOS",  # VOS (iCopy)
@@ -348,11 +348,10 @@ SECTORS = {
         "pb_suitable": 3,
         "color": "#A855F7",  # Purple
         "symbols": [
+            "AAA",  # An Phat Plastic (iCopy)
             "BFC",  # Binh Dien Fertilizer
-            "CSV",  # CSV Construction
             "DCM",  # DCM Corp
             "DGC",  # Duc Giang Chemicals
-            "DHC",  # Dong Hai Bentre
             "DPM",  # PetroVietnam Fertilizer
             "GIL",  # GIL (iCopy)
             "GVR",  # Group Cao Su VN

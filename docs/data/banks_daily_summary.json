@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-29T08:28:33.049574",
+  "last_updated": "2026-01-29T09:28:02.388075",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🏦 Ngân hàng",
@@ -3499,13 +3499,23 @@
       "symbol": "STB",
       "name": "STB",
       "current": {
-        "price": null,
-        "pb_vnstock": null,
-        "pb_calculated": null,
-        "bvps": null,
+        "price": 63200.0,
+        "pb_vnstock": 1.6265131736,
+        "pb_calculated": 1.9,
+        "bvps": 33261.3352773471,
         "pb_source": "vnstock"
       },
-      "valuation": {},
+      "valuation": {
+        "zone": "extremely_expensive",
+        "signal": "STRONG_SELL",
+        "percentile": 91.2,
+        "pb_thresholds": {
+          "extremely_cheap": 0.7562544451563689,
+          "cheap": 0.9063688276731302,
+          "fair_high": 1.2875571245506408,
+          "expensive": 1.5888641442920757
+        }
+      },
       "statistics": {
         "count": 3178,
         "min": 0.49236583963062847,

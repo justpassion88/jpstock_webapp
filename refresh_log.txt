@@ -1,0 +1,331 @@
+======================================================================
+JP Stock Webapp - Fetch ALL Sectors Daily P/B Data
+Data Source: VCI
+Started at: 2026-01-29 08:28:33
+======================================================================
+
+Total sectors: 11
+Total stocks: 205
+
+============================================================
+SECTOR: 🏦 NGÂN HÀNG
+Symbols: 20
+============================================================
+  [1/20] ACB (ACB)... ⚠️  Dependency issues detected:
+  • vnii: 0.1.2 (requires >=0.1.5)
+
+For details:
+from vnstock.core.utils.upgrade import show_full_notice
+show_full_notice()
+✅ Authentication successful: Just Passion
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3173 days, P/B=N/A
+  [2/20] BAF (BAF)... ✓ 1037 days, P/B=N/A
+  [3/20] BID (BID)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2998 days, P/B=N/A
+  [4/20] CTG (CTG)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3860 days, P/B=N/A
+  [5/20] EIB (EIB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [6/20] HDB (HDB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2015 days, P/B=N/A
+  [7/20] LPB (LPB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2070 days, P/B=N/A
+  [8/20] MBB (MBB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3549 days, P/B=N/A
+  [9/20] MSB (MSB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1273 days, P/B=N/A
+  [10/20] NAB (NAB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1320 days, P/B=N/A
+  [11/20] OCB (OCB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1248 days, P/B=N/A
+  [12/20] SHB (SHB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3175 days, P/B=N/A
+  [13/20] SHI (SHI)... ✓ 3178 days, P/B=N/A
+  [14/20] SSB (SSB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1214 days, P/B=N/A
+  [15/20] STB (STB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [16/20] TCB (TCB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1917 days, P/B=N/A
+  [17/20] TPB (TPB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1946 days, P/B=N/A
+  [18/20] VCB (VCB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [19/20] VIB (VIB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2257 days, P/B=N/A
+  [20/20] VPB (VPB)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2114 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/banks_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/banks_daily_summary.json
+
+============================================================
+SECTOR: 🏠 BẤT ĐỘNG SẢN
+Symbols: 40
+============================================================
+  [1/40] AAA (AAA)... ✓ 3173 days, P/B=N/A
+  [2/40] BCM (BCM)... ✓ 1859 days, P/B=N/A
+  [3/40] CEO (CEO)... ✓ 2835 days, P/B=N/A
+  [4/40] CRE (CRE)... ✓ 1851 days, P/B=N/A
+  [5/40] DHA (DHA)... ✓ 3178 days, P/B=N/A
+  [6/40] DHC (DHC)... ✓ 3178 days, P/B=N/A
+  [7/40] DIG (DIG)... ✓ 3178 days, P/B=N/A
+  [8/40] DPG (DPG)... ✓ 1983 days, P/B=N/A
+  [9/40] DPR (DPR)... ✓ 3178 days, P/B=N/A
+  [10/40] DRC (DRC)... ✓ 3178 days, P/B=N/A
+  [11/40] DTD (DTD)... ✓ 1987 days, P/B=N/A
+  [12/40] DXG (DXG)... ✓ 3178 days, P/B=N/A
+  [13/40] DXS (DXS)... ✓ 1111 days, P/B=N/A
+  [14/40] HAG (HAG)... ✓ 3860 days, P/B=N/A
+  [15/40] HAH (HAH)... ✓ 2726 days, P/B=N/A
+  [16/40] HDC (HDC)... ✓ 3178 days, P/B=N/A
+  [17/40] HPX (HPX)... ✓ 1742 days, P/B=N/A
+  [18/40] IDC (IDC)... ✓ 1860 days, P/B=N/A
+  [19/40] IJC (IJC)... ✓ 3178 days, P/B=N/A
+  [20/40] IMP (IMP)... ✓ 3178 days, P/B=N/A
+  [21/40] ITA (ITA)... ✓ 2841 days, P/B=N/A
+  [22/40] KBC (KBC)... ✓ 3178 days, P/B=N/A
+  [23/40] KDH (KDH)... ✓ 3178 days, P/B=N/A
+  [24/40] KHG (KHG)... ✓ 1111 days, P/B=N/A
+  [25/40] LDG (LDG)... ✓ 2494 days, P/B=N/A
+  [26/40] NBB (NBB)... ✓ 3178 days, P/B=N/A
+  [27/40] NHA (NHA)... ✓ 3172 days, P/B=N/A
+  [28/40] NLG (NLG)... ✓ 3178 days, P/B=N/A
+  [29/40] NTL (NTL)... ✓ 3178 days, P/B=N/A
+  [30/40] NVL (NVL)... ✓ 2271 days, P/B=N/A
+  [31/40] PDR (PDR)... ✓ 3178 days, P/B=N/A
+  [32/40] PHR (PHR)... ✓ 3178 days, P/B=N/A
+  [33/40] PLC (PLC)... ✓ 3178 days, P/B=N/A
+  [34/40] SCR (SCR)... ✓ 3173 days, P/B=N/A
+  [35/40] SZC (SZC)... ✓ 1759 days, P/B=N/A
+  [36/40] TDC (TDC)...     ✗ Error fetching prices: Failed to fetch data: 502 - Bad Gateway
+✗ No data
+  [37/40] VHC (VHC)... ✓ 3178 days, P/B=N/A
+  [38/40] VHM (VHM)... ✓ 2034 days, P/B=N/A
+  [39/40] VIC (VIC)... ✓ 3178 days, P/B=N/A
+  [40/40] VRE (VRE)... ✓ 1987 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/realestate_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/realestate_daily_summary.json
+
+============================================================
+SECTOR: 📈 CHỨNG KHOÁN
+Symbols: 22
+============================================================
+  [1/22] AGR (AGR)... ✓ 3178 days, P/B=N/A
+  [2/22] BSI (BSI)... ✓ 3172 days, P/B=N/A
+  [3/22] BVS (BVS)... ✓ 3178 days, P/B=N/A
+  [4/22] CSM (CSM)... ✓ 3178 days, P/B=N/A
+  [5/22] CTS (CTS)... ✓ 3175 days, P/B=N/A
+  [6/22] EVF (EVF)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 1863 days, P/B=N/A
+  [7/22] FTS (FTS)... ✓ 2260 days, P/B=N/A
+  [8/22] HCM (HCM)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3860 days, P/B=N/A
+  [9/22] IPA (IPA)... ✓ 2238 days, P/B=N/A
+  [10/22] MBS (MBS)... ✓ 2464 days, P/B=N/A
+  [11/22] ORS (ORS)... ✓ 3169 days, P/B=N/A
+  [12/22] SCS (SCS)... ✓ 2134 days, P/B=N/A
+  [13/22] SHS (SHS)... ✓ 3178 days, P/B=N/A
+  [14/22] SIP (SIP)... ✗ No data
+  [15/22] SSI (SSI)... ✓ 3178 days, P/B=N/A
+  [16/22] TVS (TVS)... ✓ 2759 days, P/B=N/A
+  [17/22] VCI (VCI)... ✓ 2143 days, P/B=N/A
+  [18/22] VCS (VCS)... ✓ 3178 days, P/B=N/A
+  [19/22] VDS (VDS)... ✓ 3172 days, P/B=N/A
+  [20/22] VFS (VFS)... ✓ 1390 days, P/B=N/A
+  [21/22] VIX (VIX)... ✓ 3914 days, P/B=N/A
+  [22/22] VND (VND)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3603 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/securities_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/securities_daily_summary.json
+
+============================================================
+SECTOR: ⚡ ĐIỆN & NĂNG LƯỢNG
+Symbols: 19
+============================================================
+  [1/19] GAS (GAS)... ✓ 3178 days, P/B=N/A
+  [2/19] GEE (GEE)... ✓ 958 days, P/B=N/A
+  [3/19] GEG (GEG)... ✓ 2212 days, P/B=N/A
+  [4/19] GEX (GEX)... ✓ 2565 days, P/B=N/A
+  [5/19] HDG (HDG)... ✓ 3860 days, P/B=N/A
+  [6/19] HND (HND)... ✓ 2331 days, P/B=N/A
+  [7/19] NT2 (NT2)... ✓ 3171 days, P/B=N/A
+  [8/19] PC1 (PC1)... ✓ 2301 days, P/B=N/A
+  [9/19] PGV (PGV)... ✓ 1958 days, P/B=N/A
+  [10/19] PLX (PLX)... ✓ 2196 days, P/B=N/A
+  [11/19] POW (POW)... ✓ 1969 days, P/B=N/A
+  [12/19] PPC (PPC)... ✓ 3178 days, P/B=N/A
+  [13/19] QTP (QTP)... ✓ 2221 days, P/B=N/A
+  [14/19] REE (REE)... ✓ 3178 days, P/B=N/A
+  [15/19] SJD (SJD)... ✓ 3178 days, P/B=N/A
+  [16/19] TBC (TBC)... ✓ 3173 days, P/B=N/A
+  [17/19] VSC (VSC)... ✓ 3178 days, P/B=N/A
+  [18/19] VSH (VSH)... ✓ 3177 days, P/B=N/A
+  [19/19] YEG (YEG)... ✓ 1901 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/energy_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/energy_daily_summary.json
+
+============================================================
+SECTOR: 🛢️ DẦU KHÍ
+Symbols: 10
+============================================================
+  [1/10] BSR (BSR)... ✓ 1973 days, P/B=N/A
+  [2/10] CNG (CNG)... ✓ 3178 days, P/B=N/A
+  [3/10] OIL (OIL)... ✓ 1866 days, P/B=N/A
+  [4/10] PVC (PVC)... ✓ 3178 days, P/B=N/A
+  [5/10] PVD (PVD)... ✓ 3178 days, P/B=N/A
+  [6/10] PVS (PVS)... ✓ 3178 days, P/B=N/A
+  [7/10] PVT (PVT)... ✓ 3178 days, P/B=N/A
+  [8/10] PVL (PVL)... ✓ 2868 days, P/B=N/A
+  [9/10] PXS (PXS)... ✓ 3600 days, P/B=N/A
+  [10/10] VPL (VPL)... ✓ 184 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/oilgas_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/oilgas_daily_summary.json
+
+============================================================
+SECTOR: 🏗️ THÉP & VẬT LIỆU
+Symbols: 13
+============================================================
+  [1/13] DTL (DTL)... ✓ 3137 days, P/B=N/A
+  [2/13] HMC (HMC)... ✓ 3176 days, P/B=N/A
+  [3/13] HPG (HPG)... ✓ 3178 days, P/B=N/A
+  [4/13] HSG (HSG)... ✓ 3178 days, P/B=N/A
+  [5/13] NKG (NKG)... ✓ 3178 days, P/B=N/A
+  [6/13] NTP (NTP)... ✓ 3178 days, P/B=N/A
+  [7/13] POM (POM)... ✓ 2866 days, P/B=N/A
+  [8/13] SMC (SMC)... ✓ 3178 days, P/B=N/A
+  [9/13] TIS (TIS)... ✓ 3178 days, P/B=N/A
+  [10/13] TLH (TLH)... ✓ 3178 days, P/B=N/A
+  [11/13] TVN (TVN)... ✓ 2509 days, P/B=N/A
+  [12/13] VGS (VGS)... ✓ 3178 days, P/B=N/A
+  [13/13] VIS (VIS)...     ✗ Error fetching prices: RetryError[<Future at 0x71e9bbe75c40 state=finished raised ValueError>]
+✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/steel_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/steel_daily_summary.json
+
+============================================================
+SECTOR: 🏗️ XÂY DỰNG
+Symbols: 19
+============================================================
+  [1/19] ANV (ANV)... ✓ 3860 days, P/B=N/A
+  [2/19] C4G (C4G)... ✓ 1783 days, P/B=N/A
+  [3/19] CII (CII)... ✓ 3178 days, P/B=N/A
+  [4/19] CTD (CTD)... ✓ 3178 days, P/B=N/A
+  [5/19] CTI (CTI)... ✓ 3178 days, P/B=N/A
+  [6/19] CTR (CTR)... ✓ 2061 days, P/B=N/A
+  [7/19] DCL (DCL)... ✓ 3178 days, P/B=N/A
+  [8/19] FCN (FCN)... ✓ 3178 days, P/B=N/A
+  [9/19] HBC (HBC)... ✓ 3170 days, P/B=N/A
+  [10/19] HHV (HHV)... ✓ 1483 days, P/B=N/A
+  [11/19] HHS (HHS)... ✓ 3178 days, P/B=N/A
+  [12/19] HTN (HTN)... ✓ 1803 days, P/B=N/A
+  [13/19] HUT (HUT)... ✓ 3178 days, P/B=N/A
+  [14/19] LCG (LCG)... ✓ 3362 days, P/B=N/A
+  [15/19] PTB (PTB)... ✓ 3178 days, P/B=N/A
+  [16/19] TNG (TNG)... ✓ 3178 days, P/B=N/A
+  [17/19] TRC (TRC)... ✓ 3178 days, P/B=N/A
+  [18/19] TV2 (TV2)... ✓ 3171 days, P/B=N/A
+  [19/19] VCG (VCG)... ✓ 3173 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/construction_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/construction_daily_summary.json
+
+============================================================
+SECTOR: 🛡️ BẢO HIỂM
+Symbols: 7
+============================================================
+  [1/7] ABI (ABI)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [2/7] BIC (BIC)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [3/7] BMI (BMI)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [4/7] BVH (BVH)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [5/7] MIG (MIG)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 2182 days, P/B=N/A
+  [6/7] PVI (PVI)... Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+✓ 3178 days, P/B=N/A
+  [7/7] VPI (VPI)... ✓ 1980 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/insurance_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/insurance_daily_summary.json
+
+============================================================
+SECTOR: 🛒 BÁN LẺ & TIÊU DÙNG
+Symbols: 23
+============================================================
+  [1/23] ASM (ASM)... ✓ 3178 days, P/B=N/A
+  [2/23] BCG (BCG)... ✓ 2415 days, P/B=N/A
+  [3/23] BMP (BMP)... ✓ 3178 days, P/B=N/A
+  [4/23] DBC (DBC)... ✓ 3914 days, P/B=N/A
+  [5/23] DBD (DBD)... ✓ 2254 days, P/B=N/A
+  [6/23] DGW (DGW)... ✓ 2494 days, P/B=N/A
+  [7/23] FRT (FRT)... ✓ 1942 days, P/B=N/A
+  [8/23] GMD (GMD)... ✓ 3178 days, P/B=N/A
+  [9/23] HAX (HAX)... ✓ 3178 days, P/B=N/A
+  [10/23] KDC (KDC)... ✓ 3178 days, P/B=N/A
+  [11/23] MSN (MSN)... ✓ 3739 days, P/B=N/A
+  [12/23] MWG (MWG)... ✓ 2888 days, P/B=N/A
+  [13/23] NAF (NAF)... ✓ 2494 days, P/B=N/A
+  [14/23] PAC (PAC)... ✓ 3178 days, P/B=N/A
+  [15/23] PAN (PAN)... ✓ 3171 days, P/B=N/A
+  [16/23] PET (PET)... ✓ 3178 days, P/B=N/A
+  [17/23] PNJ (PNJ)... ✓ 3178 days, P/B=N/A
+  [18/23] SAB (SAB)... ✓ 2287 days, P/B=N/A
+  [19/23] SBT (SBT)... ✓ 3178 days, P/B=N/A
+  [20/23] VGC (VGC)... ✓ 2483 days, P/B=N/A
+  [21/23] VJC (VJC)... ✓ 2233 days, P/B=N/A
+  [22/23] VNM (VNM)... ✓ 3178 days, P/B=N/A
+  [23/23] VOS (VOS)... ✓ 3178 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/retail_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/retail_daily_summary.json
+
+============================================================
+SECTOR: 💻 CÔNG NGHỆ
+Symbols: 16
+============================================================
+  [1/16] AGG (AGG)... ✓ 1492 days, P/B=N/A
+  [2/16] BWE (BWE)... ✓ 2134 days, P/B=N/A
+  [3/16] CMG (CMG)... ✓ 3178 days, P/B=N/A
+  [4/16] DSE (DSE)... ✓ 398 days, P/B=N/A
+  [5/16] ELC (ELC)... ✓ 3178 days, P/B=N/A
+  [6/16] FOX (FOX)... ✓ 2260 days, P/B=N/A
+  [7/16] FPT (FPT)... ✓ 3178 days, P/B=N/A
+  [8/16] ICT (ICT)... ✓ 1509 days, P/B=N/A
+  [9/16] IDI (IDI)... ✓ 3178 days, P/B=N/A
+  [10/16] ITD (ITD)... ✓ 3177 days, P/B=N/A
+  [11/16] LHG (LHG)... ✓ 3178 days, P/B=N/A
+  [12/16] TCH (TCH)... ✓ 2331 days, P/B=N/A
+  [13/16] TCM (TCM)... ✓ 3178 days, P/B=N/A
+  [14/16] VGI (VGI)... ✓ 1837 days, P/B=N/A
+  [15/16] VIP (VIP)... ✓ 3178 days, P/B=N/A
+  [16/16] VTP (VTP)... ✓ 1787 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/technology_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/technology_daily_summary.json
+
+============================================================
+SECTOR: 🧪 HÓA CHẤT & CÔNG NGHIỆP
+Symbols: 16
+============================================================
+  [1/16] BFC (BFC)... ✓ 2581 days, P/B=N/A
+  [2/16] CSV (CSV)... ✓ 2721 days, P/B=N/A
+  [3/16] DCM (DCM)... ✓ 2494 days, P/B=N/A
+  [4/16] DGC (DGC)... ✓ 2851 days, P/B=N/A
+  [5/16] DHC (DHC)... ✓ 3178 days, P/B=N/A
+  [6/16] DPM (DPM)... ✓ 3178 days, P/B=N/A
+  [7/16] GIL (GIL)... ✓ 3178 days, P/B=N/A
+  [8/16] GVR (GVR)... ✓ 1736 days, P/B=N/A
+  [9/16] KSB (KSB)... ✓ 3178 days, P/B=N/A
+  [10/16] LAS (LAS)... ✓ 3178 days, P/B=N/A
+  [11/16] MSH (MSH)... ✓ 1791 days, P/B=N/A
+  [12/16] TCX (TCX)... ✓ 71 days, P/B=N/A
+  [13/16] TDP (TDP)... ✓ 1754 days, P/B=N/A
+  [14/16] TIG (TIG)... ✓ 3178 days, P/B=N/A
+  [15/16] TLG (TLG)... ✓ 3178 days, P/B=N/A
+  [16/16] TNH (TNH)... ✓ 1239 days, P/B=N/A
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/chemicals_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/chemicals_daily_summary.json
+
+======================================================================
+ALL SECTORS COMPLETED!
+Finished at: 2026-01-29 08:50:39
+======================================================================
