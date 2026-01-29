@@ -1,0 +1,927 @@
+nohup: ignoring input
+======================================================================
+🚀 BẮT ĐẦU THÊM 69 MÃ iCOPY VÀO HỆ THỐNG
+======================================================================
+
+Tổng số mã cần thêm: 68
+
+
+======================================================================
+📂 SECTOR: BANKS - 3 mã
+======================================================================
+
+============================================================
+📊 Processing SSB -> banks_daily.json
+============================================================
+   ⏭️  SSB đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing VIB -> banks_daily.json
+============================================================
+   ⏭️  VIB đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing SHI -> banks_daily.json
+============================================================
+   ⏭️  SHI đã tồn tại, bỏ qua
+
+
+======================================================================
+📂 SECTOR: REALESTATE - 12 mã
+======================================================================
+
+============================================================
+📊 Processing AAA -> realestate_daily.json
+============================================================
+   ⏭️  AAA đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing DHA -> realestate_daily.json
+============================================================
+   ⏭️  DHA đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing DPR -> realestate_daily.json
+============================================================
+   ⏭️  DPR đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing DRC -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for DRC...
+⚠️  Dependency issues detected:
+  • vnii: 0.1.2 (requires >=0.1.5)
+
+For details:
+from vnstock.core.utils.upgrade import show_full_notice
+show_full_notice()
+✅ Authentication successful: Just Passion
+   ✅ DRC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    print(f"      - P/B hiện tại: {current_pb:.3f if current_pb else 'N/A'}")
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing DTD -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for DTD...
+   ✅ DTD đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    print(f"      - P/B hiện tại: {current_pb:.3f if current_pb else 'N/A'}")
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing HAG -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for HAG...
+   ✅ HAG đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    print(f"      - P/B hiện tại: {current_pb:.3f if current_pb else 'N/A'}")
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing HAH -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for HAH...
+   ✅ HAH đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing IMP -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for IMP...
+   ✅ IMP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing NTL -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for NTL...
+   ✅ NTL đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PHR -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for PHR...
+   ✅ PHR đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PLC -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for PLC...
+   ✅ PLC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VHC -> realestate_daily.json
+============================================================
+   🔄 Fetching complete data for VHC...
+   ✅ VHC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: SECURITIES - 10 mã
+======================================================================
+
+============================================================
+📊 Processing AGR -> securities_daily.json
+============================================================
+   ⏭️  AGR đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing BVS -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for BVS...
+   ✅ BVS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing CSM -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for CSM...
+   ✅ CSM đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing EVF -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for EVF...
+Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+   ✅ EVF đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing IPA -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for IPA...
+   ✅ IPA đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing SIP -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for SIP...
+   ✅ SIP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VCS -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for VCS...
+   ✅ VCS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VDS -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for VDS...
+   ✅ VDS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VFS -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for VFS...
+   ✅ VFS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VIX -> securities_daily.json
+============================================================
+   🔄 Fetching complete data for VIX...
+   ✅ VIX đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: RETAIL - 12 mã
+======================================================================
+
+============================================================
+📊 Processing ASM -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for ASM...
+   ✅ ASM đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing BMP -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for BMP...
+   ✅ BMP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing DBC -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for DBC...
+   ✅ DBC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing DBD -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for DBD...
+   ✅ DBD đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing GMD -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for GMD...
+   ✅ GMD đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing KDC -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for KDC...
+   ✅ KDC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing NAF -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for NAF...
+   ✅ NAF đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PAC -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for PAC...
+   ✅ PAC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PAN -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for PAN...
+   ✅ PAN đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PET -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for PET...
+   ✅ PET đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing SBT -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for SBT...
+   ✅ SBT đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VOS -> retail_daily.json
+============================================================
+   🔄 Fetching complete data for VOS...
+   ✅ VOS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: CONSTRUCTION - 9 mã
+======================================================================
+
+============================================================
+📊 Processing ANV -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for ANV...
+   ✅ ANV đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing CTI -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for CTI...
+   ✅ CTI đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing CTR -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for CTR...
+   ✅ CTR đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing DCL -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for DCL...
+   ✅ DCL đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing HHS -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for HHS...
+   ✅ HHS đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing HTN -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for HTN...
+   ✅ HTN đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing PTB -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for PTB...
+   ✅ PTB đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TNG -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for TNG...
+   ✅ TNG đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TRC -> construction_daily.json
+============================================================
+   🔄 Fetching complete data for TRC...
+   ✅ TRC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: ENERGY - 4 mã
+======================================================================
+
+============================================================
+📊 Processing GEE -> energy_daily.json
+============================================================
+   🔄 Fetching complete data for GEE...
+   ✅ GEE đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing GEG -> energy_daily.json
+============================================================
+   ⏭️  GEG đã tồn tại, bỏ qua
+
+============================================================
+📊 Processing GEX -> energy_daily.json
+============================================================
+   🔄 Fetching complete data for GEX...
+   ✅ GEX đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VSC -> energy_daily.json
+============================================================
+   🔄 Fetching complete data for VSC...
+   ✅ VSC đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: STEEL - 1 mã
+======================================================================
+
+============================================================
+📊 Processing NTP -> steel_daily.json
+============================================================
+   🔄 Fetching complete data for NTP...
+   ✅ NTP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: TECHNOLOGY - 7 mã
+======================================================================
+
+============================================================
+📊 Processing AGG -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for AGG...
+   ✅ AGG đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing BWE -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for BWE...
+   ✅ BWE đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing DSE -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for DSE...
+   ✅ DSE đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing IDI -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for IDI...
+   ✅ IDI đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TCH -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for TCH...
+   ✅ TCH đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TCM -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for TCM...
+   ✅ TCM đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing VTP -> technology_daily.json
+============================================================
+   🔄 Fetching complete data for VTP...
+   ✅ VTP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: OILGAS - 1 mã
+======================================================================
+
+============================================================
+📊 Processing PVL -> oilgas_daily.json
+============================================================
+   🔄 Fetching complete data for PVL...
+   ✅ PVL đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: INSURANCE - 1 mã
+======================================================================
+
+============================================================
+📊 Processing VPI -> insurance_daily.json
+============================================================
+   🔄 Fetching complete data for VPI...
+   ✅ VPI đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📂 SECTOR: CHEMICALS - 8 mã
+======================================================================
+
+============================================================
+📊 Processing GIL -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for GIL...
+   ✅ GIL đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing KSB -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for KSB...
+   ✅ KSB đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing MSH -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for MSH...
+   ✅ MSH đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TCX -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for TCX...
+   ✅ TCX đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TDP -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for TDP...
+   ✅ TDP đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TIG -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for TIG...
+   ✅ TIG đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TLG -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for TLG...
+   ✅ TLG đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+============================================================
+📊 Processing TNH -> chemicals_daily.json
+============================================================
+   🔄 Fetching complete data for TNH...
+   ✅ TNH đã được thêm thành công!
+   ❌ Lỗi: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+Traceback (most recent call last):
+  File "/workspaces/jpstock_webapp/add_icopy_missing_stocks.py", line 77, in add_stock_to_file
+    if current_pb:
+                   
+ValueError: Invalid format specifier '.3f if current_pb else 'N/A'' for object of type 'float'
+
+
+======================================================================
+📊 CẬP NHẬT SUMMARY FILES
+======================================================================
+
+Updating banks_daily_summary.json...
+
+Updating realestate_daily_summary.json...
+
+Updating securities_daily_summary.json...
+
+Updating retail_daily_summary.json...
+
+Updating construction_daily_summary.json...
+
+Updating energy_daily_summary.json...
+
+Updating steel_daily_summary.json...
+
+Updating technology_daily_summary.json...
+
+Updating oilgas_daily_summary.json...
+
+Updating insurance_daily_summary.json...
+
+Updating chemicals_daily_summary.json...
+
+
+======================================================================
+📈 TỔNG KẾT
+======================================================================
+✅ Thành công: 8/68 mã
+❌ Thất bại: 60/68 mã
+
+❌ Các mã thất bại:
+   - DRC (realestate)
+   - DTD (realestate)
+   - HAG (realestate)
+   - HAH (realestate)
+   - IMP (realestate)
+   - NTL (realestate)
+   - PHR (realestate)
+   - PLC (realestate)
+   - VHC (realestate)
+   - BVS (securities)
+   - CSM (securities)
+   - EVF (securities)
+   - IPA (securities)
+   - SIP (securities)
+   - VCS (securities)
+   - VDS (securities)
+   - VFS (securities)
+   - VIX (securities)
+   - ASM (retail)
+   - BMP (retail)
+   - DBC (retail)
+   - DBD (retail)
+   - GMD (retail)
+   - KDC (retail)
+   - NAF (retail)
+   - PAC (retail)
+   - PAN (retail)
+   - PET (retail)
+   - SBT (retail)
+   - VOS (retail)
+   - ANV (construction)
+   - CTI (construction)
+   - CTR (construction)
+   - DCL (construction)
+   - HHS (construction)
+   - HTN (construction)
+   - PTB (construction)
+   - TNG (construction)
+   - TRC (construction)
+   - GEE (energy)
+   - GEX (energy)
+   - VSC (energy)
+   - NTP (steel)
+   - AGG (technology)
+   - BWE (technology)
+   - DSE (technology)
+   - IDI (technology)
+   - TCH (technology)
+   - TCM (technology)
+   - VTP (technology)
+   - PVL (oilgas)
+   - VPI (insurance)
+   - GIL (chemicals)
+   - KSB (chemicals)
+   - MSH (chemicals)
+   - TCX (chemicals)
+   - TDP (chemicals)
+   - TIG (chemicals)
+   - TLG (chemicals)
+   - TNH (chemicals)
+
+📅 Hoàn thành: 2026-01-29 04:53:17
