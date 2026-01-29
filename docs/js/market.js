@@ -20,10 +20,13 @@ const SECTORS = {
 
 let marketData = null;
 let sectorDataCache = {};
+let allStocksData = [];
 
 // Initialize
 document.addEventListener('DOMContentLoaded', async () => {
     await loadMarketData();
+    await loadAllStocksData();
+    setupFiltersAndSearch();
 });
 
 // Load market overview data
@@ -613,5 +616,293 @@ function getZoneText(zone) {
         case 'EXPENSIVE': return 'Đắt';
         case 'VERY_EXPENSIVE': return 'Cực đắt';
         default: return 'N/A';
+    }
+}
+
+// ==============================================
+// ALL STOCKS LIST FUNCTIONALITY
+// ==============================================
+
+// Load all stocks from all sectors
+async function loadAllStocksData() {
+    allStocksData = [];
+    const sectorFilterEl = document.getElementById('sector-filter');
+    
+    for (const [sectorKey, sectorConfig] of Object.entries(SECTORS)) {
+        try {
+            const response = await fetch(`data/${sectorConfig.file}`);
+            if (!response.ok) continue;
+            
+            const data = await response.json();
+            const stocks = data.stocks || {};
+            
+            // Add sector option to filter dropdown
+            if (sectorFilterEl && !sectorFilterEl.querySelector(`option[value="${sectorKey}"]`)) {
+                const option = document.createElement('option');
+                option.value = sectorKey;
+                option.textContent = sectorConfig.name;
+                sectorFilterEl.appendChild(option);
+            }
+            
+            // Process each stock
+            for (const [symbol, stockData] of Object.entries(stocks)) {
+                if (stockData && stockData.current) {
+                    const valuation = stockData.valuation || {};
+                    const statistics = stockData.statistics || {};
+                    const percentiles = statistics.percentiles || {};
+                    
+                    allStocksData.push({
+                        symbol: symbol,
+                        sector: sectorKey,
+                        sectorName: sectorConfig.name,
+                        pb: stockData.current.pb || 0,
+                        pbMin: statistics.min || 0,
+                        pbMax: statistics.max || 0,
+                        pbAvg: statistics.mean || statistics.avg || 0,
+                        zone: valuation.zone || 'unknown',
+                        zoneName: getZoneNameFromValuation(valuation.zone),
+                        percentile: valuation.percentile || 0,
+                        signal: valuation.signal || 'HOLD',
+                        p10: percentiles.p10 || 0,
+                        p25: percentiles.p25 || 0,
+                        p50: percentiles.p50 || 0,
+                        p75: percentiles.p75 || 0,
+                        p90: percentiles.p90 || 0
+                    });
+                }
+            }
+        } catch (error) {
+            console.error(`Error loading ${sectorKey}:`, error);
+        }
+    }
+    
+    console.log(`Loaded ${allStocksData.length} stocks from all sectors`);
+    renderAllStocksTable();
+}
+
+// Get zone name from valuation zone
+function getZoneNameFromValuation(zone) {
+    const zoneMap = {
+        'extremely_cheap': 'Cực rẻ',
+        'cheap': 'Rẻ',
+        'fair': 'Hợp lý',
+        'expensive': 'Đắt',
+        'extremely_expensive': 'Cực đắt',
+        'VERY_CHEAP': 'Cực rẻ',
+        'CHEAP': 'Rẻ',
+        'FAIR': 'Hợp lý',
+        'EXPENSIVE': 'Đắt',
+        'VERY_EXPENSIVE': 'Cực đắt'
+    };
+    return zoneMap[zone] || 'N/A';
+}
+
+// Setup filters and search
+function setupFiltersAndSearch() {
+    const searchEl = document.getElementById('stock-search');
+    const zoneFilterEl = document.getElementById('zone-filter');
+    const sectorFilterEl = document.getElementById('sector-filter');
+    const sortEl = document.getElementById('stock-sort');
+    
+    if (searchEl) {
+        searchEl.addEventListener('input', debounce(() => renderAllStocksTable(), 300));
+    }
+    if (zoneFilterEl) {
+        zoneFilterEl.addEventListener('change', () => renderAllStocksTable());
+    }
+    if (sectorFilterEl) {
+        sectorFilterEl.addEventListener('change', () => renderAllStocksTable());
+    }
+    if (sortEl) {
+        sortEl.addEventListener('change', () => renderAllStocksTable());
+    }
+}
+
+// Debounce function for search
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Render all stocks table
+function renderAllStocksTable() {
+    const tableBody = document.getElementById('all-stocks-table');
+    if (!tableBody) return;
+    
+    // Get filter values
+    const searchTerm = (document.getElementById('stock-search')?.value || '').toLowerCase();
+    const zoneFilter = document.getElementById('zone-filter')?.value || 'all';
+    const sectorFilter = document.getElementById('sector-filter')?.value || 'all';
+    const sortBy = document.getElementById('stock-sort')?.value || 'symbol';
+    
+    // Filter stocks
+    let filteredStocks = allStocksData.filter(stock => {
+        // Search filter
+        if (searchTerm && !stock.symbol.toLowerCase().includes(searchTerm)) {
+            return false;
+        }
+        
+        // Zone filter
+        if (zoneFilter !== 'all') {
+            const normalizedZone = stock.zone.toLowerCase().replace('_', '_');
+            if (normalizedZone !== zoneFilter) {
+                return false;
+            }
+        }
+        
+        // Sector filter
+        if (sectorFilter !== 'all' && stock.sector !== sectorFilter) {
+            return false;
+        }
+        
+        return true;
+    });
+    
+    // Sort stocks
+    filteredStocks.sort((a, b) => {
+        switch (sortBy) {
+            case 'pb_asc': return a.pb - b.pb;
+            case 'pb_desc': return b.pb - a.pb;
+            case 'percentile_asc': return a.percentile - b.percentile;
+            case 'percentile_desc': return b.percentile - a.percentile;
+            default: return a.symbol.localeCompare(b.symbol);
+        }
+    });
+    
+    // Update summary stats
+    updateStocksSummary(filteredStocks);
+    
+    // Render table
+    if (filteredStocks.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="10" class="text-center py-8 text-gray-500">
+                    Không tìm thấy mã cổ phiếu phù hợp
+                </td>
+            </tr>
+        `;
+        return;
+    }
+    
+    tableBody.innerHTML = filteredStocks.map((stock, index) => `
+        <tr class="hover:bg-gray-700/50 cursor-pointer transition-colors" onclick="window.location.href='stock.html?symbol=${stock.symbol}'">
+            <td class="px-3 py-2 text-center text-gray-500 font-mono">${index + 1}</td>
+            <td class="px-3 py-2 font-bold text-blue-400">${stock.symbol}</td>
+            <td class="px-3 py-2 text-gray-400 text-xs">${stock.sectorName}</td>
+            <td class="px-3 py-2 text-right font-mono ${getPBColor(stock.pb, stock.pbAvg)}">${stock.pb.toFixed(2)}</td>
+            <td class="px-3 py-2 text-right font-mono text-gray-500">${stock.pbMin.toFixed(2)}</td>
+            <td class="px-3 py-2 text-right font-mono text-gray-500">${stock.pbMax.toFixed(2)}</td>
+            <td class="px-3 py-2 text-right font-mono text-gray-400">${stock.pbAvg.toFixed(2)}</td>
+            <td class="px-3 py-2 text-center">
+                <span class="px-2 py-1 rounded-full text-xs font-medium ${getZoneClassFromValuation(stock.zone)}">${stock.zoneName}</span>
+            </td>
+            <td class="px-3 py-2 text-right font-mono ${getPercentileColor(stock.percentile)}">${stock.percentile.toFixed(0)}%</td>
+            <td class="px-3 py-2 text-center">
+                <span class="text-xs font-bold ${getSignalColorFromValuation(stock.signal)}">${getSignalTextShort(stock.signal)}</span>
+            </td>
+        </tr>
+    `).join('');
+    
+    // Update pagination info
+    const paginationInfo = document.getElementById('pagination-info');
+    if (paginationInfo) {
+        paginationInfo.textContent = `Hiển thị ${filteredStocks.length} / ${allStocksData.length} mã cổ phiếu`;
+    }
+}
+
+// Update summary counts
+function updateStocksSummary(stocks) {
+    const counts = {
+        total: stocks.length,
+        extremely_cheap: 0,
+        cheap: 0,
+        fair: 0,
+        expensive: 0,
+        extremely_expensive: 0
+    };
+    
+    stocks.forEach(stock => {
+        const zone = stock.zone.toLowerCase();
+        if (zone === 'extremely_cheap' || zone === 'very_cheap') counts.extremely_cheap++;
+        else if (zone === 'cheap') counts.cheap++;
+        else if (zone === 'fair') counts.fair++;
+        else if (zone === 'expensive') counts.expensive++;
+        else if (zone === 'extremely_expensive' || zone === 'very_expensive') counts.extremely_expensive++;
+    });
+    
+    document.getElementById('total-display').textContent = counts.total;
+    document.getElementById('extremely-cheap-count').textContent = counts.extremely_cheap;
+    document.getElementById('cheap-count').textContent = counts.cheap;
+    document.getElementById('fair-count').textContent = counts.fair;
+    document.getElementById('expensive-count').textContent = counts.expensive;
+    document.getElementById('extremely-expensive-count').textContent = counts.extremely_expensive;
+}
+
+// Get P/B color based on comparison with average
+function getPBColor(pb, pbAvg) {
+    if (pb < pbAvg * 0.8) return 'text-green-400';
+    if (pb < pbAvg) return 'text-emerald-400';
+    if (pb < pbAvg * 1.2) return 'text-yellow-400';
+    return 'text-red-400';
+}
+
+// Get percentile color
+function getPercentileColor(percentile) {
+    if (percentile < 10) return 'text-blue-400';
+    if (percentile < 25) return 'text-green-400';
+    if (percentile < 75) return 'text-yellow-400';
+    if (percentile < 90) return 'text-orange-400';
+    return 'text-red-400';
+}
+
+// Get zone class from valuation
+function getZoneClassFromValuation(zone) {
+    const normalizedZone = zone.toLowerCase();
+    switch (normalizedZone) {
+        case 'extremely_cheap':
+        case 'very_cheap':
+            return 'bg-blue-600 text-white';
+        case 'cheap':
+            return 'bg-green-600 text-white';
+        case 'fair':
+            return 'bg-yellow-600 text-black';
+        case 'expensive':
+            return 'bg-orange-600 text-white';
+        case 'extremely_expensive':
+        case 'very_expensive':
+            return 'bg-red-600 text-white';
+        default:
+            return 'bg-gray-600 text-white';
+    }
+}
+
+// Get signal color from valuation
+function getSignalColorFromValuation(signal) {
+    switch (signal) {
+        case 'STRONG_BUY': return 'text-blue-400';
+        case 'BUY': return 'text-green-400';
+        case 'HOLD': return 'text-yellow-400';
+        case 'SELL': return 'text-orange-400';
+        case 'STRONG_SELL': return 'text-red-400';
+        default: return 'text-gray-400';
+    }
+}
+
+// Get short signal text
+function getSignalTextShort(signal) {
+    switch (signal) {
+        case 'STRONG_BUY': return '🔥 MUA MẠNH';
+        case 'BUY': return '🛒 MUA';
+        case 'HOLD': return '⏸️ GIỮ';
+        case 'SELL': return '⚠️ BÁN';
+        case 'STRONG_SELL': return '🚨 BÁN MẠNH';
+        default: return '❓ N/A';
     }
 }
