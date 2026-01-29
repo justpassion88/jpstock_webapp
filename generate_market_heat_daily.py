@@ -114,19 +114,11 @@ def extract_daily_history(sector_id: str) -> List[Dict]:
                     date_pb_map[date] = []
                 date_pb_map[date].append(pb)
     
-    # Lấy mẫu: mỗi tháng lấy 1 điểm (ngày cuối tháng có data)
-    monthly_dates = {}
-    for date in sorted(date_pb_map.keys()):
-        month_key = date[:7]  # YYYY-MM
-        # Luôn lấy ngày cuối trong tháng
-        monthly_dates[month_key] = date
-    
-    # Lấy 60 tháng gần nhất
-    sampled_months = sorted(monthly_dates.keys())[-60:]
+    # Lấy TOÀN BỘ lịch sử theo ngày - không sampling
+    all_dates = sorted(date_pb_map.keys())
     
     daily_history = []
-    for month_key in sampled_months:
-        date = monthly_dates[month_key]
+    for date in all_dates:
         pb_values = date_pb_map[date]
         
         # Chỉ tính nếu có ít nhất 30% total stocks (để đảm bảo đại diện)
@@ -295,7 +287,7 @@ def generate_market_heat():
             'total_sectors': len(sector_heats),
             'total_stocks': total_stocks
         },
-        'history': combined_history[-60:],  # Keep last 60 months
+        'history': combined_history,  # Keep all weekly data points
         'analysis': analysis
     }
     
