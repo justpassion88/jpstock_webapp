@@ -1,15 +1,6 @@
 {
-  "updated_at": "2026-01-29T07:12:07.755034",
+  "updated_at": "2026-01-29T07:20:06.498313",
   "sectors": [
-    {
-      "sector_id": "realestate",
-      "sector_name": "🏠 Bất động sản",
-      "heat_index": 100,
-      "status": "🔥 QUÁ NÓNG",
-      "signal": "🚨 BÁN",
-      "stocks_count": 28,
-      "avg_pb": 1.81
-    },
     {
       "sector_id": "energy",
       "sector_name": "⚡ Điện & Năng lượng",
@@ -17,7 +8,225 @@
       "status": "🔥 QUÁ NÓNG",
       "signal": "🚨 BÁN",
       "stocks_count": 15,
-      "avg_pb": 3.92
+      "avg_pb": 2.04,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.12,
+          "heat_index": 3.2,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 1.09,
+          "heat_index": 0,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 1.1,
+          "heat_index": 1.1,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.16,
+          "heat_index": 7.4,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.23,
+          "heat_index": 14.7,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.26,
+          "heat_index": 17.9,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.36,
+          "heat_index": 28.4,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.33,
+          "heat_index": 25.3,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.31,
+          "heat_index": 23.2,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.17,
+          "heat_index": 8.4,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.27,
+          "heat_index": 18.9,
+          "stocks_count": 18
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.31,
+          "heat_index": 23.2,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.32,
+          "heat_index": 24.2,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.37,
+          "heat_index": 29.5,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.4,
+          "heat_index": 32.6,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.3,
+          "heat_index": 22.1,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.45,
+          "heat_index": 37.9,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.47,
+          "heat_index": 40.0,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.48,
+          "heat_index": 41.1,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.44,
+          "heat_index": 36.8,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.42,
+          "heat_index": 34.7,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.37,
+          "heat_index": 29.5,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.36,
+          "heat_index": 28.4,
+          "stocks_count": 18
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.38,
+          "heat_index": 30.5,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.4,
+          "heat_index": 32.6,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.53,
+          "heat_index": 46.3,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.52,
+          "heat_index": 45.3,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.51,
+          "heat_index": 44.2,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.64,
+          "heat_index": 57.9,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.67,
+          "heat_index": 61.1,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.82,
+          "heat_index": 76.8,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.84,
+          "heat_index": 78.9,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.85,
+          "heat_index": 80.0,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.87,
+          "heat_index": 82.1,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.92,
+          "heat_index": 87.4,
+          "stocks_count": 18
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 2.04,
+          "heat_index": 100,
+          "stocks_count": 18
+        }
+      ]
     },
     {
       "sector_id": "oilgas",
@@ -26,16 +235,225 @@
       "status": "🔥 QUÁ NÓNG",
       "signal": "🚨 BÁN",
       "stocks_count": 8,
-      "avg_pb": 4.52
-    },
-    {
-      "sector_id": "steel",
-      "sector_name": "🏗️ Thép",
-      "heat_index": 100,
-      "status": "🔥 QUÁ NÓNG",
-      "signal": "🚨 BÁN",
-      "stocks_count": 12,
-      "avg_pb": 2.54
+      "avg_pb": 1.58,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 0.83,
+          "heat_index": 7.4,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.79,
+          "heat_index": 2.5,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.77,
+          "heat_index": 0,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 0.91,
+          "heat_index": 17.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.08,
+          "heat_index": 38.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.14,
+          "heat_index": 45.7,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.25,
+          "heat_index": 59.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.22,
+          "heat_index": 55.6,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.25,
+          "heat_index": 59.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.09,
+          "heat_index": 39.5,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.21,
+          "heat_index": 54.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.2,
+          "heat_index": 53.1,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.15,
+          "heat_index": 46.9,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.19,
+          "heat_index": 51.9,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.29,
+          "heat_index": 64.2,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.14,
+          "heat_index": 45.7,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.3,
+          "heat_index": 65.4,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.22,
+          "heat_index": 55.6,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.24,
+          "heat_index": 58.0,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.25,
+          "heat_index": 59.3,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.2,
+          "heat_index": 53.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.1,
+          "heat_index": 40.7,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.09,
+          "heat_index": 39.5,
+          "stocks_count": 9
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.06,
+          "heat_index": 35.8,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.12,
+          "heat_index": 43.2,
+          "stocks_count": 9
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.19,
+          "heat_index": 51.9,
+          "stocks_count": 9
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.04,
+          "heat_index": 33.3,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 0.86,
+          "heat_index": 11.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.41,
+          "heat_index": 79.0,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.56,
+          "heat_index": 97.5,
+          "stocks_count": 8
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.48,
+          "heat_index": 87.7,
+          "stocks_count": 8
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.46,
+          "heat_index": 85.2,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.48,
+          "heat_index": 87.7,
+          "stocks_count": 8
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.38,
+          "heat_index": 75.3,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.48,
+          "heat_index": 87.7,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.58,
+          "heat_index": 100,
+          "stocks_count": 8
+        }
+      ]
     },
     {
       "sector_id": "insurance",
@@ -44,7 +462,452 @@
       "status": "🔥 QUÁ NÓNG",
       "signal": "🚨 BÁN",
       "stocks_count": 6,
-      "avg_pb": 3.29
+      "avg_pb": 1.85,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.27,
+          "heat_index": 7.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 1.22,
+          "heat_index": 0,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 1.28,
+          "heat_index": 9.5,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.24,
+          "heat_index": 3.2,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.27,
+          "heat_index": 7.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.26,
+          "heat_index": 6.3,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.4,
+          "heat_index": 28.6,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.32,
+          "heat_index": 15.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.3,
+          "heat_index": 12.7,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.22,
+          "heat_index": 0,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.27,
+          "heat_index": 7.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.27,
+          "heat_index": 7.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.25,
+          "heat_index": 4.8,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.29,
+          "heat_index": 11.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.31,
+          "heat_index": 14.3,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.38,
+          "heat_index": 25.4,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.53,
+          "heat_index": 49.2,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.54,
+          "heat_index": 50.8,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.56,
+          "heat_index": 54.0,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.52,
+          "heat_index": 47.6,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.47,
+          "heat_index": 39.7,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.46,
+          "heat_index": 38.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.51,
+          "heat_index": 46.0,
+          "stocks_count": 7
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.61,
+          "heat_index": 61.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.54,
+          "heat_index": 50.8,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.62,
+          "heat_index": 63.5,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.58,
+          "heat_index": 57.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.58,
+          "heat_index": 57.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.6,
+          "heat_index": 60.3,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.66,
+          "heat_index": 69.8,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.61,
+          "heat_index": 61.9,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.8,
+          "heat_index": 92.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.8,
+          "heat_index": 92.1,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.77,
+          "heat_index": 87.3,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.79,
+          "heat_index": 90.5,
+          "stocks_count": 7
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.85,
+          "heat_index": 100,
+          "stocks_count": 7
+        }
+      ]
+    },
+    {
+      "sector_id": "realestate",
+      "sector_name": "🏠 Bất động sản",
+      "heat_index": 98.6,
+      "status": "🔥 QUÁ NÓNG",
+      "signal": "🚨 BÁN",
+      "stocks_count": 28,
+      "avg_pb": 1.68,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.1,
+          "heat_index": 18.1,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.97,
+          "heat_index": 0,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 1.02,
+          "heat_index": 6.9,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.09,
+          "heat_index": 16.7,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.19,
+          "heat_index": 30.6,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.2,
+          "heat_index": 31.9,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.38,
+          "heat_index": 56.9,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.39,
+          "heat_index": 58.3,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.25,
+          "heat_index": 38.9,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.05,
+          "heat_index": 11.1,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.21,
+          "heat_index": 33.3,
+          "stocks_count": 37
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.27,
+          "heat_index": 41.7,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.3,
+          "heat_index": 45.8,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.35,
+          "heat_index": 52.8,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.45,
+          "heat_index": 66.7,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.31,
+          "heat_index": 47.2,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.44,
+          "heat_index": 65.3,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.39,
+          "heat_index": 58.3,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.35,
+          "heat_index": 52.8,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.35,
+          "heat_index": 52.8,
+          "stocks_count": 37
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.38,
+          "heat_index": 56.9,
+          "stocks_count": 36
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.31,
+          "heat_index": 47.2,
+          "stocks_count": 36
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.32,
+          "heat_index": 48.6,
+          "stocks_count": 36
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.33,
+          "heat_index": 50.0,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.29,
+          "heat_index": 44.4,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.38,
+          "heat_index": 56.9,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.35,
+          "heat_index": 52.8,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.19,
+          "heat_index": 30.6,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.4,
+          "heat_index": 59.7,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.44,
+          "heat_index": 65.3,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.59,
+          "heat_index": 86.1,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.68,
+          "heat_index": 98.6,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.69,
+          "heat_index": 100,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.67,
+          "heat_index": 97.2,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.69,
+          "heat_index": 100,
+          "stocks_count": 36
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.68,
+          "heat_index": 98.6,
+          "stocks_count": 36
+        }
+      ]
     },
     {
       "sector_id": "banks",
@@ -53,7 +916,231 @@
       "status": "🔥 QUÁ NÓNG",
       "signal": "🚨 BÁN",
       "stocks_count": 17,
-      "avg_pb": 1.66
+      "avg_pb": 1.66,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 0.86,
+          "heat_index": 6.2,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.8,
+          "heat_index": 0,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.85,
+          "heat_index": 5.2,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 0.88,
+          "heat_index": 8.2,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 0.92,
+          "heat_index": 12.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 0.96,
+          "heat_index": 16.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 0.98,
+          "heat_index": 18.6,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.01,
+          "heat_index": 21.6,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 0.97,
+          "heat_index": 17.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 0.89,
+          "heat_index": 9.3,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 0.93,
+          "heat_index": 13.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 0.96,
+          "heat_index": 16.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.04,
+          "heat_index": 24.7,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.13,
+          "heat_index": 34.0,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.12,
+          "heat_index": 33.0,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.08,
+          "heat_index": 28.9,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.12,
+          "heat_index": 33.0,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.1,
+          "heat_index": 30.9,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.15,
+          "heat_index": 36.1,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.18,
+          "heat_index": 39.2,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.25,
+          "heat_index": 46.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.24,
+          "heat_index": 45.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.22,
+          "heat_index": 43.3,
+          "stocks_count": 17
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.28,
+          "heat_index": 49.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.26,
+          "heat_index": 47.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.32,
+          "heat_index": 53.6,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.3,
+          "heat_index": 51.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.25,
+          "heat_index": 46.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.32,
+          "heat_index": 53.6,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.36,
+          "heat_index": 57.7,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.5,
+          "heat_index": 72.2,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.77,
+          "heat_index": 100,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.69,
+          "heat_index": 91.8,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.59,
+          "heat_index": 81.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.56,
+          "heat_index": 78.4,
+          "stocks_count": 17
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.6,
+          "heat_index": 82.5,
+          "stocks_count": 17
+        },
+        {
+          "period": "2026-01-28",
+          "avg_pb": 1.66,
+          "heat_index": 88.7,
+          "stocks_count": 17
+        }
+      ]
     },
     {
       "sector_id": "chemicals",
@@ -62,7 +1149,458 @@
       "status": "🌡️ NÓNG",
       "signal": "⚠️ THẬN TRỌNG",
       "stocks_count": 8,
-      "avg_pb": 1.56
+      "avg_pb": 1.56,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.02,
+          "heat_index": 10.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.94,
+          "heat_index": 0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.95,
+          "heat_index": 1.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 0.98,
+          "heat_index": 5.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.03,
+          "heat_index": 11.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.12,
+          "heat_index": 22.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.21,
+          "heat_index": 33.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.23,
+          "heat_index": 36.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.23,
+          "heat_index": 36.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.07,
+          "heat_index": 16.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.19,
+          "heat_index": 31.2,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.22,
+          "heat_index": 35.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.29,
+          "heat_index": 43.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.44,
+          "heat_index": 62.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.56,
+          "heat_index": 77.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.41,
+          "heat_index": 58.7,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.6,
+          "heat_index": 82.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.58,
+          "heat_index": 80.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.66,
+          "heat_index": 90.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.69,
+          "heat_index": 93.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.7,
+          "heat_index": 95.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.66,
+          "heat_index": 90.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.69,
+          "heat_index": 93.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.74,
+          "heat_index": 100,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.66,
+          "heat_index": 90.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.73,
+          "heat_index": 98.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.62,
+          "heat_index": 85.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.46,
+          "heat_index": 65.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.58,
+          "heat_index": 80.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.65,
+          "heat_index": 88.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.64,
+          "heat_index": 87.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.66,
+          "heat_index": 90.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.58,
+          "heat_index": 80.0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.65,
+          "heat_index": 88.8,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.59,
+          "heat_index": 81.3,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.53,
+          "heat_index": 73.8,
+          "stocks_count": 16
+        },
+        {
+          "period": "2026-01-29",
+          "avg_pb": 1.56,
+          "heat_index": 77.5,
+          "stocks_count": 8
+        }
+      ]
+    },
+    {
+      "sector_id": "steel",
+      "sector_name": "🏗️ Thép",
+      "heat_index": 52.9,
+      "status": "😐 TRUNG LƯỠNG",
+      "signal": "⏸️ QUAN SÁT",
+      "stocks_count": 12,
+      "avg_pb": 1.15,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 0.74,
+          "heat_index": 4.7,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.7,
+          "heat_index": 0,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.7,
+          "heat_index": 0,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 0.78,
+          "heat_index": 9.4,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 0.84,
+          "heat_index": 16.5,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 0.93,
+          "heat_index": 27.1,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 0.92,
+          "heat_index": 25.9,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 0.87,
+          "heat_index": 20.0,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 0.84,
+          "heat_index": 16.5,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 0.73,
+          "heat_index": 3.5,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 0.83,
+          "heat_index": 15.3,
+          "stocks_count": 11
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 0.88,
+          "heat_index": 21.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 0.9,
+          "heat_index": 23.5,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 0.94,
+          "heat_index": 28.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 0.95,
+          "heat_index": 29.4,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 0.88,
+          "heat_index": 21.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.05,
+          "heat_index": 41.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.09,
+          "heat_index": 45.9,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.09,
+          "heat_index": 45.9,
+          "stocks_count": 10
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.14,
+          "heat_index": 51.8,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.06,
+          "heat_index": 42.4,
+          "stocks_count": 10
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.01,
+          "heat_index": 36.5,
+          "stocks_count": 10
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.13,
+          "heat_index": 50.6,
+          "stocks_count": 11
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.03,
+          "heat_index": 38.8,
+          "stocks_count": 9
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.22,
+          "heat_index": 61.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.35,
+          "heat_index": 76.5,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.03,
+          "heat_index": 38.8,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.02,
+          "heat_index": 37.6,
+          "stocks_count": 9
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.2,
+          "heat_index": 58.8,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.08,
+          "heat_index": 44.7,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.19,
+          "heat_index": 57.6,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.39,
+          "heat_index": 81.2,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.23,
+          "heat_index": 62.4,
+          "stocks_count": 10
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.37,
+          "heat_index": 78.8,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.55,
+          "heat_index": 100,
+          "stocks_count": 11
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.15,
+          "heat_index": 52.9,
+          "stocks_count": 10
+        }
+      ]
     },
     {
       "sector_id": "securities",
@@ -71,7 +1609,231 @@
       "status": "😐 TRUNG LƯỠNG",
       "signal": "⏸️ QUAN SÁT",
       "stocks_count": 12,
-      "avg_pb": 1.54
+      "avg_pb": 1.54,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.0,
+          "heat_index": 8.1,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.9,
+          "heat_index": 0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.97,
+          "heat_index": 5.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.08,
+          "heat_index": 14.6,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.22,
+          "heat_index": 26.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.28,
+          "heat_index": 30.9,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.4,
+          "heat_index": 40.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.52,
+          "heat_index": 50.4,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.44,
+          "heat_index": 43.9,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.16,
+          "heat_index": 21.1,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.4,
+          "heat_index": 40.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.47,
+          "heat_index": 46.3,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.55,
+          "heat_index": 52.8,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.68,
+          "heat_index": 63.4,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.83,
+          "heat_index": 75.6,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.69,
+          "heat_index": 64.2,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.87,
+          "heat_index": 78.9,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.77,
+          "heat_index": 70.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.63,
+          "heat_index": 59.3,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.7,
+          "heat_index": 65.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.72,
+          "heat_index": 66.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.63,
+          "heat_index": 59.3,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.61,
+          "heat_index": 57.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.65,
+          "heat_index": 61.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.65,
+          "heat_index": 61.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.79,
+          "heat_index": 72.4,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.75,
+          "heat_index": 69.1,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.5,
+          "heat_index": 48.8,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.61,
+          "heat_index": 57.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.65,
+          "heat_index": 61.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.9,
+          "heat_index": 81.3,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 2.13,
+          "heat_index": 100,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.95,
+          "heat_index": 85.4,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.75,
+          "heat_index": 69.1,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.65,
+          "heat_index": 61.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.61,
+          "heat_index": 57.7,
+          "stocks_count": 22
+        },
+        {
+          "period": "2026-01-29",
+          "avg_pb": 1.54,
+          "heat_index": 52.0,
+          "stocks_count": 10
+        }
+      ]
     },
     {
       "sector_id": "retail",
@@ -80,7 +1842,231 @@
       "status": "😐 TRUNG LƯỠNG",
       "signal": "⏸️ QUAN SÁT",
       "stocks_count": 10,
-      "avg_pb": 2.14
+      "avg_pb": 2.14,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.92,
+          "heat_index": 23.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 1.72,
+          "heat_index": 3.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 1.69,
+          "heat_index": 0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.82,
+          "heat_index": 13.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.83,
+          "heat_index": 14.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.96,
+          "heat_index": 27.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 2.15,
+          "heat_index": 46.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 2.17,
+          "heat_index": 48.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 2.12,
+          "heat_index": 43.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.89,
+          "heat_index": 20.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 2.08,
+          "heat_index": 39.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 2.18,
+          "heat_index": 49.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 2.12,
+          "heat_index": 43.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 2.3,
+          "heat_index": 61.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 2.4,
+          "heat_index": 71.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 2.34,
+          "heat_index": 65.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 2.54,
+          "heat_index": 85.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 2.5,
+          "heat_index": 81.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 2.42,
+          "heat_index": 73.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 2.51,
+          "heat_index": 82.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 2.5,
+          "heat_index": 81.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 2.42,
+          "heat_index": 73.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 2.4,
+          "heat_index": 71.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 2.46,
+          "heat_index": 77.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 2.37,
+          "heat_index": 68.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 2.33,
+          "heat_index": 64.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 2.21,
+          "heat_index": 52.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 2.13,
+          "heat_index": 44.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 2.21,
+          "heat_index": 52.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 2.36,
+          "heat_index": 67.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 2.45,
+          "heat_index": 76.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 2.47,
+          "heat_index": 78.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 2.4,
+          "heat_index": 71.0,
+          "stocks_count": 23
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 2.64,
+          "heat_index": 95.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 2.64,
+          "heat_index": 95.0,
+          "stocks_count": 22
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 2.69,
+          "heat_index": 100,
+          "stocks_count": 22
+        },
+        {
+          "period": "2026-01-29",
+          "avg_pb": 2.14,
+          "heat_index": 45.0,
+          "stocks_count": 13
+        }
+      ]
     },
     {
       "sector_id": "technology",
@@ -89,7 +2075,231 @@
       "status": "🌤️ MÁT",
       "signal": "✅ XEM XÉT",
       "stocks_count": 8,
-      "avg_pb": 1.97
+      "avg_pb": 1.97,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.25,
+          "heat_index": 4.4,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 1.17,
+          "heat_index": 0,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 1.18,
+          "heat_index": 0.6,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.21,
+          "heat_index": 2.2,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.29,
+          "heat_index": 6.6,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.33,
+          "heat_index": 8.8,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.53,
+          "heat_index": 19.9,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.62,
+          "heat_index": 24.9,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.58,
+          "heat_index": 22.7,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 1.39,
+          "heat_index": 12.2,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 1.54,
+          "heat_index": 20.4,
+          "stocks_count": 15
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 1.63,
+          "heat_index": 25.4,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.7,
+          "heat_index": 29.3,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.86,
+          "heat_index": 38.1,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 2.03,
+          "heat_index": 47.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 2.12,
+          "heat_index": 52.5,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 2.53,
+          "heat_index": 75.1,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 2.77,
+          "heat_index": 88.4,
+          "stocks_count": 15
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 2.39,
+          "heat_index": 67.4,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 2.35,
+          "heat_index": 65.2,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 2.33,
+          "heat_index": 64.1,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 2.35,
+          "heat_index": 65.2,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 2.73,
+          "heat_index": 86.2,
+          "stocks_count": 16
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 2.78,
+          "heat_index": 89.0,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 2.98,
+          "heat_index": 100,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 2.82,
+          "heat_index": 91.2,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 2.56,
+          "heat_index": 76.8,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 2.29,
+          "heat_index": 61.9,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 2.39,
+          "heat_index": 67.4,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 2.52,
+          "heat_index": 74.6,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 2.5,
+          "heat_index": 73.5,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 2.44,
+          "heat_index": 70.2,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 2.37,
+          "heat_index": 66.3,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 2.5,
+          "heat_index": 73.5,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 2.34,
+          "heat_index": 64.6,
+          "stocks_count": 16
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 2.32,
+          "heat_index": 63.5,
+          "stocks_count": 16
+        },
+        {
+          "period": "2026-01-29",
+          "avg_pb": 1.97,
+          "heat_index": 44.2,
+          "stocks_count": 8
+        }
+      ]
     },
     {
       "sector_id": "construction",
@@ -98,13 +2308,237 @@
       "status": "🌤️ MÁT",
       "signal": "✅ XEM XÉT",
       "stocks_count": 10,
-      "avg_pb": 1.72
+      "avg_pb": 1.72,
+      "history": [
+        {
+          "period": "2023-01-31",
+          "avg_pb": 1.01,
+          "heat_index": 4.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-02-28",
+          "avg_pb": 0.91,
+          "heat_index": 0,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-03-31",
+          "avg_pb": 0.94,
+          "heat_index": 1.3,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-04-28",
+          "avg_pb": 1.31,
+          "heat_index": 17.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-05-31",
+          "avg_pb": 1.44,
+          "heat_index": 23.3,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-06-30",
+          "avg_pb": 1.52,
+          "heat_index": 26.9,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-07-31",
+          "avg_pb": 1.66,
+          "heat_index": 33.0,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-08-31",
+          "avg_pb": 1.72,
+          "heat_index": 35.7,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-09-29",
+          "avg_pb": 1.55,
+          "heat_index": 28.2,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-10-31",
+          "avg_pb": 2.69,
+          "heat_index": 78.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-11-30",
+          "avg_pb": 3.15,
+          "heat_index": 98.7,
+          "stocks_count": 19
+        },
+        {
+          "period": "2023-12-29",
+          "avg_pb": 3.18,
+          "heat_index": 100,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-01-31",
+          "avg_pb": 1.39,
+          "heat_index": 21.1,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-02-29",
+          "avg_pb": 1.45,
+          "heat_index": 23.8,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-03-29",
+          "avg_pb": 1.6,
+          "heat_index": 30.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-04-26",
+          "avg_pb": 1.35,
+          "heat_index": 19.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-05-31",
+          "avg_pb": 1.49,
+          "heat_index": 25.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-06-28",
+          "avg_pb": 1.46,
+          "heat_index": 24.2,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-07-31",
+          "avg_pb": 1.42,
+          "heat_index": 22.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-08-30",
+          "avg_pb": 1.4,
+          "heat_index": 21.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-09-30",
+          "avg_pb": 1.4,
+          "heat_index": 21.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-10-31",
+          "avg_pb": 1.33,
+          "heat_index": 18.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-11-29",
+          "avg_pb": 1.32,
+          "heat_index": 18.1,
+          "stocks_count": 19
+        },
+        {
+          "period": "2024-12-31",
+          "avg_pb": 1.4,
+          "heat_index": 21.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-01-24",
+          "avg_pb": 1.39,
+          "heat_index": 21.1,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-02-28",
+          "avg_pb": 1.42,
+          "heat_index": 22.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-03-31",
+          "avg_pb": 1.33,
+          "heat_index": 18.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-04-29",
+          "avg_pb": 1.17,
+          "heat_index": 11.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-05-30",
+          "avg_pb": 1.26,
+          "heat_index": 15.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-06-30",
+          "avg_pb": 1.35,
+          "heat_index": 19.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-07-31",
+          "avg_pb": 1.33,
+          "heat_index": 18.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-08-29",
+          "avg_pb": 1.38,
+          "heat_index": 20.7,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-09-30",
+          "avg_pb": 1.42,
+          "heat_index": 22.5,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-10-31",
+          "avg_pb": 1.43,
+          "heat_index": 22.9,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-11-28",
+          "avg_pb": 1.4,
+          "heat_index": 21.6,
+          "stocks_count": 19
+        },
+        {
+          "period": "2025-12-31",
+          "avg_pb": 1.35,
+          "heat_index": 19.4,
+          "stocks_count": 19
+        },
+        {
+          "period": "2026-01-29",
+          "avg_pb": 1.72,
+          "heat_index": 35.7,
+          "stocks_count": 9
+        }
+      ]
     }
   ],
   "market_heat": {
-    "heat_index": 80.7,
+    "heat_index": 76.2,
     "status": "🌡️ NÓNG",
-    "signal": "🚨 BÁN",
+    "signal": "⚠️ THẬN TRỌNG",
     "total_sectors": 11,
     "total_stocks": 134
   },
@@ -112,200 +2546,232 @@
     {
       "period": "2023-01-31",
       "avg_pb": 1.1,
-      "heat_index": 10.5
+      "heat_index": 16.2,
+      "sectors_count": 11
     },
     {
       "period": "2023-02-28",
       "avg_pb": 1.02,
-      "heat_index": 8.4
+      "heat_index": 12.9,
+      "sectors_count": 11
     },
     {
       "period": "2023-03-31",
       "avg_pb": 1.04,
-      "heat_index": 8.9
+      "heat_index": 13.7,
+      "sectors_count": 11
     },
     {
       "period": "2023-04-28",
       "avg_pb": 1.13,
-      "heat_index": 11.3
+      "heat_index": 17.4,
+      "sectors_count": 11
     },
     {
       "period": "2023-05-31",
       "avg_pb": 1.21,
-      "heat_index": 13.4
+      "heat_index": 20.7,
+      "sectors_count": 11
     },
     {
       "period": "2023-06-30",
       "avg_pb": 1.27,
-      "heat_index": 14.9
+      "heat_index": 22.9,
+      "sectors_count": 11
     },
     {
       "period": "2023-07-31",
       "avg_pb": 1.39,
-      "heat_index": 17.9
+      "heat_index": 27.6,
+      "sectors_count": 11
     },
     {
       "period": "2023-08-31",
       "avg_pb": 1.4,
-      "heat_index": 18.3
+      "heat_index": 28.2,
+      "sectors_count": 11
     },
     {
       "period": "2023-09-29",
       "avg_pb": 1.35,
-      "heat_index": 17.0
+      "heat_index": 26.2,
+      "sectors_count": 11
     },
     {
       "period": "2023-10-31",
       "avg_pb": 1.3,
-      "heat_index": 15.8
+      "heat_index": 24.4,
+      "sectors_count": 11
     },
     {
       "period": "2023-11-30",
       "avg_pb": 1.46,
-      "heat_index": 19.9
+      "heat_index": 30.7,
+      "sectors_count": 11
     },
     {
       "period": "2023-12-29",
       "avg_pb": 1.51,
-      "heat_index": 21.1
+      "heat_index": 32.5,
+      "sectors_count": 11
     },
     {
       "period": "2024-01-31",
       "avg_pb": 1.36,
-      "heat_index": 17.4
+      "heat_index": 26.8,
+      "sectors_count": 11
     },
     {
       "period": "2024-02-29",
       "avg_pb": 1.45,
-      "heat_index": 19.8
+      "heat_index": 30.4,
+      "sectors_count": 11
     },
     {
       "period": "2024-03-29",
       "avg_pb": 1.54,
-      "heat_index": 22.0
+      "heat_index": 33.9,
+      "sectors_count": 11
     },
     {
       "period": "2024-04-26",
       "avg_pb": 1.45,
-      "heat_index": 19.8
+      "heat_index": 30.4,
+      "sectors_count": 11
     },
     {
       "period": "2024-05-31",
       "avg_pb": 1.63,
-      "heat_index": 24.3
+      "heat_index": 37.5,
+      "sectors_count": 11
     },
     {
       "period": "2024-06-28",
       "avg_pb": 1.63,
-      "heat_index": 24.3
+      "heat_index": 37.4,
+      "sectors_count": 11
     },
     {
       "period": "2024-07-31",
       "avg_pb": 1.58,
-      "heat_index": 23.1
+      "heat_index": 35.5,
+      "sectors_count": 11
     },
     {
       "period": "2024-08-30",
       "avg_pb": 1.59,
-      "heat_index": 23.4
+      "heat_index": 36.0,
+      "sectors_count": 11
     },
     {
       "period": "2024-09-30",
       "avg_pb": 1.58,
-      "heat_index": 23.2
+      "heat_index": 35.7,
+      "sectors_count": 11
     },
     {
       "period": "2024-10-31",
       "avg_pb": 1.53,
-      "heat_index": 21.8
+      "heat_index": 33.7,
+      "sectors_count": 11
     },
     {
       "period": "2024-11-29",
       "avg_pb": 1.58,
-      "heat_index": 23.0
+      "heat_index": 35.5,
+      "sectors_count": 11
     },
     {
       "period": "2024-12-31",
       "avg_pb": 1.61,
-      "heat_index": 23.8
+      "heat_index": 36.7,
+      "sectors_count": 11
     },
     {
       "period": "2025-01-24",
       "avg_pb": 1.63,
-      "heat_index": 24.2
+      "heat_index": 37.3,
+      "sectors_count": 11
     },
     {
       "period": "2025-02-28",
       "avg_pb": 1.68,
-      "heat_index": 25.7
+      "heat_index": 39.5,
+      "sectors_count": 11
     },
     {
       "period": "2025-03-31",
       "avg_pb": 1.57,
-      "heat_index": 22.8
+      "heat_index": 35.2,
+      "sectors_count": 11
     },
     {
       "period": "2025-04-29",
       "avg_pb": 1.45,
-      "heat_index": 19.7
+      "heat_index": 30.3,
+      "sectors_count": 11
     },
     {
       "period": "2025-05-30",
       "avg_pb": 1.6,
-      "heat_index": 23.6
+      "heat_index": 36.4,
+      "sectors_count": 11
     },
     {
       "period": "2025-06-30",
       "avg_pb": 1.66,
-      "heat_index": 25.2
+      "heat_index": 38.9,
+      "sectors_count": 11
     },
     {
       "period": "2025-07-31",
       "avg_pb": 1.73,
-      "heat_index": 26.9
+      "heat_index": 41.5,
+      "sectors_count": 11
     },
     {
       "period": "2025-08-29",
       "avg_pb": 1.82,
-      "heat_index": 29.3
+      "heat_index": 45.2,
+      "sectors_count": 11
     },
     {
       "period": "2025-09-30",
       "avg_pb": 1.77,
-      "heat_index": 28.0
+      "heat_index": 43.1,
+      "sectors_count": 11
     },
     {
       "period": "2025-10-31",
       "avg_pb": 1.78,
-      "heat_index": 28.4
+      "heat_index": 43.7,
+      "sectors_count": 11
     },
     {
       "period": "2025-11-28",
       "avg_pb": 1.78,
-      "heat_index": 28.3
+      "heat_index": 43.7,
+      "sectors_count": 11
     },
     {
       "period": "2025-12-31",
       "avg_pb": 1.76,
-      "heat_index": 27.8
-    },
-    {
-      "period": "2026-01-28",
-      "avg_pb": 1.66,
-      "heat_index": 25.1
+      "heat_index": 42.9,
+      "sectors_count": 11
     },
     {
       "period": "2026-01-29",
-      "avg_pb": 2.5,
-      "heat_index": 47.1
+      "avg_pb": 1.79,
+      "heat_index": 43.8,
+      "sectors_count": 5
     }
   ],
   "analysis": {
-    "max_heat": 47.1,
-    "min_heat": 8.4,
-    "avg_heat": 21.7,
-    "current_vs_avg": 59.0,
+    "max_heat": 45.2,
+    "min_heat": 12.9,
+    "avg_heat": 32.6,
+    "current_vs_avg": 43.6,
     "recent_trend": "tăng",
-    "volatility": 6.7
+    "volatility": 4.5
   }
 }

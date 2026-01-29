@@ -81,7 +81,7 @@ def load_sector_data(sector_id: str) -> Dict:
 
 
 def extract_daily_history(sector_id: str) -> List[Dict]:
-    """Trích xuất lịch sử P/B daily từ sector data"""
+    """Trích xuất lịch sử P/B daily từ sector data - Tính với stocks có sẵn tại mỗi thời điểm"""
     daily_file = DATA_DIR / f"{sector_id}_daily.json"
     
     if not daily_file.exists():
@@ -90,49 +90,55 @@ def extract_daily_history(sector_id: str) -> List[Dict]:
     with open(daily_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
-    # Tập hợp tất cả các ngày có dữ liệu
-    all_dates = set()
     stocks = data.get('stocks', {})
+    if not isinstance(stocks, dict):
+        return []
     
-    if isinstance(stocks, dict):
-        for stock_data in stocks.values():
-            if isinstance(stock_data, dict):
-                daily_data = stock_data.get('daily_data', [])
-                for day in daily_data:
-                    if isinstance(day, dict) and 'date' in day:
-                        all_dates.add(day['date'])
+    # Build một dict: date -> list of P/B values từ các stocks có data
+    date_pb_map = {}
     
-    # Sort dates
-    sorted_dates = sorted(all_dates)
+    for stock_data in stocks.values():
+        if not isinstance(stock_data, dict):
+            continue
+        
+        daily_data = stock_data.get('daily_data', [])
+        for day in daily_data:
+            if not isinstance(day, dict):
+                continue
+            
+            date = day.get('date')
+            pb = day.get('pb')
+            
+            if date and pb and pb > 0:
+                if date not in date_pb_map:
+                    date_pb_map[date] = []
+                date_pb_map[date].append(pb)
     
-    # Tính P/B trung bình cho mỗi ngày
-    daily_history = []
-    
-    # Lấy mẫu: mỗi tháng lấy 1 điểm (ngày cuối tháng)
+    # Lấy mẫu: mỗi tháng lấy 1 điểm (ngày cuối tháng có data)
     monthly_dates = {}
-    for date in sorted_dates:
+    for date in sorted(date_pb_map.keys()):
         month_key = date[:7]  # YYYY-MM
+        # Luôn lấy ngày cuối trong tháng
         monthly_dates[month_key] = date
     
-    sampled_dates = list(monthly_dates.values())[-60:]  # Lấy 60 tháng gần nhất
+    # Lấy 60 tháng gần nhất
+    sampled_months = sorted(monthly_dates.keys())[-60:]
     
-    for date in sampled_dates:
-        pb_values = []
+    daily_history = []
+    for month_key in sampled_months:
+        date = monthly_dates[month_key]
+        pb_values = date_pb_map[date]
         
-        for stock_data in stocks.values():
-            if isinstance(stock_data, dict):
-                daily_data = stock_data.get('daily_data', [])
-                # Tìm P/B cho ngày này
-                for day in daily_data:
-                    if isinstance(day, dict) and day.get('date') == date and day.get('pb') and day['pb'] > 0:
-                        pb_values.append(day['pb'])
-                        break
+        # Chỉ tính nếu có ít nhất 30% total stocks (để đảm bảo đại diện)
+        # Hoặc ít nhất 5 stocks
+        min_stocks_required = max(5, len(stocks) * 0.3) if len(stocks) > 0 else 5
         
-        if pb_values:
+        if len(pb_values) >= min_stocks_required:
             avg_pb = statistics.mean(pb_values)
             daily_history.append({
                 'date': date,
-                'avg_pb': round(avg_pb, 2)
+                'avg_pb': round(avg_pb, 2),
+                'stocks_count': len(pb_values)
             })
     
     return daily_history
@@ -157,21 +163,31 @@ def generate_market_heat():
         # Extract daily history để tính stats
         history = extract_daily_history(sector_id)
         
-        if not history:
-            print(f"  ⚠️  {sector_name}: Không có lịch sử P/B")
+        if not history or len(history) < 2:
+            print(f"  ⚠️  {sector_name}: Không đủ lịch sử P/B (có {len(history)})")
             continue
         
         # Tính stats từ history
         all_pb = [h['avg_pb'] for h in history]
-        avg_pb = statistics.mean(all_pb)
         max_pb = max(all_pb)
         min_pb = min(all_pb)
         
         # P/B hiện tại (cuối cùng trong history)
-        current_pb = history[-1]['avg_pb'] if history else avg_pb
+        current_pb = history[-1]['avg_pb']
         
         # Tính heat index
         heat_index = calculate_heat_index(current_pb, max_pb, min_pb)
+        
+        # Tính heat_index cho từng điểm trong history
+        history_with_heat = []
+        for h in history:
+            h_heat = calculate_heat_index(h['avg_pb'], max_pb, min_pb)
+            history_with_heat.append({
+                'period': h['date'],
+                'avg_pb': h['avg_pb'],
+                'heat_index': h_heat,
+                'stocks_count': h.get('stocks_count', 0)
+            })
         
         sector_heats.append({
             'sector_id': sector_id,
@@ -180,15 +196,16 @@ def generate_market_heat():
             'status': get_heat_status(heat_index),
             'signal': get_signal(heat_index),
             'stocks_count': summary.get('total_stocks', 0),
-            'avg_pb': current_pb
+            'avg_pb': current_pb,
+            'history': history_with_heat  # Thêm history vào từng sector
         })
         
         all_histories.append({
             'sector_id': sector_id,
-            'history': history
+            'history': history_with_heat
         })
         
-        print(f"  ✓ {sector_name}: Heat={heat_index:.1f} (P/B: {current_pb:.2f}, Min: {min_pb:.2f}, Max: {max_pb:.2f})")
+        print(f"  ✓ {sector_name}: Heat={heat_index:.1f} (P/B: {current_pb:.2f}, Min: {min_pb:.2f}, Max: {max_pb:.2f}, History: {len(history_with_heat)} points)")
     
     # Calculate market heat (weighted average)
     total_stocks = sum(s['stocks_count'] for s in sector_heats)
@@ -200,58 +217,60 @@ def generate_market_heat():
     
     market_heat_index = round(weighted_heat, 1)
     
-    # Generate combined history (average of all sectors)
+    # Generate combined history (average of all sectors) - Tính với sectors có sẵn tại mỗi thời điểm
     combined_history = []
     
     if all_histories:
-        # Tìm tất cả các ngày chung
-        all_dates = set()
+        # Build một dict: date -> list of P/B values từ các sectors có data
+        date_sector_map = {}
+        
         for sector_hist in all_histories:
             for entry in sector_hist['history']:
-                all_dates.add(entry['date'])
-        
-        sorted_dates = sorted(all_dates)
-        
-        for date in sorted_dates:
-            pb_values = []
-            
-            for sector_hist in all_histories:
-                for entry in sector_hist['history']:
-                    if entry['date'] == date:
-                        pb_values.append(entry['avg_pb'])
-                        break
-            
-            if pb_values:
-                avg_pb = statistics.mean(pb_values)
+                date = entry['period']
+                pb = entry['avg_pb']
                 
-                # Calculate heat từ P/B
-                all_pb = []
-                for sector_hist in all_histories:
-                    for entry in sector_hist['history']:
-                        all_pb.append(entry['avg_pb'])
+                if date not in date_sector_map:
+                    date_sector_map[date] = []
+                date_sector_map[date].append(pb)
+        
+        # Sort dates
+        sorted_dates = sorted(date_sector_map.keys())
+        
+        # Tính stats cho toàn bộ history để có min/max
+        all_pb_all_time = []
+        for pb_list in date_sector_map.values():
+            all_pb_all_time.extend(pb_list)
+        
+        if all_pb_all_time:
+            max_pb = max(all_pb_all_time)
+            min_pb = min(all_pb_all_time)
+            
+            # Tính cho từng ngày với sectors có sẵn
+            for date in sorted_dates:
+                pb_values = date_sector_map[date]
                 
-                if all_pb:
-                    max_pb = max(all_pb)
-                    min_pb = min(all_pb)
+                # Chỉ tính nếu có ít nhất 3 sectors (đại diện tốt hơn)
+                if len(pb_values) >= 3:
+                    avg_pb = statistics.mean(pb_values)
                     heat_index = calculate_heat_index(avg_pb, max_pb, min_pb)
-                else:
-                    heat_index = 50.0
-                
-                combined_history.append({
-                    'period': date,
-                    'avg_pb': round(avg_pb, 2),
-                    'heat_index': heat_index
-                })
+                    
+                    combined_history.append({
+                        'period': date,
+                        'avg_pb': round(avg_pb, 2),
+                        'heat_index': heat_index,
+                        'sectors_count': len(pb_values)
+                    })
     
     # Analysis
     if combined_history:
-        recent_heat = [h['heat_index'] for h in combined_history[-12:]]  # 12 tháng gần nhất
+        all_heat = [h['heat_index'] for h in combined_history]
+        recent_heat = all_heat[-12:]  # 12 tháng gần nhất
         
         analysis = {
-            'max_heat': round(max(h['heat_index'] for h in combined_history), 1),
-            'min_heat': round(min(h['heat_index'] for h in combined_history), 1),
-            'avg_heat': round(statistics.mean([h['heat_index'] for h in combined_history]), 1),
-            'current_vs_avg': round(market_heat_index - statistics.mean([h['heat_index'] for h in combined_history]), 1),
+            'max_heat': round(max(all_heat), 1),
+            'min_heat': round(min(all_heat), 1),
+            'avg_heat': round(statistics.mean(all_heat), 1),
+            'current_vs_avg': round(market_heat_index - statistics.mean(all_heat), 1),
             'recent_trend': 'tăng' if len(recent_heat) >= 2 and recent_heat[-1] > recent_heat[0] else 'giảm',
             'volatility': round(statistics.stdev(recent_heat) if len(recent_heat) >= 2 else 0, 1)
         }
