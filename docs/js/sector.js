@@ -242,7 +242,7 @@ function calculateHeatFromStocks(stocks) {
     
     stocks.forEach(stock => {
         const percentile = stock.valuation?.percentile;
-        const pb = stock.current?.pb;
+        const pb = stock.current?.pb_vnstock || stock.current?.pb_calculated || stock.current?.pb;
         
         if (percentile !== undefined && percentile !== null) {
             totalPercentile += percentile;
@@ -292,9 +292,9 @@ function countExpensiveStocks() {
 }
 
 function calculateAvgPB() {
-    const validStocks = allStocks.filter(s => s.current?.pb);
+    const validStocks = allStocks.filter(s => s.current?.pb_vnstock || s.current?.pb_calculated || s.current?.pb);
     if (validStocks.length === 0) return 0;
-    return validStocks.reduce((sum, s) => sum + s.current.pb, 0) / validStocks.length;
+    return validStocks.reduce((sum, s) => sum + (s.current.pb_vnstock || s.current.pb_calculated || s.current.pb), 0) / validStocks.length;
 }
 
 // Get signal from heat index
@@ -637,7 +637,7 @@ function createStockCard(stock) {
                      zoneVi.includes('HỢP') ? '#F59E0B' : '#6B7280';
     
     // P/B values
-    const currentPb = stock.current?.pb?.toFixed(2) || stock.current_pb?.toFixed(2) || 'N/A';
+    const currentPb = (stock.current?.pb_vnstock || stock.current?.pb_calculated || stock.current?.pb || stock.current_pb)?.toFixed(2) || 'N/A';
     const avgPb = stats.mean?.toFixed(2) || 'N/A';
     
     // Percentile
@@ -799,8 +799,8 @@ function sortStocks(field) {
                 valB = getRiskScore(b);
                 return valA - valB;
             case 'current_pb':
-                valA = a.current?.pb || a.current_pb || 0;
-                valB = b.current?.pb || b.current_pb || 0;
+                valA = a.current?.pb_vnstock || a.current?.pb_calculated || a.current?.pb || a.current_pb || 0;
+                valB = b.current?.pb_vnstock || b.current?.pb_calculated || b.current?.pb || b.current_pb || 0;
                 return valA - valB;
             default:
                 return (a.valuation?.percentile ?? 50) - (b.valuation?.percentile ?? 50);
