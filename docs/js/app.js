@@ -1,6 +1,7 @@
 /**
  * JP Stock Webapp - Dashboard V2
- * Phân tích P/B với Historical Backtest
+ * Phân tích P/B với Daily Data & Historical Backtest
+ * Updated: 2026-01-29 - Sử dụng Daily P/B Data
  */
 
 let banksData = null;
@@ -10,7 +11,7 @@ let sectorHeat = null;
 async function loadBanks() {
     try {
         const [banksRes, heatRes] = await Promise.all([
-            fetch('data/banks_v2.json'),
+            fetch('data/banks_daily_summary.json'),
             fetch('data/sector_heat.json').catch(() => null)
         ]);
         
@@ -21,7 +22,7 @@ async function loadBanks() {
         
         displayHeatIndex();
         displaySummary(banksData);
-        displayBankList(banksData.banks);
+        displayBankList(banksData.stocks || banksData.banks);
     } catch (error) {
         console.error('Error loading banks:', error);
         document.getElementById('bank-list').innerHTML = `
@@ -510,15 +511,21 @@ function createBankCard(bank) {
     `;
 }
 
+// Get banks/stocks from data (supports both formats)
+function getBanks() {
+    return banksData?.stocks || banksData?.banks || {};
+}
+
 // Filter by zone
 function filterByZone(zone, btn) {
     if (!banksData) return;
+    const banks = getBanks();
     
     if (zone === 'all') {
-        displayBankList(banksData.banks);
+        displayBankList(banks);
     } else {
         const filtered = {};
-        Object.entries(banksData.banks).forEach(([symbol, bank]) => {
+        Object.entries(banks).forEach(([symbol, bank]) => {
             if (bank.valuation?.zone === zone) {
                 filtered[symbol] = bank;
             }
@@ -537,7 +544,7 @@ function filterByZone(zone, btn) {
 function sortBanks(field) {
     if (!banksData) return;
     
-    const banks = Object.values(banksData.banks);
+    const banks = Object.values(getBanks());
     
     banks.sort((a, b) => {
         let valA, valB;

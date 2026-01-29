@@ -1,0 +1,230 @@
+nohup: ignoring input
+======================================================================
+JP Stock Webapp - Fetch ALL Sectors Daily P/B Data
+Data Source: VCI
+Started at: 2026-01-29 00:03:59
+======================================================================
+
+Total sectors: 11
+Total stocks: 134
+
+============================================================
+SECTOR: 🏦 NGÂN HÀNG
+Symbols: 17
+============================================================
+  [1/17] VCB (VCB)... 📦 Vnii 0.1.9 is available (subscription)
+Current version: 0.1.2
+Update: pip install --upgrade --extra-index-url https://vnstocks.com/api/simple vnii
+✅ Authentication successful: Just Passion
+✓ 751 days, P/B=2.85
+  [2/17] BID (BID)... ✓ 751 days, P/B=2.35
+  [3/17] CTG (CTG)... ✓ 751 days, P/B=1.91
+  [4/17] TCB (TCB)... ✓ 751 days, P/B=1.44
+  [5/17] MBB (MBB)... ✓ 751 days, P/B=1.68
+  [6/17] VPB (VPB)... ✓ 751 days, P/B=1.31
+  [7/17] ACB (ACB)... ✓ 751 days, P/B=1.30
+  [8/17] HDB (HDB)... ✓ 751 days, P/B=1.99
+  [9/17] STB (STB)... ✓ 751 days, P/B=1.63
+  [10/17] TPB (TPB)... ✓ 751 days, P/B=1.21
+  [11/17] SHB (SHB)... ✓ 751 days, P/B=1.17
+  [12/17] LPB (LPB)... ✓ 751 days, P/B=2.66
+  [13/17] MSB (MSB)... ✓ 751 days, P/B=0.97
+  [14/17] OCB (OCB)... ✓ 751 days, P/B=0.99
+  [15/17] EIB (EIB)... ✓ 751 days, P/B=1.62
+  [16/17] NAB (NAB)... ✓ 745 days, P/B=1.16
+  [17/17] BAF (BAF)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/banks_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/banks_daily_summary.json
+
+============================================================
+SECTOR: 🏠 BẤT ĐỘNG SẢN
+Symbols: 28
+============================================================
+  [1/28] VHM (VHM)... ✗ No data
+  [2/28] VIC (VIC)... ✗ No data
+  [3/28] NVL (NVL)... ✗ No data
+  [4/28] PDR (PDR)... ✗ No data
+  [5/28] DXG (DXG)... ✗ No data
+  [6/28] KDH (KDH)... ✗ No data
+  [7/28] NLG (NLG)... ✗ No data
+  [8/28] DIG (DIG)... ✗ No data
+  [9/28] CEO (CEO)... ✗ No data
+  [10/28] KBC (KBC)... ✗ No data
+  [11/28] BCM (BCM)... ✗ No data
+  [12/28] IDC (IDC)... ✗ No data
+  [13/28] ITA (ITA)... ✗ No data
+  [14/28] HDC (HDC)... ✗ No data
+  [15/28] LDG (LDG)... ✗ No data
+  [16/28] NBB (NBB)... ✗ No data
+  [17/28] TDC (TDC)... ✗ No data
+  [18/28] VRE (VRE)... ✗ No data
+  [19/28] SCR (SCR)... ✗ No data
+  [20/28] HPX (HPX)... ✗ No data
+  [21/28] DXS (DXS)... ✗ No data
+  [22/28] DPG (DPG)... ✗ No data
+  [23/28] DHA (DHA)... ✗ No data
+  [24/28] NHA (NHA)... ✗ No data
+  [25/28] CRE (CRE)... ✗ No data
+  [26/28] IJC (IJC)... ✗ No data
+  [27/28] KHG (KHG)... ✗ No data
+  [28/28] SZC (SZC)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/realestate_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/realestate_daily_summary.json
+
+============================================================
+SECTOR: 📈 CHỨNG KHOÁN
+Symbols: 12
+============================================================
+  [1/12] SSI (SSI)... ✗ No data
+  [2/12] VND (VND)... ✓ 751 days, P/B=1.35
+  [3/12] HCM (HCM)... ✗ No data
+  [4/12] VCI (VCI)... ✗ No data
+  [5/12] SHS (SHS)... ✗ No data
+  [6/12] MBS (MBS)... ✗ No data
+  [7/12] FTS (FTS)... ✗ No data
+  [8/12] BSI (BSI)... ✗ No data
+  [9/12] CTS (CTS)... ✗ No data
+  [10/12] ORS (ORS)... ✗ No data
+  [11/12] TVS (TVS)... ✗ No data
+  [12/12] AGR (AGR)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/securities_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/securities_daily_summary.json
+
+============================================================
+SECTOR: ⚡ ĐIỆN & NĂNG LƯỢNG
+Symbols: 15
+============================================================
+  [1/15] POW (POW)... ✗ No data
+  [2/15] GEG (GEG)... ✗ No data
+  [3/15] REE (REE)... ✗ No data
+  [4/15] NT2 (NT2)... ✗ No data
+  [5/15] PPC (PPC)... ✗ No data
+  [6/15] HND (HND)... ✗ No data
+  [7/15] SJD (SJD)... ✗ No data
+  [8/15] VSH (VSH)... ✗ No data
+  [9/15] TBC (TBC)... ✗ No data
+  [10/15] HDG (HDG)... ✗ No data
+  [11/15] PC1 (PC1)... ✗ No data
+  [12/15] QTP (QTP)... ✗ No data
+  [13/15] PGV (PGV)... ✗ No data
+  [14/15] GAS (GAS)... ✗ No data
+  [15/15] PLX (PLX)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/energy_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/energy_daily_summary.json
+
+============================================================
+SECTOR: 🛢️ DẦU KHÍ
+Symbols: 8
+============================================================
+  [1/8] PVD (PVD)... ✗ No data
+  [2/8] PVS (PVS)... ✗ No data
+  [3/8] PVT (PVT)... ✗ No data
+  [4/8] BSR (BSR)... ✗ No data
+  [5/8] OIL (OIL)... ✗ No data
+  [6/8] CNG (CNG)... ✗ No data
+  [7/8] PVC (PVC)... ✗ No data
+  [8/8] PXS (PXS)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/oilgas_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/oilgas_daily_summary.json
+
+============================================================
+SECTOR: 🏗️ THÉP & VẬT LIỆU
+Symbols: 12
+============================================================
+  [1/12] HPG (HPG)... ✗ No data
+  [2/12] HSG (HSG)... ✗ No data
+  [3/12] NKG (NKG)... ✗ No data
+  [4/12] TLH (TLH)... ✗ No data
+  [5/12] SMC (SMC)... ✗ No data
+  [6/12] POM (POM)... ✗ No data
+  [7/12] DTL (DTL)... ✗ No data
+  [8/12] VIS (VIS)...     ✗ Error fetching prices: RetryError[<Future at 0x7dec3d277b60 state=finished raised ValueError>]
+✗ No data
+  [9/12] TVN (TVN)... ✗ No data
+  [10/12] TIS (TIS)... ✗ No data
+  [11/12] VGS (VGS)... ✗ No data
+  [12/12] HMC (HMC)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/steel_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/steel_daily_summary.json
+
+============================================================
+SECTOR: 🏗️ XÂY DỰNG
+Symbols: 10
+============================================================
+  [1/10] CTD (CTD)... ✗ No data
+  [2/10] HBC (HBC)... ✗ No data
+  [3/10] VCG (VCG)... ✗ No data
+  [4/10] FCN (FCN)... ✗ No data
+  [5/10] LCG (LCG)... ✗ No data
+  [6/10] HUT (HUT)... ✗ No data
+  [7/10] C4G (C4G)... ✗ No data
+  [8/10] CII (CII)... ✗ No data
+  [9/10] HHV (HHV)... ✗ No data
+  [10/10] TV2 (TV2)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/construction_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/construction_daily_summary.json
+
+============================================================
+SECTOR: 🛡️ BẢO HIỂM
+Symbols: 6
+============================================================
+  [1/6] BVH (BVH)... ✗ No data
+  [2/6] BMI (BMI)... ✗ No data
+  [3/6] PVI (PVI)... ✗ No data
+  [4/6] BIC (BIC)... ✗ No data
+  [5/6] MIG (MIG)... ✗ No data
+  [6/6] ABI (ABI)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/insurance_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/insurance_daily_summary.json
+
+============================================================
+SECTOR: 🛒 BÁN LẺ & TIÊU DÙNG
+Symbols: 10
+============================================================
+  [1/10] VNM (VNM)... ✗ No data
+  [2/10] MSN (MSN)... ✗ No data
+  [3/10] SAB (SAB)... ✗ No data
+  [4/10] PNJ (PNJ)... ✗ No data
+  [5/10] MWG (MWG)... ✗ No data
+  [6/10] DGW (DGW)... ✗ No data
+  [7/10] FRT (FRT)... ✗ No data
+  [8/10] HAX (HAX)... ✗ No data
+  [9/10] VGC (VGC)... ✗ No data
+  [10/10] BCG (BCG)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/retail_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/retail_daily_summary.json
+
+============================================================
+SECTOR: 💻 CÔNG NGHỆ
+Symbols: 8
+============================================================
+  [1/8] FPT (FPT)... ✗ No data
+  [2/8] CMG (CMG)... ✗ No data
+  [3/8] VGI (VGI)... ✗ No data
+  [4/8] FOX (FOX)... ✗ No data
+  [5/8] ELC (ELC)... ✗ No data
+  [6/8] ITD (ITD)... ✗ No data
+  [7/8] ICT (ICT)... ✗ No data
+  [8/8] LHG (LHG)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/technology_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/technology_daily_summary.json
+
+============================================================
+SECTOR: 🧪 HÓA CHẤT & CÔNG NGHIỆP
+Symbols: 8
+============================================================
+  [1/8] DGC (DGC)... ✗ No data
+  [2/8] DCM (DCM)... ✗ No data
+  [3/8] DPM (DPM)... ✗ No data
+  [4/8] BFC (BFC)... ✗ No data
+  [5/8] LAS (LAS)... ✗ No data
+  [6/8] CSV (CSV)... ✗ No data
+  [7/8] DHC (DHC)... ✗ No data
+  [8/8] GVR (GVR)... ✗ No data
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/chemicals_daily.json
+  ✓ Saved to /workspaces/jpstock_webapp/src/../docs/data/chemicals_daily_summary.json
+
+======================================================================
+ALL SECTORS COMPLETED!
+Finished at: 2026-01-29 00:15:34
+======================================================================

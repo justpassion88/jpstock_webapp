@@ -6,8 +6,14 @@
 
 **JP Stock Webapp** là nền tảng phân tích định lượng toàn diện cho thị trường chứng khoán Việt Nam, tập trung vào phương pháp định giá P/B (Price-to-Book) với dữ liệu lịch sử 14+ năm (2012-2026).
 
+### 🆕 **Cập nhật 29/01/2026: Daily P/B Data**
+- ✅ **134 cổ phiếu** với dữ liệu **P/B hàng ngày** (thay vì dữ liệu quý)
+- ✅ **751 ngày** dữ liệu daily cho mỗi mã (~3 năm giao dịch)
+- ✅ Công thức: `P/B = Daily Close Price / Quarterly BVPS (từ finance.ratio)`
+- ✅ Nguồn dữ liệu: **VCI** với vnstock v3.4.1 (Bronze tier)
+
 Hệ thống cung cấp:
-- 📊 Phân tích P/B định lượng cho **124 cổ phiếu** thuộc **11 ngành**
+- 📊 Phân tích P/B định lượng cho **134 cổ phiếu** thuộc **11 ngành**
 - 🤖 **5 Trading BOT** với ML backtest trên dữ liệu thực
 - 🌡️ **Market Heat Index** đo nhiệt độ thị trường theo từng ngành
 - 📈 Visualization tương tác với biểu đồ P/B lịch sử
@@ -187,11 +193,13 @@ jpstock_webapp/
 │
 ├── 📂 src/                           # Backend Python scripts
 │   ├── config.py                    # Cấu hình ngân hàng
-│   ├── config_sectors.py            # Cấu hình 11 ngành - 124 mã
+│   ├── config_sectors.py            # Cấu hình 11 ngành - 134 mã
 │   │
-│   ├── fetch_data.py                # Fetch P/B data cho ngân hàng
-│   ├── fetch_data_v2.py             # Version 2 với improvements
-│   ├── fetch_multi_sector.py        # Fetch data cho tất cả ngành
+│   ├── fetch_data_daily.py          # 🆕 Fetch Daily P/B data
+│   ├── fetch_all_sectors_daily.py   # 🆕 Fetch all sectors (daily)
+│   ├── fetch_data.py                # Legacy: Fetch P/B data cho ngân hàng
+│   ├── fetch_data_v2.py             # Legacy: Version 2 với improvements
+│   ├── fetch_multi_sector.py        # Legacy: Fetch data cho tất cả ngành
 │   │
 │   ├── analyze.py                   # P/B analysis engine (ngân hàng)
 │   ├── analyze_v2.py                # Version 2 với backtest
@@ -213,20 +221,24 @@ jpstock_webapp/
 │   ├── market.html                  # 🌡️ Market Heat Index
 │   │
 │   ├── 📂 data/                     # JSON data files
-│   │   ├── banks.json               # Ngân hàng (main)
-│   │   ├── banks_v2.json            # Ngân hàng v2 với backtest
-│   │   ├── raw_bank_data*.json      # Raw data cho debugging
 │   │   │
-│   │   ├── realestate.json          # 🏠 BĐS (20 mã)
-│   │   ├── securities.json          # 📈 Chứng khoán (12 mã)
-│   │   ├── retail.json              # 🛒 Bán lẻ (10 mã)
-│   │   ├── construction.json        # 🏗️ Xây dựng (10 mã)
-│   │   ├── energy.json              # ⚡ Năng lượng (15 mã)
-│   │   ├── steel.json               # 🏭 Thép (12 mã)
-│   │   ├── technology.json          # 💻 Công nghệ (8 mã)
-│   │   ├── oilgas.json              # 🛢️ Dầu khí (8 mã)
-│   │   ├── insurance.json           # 🛡️ Bảo hiểm (6 mã)
-│   │   ├── chemicals.json           # 🧪 Hóa chất (8 mã)
+│   │   │── 🆕 DAILY P/B DATA (2026-01-29)
+│   │   ├── banks_daily.json              # 🏦 Ngân hàng (17 mã, full daily data)
+│   │   ├── banks_daily_summary.json      # 🏦 Ngân hàng (summary only)
+│   │   ├── realestate_daily*.json        # 🏠 BĐS (28 mã)
+│   │   ├── securities_daily*.json        # 📈 Chứng khoán (12 mã)
+│   │   ├── energy_daily*.json            # ⚡ Năng lượng (15 mã)
+│   │   ├── oilgas_daily*.json            # 🛢️ Dầu khí (8 mã)
+│   │   ├── steel_daily*.json             # 🏭 Thép (12 mã)
+│   │   ├── construction_daily*.json      # 🏗️ Xây dựng (10 mã)
+│   │   ├── insurance_daily*.json         # 🛡️ Bảo hiểm (6 mã)
+│   │   ├── retail_daily*.json            # 🛒 Bán lẻ (10 mã)
+│   │   ├── technology_daily*.json        # 💻 Công nghệ (8 mã)
+│   │   ├── chemicals_daily*.json         # 🧪 Hóa chất (8 mã)
+│   │   │
+│   │   │── LEGACY DATA (quarterly)
+│   │   ├── banks.json, banks_v2.json     # Ngân hàng cũ
+│   │   ├── realestate.json, etc.         # Các ngành cũ
 │   │   │
 │   │   ├── sector_heat.json         # Heat index từng ngành
 │   │   ├── market_heat.json         # Heat index toàn thị trường
@@ -675,6 +687,52 @@ Công cụ này được phát triển cho mục đích **học tập và nghiê
 ## 📄 License
 
 **MIT License**
+---
+
+## 📋 Changelog
+
+### v2.0.0 - Daily P/B Data (2026-01-29)
+**🚀 Major Update: Chuyển từ Quarterly sang Daily P/B Data**
+
+- ✅ **134 cổ phiếu** với dữ liệu P/B hàng ngày
+- ✅ **751 ngày** dữ liệu (~3 năm trading days) cho mỗi mã
+- ✅ **Công thức mới**: `P/B = Daily Close Price / Quarterly BVPS`
+- ✅ **Data source**: VCI via vnstock v3.4.1 (Bronze tier)
+- ✅ **API mới**: Sử dụng `stock.finance.ratio(period='quarter')` để lấy BVPS
+
+**Files mới:**
+- `*_daily.json` - Full daily data với P/B history
+- `*_daily_summary.json` - Summary chỉ có statistics
+
+**Scripts mới:**
+- `src/fetch_data_daily.py` - Core daily P/B fetch logic
+- `src/fetch_all_sectors_daily.py` - Multi-sector batch fetch
+
+**Kết quả fetch (2026-01-29 00:08-00:22):**
+| Ngành | Thành công | Tổng | Ghi chú |
+|-------|------------|------|---------|
+| 🏦 Ngân hàng | 17 | 17 | 100% |
+| 🏠 Bất động sản | 28 | 28 | 100% |
+| 📈 Chứng khoán | 12 | 12 | 100% |
+| ⚡ Điện & Năng lượng | 15 | 15 | 100% |
+| 🛢️ Dầu khí | 8 | 8 | 100% |
+| 🏗️ Thép & Vật liệu | 10 | 12 | HSG, VIS: API error |
+| 🏗️ Xây dựng | 10 | 10 | 100% |
+| 🛡️ Bảo hiểm | 6 | 6 | 100% |
+| 🛒 Bán lẻ & Tiêu dùng | 10 | 10 | 100% |
+| 💻 Công nghệ | 8 | 8 | 100% |
+| 🧪 Hóa chất & Công nghiệp | 8 | 8 | 100% |
+| **TỔNG** | **132** | **134** | **98.5%** |
+
+### v1.x - Quarterly P/B Data (Legacy)
+- Dữ liệu P/B theo quý từ vnstock
+- Banks V2 với historical backtest
+- BOT #1-5 trading strategies
+- Market Heat Index
+
+---
+
+## 📜 License
 
 Copyright (c) 2024-2026 [@justpassion88](https://github.com/justpassion88)
 

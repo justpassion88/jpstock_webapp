@@ -1,0 +1,20 @@
+======================================================================
+JP Stock Webapp - Fetch ALL Sectors Daily P/B Data
+Data Source: VCI
+Started at: 2026-01-28 23:56:36
+======================================================================
+
+Total sectors: 11
+Total stocks: 134
+
+============================================================
+SECTOR: 🏦 NGÂN HÀNG
+Symbols: 17
+============================================================
+  [1/17] VCB (VCB)... 📦 Vnii 0.1.9 is available (subscription)
+Current version: 0.1.2
+Update: pip install --upgrade --extra-index-url https://vnstocks.com/api/simple vnii
+✅ Authentication successful: Just Passion
+✓ 752 days, P/B=2.85
+  [2/17] BID (BID)... ✓ 752 days, P/B=2.35
+  [3/17] CTG (CTG)... 

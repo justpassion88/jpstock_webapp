@@ -1,24 +1,25 @@
 /**
  * JP Stock Webapp - Sector Detail
  * Hiển thị chi tiết các ngành (không phải ngân hàng)
+ * Updated: 2026-01-29 - Sử dụng Daily P/B Data
  */
 
 let sectorData = null;
 let currentSector = null;
 let allStocks = [];
 
-// Sector configuration
+// Sector configuration - Updated to use daily data files
 const SECTORS = {
-    realestate: { name: '🏠 Bất động sản', file: 'realestate.json' },
-    securities: { name: '📈 Chứng khoán', file: 'securities.json' },
-    energy: { name: '⚡ Điện & Năng lượng', file: 'energy.json' },
-    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas.json' },
-    steel: { name: '🏗️ Thép & Vật liệu', file: 'steel.json' },
-    construction: { name: '🏗️ Xây dựng', file: 'construction.json' },
-    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance.json' },
-    retail: { name: '🛒 Bán lẻ & Tiêu dùng', file: 'retail.json' },
-    technology: { name: '💻 Công nghệ', file: 'technology.json' },
-    chemicals: { name: '🧪 Hóa chất & Công nghiệp', file: 'chemicals.json' }
+    realestate: { name: '🏠 Bất động sản', file: 'realestate_daily_summary.json' },
+    securities: { name: '📈 Chứng khoán', file: 'securities_daily_summary.json' },
+    energy: { name: '⚡ Điện & Năng lượng', file: 'energy_daily_summary.json' },
+    oilgas: { name: '🛢️ Dầu khí', file: 'oilgas_daily_summary.json' },
+    steel: { name: '🏗️ Thép & Vật liệu', file: 'steel_daily_summary.json' },
+    construction: { name: '🏗️ Xây dựng', file: 'construction_daily_summary.json' },
+    insurance: { name: '🛡️ Bảo hiểm', file: 'insurance_daily_summary.json' },
+    retail: { name: '🛒 Bán lẻ & Tiêu dùng', file: 'retail_daily_summary.json' },
+    technology: { name: '💻 Công nghệ', file: 'technology_daily_summary.json' },
+    chemicals: { name: '🧪 Hóa chất & Công nghiệp', file: 'chemicals_daily_summary.json' }
 };
 
 // Get sector from URL
