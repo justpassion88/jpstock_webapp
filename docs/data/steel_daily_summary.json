@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-27T07:08:08.185578",
+  "last_updated": "2026-02-28T06:54:55.288601",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🏗️ Thép & Vật liệu",
@@ -14,7 +14,7 @@
         "pb_calculated": 1.213,
         "bvps": 10883.635659286,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918429"
+        "last_updated": "2026-02-28T06:54:36.589021"
       },
       "valuation": {
         "zone": "fair",
@@ -266,7 +266,7 @@
         "pb_calculated": 0.757,
         "bvps": 15197.4451060603,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918450"
+        "last_updated": "2026-02-28T06:54:36.589033"
       },
       "valuation": {
         "zone": "expensive",
@@ -518,7 +518,7 @@
         "pb_calculated": 1.634,
         "bvps": 16342.6795110791,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918452",
+        "last_updated": "2026-02-28T06:54:36.589035",
         "last_trade_date": "2026-01-30"
       },
       "valuation": {
@@ -771,7 +771,7 @@
         "pb_calculated": 0.888,
         "bvps": 18233.4060453516,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918453"
+        "last_updated": "2026-02-28T06:54:36.589036"
       },
       "valuation": {
         "zone": "fair",
@@ -1023,7 +1023,7 @@
         "pb_calculated": 2.393,
         "bvps": 19267.9116741898,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918455"
+        "last_updated": "2026-02-28T06:54:36.589038"
       },
       "valuation": {
         "zone": "expensive",
@@ -1275,7 +1275,7 @@
         "pb_calculated": 0.889,
         "bvps": 17047.2175133261,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918457"
+        "last_updated": "2026-02-28T06:54:36.589039"
       },
       "valuation": {
         "zone": "expensive",
@@ -1527,7 +1527,7 @@
         "pb_calculated": 2.546,
         "bvps": 24741.844335307,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918458"
+        "last_updated": "2026-02-28T06:54:36.589041"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1779,7 +1779,7 @@
         "pb_calculated": null,
         "bvps": 0.0,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918459"
+        "last_updated": "2026-02-28T06:54:36.589043"
       },
       "valuation": {},
       "statistics": {
@@ -2021,7 +2021,7 @@
         "pb_calculated": 1.448,
         "bvps": 9117.6117372494,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918461"
+        "last_updated": "2026-02-28T06:54:36.589044"
       },
       "valuation": {},
       "statistics": {},
@@ -2036,7 +2036,8 @@
         "pb_calculated": 0.624,
         "bvps": 8009.8360523043,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918462"
+        "last_updated": "2026-02-28T06:54:40.263665",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -2283,12 +2284,13 @@
       "symbol": "TLH",
       "name": "TLH",
       "current": {
-        "price": 5040.0,
+        "price": 4980.0,
         "pb_vnstock": 0.4376873514,
         "pb_calculated": 0.45,
         "bvps": 11195.2058565661,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918464"
+        "last_updated": "2026-02-28T06:54:44.420954",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -2540,7 +2542,7 @@
         "pb_calculated": 0.676,
         "bvps": 12864.6245151799,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918465"
+        "last_updated": "2026-02-28T06:54:44.721107"
       },
       "valuation": {
         "zone": "fair",
@@ -2792,7 +2794,7 @@
         "pb_calculated": 1.307,
         "bvps": 19894.6696587706,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:07:58.918466"
+        "last_updated": "2026-02-28T06:54:44.721132"
       },
       "valuation": {
         "zone": "expensive",

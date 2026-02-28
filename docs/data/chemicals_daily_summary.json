@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-27T07:11:37.554690",
+  "last_updated": "2026-02-28T06:58:30.279759",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🧪 Hóa chất & Công nghiệp",
@@ -1270,12 +1270,13 @@
       "symbol": "GIL",
       "name": "GIL",
       "current": {
-        "price": 13450.0,
+        "price": 15000.0,
         "pb_vnstock": 0.6185355761,
         "pb_calculated": 0.58,
         "bvps": 23199.9589920857,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554675"
+        "last_updated": "2026-02-28T06:57:39.744392",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -1522,12 +1523,13 @@
       "symbol": "GVR",
       "name": "GVR",
       "current": {
-        "price": 38200.0,
+        "price": 40000.0,
         "pb_vnstock": 2.5055164041,
         "pb_calculated": 2.633,
         "bvps": 14507.9872320543,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554677"
+        "last_updated": "2026-02-28T06:57:50.495967",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "expensive",
@@ -1774,12 +1776,13 @@
       "symbol": "KSB",
       "name": "KSB",
       "current": {
-        "price": 17300.0,
+        "price": 17700.0,
         "pb_vnstock": 0.7220384263,
         "pb_calculated": 0.722,
         "bvps": 23959.9436390921,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554678"
+        "last_updated": "2026-02-28T06:57:57.538937",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -2026,12 +2029,13 @@
       "symbol": "LAS",
       "name": "LAS",
       "current": {
-        "price": 16200.0,
+        "price": 17800.0,
         "pb_vnstock": 1.2420540498,
         "pb_calculated": 1.242,
         "bvps": 13042.9106549651,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554680"
+        "last_updated": "2026-02-28T06:58:01.608067",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "expensive",
@@ -2278,12 +2282,13 @@
       "symbol": "MSH",
       "name": "MSH",
       "current": {
-        "price": 34550.0,
+        "price": 39250.0,
         "pb_vnstock": 1.8330828864,
         "pb_calculated": 1.784,
         "bvps": 19366.2819415786,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554681"
+        "last_updated": "2026-02-28T06:58:05.989955",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -2522,13 +2527,13 @@
       "symbol": "TCX",
       "name": "TCX",
       "current": {
-        "price": 54900.0,
+        "price": 63500.0,
         "pb_vnstock": 2.8721289188,
         "pb_calculated": 2.872,
         "bvps": 19079.923481724,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554683",
-        "last_trade_date": "2026-02-06"
+        "last_updated": "2026-02-28T06:58:09.929009",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "expensive",
@@ -2564,12 +2569,13 @@
       "symbol": "TDP",
       "name": "TDP",
       "current": {
-        "price": 34000.0,
+        "price": 29050.0,
         "pb_vnstock": 2.1486022302,
         "pb_calculated": 2.628,
         "bvps": 12938.6443006867,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554684"
+        "last_updated": "2026-02-28T06:58:14.356484",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -2816,12 +2822,13 @@
       "symbol": "TIG",
       "name": "TIG",
       "current": {
-        "price": 8500.0,
+        "price": 8400.0,
         "pb_vnstock": 0.8248635702,
         "pb_calculated": 0.806,
         "bvps": 10547.1987302576,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554686"
+        "last_updated": "2026-02-28T06:58:18.451080",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
@@ -3068,12 +3075,13 @@
       "symbol": "TLG",
       "name": "TLG",
       "current": {
-        "price": 51100.0,
+        "price": 54500.0,
         "pb_vnstock": 2.0347944729,
         "pb_calculated": 1.933,
         "bvps": 26440.0167758816,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554687"
+        "last_updated": "2026-02-28T06:58:25.073465",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3320,12 +3328,13 @@
       "symbol": "TNH",
       "name": "TNH",
       "current": {
-        "price": 12100.0,
+        "price": 11800.0,
         "pb_vnstock": 1.1812498443,
         "pb_calculated": 1.162,
         "bvps": 10412.6997852086,
         "pb_source": "vnstock",
-        "last_updated": "2026-02-27T07:11:37.554689"
+        "last_updated": "2026-02-28T06:58:29.979622",
+        "last_trade_date": "2026-02-27"
       },
       "valuation": {
         "zone": "fair",
