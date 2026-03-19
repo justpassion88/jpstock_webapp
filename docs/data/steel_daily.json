@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-18T07:12:35.322692",
+  "last_updated": "2026-03-19T07:12:22.375198",
   "data_type": "daily",
   "data_source": "VCI",
   "sector": "🏗️ Thép & Vật liệu",
@@ -12,13 +12,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 11450.0,
+        "price": 11500.0,
         "pb_vnstock": 1.2036419088,
         "pb_calculated": 1.213,
         "bvps": 10883.635659286,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:39.254757",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:11.545927",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "fair",
@@ -19097,13 +19097,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 11250.0,
+        "price": 11300.0,
         "pb_vnstock": 0.7567061384,
         "pb_calculated": 0.757,
         "bvps": 15197.4451060603,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:42.882613",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:16.670601",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "expensive",
@@ -38416,13 +38416,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 26900.0,
+        "price": 26650.0,
         "pb_vnstock": 1.6674132281,
         "pb_calculated": 1.634,
         "bvps": 16342.6795110791,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:47.099077",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:23.327819",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -57747,13 +57747,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 14750.0,
+        "price": 14550.0,
         "pb_vnstock": 0.8939635282,
         "pb_calculated": 0.888,
         "bvps": 18233.4060453516,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:51.282995",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:28.692698",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "fair",
@@ -77078,13 +77078,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 46350.0,
+        "price": 45900.0,
         "pb_vnstock": 2.3925789561,
         "pb_calculated": 2.393,
         "bvps": 19267.9116741898,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:54.911078",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:34.247213",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "expensive",
@@ -92239,13 +92239,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 14000.0,
+        "price": 13700.0,
         "pb_vnstock": 0.915105353,
         "pb_calculated": 0.889,
         "bvps": 17047.2175133261,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:11:58.737156",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:40.707856",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "expensive",
@@ -111570,13 +111570,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 58100.0,
+        "price": 57500.0,
         "pb_vnstock": 2.5462936047,
         "pb_calculated": 2.546,
         "bvps": 24741.844335307,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:02.389905",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:45.167582",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -130906,7 +130906,7 @@
         "pb_calculated": null,
         "bvps": 0.0,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:06.158443",
+        "last_updated": "2026-03-19T07:11:49.829547",
         "last_trade_date": "2026-03-13"
       },
       "valuation": {},
@@ -148350,13 +148350,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 11000.0,
+        "price": 10900.0,
         "pb_vnstock": 1.5464576038,
         "pb_calculated": 1.448,
         "bvps": 9117.6117372494,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:09.755016",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:54.375676",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {},
       "statistics": {},
@@ -148375,13 +148375,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 4900.0,
+        "price": 4800.0,
         "pb_vnstock": 0.6410867796,
         "pb_calculated": 0.624,
         "bvps": 8009.8360523043,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:13.295544",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:11:58.287885",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "fair",
@@ -167706,13 +167706,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 4560.0,
+        "price": 4490.0,
         "pb_vnstock": 0.4376873514,
         "pb_calculated": 0.45,
         "bvps": 11195.2058565661,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:16.887708",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:12:02.421612",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "fair",
@@ -187037,13 +187037,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 8500.0,
+        "price": 8400.0,
         "pb_vnstock": 0.6625144784,
         "pb_calculated": 0.676,
         "bvps": 12864.6245151799,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:20.563609",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:12:06.516004",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "fair",
@@ -202354,13 +202354,13 @@
       "data_type": "daily",
       "years_of_data": 15,
       "current": {
-        "price": 24000.0,
+        "price": 23800.0,
         "pb_vnstock": 1.3219621361,
         "pb_calculated": 1.307,
         "bvps": 19894.6696587706,
         "pb_source": "vnstock",
-        "last_updated": "2026-03-18T07:12:24.289542",
-        "last_trade_date": "2026-03-18"
+        "last_updated": "2026-03-19T07:12:11.955721",
+        "last_trade_date": "2026-03-19"
       },
       "valuation": {
         "zone": "expensive",
