@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T07:38:17.564836",
+  "last_updated": "2026-04-10T07:56:36.014668",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🛢️ Dầu khí",
@@ -14,7 +14,7 @@
         "pb_calculated": 1.91,
         "bvps": 11467.5955490148,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564809"
+        "last_updated": "2026-04-10T07:56:31.876541"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -266,7 +266,7 @@
         "pb_calculated": 1.499,
         "bvps": 18147.3750644914,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564820"
+        "last_updated": "2026-04-10T07:56:31.876554"
       },
       "valuation": {
         "zone": "expensive",
@@ -518,7 +518,7 @@
         "pb_calculated": 1.485,
         "bvps": 10171.7071748166,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564822",
+        "last_updated": "2026-04-10T07:56:31.876556",
         "last_trade_date": "2026-02-13"
       },
       "valuation": {
@@ -771,7 +771,7 @@
         "pb_calculated": 1.228,
         "bvps": 11645.1474610159,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564824",
+        "last_updated": "2026-04-10T07:56:31.876558",
         "last_trade_date": "2026-02-03"
       },
       "valuation": {
@@ -1024,7 +1024,7 @@
         "pb_calculated": 1.002,
         "bvps": 30440.8560919602,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564826"
+        "last_updated": "2026-04-10T07:56:31.876559"
       },
       "valuation": {
         "zone": "expensive",
@@ -1276,7 +1276,7 @@
         "pb_calculated": 1.55,
         "bvps": 28063.950093033,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564828"
+        "last_updated": "2026-04-10T07:56:31.876561"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1523,12 +1523,13 @@
       "symbol": "PVT",
       "name": "PVT",
       "current": {
-        "price": 21000.0,
+        "price": 22500.0,
         "pb_vnstock": 1.1781478476,
         "pb_calculated": 1.184,
         "bvps": 17739.7090211529,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564829"
+        "last_updated": "2026-04-10T07:56:35.714481",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -1780,7 +1781,7 @@
         "pb_calculated": 1.447,
         "bvps": 2903.43009452,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564831",
+        "last_updated": "2026-04-10T07:56:36.014639",
         "last_trade_date": "2026-02-06"
       },
       "valuation": {
@@ -2033,7 +2034,7 @@
         "pb_calculated": 1.797,
         "bvps": 2003.3317432611,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564833"
+        "last_updated": "2026-04-10T07:56:36.014662"
       },
       "valuation": {
         "zone": "fair",
@@ -2285,7 +2286,7 @@
         "pb_calculated": 4.543,
         "bvps": 20030.822198394,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-09T07:38:17.564834"
+        "last_updated": "2026-04-10T07:56:36.014665"
       },
       "valuation": {
         "zone": "fair",
