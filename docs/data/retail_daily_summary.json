@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11T07:09:31.297904",
+  "last_updated": "2026-04-12T07:24:37.997702",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "🛒 Bán lẻ & Tiêu dùng",
@@ -2771,13 +2771,13 @@
       "symbol": "MWG",
       "name": "MWG",
       "current": {
-        "price": 87700.0,
+        "price": 81500.0,
         "pb_vnstock": 4.0204348544,
         "pb_calculated": 3.997,
         "bvps": 21390.7209331822,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297887",
-        "last_trade_date": "2026-03-03"
+        "last_updated": "2026-04-12T07:23:54.502557",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3024,12 +3024,13 @@
       "symbol": "NAF",
       "name": "NAF",
       "current": {
-        "price": 42500.0,
+        "price": 50200.0,
         "pb_vnstock": 3.1073703529,
         "pb_calculated": 3.382,
         "bvps": 12566.8959812391,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297888"
+        "last_updated": "2026-04-12T07:23:59.314656",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -3276,12 +3277,13 @@
       "symbol": "PAC",
       "name": "PAC",
       "current": {
-        "price": 22500.0,
+        "price": 24800.0,
         "pb_vnstock": 1.5318724375,
         "pb_calculated": 1.532,
         "bvps": 14687.9070663991,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297890"
+        "last_updated": "2026-04-12T07:24:03.401293",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "expensive",
@@ -3528,12 +3530,13 @@
       "symbol": "PAN",
       "name": "PAN",
       "current": {
-        "price": 29450.0,
+        "price": 32299.999999999996,
         "pb_vnstock": 1.1925384453,
         "pb_calculated": 1.193,
         "bvps": 24695.2206162263,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297891"
+        "last_updated": "2026-04-12T07:24:08.149121",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "fair",
@@ -3780,13 +3783,13 @@
       "symbol": "PET",
       "name": "PET",
       "current": {
-        "price": 34200.0,
+        "price": 48500.0,
         "pb_vnstock": 1.6579625998,
         "pb_calculated": 1.431,
         "bvps": 22014.9718725913,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297893",
-        "last_trade_date": "2026-02-02"
+        "last_updated": "2026-04-12T07:24:12.423624",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -4033,13 +4036,13 @@
       "symbol": "PNJ",
       "name": "PNJ",
       "current": {
-        "price": 106300.0,
+        "price": 109000.0,
         "pb_vnstock": 2.8719351653,
         "pb_calculated": 3.353,
         "bvps": 35342.0234648833,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297895",
-        "last_trade_date": "2026-03-23"
+        "last_updated": "2026-04-12T07:24:17.096768",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "expensive",
@@ -4286,12 +4289,13 @@
       "symbol": "SAB",
       "name": "SAB",
       "current": {
-        "price": 48950.0,
+        "price": 45800.0,
         "pb_vnstock": 3.0351670062,
         "pb_calculated": 2.767,
         "bvps": 17692.601392414,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297896"
+        "last_updated": "2026-04-12T07:24:21.307426",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "fair",
@@ -4538,13 +4542,13 @@
       "symbol": "SBT",
       "name": "SBT",
       "current": {
-        "price": 22650.0,
+        "price": 21850.0,
         "pb_vnstock": 1.8396665191,
         "pb_calculated": 1.821,
         "bvps": 13181.7368789141,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297898",
-        "last_trade_date": "2026-04-01"
+        "last_updated": "2026-04-12T07:24:26.845541",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "extremely_expensive",
@@ -4791,12 +4795,13 @@
       "symbol": "VJC",
       "name": "VJC",
       "current": {
-        "price": 171500.0,
+        "price": 167000.0,
         "pb_vnstock": 4.5946698495,
         "pb_calculated": 4.16,
         "bvps": 41221.677771268,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297899"
+        "last_updated": "2026-04-12T07:24:30.272907",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "fair",
@@ -5043,12 +5048,13 @@
       "symbol": "VNM",
       "name": "VNM",
       "current": {
-        "price": 67700.0,
+        "price": 62800.0,
         "pb_vnstock": 4.1495135668,
         "pb_calculated": 4.15,
         "bvps": 16315.1653587256,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297900"
+        "last_updated": "2026-04-12T07:24:34.363523",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "fair",
@@ -5295,13 +5301,13 @@
       "symbol": "VOS",
       "name": "VOS",
       "current": {
-        "price": 13650.0,
+        "price": 13050.0,
         "pb_vnstock": 0.85690919,
         "pb_calculated": 0.857,
         "bvps": 15112.4531651,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-11T07:09:31.297902",
-        "last_trade_date": "2026-03-19"
+        "last_updated": "2026-04-12T07:24:37.697554",
+        "last_trade_date": "2026-04-10"
       },
       "valuation": {
         "zone": "fair",
