@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-14T07:59:47.370631",
+  "last_updated": "2026-04-15T08:01:06.928764",
   "data_type": "daily_summary",
   "data_source": "VCI",
   "sector": "💻 Công nghệ",
@@ -14,7 +14,7 @@
         "pb_calculated": 0.719,
         "bvps": 20523.0298694845,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-14T07:59:47.370602"
+        "last_updated": "2026-04-15T08:00:55.886142"
       },
       "valuation": {
         "zone": "extremely_cheap",
@@ -266,7 +266,7 @@
         "pb_calculated": 1.748,
         "bvps": 25915.1976651663,
         "pb_source": "vnstock",
-        "last_updated": "2026-04-14T07:59:47.370609",
+        "last_updated": "2026-04-15T08:00:55.886155",
         "last_trade_date": "2026-03-05"
       },
       "valuation": {
